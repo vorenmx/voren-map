@@ -1,0 +1,19 @@
+{
+  "name": "motorcycle-shops-mexico-extractor",
+  "version": "1.0.0",
+  "description": "Extracts motorcycle repair and parts shop data from Google Maps and INEGI DENUE for all of Mexico",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "denue-only": "node index.js --denue-only",
+    "google-only": "node index.js --google-only",
+    "merge": "node index.js --merge"
+  },
+  "dependencies": {
+    "axios": "^1.7.0",
+    "csv-writer": "^1.6.0",
+    "dotenv": "^16.4.0",
+    "string-similarity": "^4.0.4"
+  }
+}

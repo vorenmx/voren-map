@@ -25,7 +25,13 @@
 
     <!-- Map + Filters layout -->
     <div class="main-layout">
-      <MapView ref="mapViewRef" :layers="layers" :on-layer-click="onLayerClick" class="map-area" />
+      <MapView
+        ref="mapViewRef"
+        :layers="layers"
+        :on-layer-click="onLayerClick"
+        :on-saved-place-click="onSavedPlaceClick"
+        class="map-area"
+      />
       <FilterPanel
         v-model="filters"
         :all-states="allStates"
@@ -43,6 +49,10 @@
         :shop="clickedShop"
         @close="clickedShop = null"
       />
+      <PlaceDetailPanel
+        :place="selectedPlace"
+        @close="selectedPlace = null; mapViewRef?.clearPin()"
+      />
     </div>
   </div>
 </template>
@@ -54,16 +64,42 @@ import FilterPanel from './components/FilterPanel.vue';
 import SearchBar from './components/SearchBar.vue';
 import ShopDetailPanel from './components/ShopDetailPanel.vue';
 import HexShopListPanel from './components/HexShopListPanel.vue';
+import PlaceDetailPanel from './components/PlaceDetailPanel.vue';
 import { useShops } from './composables/useShops.js';
 import { useDeckLayers } from './composables/useDeckLayers.js';
+import { useVisited } from './composables/useVisited.js';
+import { useSavedPlaces } from './composables/useSavedPlaces.js';
 
 const { shops, loading, error, allStates, fetchShops } = useShops();
+const { visitedShops, fetchVisited } = useVisited();
+const { savedPlaces, fetchSavedPlaces } = useSavedPlaces();
 const mapViewRef = ref(null);
 
 function onFlyTo(payload) {
   mapViewRef.value?.flyTo(payload);
-  const label = payload.shop?.name || payload.shop?.company_name || '';
-  mapViewRef.value?.placePin({ lat: payload.lat, lng: payload.lng, label });
+
+  if (payload.place) {
+    // Location result — open PlaceDetailPanel, close shop panels
+    selectedPlace.value = payload.place;
+    clickedShop.value = null;
+    clickedHexShops.value = null;
+    mapViewRef.value?.placePin({ lat: payload.lat, lng: payload.lng, label: payload.place.name || '' });
+  } else if (payload.shop) {
+    // Shop result — open ShopDetailPanel, close place panel
+    selectedPlace.value = null;
+    clickedShop.value = payload.shop;
+    clickedHexShops.value = null;
+    const label = payload.shop.name || payload.shop.company_name || '';
+    mapViewRef.value?.placePin({ lat: payload.lat, lng: payload.lng, label });
+  }
+}
+
+function onSavedPlaceClick(place) {
+  selectedPlace.value = place;
+  clickedShop.value = null;
+  clickedHexShops.value = null;
+  mapViewRef.value?.flyTo({ lat: place.lat, lng: place.lng, zoom: 15 });
+  mapViewRef.value?.placePin({ lat: place.lat, lng: place.lng, label: place.name || '' });
 }
 
 const filters = ref({
@@ -77,9 +113,13 @@ const filters = ref({
 });
 
 const filteredShops = computed(() => {
-  return shops.value.filter((s) => {
+  // In visited mode, use the visited_stores snapshot directly
+  const source = filters.value.viewMode === 'visited' ? visitedShops.value : shops.value;
+  return source.filter((s) => {
     if (!filters.value.shopTypes.includes(s.shop_type)) return false;
-    if (!filters.value.sources.includes(s.source)) return false;
+    if (filters.value.viewMode !== 'visited') {
+      if (!filters.value.sources.includes(s.source)) return false;
+    }
     if (filters.value.state && s.state !== filters.value.state) return false;
     if (filters.value.minRating > 0) {
       if (!s.rating || s.rating < filters.value.minRating) return false;
@@ -96,6 +136,7 @@ const onHover = ref((info) => info);
 // Click state
 const clickedShop = ref(null);
 const clickedHexShops = ref(null);
+const selectedPlace = ref(null); // location from search bar or saved-place marker click
 
 // Hex radius in degrees (~5km at Mexico's latitude, matching HexagonLayer radius: 5000)
 const HEX_RADIUS_DEG = 0.045;
@@ -200,10 +241,24 @@ watch(viewMode, (mode) => {
     mapViewRef.value?.setTilt(0);
     mapViewRef.value?.setHeading(0);
   }
+  // Refresh visited list whenever user switches to visited mode
+  if (mode === 'visited') fetchVisited();
 });
+
+// Keep star markers in sync whenever savedPlaces list changes.
+// Also call again after a short delay on first load to ensure the map is ready.
+watch(savedPlaces, (places) => {
+  if (mapViewRef.value) {
+    mapViewRef.value.syncSavedMarkers(places);
+  } else {
+    setTimeout(() => mapViewRef.value?.syncSavedMarkers(places), 2000);
+  }
+}, { deep: true });
 
 onMounted(() => {
   fetchShops();
+  fetchVisited();
+  fetchSavedPlaces();
 });
 </script>
 

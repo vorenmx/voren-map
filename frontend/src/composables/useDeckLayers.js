@@ -159,7 +159,7 @@ export function useDeckLayers(filteredShops, viewMode, onHover, showPurchases, s
       return activeLayers;
     }
 
-    // ── Points (ScatterplotLayer) ──────────────────────────────────────────
+    // ── Visited / Points (ScatterplotLayer) ───────────────────────────────
     return [
       new ScatterplotLayer({
         id: 'scatter-layer',

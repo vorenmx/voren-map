@@ -49,6 +49,17 @@
         >
           Compare Purchases vs Avg Order
         </button>
+        <button
+          class="toggle-btn visited-mode-btn"
+          :class="{ active: modelValue.viewMode === 'visited' }"
+          @click="emit('update:modelValue', { ...modelValue, viewMode: 'visited' })"
+          style="margin-top:6px; width:100%;"
+        >
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0">
+            <path d="M20 6L9 17l-5-5" />
+          </svg>
+          Visited Stores
+        </button>
       </section>
 
       <!-- Shop Type -->
@@ -430,6 +441,21 @@ function resetFilters() {
 .compare-btn.active {
   background: #6d28d9 !important;
   border-color: #7c3aed !important;
+  color: #fff !important;
+}
+
+.visited-mode-btn {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: rgba(34, 197, 94, 0.08) !important;
+  border-color: rgba(34, 197, 94, 0.25) !important;
+  color: #86efac !important;
+}
+.visited-mode-btn.active {
+  background: #15803d !important;
+  border-color: #16a34a !important;
   color: #fff !important;
 }
 

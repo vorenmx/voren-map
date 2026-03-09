@@ -6,5 +6,13 @@ service cloud.firestore {
       allow read: if true;
       allow write: if false;
     }
+    // Visited stores — public read/write (no auth required for now)
+    match /visited_stores/{shopId} {
+      allow read, write: if true;
+    }
+    // Saved places — public read/write (no auth required for now)
+    match /saved_places/{placeId} {
+      allow read, write: if true;
+    }
   }
 }

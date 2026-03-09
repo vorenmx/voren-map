@@ -168,9 +168,22 @@ async function selectLocation(item) {
   if (!item._prediction) return;
   try {
     const place = item._prediction.toPlace();
-    await place.fetchFields({ fields: ['location', 'displayName'] });
+    await place.fetchFields({ fields: ['location', 'displayName', 'formattedAddress'] });
     const loc = place.location;
-    if (loc) emit('fly-to', { lat: loc.lat(), lng: loc.lng(), zoom: 13 });
+    if (loc) {
+      emit('fly-to', {
+        lat: loc.lat(),
+        lng: loc.lng(),
+        zoom: 14,
+        place: {
+          place_id: item.place_id,
+          name: place.displayName || item.structured_formatting?.main_text || item.description || '',
+          formatted_address: place.formattedAddress || item.description || '',
+          lat: loc.lat(),
+          lng: loc.lng(),
+        },
+      });
+    }
   } catch {
     // fallback: nothing
   }

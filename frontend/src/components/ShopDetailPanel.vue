@@ -115,6 +115,20 @@
 
         <!-- Actions -->
         <div class="panel-actions">
+          <!-- Visited toggle -->
+          <button
+            class="action-btn visited-btn"
+            :class="{ 'visited-active': isVisited }"
+            :disabled="saving"
+            @click="handleVisitedToggle"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path v-if="isVisited" d="M20 6L9 17l-5-5" />
+              <circle v-else cx="12" cy="12" r="10" />
+            </svg>
+            {{ saving ? 'Saving…' : isVisited ? 'Visited' : 'Mark as Visited' }}
+          </button>
+
           <a
             v-if="shop.google_maps_url"
             :href="shop.google_maps_url"
@@ -140,13 +154,29 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
+import { useVisited } from '../composables/useVisited.js';
 
 const props = defineProps({
   shop: { type: Object, default: null },
 });
 
 defineEmits(['close']);
+
+const { visitedIds, toggleVisited } = useVisited();
+const saving = ref(false);
+
+const isVisited = computed(() => props.shop?.id && visitedIds.value.has(props.shop.id));
+
+async function handleVisitedToggle() {
+  if (!props.shop?.id || saving.value) return;
+  saving.value = true;
+  try {
+    await toggleVisited(props.shop);
+  } finally {
+    saving.value = false;
+  }
+}
 
 const typeClass = computed(() => {
   const map = { Repair: 'type-repair', Parts: 'type-parts', Both: 'type-both', Other: 'type-other' };
@@ -422,5 +452,39 @@ const hoursLines = computed(() => {
 }
 .action-btn.primary:hover {
   background: #2563eb;
+}
+
+.visited-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  background: rgba(255,255,255,0.05);
+  color: #94a3b8;
+  border: 1px solid rgba(255,255,255,0.12);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.15s;
+}
+.visited-btn:hover:not(:disabled) {
+  background: rgba(34,197,94,0.1);
+  border-color: rgba(34,197,94,0.3);
+  color: #86efac;
+}
+.visited-btn.visited-active {
+  background: rgba(34,197,94,0.15);
+  border-color: rgba(34,197,94,0.4);
+  color: #4ade80;
+}
+.visited-btn.visited-active:hover:not(:disabled) {
+  background: rgba(239,68,68,0.1);
+  border-color: rgba(239,68,68,0.3);
+  color: #fca5a5;
+}
+.visited-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
 }
 </style>

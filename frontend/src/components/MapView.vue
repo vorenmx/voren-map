@@ -34,6 +34,7 @@ import ShopTooltip from './ShopTooltip.vue';
 const props = defineProps({
   layers: { type: Array, required: true },
   onLayerClick: { type: Function, default: null },
+  onSavedPlaceClick: { type: Function, default: null },
 });
 
 const mapContainer = ref(null);
@@ -135,7 +136,43 @@ function setHeading(degrees) {
   googleMap.setHeading(degrees);
 }
 
-defineExpose({ flyTo, setTilt, setHeading, placePin, clearPin });
+// ── Saved-place star markers ─────────────────────────────────────────────────
+const starMarkers = new Map(); // id → AdvancedMarkerElement
+
+function syncSavedMarkers(places) {
+  if (!googleMap || !window.google?.maps?.marker?.AdvancedMarkerElement) return;
+
+  // Remove markers for places no longer in the list
+  const ids = new Set(places.map((p) => p.id));
+  for (const [id, marker] of starMarkers) {
+    if (!ids.has(id)) {
+      marker.map = null;
+      starMarkers.delete(id);
+    }
+  }
+
+  // Add markers for newly saved places
+  for (const place of places) {
+    if (starMarkers.has(place.id)) continue;
+    const el = document.createElement('div');
+    el.style.cssText = 'font-size:26px;line-height:1;cursor:pointer;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.6));user-select:none;';
+    el.textContent = '⭐';
+    el.title = place.name || place.formatted_address || 'Saved place';
+
+    const marker = new window.google.maps.marker.AdvancedMarkerElement({
+      map: googleMap,
+      position: { lat: place.lat, lng: place.lng },
+      title: el.title,
+      content: el,
+    });
+    marker.addListener('click', () => {
+      if (props.onSavedPlaceClick) props.onSavedPlaceClick(place);
+    });
+    starMarkers.set(place.id, marker);
+  }
+}
+
+defineExpose({ flyTo, setTilt, setHeading, placePin, clearPin, syncSavedMarkers });
 
 watch(
   () => props.layers,

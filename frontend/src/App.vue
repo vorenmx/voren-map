@@ -4,7 +4,7 @@
     <header class="app-header">
       <div class="header-left">
         <span class="logo">🏍</span>
-        <div>
+        <div class="header-titles">
           <h1 class="app-title">Motorcycle Shops Mexico</h1>
           <p class="app-subtitle">3D density map — deck.gl + Google Maps</p>
         </div>
@@ -20,6 +20,14 @@
         <div v-else class="data-badge">
           {{ shops.length.toLocaleString() }} shops loaded
         </div>
+        <!-- Mobile-only filter toggle -->
+        <button class="mobile-filter-btn" @click="mobileFilterOpen = true" title="Open filters">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="6" x2="20" y2="6"/>
+            <line x1="8" y1="12" x2="16" y2="12"/>
+            <line x1="11" y1="18" x2="13" y2="18"/>
+          </svg>
+        </button>
       </div>
     </header>
 
@@ -32,11 +40,15 @@
         :on-saved-place-click="onSavedPlaceClick"
         class="map-area"
       />
+      <!-- Mobile backdrop -->
+      <div v-if="mobileFilterOpen" class="mobile-backdrop" @click="mobileFilterOpen = false" />
       <FilterPanel
         v-model="filters"
         :all-states="allStates"
         :total-count="shops.length"
         :filtered-count="filteredShops.length"
+        :mobile-open="mobileFilterOpen"
+        @close="mobileFilterOpen = false"
       />
 
       <!-- Click panels, positioned over the map -->
@@ -71,6 +83,7 @@ import { useVisited } from './composables/useVisited.js';
 import { useSavedPlaces } from './composables/useSavedPlaces.js';
 
 const { shops, loading, error, allStates, fetchShops } = useShops();
+const mobileFilterOpen = ref(false);
 const { visitedShops, fetchVisited } = useVisited();
 const { savedPlaces, fetchSavedPlaces } = useSavedPlaces();
 const mapViewRef = ref(null);
@@ -366,4 +379,63 @@ onMounted(() => {
   height: 100%;
 }
 
+/* Mobile filter toggle button — hidden on desktop */
+.mobile-filter-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  color: #e2e8f0;
+  cursor: pointer;
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+.mobile-filter-btn:hover {
+  background: rgba(255,255,255,0.14);
+}
+
+/* Mobile backdrop */
+.mobile-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 190;
+}
+
+@media (max-width: 640px) {
+  .app-header {
+    padding: 8px 12px;
+    gap: 10px;
+  }
+
+  .header-titles {
+    display: none;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Hide the shops-loaded / loading / error badge on mobile to save space */
+  .data-badge,
+  .loading-badge,
+  .error-badge {
+    display: none;
+  }
+
+  .mobile-filter-btn {
+    display: flex;
+  }
+
+  .mobile-backdrop {
+    display: block;
+  }
+}
 </style>

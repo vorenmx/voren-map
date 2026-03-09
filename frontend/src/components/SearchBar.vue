@@ -256,8 +256,9 @@ function typeClass(type) {
 <style scoped>
 .search-wrapper {
   position: relative;
-  width: 340px;
-  flex-shrink: 0;
+  flex: 1;
+  min-width: 0;
+  max-width: 340px;
 }
 
 .search-box {
@@ -414,5 +415,19 @@ function typeClass(type) {
   font-size: 13px;
   color: #475569;
   text-align: center;
+}
+
+@media (max-width: 640px) {
+  .search-wrapper {
+    max-width: none;
+  }
+
+  .dropdown {
+    position: fixed;
+    left: 8px;
+    right: 8px;
+    top: 56px;
+    z-index: 300;
+  }
 }
 </style>

@@ -286,4 +286,16 @@ function typeClass(shop) {
   color: #334155;
   margin-top: 2px;
 }
+
+@media (max-width: 640px) {
+  .hex-panel {
+    width: 100%;
+    left: 0;
+  }
+
+  .close-btn {
+    width: 44px;
+    height: 44px;
+  }
+}
 </style>

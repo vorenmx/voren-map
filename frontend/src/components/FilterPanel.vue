@@ -1,6 +1,6 @@
 <template>
-  <aside class="filter-panel" :class="{ collapsed }">
-    <button class="collapse-btn" @click="collapsed = !collapsed" :title="collapsed ? 'Expand filters' : 'Collapse filters'">
+  <aside class="filter-panel" :class="{ collapsed, 'mobile-open': mobileOpen }">
+    <button class="collapse-btn" @click="handleCollapseClick" :title="collapsed ? 'Expand filters' : 'Collapse filters'">
       <span>{{ collapsed ? '›' : '‹' }}</span>
     </button>
 
@@ -175,10 +175,19 @@ const props = defineProps({
   allStates: { type: Array, default: () => [] },
   totalCount: { type: Number, default: 0 },
   filteredCount: { type: Number, default: 0 },
+  mobileOpen: { type: Boolean, default: false },
 });
 
-const emit = defineEmits(['update:modelValue']);
+const emit = defineEmits(['update:modelValue', 'close']);
 const collapsed = ref(false);
+
+function handleCollapseClick() {
+  if (window.innerWidth <= 640) {
+    emit('close');
+  } else {
+    collapsed.value = !collapsed.value;
+  }
+}
 
 const SHOP_TYPES = [
   { value: 'Repair', label: 'Repair', color: '#3b82f6' },
@@ -464,5 +473,46 @@ function resetFilters() {
   color: #475569;
   margin-top: 6px;
   line-height: 1.4;
+}
+
+@media (max-width: 640px) {
+  .filter-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 85vw;
+    max-width: 300px;
+    z-index: 200;
+    transform: translateX(100%);
+    transition: transform 0.25s ease;
+  }
+
+  .filter-panel.mobile-open {
+    transform: translateX(0);
+  }
+
+  /* Flip arrow to point right (→ close direction) on mobile */
+  .collapse-btn {
+    font-size: 18px;
+    transform: scaleX(-1);
+  }
+
+  /* Larger touch targets for checkboxes */
+  .checkbox-item {
+    padding: 6px 0;
+    font-size: 14px;
+  }
+
+  .toggle-btn {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+
+  .select-input {
+    padding: 10px;
+    font-size: 14px;
+  }
 }
 </style>

@@ -60,10 +60,10 @@ onMounted(async () => {
     tilt: 0,
     heading: 0,
     disableDefaultUI: false,
-    zoomControl: true,
+    zoomControl: window.innerWidth > 640,
     mapTypeControl: false,
     streetViewControl: false,
-    fullscreenControl: true,
+    fullscreenControl: window.innerWidth > 640,
     // styles only apply when no mapId (vector map); vector map uses Cloud styling
     ...(mapId ? {} : { styles: DARK_MAP_STYLES }),
   });
@@ -321,5 +321,19 @@ const DARK_MAP_STYLES = [
 
 @keyframes spin {
   to { transform: rotate(360deg); }
+}
+
+@media (max-width: 640px) {
+  /* Move zoom controls above the browser navigation bar (~80px) */
+  .zoom-controls {
+    bottom: 88px;
+    left: 12px;
+  }
+
+  /* Larger touch targets for zoom buttons */
+  .zoom-btn {
+    width: 44px;
+    height: 44px;
+  }
 }
 </style>

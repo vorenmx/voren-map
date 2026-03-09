@@ -371,4 +371,25 @@ async function handleUpdateDescription() {
   border: 1px solid #2563eb;
 }
 .action-btn.primary:hover { background: #2563eb; }
+
+@media (max-width: 640px) {
+  .detail-panel {
+    width: 100%;
+    left: 0;
+  }
+
+  .panel-actions {
+    padding-bottom: max(env(safe-area-inset-bottom, 0px), 64px);
+  }
+
+  .close-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .action-btn {
+    padding: 14px;
+    font-size: 14px;
+  }
+}
 </style>

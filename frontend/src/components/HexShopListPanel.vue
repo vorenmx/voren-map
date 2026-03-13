@@ -6,16 +6,16 @@
           <div class="header-info">
             <span class="hex-icon">⬡</span>
             <div>
-              <div class="panel-title">{{ shops.length }} shops in this area</div>
+              <div class="panel-title">{{ shops.length }} tiendas en esta área</div>
               <div class="sort-row">
-                Sort by:
-                <button :class="{ active: sortKey === 'rating' }" @click="sortKey = 'rating'">Rating</button>
-                <button :class="{ active: sortKey === 'purchases' }" @click="sortKey = 'purchases'">Purchases</button>
-                <button :class="{ active: sortKey === 'name' }" @click="sortKey = 'name'">Name</button>
+                Ordenar por:
+                <button :class="{ active: sortKey === 'rating' }" @click="sortKey = 'rating'">Calificación</button>
+                <button :class="{ active: sortKey === 'purchases' }" @click="sortKey = 'purchases'">Compras</button>
+                <button :class="{ active: sortKey === 'name' }" @click="sortKey = 'name'">Nombre</button>
               </div>
             </div>
           </div>
-          <button class="close-btn" @click="$emit('close')" title="Close">
+          <button class="close-btn" @click="$emit('close')" title="Cerrar">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
               <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
             </svg>
@@ -32,7 +32,7 @@
             <div class="row-main">
               <span class="type-dot" :class="typeClass(shop)"></span>
               <div class="row-text">
-                <div class="row-name">{{ shop.name || shop.company_name || 'Unnamed Shop' }}</div>
+                <div class="row-name">{{ shop.name || shop.company_name || 'Tienda sin nombre' }}</div>
                 <div class="row-sub">
                   <span v-if="shop.shop_type" class="row-type">{{ shop.shop_type }}</span>
                   <span v-if="shop.municipality || shop.state" class="row-loc">

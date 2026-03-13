@@ -5,23 +5,23 @@
       <div class="header-left">
         <span class="logo">🏍</span>
         <div class="header-titles">
-          <h1 class="app-title">Motorcycle Shops Mexico</h1>
-          <p class="app-subtitle">3D density map — deck.gl + Google Maps</p>
+          <h1 class="app-title">Tiendas de Motos México</h1>
+          <p class="app-subtitle">Mapa 3D de densidad — deck.gl + Google Maps</p>
         </div>
       </div>
       <SearchBar :shops="shops" @fly-to="onFlyTo" />
       <div class="header-right">
         <div v-if="loading" class="loading-badge">
-          <span class="pulse"></span> Loading data…
+          <span class="pulse"></span> Cargando datos…
         </div>
         <div v-else-if="error" class="error-badge" :title="error">
-          ⚠ Data error
+          ⚠ Error de datos
         </div>
         <div v-else class="data-badge">
-          {{ shops.length.toLocaleString() }} shops loaded
+          {{ shops.length.toLocaleString() }} tiendas cargadas
         </div>
         <!-- Mobile-only filter toggle -->
-        <button class="mobile-filter-btn" @click="mobileFilterOpen = true" title="Open filters">
+        <button class="mobile-filter-btn" @click="mobileFilterOpen = true" title="Abrir filtros">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="4" y1="6" x2="20" y2="6"/>
             <line x1="8" y1="12" x2="16" y2="12"/>
@@ -81,10 +81,9 @@ import { useShops } from './composables/useShops.js';
 import { useDeckLayers } from './composables/useDeckLayers.js';
 import { useVisited } from './composables/useVisited.js';
 import { useSavedPlaces } from './composables/useSavedPlaces.js';
-
 const { shops, loading, error, allStates, fetchShops } = useShops();
 const mobileFilterOpen = ref(false);
-const { visitedShops, fetchVisited } = useVisited();
+const { visitedShops, visitedIds, visitedStatusMap, fetchVisited, migrateFromShopStatuses, migrateToNewStatusModel } = useVisited();
 const { savedPlaces, fetchSavedPlaces } = useSavedPlaces();
 const mapViewRef = ref(null);
 
@@ -116,13 +115,15 @@ function onSavedPlaceClick(place) {
 }
 
 const filters = ref({
-  viewMode: 'hex',
-  shopTypes: ['Repair', 'Parts', 'Both', 'Other'],
-  sources: ['denue', 'google', 'both'],
-  state: '',
-  minRating: 0,
-  showPurchases: true,
-  showAvgOrder: true,
+  viewMode:            'points',
+  shopTypes:           ['Repair', 'Parts', 'Both', 'Other'],
+  sources:             ['denue', 'google', 'both'],
+  state:               '',
+  minRating:           0,
+  showPurchases:       true,
+  showAvgOrder:        true,
+  showVisitStatus:     ['visitada', 'no_visitada'],
+  showVisitedStatuses: ['visita_exitosa', 'cerrada', 'cerrada_permanentemente'],
 });
 
 const filteredShops = computed(() => {
@@ -136,6 +137,17 @@ const filteredShops = computed(() => {
     if (filters.value.state && s.state !== filters.value.state) return false;
     if (filters.value.minRating > 0) {
       if (!s.rating || s.rating < filters.value.minRating) return false;
+    }
+    // Visit status filter (visitada / no_visitada)
+    const isVisitada = visitedIds.value.has(s.id);
+    const vs = filters.value.showVisitStatus;
+    if ( isVisitada && !vs.includes('visitada'))    return false;
+    if (!isVisitada && !vs.includes('no_visitada')) return false;
+
+    // Visited-status filter (visita_exitosa / cerrada / cerrada_permanentemente)
+    if (isVisitada) {
+      const vStatus = visitedStatusMap.value.get(s.id) ?? 'visita_exitosa';
+      if (!filters.value.showVisitedStatuses.includes(vStatus)) return false;
     }
     return true;
   });
@@ -272,6 +284,8 @@ onMounted(() => {
   fetchShops();
   fetchVisited();
   fetchSavedPlaces();
+  migrateFromShopStatuses();
+  migrateToNewStatusModel();
 });
 </script>
 

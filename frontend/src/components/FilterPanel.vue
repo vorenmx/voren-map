@@ -1,13 +1,13 @@
 <template>
   <aside class="filter-panel" :class="{ collapsed, 'mobile-open': mobileOpen }">
-    <button class="collapse-btn" @click="handleCollapseClick" :title="collapsed ? 'Expand filters' : 'Collapse filters'">
+    <button class="collapse-btn" @click="handleCollapseClick" :title="collapsed ? 'Expandir filtros' : 'Colapsar filtros'">
       <span>{{ collapsed ? '›' : '‹' }}</span>
     </button>
 
     <div v-show="!collapsed" class="panel-content">
       <div class="panel-header">
-        <h2 class="panel-title">Filters</h2>
-        <button class="reset-btn" @click="resetFilters">Reset</button>
+        <h2 class="panel-title">Filtros</h2>
+        <button class="reset-btn" @click="resetFilters">Restablecer</button>
       </div>
 
       <!-- Stats -->
@@ -18,27 +18,27 @@
         </div>
         <div class="stat">
           <span class="stat-number">{{ filteredCount.toLocaleString() }}</span>
-          <span class="stat-label">shown</span>
+          <span class="stat-label">mostradas</span>
         </div>
       </div>
 
-      <!-- View Mode -->
+      <!-- Modo de Vista -->
       <section class="filter-section">
-        <label class="section-label">View Mode</label>
+        <label class="section-label">Modo de Vista</label>
         <div class="toggle-group">
           <button
             class="toggle-btn"
             :class="{ active: modelValue.viewMode === 'hex' }"
             @click="emit('update:modelValue', { ...modelValue, viewMode: 'hex' })"
           >
-            Density
+            Densidad
           </button>
           <button
             class="toggle-btn"
             :class="{ active: modelValue.viewMode === 'points' }"
             @click="emit('update:modelValue', { ...modelValue, viewMode: 'points' })"
           >
-            Points
+            Tiendas
           </button>
         </div>
         <button
@@ -47,24 +47,13 @@
           @click="emit('update:modelValue', { ...modelValue, viewMode: 'compare' })"
           style="margin-top:6px; width:100%;"
         >
-          Compare Purchases vs Avg Order
-        </button>
-        <button
-          class="toggle-btn visited-mode-btn"
-          :class="{ active: modelValue.viewMode === 'visited' }"
-          @click="emit('update:modelValue', { ...modelValue, viewMode: 'visited' })"
-          style="margin-top:6px; width:100%;"
-        >
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0">
-            <path d="M20 6L9 17l-5-5" />
-          </svg>
-          Visited Stores
+          Comparar Compras vs Pedido Prom.
         </button>
       </section>
 
-      <!-- Shop Type -->
+      <!-- Tipo de Tienda -->
       <section class="filter-section">
-        <label class="section-label">Shop Type</label>
+        <label class="section-label">Tipo de Tienda</label>
         <div class="checkbox-group">
           <label
             v-for="type in SHOP_TYPES"
@@ -82,9 +71,9 @@
         </div>
       </section>
 
-      <!-- Data Source -->
+      <!-- Fuente de Datos -->
       <section class="filter-section">
-        <label class="section-label">Data Source</label>
+        <label class="section-label">Fuente de Datos</label>
         <div class="checkbox-group">
           <label
             v-for="src in SOURCES"
@@ -101,20 +90,52 @@
         </div>
       </section>
 
-      <!-- State -->
+      <!-- Estado de Visita (visitada / no visitada) -->
       <section class="filter-section">
-        <label class="section-label">State</label>
+        <label class="section-label">Estado de Visita</label>
+        <div class="checkbox-group">
+          <label v-for="vs in VISIT_STATUS" :key="vs.value" class="checkbox-item">
+            <input
+              type="checkbox"
+              :checked="modelValue.showVisitStatus.includes(vs.value)"
+              @change="toggleVisitStatus(vs.value)"
+            />
+            <span class="dot" :style="{ background: vs.color }"></span>
+            {{ vs.label }}
+          </label>
+        </div>
+      </section>
+
+      <!-- Estado de la Tienda (visited_status) -->
+      <section class="filter-section">
+        <label class="section-label">Estado de la Tienda</label>
+        <div class="checkbox-group">
+          <label v-for="st in VISITED_STATUSES" :key="st.value" class="checkbox-item">
+            <input
+              type="checkbox"
+              :checked="modelValue.showVisitedStatuses.includes(st.value)"
+              @change="toggleVisitedStatus(st.value)"
+            />
+            <span class="dot" :style="{ background: st.color }"></span>
+            {{ st.label }}
+          </label>
+        </div>
+      </section>
+
+      <!-- Estado -->
+      <section class="filter-section">
+        <label class="section-label">Estado</label>
         <select class="select-input" :value="modelValue.state" @change="setFilter('state', $event.target.value)">
-          <option value="">All states</option>
+          <option value="">Todos los estados</option>
           <option v-for="s in allStates" :key="s" :value="s">{{ s }}</option>
         </select>
       </section>
 
-      <!-- Min Rating -->
+      <!-- Calificación Mínima -->
       <section class="filter-section">
         <label class="section-label">
-          Min. Google Rating
-          <span class="rating-val">{{ modelValue.minRating > 0 ? modelValue.minRating + '★' : 'Any' }}</span>
+          Calificación Mín.
+          <span class="rating-val">{{ modelValue.minRating > 0 ? modelValue.minRating + '★' : 'Cualquiera' }}</span>
         </label>
         <input
           type="range"
@@ -126,23 +147,23 @@
           class="range-input"
         />
         <div class="range-labels">
-          <span>Any</span>
+          <span>Cualquiera</span>
           <span>5★</span>
         </div>
       </section>
 
-      <!-- Type legend (points mode) -->
+      <!-- Leyenda (modo puntos) -->
       <section v-if="modelValue.viewMode === 'points'" class="filter-section legend-section">
-        <label class="section-label">Legend</label>
+        <label class="section-label">Leyenda</label>
         <div v-for="type in SHOP_TYPES" :key="type.value" class="legend-item">
           <span class="legend-dot" :style="{ background: type.color }"></span>
           {{ type.label }}
         </div>
       </section>
 
-      <!-- Compare controls -->
+      <!-- Controles de comparación -->
       <section v-if="modelValue.viewMode === 'compare'" class="filter-section">
-        <label class="section-label">Show Columns</label>
+        <label class="section-label">Mostrar Columnas</label>
         <label class="checkbox-item">
           <input
             type="checkbox"
@@ -150,7 +171,7 @@
             @change="setFilter('showPurchases', $event.target.checked)"
           />
           <span class="dot" style="background:#3b82f6;"></span>
-          Total Purchases
+          Compras Totales
         </label>
         <label class="checkbox-item" style="margin-top:6px;">
           <input
@@ -159,9 +180,9 @@
             @change="setFilter('showAvgOrder', $event.target.checked)"
           />
           <span class="dot" style="background:#f59e0b;"></span>
-          Avg. Order (MXN)
+          Pedido Prom. (MXN)
         </label>
-        <p class="legend-note" style="margin-top:10px;">Heights normalized independently — taller = relatively higher value. Zoom in and tilt the map to see columns in 3D.</p>
+        <p class="legend-note" style="margin-top:10px;">Alturas normalizadas de forma independiente — más alto = valor relativamente mayor. Acerca y ladea el mapa para ver las columnas en 3D.</p>
       </section>
     </div>
   </aside>
@@ -190,16 +211,27 @@ function handleCollapseClick() {
 }
 
 const SHOP_TYPES = [
-  { value: 'Repair', label: 'Repair', color: '#3b82f6' },
-  { value: 'Parts',  label: 'Parts',  color: '#f59e0b' },
-  { value: 'Both',   label: 'Both',   color: '#10b981' },
-  { value: 'Other',  label: 'Other',  color: '#9ca3af' },
+  { value: 'Repair', label: 'Reparación', color: '#3b82f6' },
+  { value: 'Parts',  label: 'Refacciones', color: '#f59e0b' },
+  { value: 'Both',   label: 'Ambos',      color: '#10b981' },
+  { value: 'Other',  label: 'Otro',       color: '#9ca3af' },
 ];
 
 const SOURCES = [
-  { value: 'denue',  label: 'DENUE only' },
-  { value: 'google', label: 'Google only' },
-  { value: 'both',   label: 'Matched (both)' },
+  { value: 'denue',  label: 'Solo DENUE' },
+  { value: 'google', label: 'Solo Google' },
+  { value: 'both',   label: 'Coincidentes (ambas)' },
+];
+
+const VISIT_STATUS = [
+  { value: 'visitada',    label: 'Visitada',    color: '#22c55e' },
+  { value: 'no_visitada', label: 'No Visitada', color: '#64748b' },
+];
+
+const VISITED_STATUSES = [
+  { value: 'visita_exitosa',          label: 'Visita Exitosa',      color: '#22c55e' },
+  { value: 'cerrada',                 label: 'Cerrada',             color: '#f59e0b' },
+  { value: 'cerrada_permanentemente', label: 'Cerrada Permanente',  color: '#ef4444' },
 ];
 
 function toggleShopType(type) {
@@ -218,17 +250,33 @@ function toggleSource(src) {
   emit('update:modelValue', { ...props.modelValue, sources: current });
 }
 
+function toggleVisitStatus(val) {
+  const current = [...(props.modelValue.showVisitStatus ?? [])];
+  const idx = current.indexOf(val);
+  if (idx === -1) current.push(val); else current.splice(idx, 1);
+  emit('update:modelValue', { ...props.modelValue, showVisitStatus: current });
+}
+
+function toggleVisitedStatus(val) {
+  const current = [...(props.modelValue.showVisitedStatuses ?? [])];
+  const idx = current.indexOf(val);
+  if (idx === -1) current.push(val); else current.splice(idx, 1);
+  emit('update:modelValue', { ...props.modelValue, showVisitedStatuses: current });
+}
+
 function setFilter(key, val) {
   emit('update:modelValue', { ...props.modelValue, [key]: val });
 }
 
 function resetFilters() {
   emit('update:modelValue', {
-    viewMode: 'hex',
-    shopTypes: ['Repair', 'Parts', 'Both', 'Other'],
-    sources: ['denue', 'google', 'both'],
-    state: '',
-    minRating: 0,
+    viewMode:           'points',
+    shopTypes:          ['Repair', 'Parts', 'Both', 'Other'],
+    sources:            ['denue', 'google', 'both'],
+    state:              '',
+    minRating:          0,
+    showVisitStatus:    ['visitada', 'no_visitada'],
+    showVisitedStatuses:['visita_exitosa', 'cerrada', 'cerrada_permanentemente'],
   });
 }
 </script>

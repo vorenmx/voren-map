@@ -14,5 +14,9 @@ service cloud.firestore {
     match /saved_places/{placeId} {
       allow read, write: if true;
     }
+    // Shop statuses (closed / permanently closed) — public read/write
+    match /shop_statuses/{shopId} {
+      allow read, write: if true;
+    }
   }
 }

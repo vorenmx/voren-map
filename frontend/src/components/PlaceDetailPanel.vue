@@ -6,16 +6,16 @@
         <div class="panel-header">
           <div class="header-badge">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Location
+            Ubicación
           </div>
-          <button class="close-btn" @click="$emit('close')" title="Close">
+          <button class="close-btn" @click="$emit('close')" title="Cerrar">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
               <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
             </svg>
           </button>
         </div>
 
-        <h2 class="place-name">{{ place.name || place.formatted_address || 'Location' }}</h2>
+        <h2 class="place-name">{{ place.name || place.formatted_address || 'Ubicación' }}</h2>
         <p v-if="place.formatted_address && place.name && place.formatted_address !== place.name" class="place-address">
           {{ place.formatted_address }}
         </p>
@@ -32,11 +32,11 @@
 
         <!-- Description -->
         <div class="section">
-          <div class="section-title">Notes</div>
+          <div class="section-title">Notas</div>
           <textarea
             v-model="description"
             class="desc-input"
-            placeholder="Add a note about this place…"
+            placeholder="Agregar una nota sobre este lugar…"
             rows="3"
           ></textarea>
         </div>
@@ -44,7 +44,7 @@
         <!-- Saved info -->
         <div v-if="savedEntry" class="saved-info">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          Saved · {{ savedTimeLabel }}
+          Guardado · {{ savedTimeLabel }}
         </div>
 
         <!-- Actions -->
@@ -59,7 +59,7 @@
             <svg width="16" height="16" viewBox="0 0 24 24" :fill="savedEntry ? '#f59e0b' : 'none'" :stroke="savedEntry ? '#f59e0b' : 'currentColor'" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
             </svg>
-            {{ saving ? 'Saving…' : savedEntry ? 'Saved' : 'Save Place' }}
+            {{ saving ? 'Guardando…' : savedEntry ? 'Guardado' : 'Guardar Lugar' }}
           </button>
 
           <!-- Update description if already saved -->
@@ -69,7 +69,7 @@
             :disabled="saving"
             @click="handleUpdateDescription"
           >
-            Update Notes
+            Actualizar Notas
           </button>
 
           <a
@@ -78,7 +78,7 @@
             rel="noopener noreferrer"
             class="action-btn primary"
           >
-            Open in Google Maps
+            Abrir en Google Maps
           </a>
         </div>
       </div>

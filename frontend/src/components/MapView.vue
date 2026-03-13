@@ -6,13 +6,13 @@
 
     <!-- Zoom controls -->
     <div class="zoom-controls" v-if="mapReady">
-      <button class="zoom-btn" @click="zoomIn" title="Zoom in">
+      <button class="zoom-btn" @click="zoomIn" title="Acercar">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
           <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
         </svg>
       </button>
       <div class="zoom-divider"></div>
-      <button class="zoom-btn" @click="zoomOut" title="Zoom out">
+      <button class="zoom-btn" @click="zoomOut" title="Alejar">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
           <line x1="5" y1="12" x2="19" y2="12"/>
         </svg>
@@ -21,7 +21,7 @@
 
     <div v-if="!mapReady" class="map-overlay">
       <div class="loading-spinner"></div>
-      <span>Loading map…</span>
+      <span>Cargando mapa…</span>
     </div>
   </div>
 </template>
@@ -157,7 +157,7 @@ function syncSavedMarkers(places) {
     const el = document.createElement('div');
     el.style.cssText = 'font-size:26px;line-height:1;cursor:pointer;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.6));user-select:none;';
     el.textContent = '⭐';
-    el.title = place.name || place.formatted_address || 'Saved place';
+    el.title = place.name || place.formatted_address || 'Lugar guardado';
 
     const marker = new window.google.maps.marker.AdvancedMarkerElement({
       map: googleMap,

@@ -10,7 +10,7 @@
         ref="inputRef"
         v-model="query"
         type="text"
-        placeholder="Search shops, cities, streets, states…"
+        placeholder="Buscar tiendas, ciudades, calles, estados…"
         class="search-input"
         autocomplete="off"
         @focus="focused = true"
@@ -20,7 +20,7 @@
         @keydown.enter.prevent="selectCurrent"
       />
       <span v-if="loadingPlaces" class="loading-dot"></span>
-      <button v-else-if="query" class="clear-btn" @click="clear" title="Clear">
+      <button v-else-if="query" class="clear-btn" @click="clear" title="Limpiar">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
           <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
         </svg>
@@ -34,7 +34,7 @@
       <template v-if="locationResults.length">
         <div class="dropdown-section-label">
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Locations
+          Ubicaciones
         </div>
         <button
           v-for="(item, i) in locationResults"
@@ -58,7 +58,7 @@
       <template v-if="shopResults.length">
         <div class="dropdown-section-label">
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          Shops
+          Tiendas
         </div>
         <button
           v-for="(item, i) in shopResults"
@@ -81,7 +81,7 @@
 
       <!-- No results -->
       <div v-if="!locationResults.length && !shopResults.length && query.length >= 2 && !loadingPlaces" class="dropdown-empty">
-        No results for "{{ query }}"
+        Sin resultados para "{{ query }}"
       </div>
     </div>
   </div>

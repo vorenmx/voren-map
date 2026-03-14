@@ -9,7 +9,7 @@ import {
   Timestamp,
   writeBatch,
 } from 'firebase/firestore';
-import { db } from '../firebase/config.js';
+import { db, auth } from '../firebase/config.js';
 
 // ── Shared singleton state ──────────────────────────────────
 const visitedIds       = ref(new Set());  // shops where status === 'visitada'
@@ -60,6 +60,7 @@ export function useVisited() {
     if (alreadySet) {
       // Deselect
       await setDoc(doc(db, 'visited_stores', id), {
+        userId:         auth.currentUser?.uid ?? null,
         status:         'no_visitada',
         visited_status: null,
         statusAt:       serverTimestamp(),
@@ -80,6 +81,7 @@ export function useVisited() {
       const isFirstVisit = !existingDoc?.visitedAt;
 
       const shopMeta = isFirstVisit ? {
+        userId:            auth.currentUser?.uid ?? null,
         shopId:            id,
         name:              shop.name              || shop.company_name || '',
         shop_type:         shop.shop_type         ?? null,
@@ -128,6 +130,7 @@ export function useVisited() {
       ts: Timestamp.now().toDate().toISOString(),
     };
     const payload = {
+      userId:          auth.currentUser?.uid ?? null,
       [field]:         value,
       surveyLog:       arrayUnion(logEntry),
       surveyUpdatedAt: serverTimestamp(),
@@ -170,6 +173,7 @@ export function useVisited() {
         }
 
         batch.set(doc(db, 'visited_stores', d.id), {
+          userId:         auth.currentUser?.uid ?? null,
           status:         newStatus,
           visited_status: newVisitedStatus,
         }, { merge: true });
@@ -203,6 +207,7 @@ export function useVisited() {
         if (status === 'closed')              newVisitedStatus = 'cerrada';
         if (status === 'permanently_closed')  newVisitedStatus = 'cerrada_permanentemente';
         batch.set(doc(db, 'visited_stores', d.id), {
+          userId:         auth.currentUser?.uid ?? null,
           status:         'visitada',
           visited_status: newVisitedStatus,
           statusAt,

@@ -5,13 +5,13 @@ import { getAnalytics } from 'firebase/analytics';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: 'REDACTED',
-  authDomain: 'motopirueta-ef11e.firebaseapp.com',
-  projectId: 'motopirueta-ef11e',
-  storageBucket: 'motopirueta-ef11e.firebasestorage.app',
-  messagingSenderId: '213299644118',
-  appId: '1:213299644118:web:1ce5f4f57b57480aca6b77',
-  measurementId: 'G-YXEBQR7VVL',
+  apiKey:            import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain:        import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId:         import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket:     import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId:             import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId:     import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);

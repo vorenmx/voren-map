@@ -1,9 +1,10 @@
 rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
-    // Allow public read for CSV files
+    // CSV data files — readable only by authenticated users.
+    // Cloud Functions access storage via the Admin SDK which bypasses these rules.
     match /csvs/{allPaths=**} {
-      allow read: if true;
+      allow read:  if request.auth != null;
       allow write: if false;
     }
   }

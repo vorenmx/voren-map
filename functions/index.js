@@ -2,6 +2,7 @@ import { onRequest } from 'firebase-functions/v2/https';
 import { initializeApp, getApps } from 'firebase-admin/app';
 import { getFirestore, GeoPoint } from 'firebase-admin/firestore';
 import { getStorage } from 'firebase-admin/storage';
+import { getAuth } from 'firebase-admin/auth';
 import Papa from 'papaparse';
 
 if (!getApps().length) {
@@ -34,6 +35,19 @@ function parseInteger(val) {
 export const importCsv = onRequest(
   { timeoutSeconds: 540, memory: '1GiB' },
   async (req, res) => {
+    // Verify Firebase Auth ID token — only authenticated users may trigger imports
+    const authHeader = req.headers.authorization;
+    if (!authHeader?.startsWith('Bearer ')) {
+      res.status(401).json({ error: 'Unauthorized: missing Bearer token' });
+      return;
+    }
+    try {
+      await getAuth().verifyIdToken(authHeader.split('Bearer ')[1]);
+    } catch {
+      res.status(403).json({ error: 'Forbidden: invalid or expired token' });
+      return;
+    }
+
     const filePath = req.query.file || 'csvs/merged.csv';
     const clearFirst = req.query.clear === 'true';
 

@@ -2,30 +2,42 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // All access requires a signed-in Firebase Auth user
     function isAuth() {
       return request.auth != null;
     }
 
-    // Shop catalogue — read-only for authenticated users
+    // Returns the userId stored on an existing document, defaulting to the
+    // caller's uid when the field is absent (backward compat for pre-migration docs).
+    function docOwner() {
+      return resource.data.get('userId', request.auth.uid);
+    }
+
+    // Shop catalogue — read-only for authenticated users, never writable from client
     match /shops/{shopId} {
       allow read: if isAuth();
       allow write: if false;
     }
 
-    // Visited stores — full access for authenticated users
-    match /visited_stores/{shopId} {
-      allow read, write: if isAuth();
+    // Visited stores — scoped to the owning user
+    match /visited_stores/{docId} {
+      allow read:   if isAuth();
+      allow create: if isAuth() && request.resource.data.userId == request.auth.uid;
+      allow update: if isAuth() && docOwner() == request.auth.uid;
+      allow delete: if isAuth() && docOwner() == request.auth.uid;
     }
 
-    // Saved places — full access for authenticated users
+    // Saved places — scoped to the owning user
     match /saved_places/{placeId} {
-      allow read, write: if isAuth();
+      allow read:   if isAuth();
+      allow create: if isAuth() && request.resource.data.userId == request.auth.uid;
+      allow update: if isAuth() && docOwner() == request.auth.uid;
+      allow delete: if isAuth() && docOwner() == request.auth.uid;
     }
 
-    // Legacy shop_statuses collection
+    // Legacy shop_statuses collection — read-only; new writes blocked
     match /shop_statuses/{shopId} {
-      allow read, write: if isAuth();
+      allow read:  if isAuth();
+      allow write: if false;
     }
   }
 }

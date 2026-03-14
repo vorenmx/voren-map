@@ -7,7 +7,7 @@ import {
   deleteDoc,
   serverTimestamp,
 } from 'firebase/firestore';
-import { db } from '../firebase/config.js';
+import { db, auth } from '../firebase/config.js';
 
 const savedPlaces = ref([]);
 let fetched = false;
@@ -33,6 +33,7 @@ export function useSavedPlaces() {
   async function savePlace(place, description) {
     const id = placeDocId(place);
     const payload = {
+      userId: auth.currentUser?.uid ?? null,
       name: place.name || '',
       description: description || '',
       formatted_address: place.formatted_address || '',

@@ -50,7 +50,9 @@ onMounted(async () => {
   // Wait for the global Maps script tag to finish loading
   await window.__mapsReady;
 
-  const mapId = import.meta.env.VITE_GOOGLE_MAPS_MAP_ID || undefined;
+  // DEMO_MAP_ID is Google's official testing Map ID; replace with a real Map ID
+  // (Google Cloud Console → Maps Platform → Map Management) to enable cloud styling.
+  const mapId = import.meta.env.VITE_GOOGLE_MAPS_MAP_ID || 'DEMO_MAP_ID';
 
   googleMap = new window.google.maps.Map(mapContainer.value, {
     center: MEXICO_CENTER,
@@ -165,7 +167,7 @@ function syncSavedMarkers(places) {
       title: el.title,
       content: el,
     });
-    marker.addListener('click', () => {
+    marker.addListener('gmp-click', () => {
       if (props.onSavedPlaceClick) props.onSavedPlaceClick(place);
     });
     starMarkers.set(place.id, marker);

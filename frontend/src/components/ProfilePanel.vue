@@ -52,62 +52,10 @@
 
         <div class="divider"></div>
 
-        <!-- Change password -->
-        <div class="form-section">
-          <h3 class="section-title">Cambiar Contraseña</h3>
-          <div class="field-group">
-            <label class="field-label">Contraseña actual</label>
-            <div class="input-wrap">
-              <input
-                v-model="currentPwd"
-                :type="showCurrentPwd ? 'text' : 'password'"
-                placeholder="••••••••"
-                class="field-input"
-                autocomplete="current-password"
-              />
-              <button class="eye-btn" @click="showCurrentPwd = !showCurrentPwd" tabindex="-1" type="button">
-                <svg v-if="!showCurrentPwd" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                <svg v-else width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
-              </button>
-            </div>
-          </div>
-          <div class="field-group">
-            <label class="field-label">Nueva contraseña</label>
-            <div class="input-wrap">
-              <input
-                v-model="newPwd"
-                :type="showNewPwd ? 'text' : 'password'"
-                placeholder="Mínimo 6 caracteres"
-                class="field-input"
-                autocomplete="new-password"
-              />
-              <button class="eye-btn" @click="showNewPwd = !showNewPwd" tabindex="-1" type="button">
-                <svg v-if="!showNewPwd" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                <svg v-else width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
-              </button>
-            </div>
-          </div>
-          <div class="field-group">
-            <label class="field-label">Confirmar contraseña</label>
-            <input
-              v-model="confirmPwd"
-              type="password"
-              placeholder="Repite la nueva contraseña"
-              class="field-input"
-              autocomplete="new-password"
-              @keydown.enter="savePassword"
-            />
-          </div>
-          <div v-if="pwdMsg.text" class="feedback" :class="pwdMsg.type">{{ pwdMsg.text }}</div>
-          <button
-            class="save-btn"
-            :disabled="pwdSaving || !currentPwd || !newPwd || !confirmPwd"
-            @click="savePassword"
-          >
-            <span v-if="pwdSaving" class="btn-spinner"></span>
-            {{ pwdSaving ? 'Cambiando…' : 'Cambiar Contraseña' }}
-          </button>
-        </div>
+        <p class="google-account-hint">
+          Iniciaste sesión con Google. La seguridad de la cuenta (contraseña, 2 pasos) se administra en
+          <a href="https://myaccount.google.com/security" target="_blank" rel="noopener noreferrer">tu cuenta de Google</a>.
+        </p>
       </div>
     </div>
   </Transition>
@@ -123,7 +71,7 @@ const props = defineProps({
 
 const emit = defineEmits(['close']);
 
-const { user, userDisplayName, updateUserProfile, changePassword } = useAuth();
+const { user, userDisplayName, updateUserProfile } = useAuth();
 
 // ── Initials ─────────────────────────────────────────────────────────────────
 const initials = computed(() => {
@@ -145,10 +93,6 @@ watch(
     if (v) {
       newName.value = userDisplayName.value || user.value?.displayName || '';
       nameMsg.value = { text: '', type: '' };
-      pwdMsg.value = { text: '', type: '' };
-      currentPwd.value = '';
-      newPwd.value = '';
-      confirmPwd.value = '';
     }
   }
 );
@@ -164,45 +108,6 @@ async function saveName() {
     nameMsg.value = { text: 'No se pudo actualizar el nombre. Intenta de nuevo.', type: 'error' };
   } finally {
     nameSaving.value = false;
-  }
-}
-
-// ── Password change ───────────────────────────────────────────────────────────
-const currentPwd = ref('');
-const newPwd = ref('');
-const confirmPwd = ref('');
-const pwdSaving = ref(false);
-const pwdMsg = ref({ text: '', type: '' });
-const showCurrentPwd = ref(false);
-const showNewPwd = ref(false);
-
-async function savePassword() {
-  pwdMsg.value = { text: '', type: '' };
-  if (newPwd.value.length < 6) {
-    pwdMsg.value = { text: 'La nueva contraseña debe tener al menos 6 caracteres.', type: 'error' };
-    return;
-  }
-  if (newPwd.value !== confirmPwd.value) {
-    pwdMsg.value = { text: 'Las contraseñas no coinciden.', type: 'error' };
-    return;
-  }
-  pwdSaving.value = true;
-  try {
-    await changePassword(currentPwd.value, newPwd.value);
-    pwdMsg.value = { text: 'Contraseña cambiada correctamente.', type: 'success' };
-    currentPwd.value = '';
-    newPwd.value = '';
-    confirmPwd.value = '';
-  } catch (err) {
-    if (err.code === 'auth/wrong-password' || err.code === 'auth/invalid-credential') {
-      pwdMsg.value = { text: 'La contraseña actual es incorrecta.', type: 'error' };
-    } else if (err.code === 'auth/too-many-requests') {
-      pwdMsg.value = { text: 'Demasiados intentos. Intenta más tarde.', type: 'error' };
-    } else {
-      pwdMsg.value = { text: 'No se pudo cambiar la contraseña. Intenta de nuevo.', type: 'error' };
-    }
-  } finally {
-    pwdSaving.value = false;
   }
 }
 
@@ -354,12 +259,6 @@ function formatDate(dateStr) {
   font-weight: 500;
 }
 
-.input-wrap {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
 .field-input {
   width: 100%;
   padding: 9px 12px;
@@ -379,22 +278,6 @@ function formatDate(dateStr) {
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
 }
 .field-input::placeholder { color: #475569; }
-
-.input-wrap .field-input { padding-right: 36px; }
-
-.eye-btn {
-  position: absolute;
-  right: 8px;
-  background: none;
-  border: none;
-  color: #475569;
-  cursor: pointer;
-  padding: 4px;
-  display: flex;
-  border-radius: 4px;
-  transition: color 0.15s;
-}
-.eye-btn:hover { color: #94a3b8; }
 
 .save-btn {
   display: flex;
@@ -441,6 +324,20 @@ function formatDate(dateStr) {
   background: rgba(239, 68, 68, 0.1);
   color: #f87171;
   border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.google-account-hint {
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+.google-account-hint a {
+  color: #93c5fd;
+  text-decoration: none;
+}
+.google-account-hint a:hover {
+  text-decoration: underline;
 }
 
 /* Slide transition */

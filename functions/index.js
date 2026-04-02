@@ -1,9 +1,20 @@
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
 import { onRequest } from 'firebase-functions/v2/https';
 import { initializeApp, getApps } from 'firebase-admin/app';
 import { getFirestore, GeoPoint } from 'firebase-admin/firestore';
 import { getStorage } from 'firebase-admin/storage';
 import { getAuth } from 'firebase-admin/auth';
 import Papa from 'papaparse';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ALLOWED_IMPORT_EMAILS = JSON.parse(
+  readFileSync(path.join(__dirname, 'allowed-google-emails.json'), 'utf8')
+);
+const allowedImportEmailSet = new Set(
+  ALLOWED_IMPORT_EMAILS.map((e) => String(e).toLowerCase().trim())
+);
 
 if (!getApps().length) {
   initializeApp();
@@ -41,10 +52,16 @@ export const importCsv = onRequest(
       res.status(401).json({ error: 'Unauthorized: missing Bearer token' });
       return;
     }
+    let decoded;
     try {
-      await getAuth().verifyIdToken(authHeader.split('Bearer ')[1]);
+      decoded = await getAuth().verifyIdToken(authHeader.split('Bearer ')[1]);
     } catch {
       res.status(403).json({ error: 'Forbidden: invalid or expired token' });
+      return;
+    }
+    const callerEmail = decoded.email?.toLowerCase()?.trim();
+    if (!callerEmail || !allowedImportEmailSet.has(callerEmail)) {
+      res.status(403).json({ error: 'Forbidden: account not authorized for import' });
       return;
     }
 

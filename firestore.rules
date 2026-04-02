@@ -2,8 +2,15 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    function isAuth() {
-      return request.auth != null;
+    // Keep in sync with frontend/src/auth/allowed-google-emails.json
+    function isAllowedGoogleEmail() {
+      return request.auth != null
+        && request.auth.token.email != null
+        && (
+          request.auth.token.email.lower() == 'hola@voren.com.mx'
+          || request.auth.token.email.lower() == 'alberto@voren.com.mx'
+          || request.auth.token.email.lower() == 'andres@voren.com.mx'
+        );
     }
 
     // Returns the userId stored on an existing document, defaulting to the
@@ -14,29 +21,29 @@ service cloud.firestore {
 
     // Shop catalogue — read-only for authenticated users, never writable from client
     match /shops/{shopId} {
-      allow read: if isAuth();
+      allow read: if isAllowedGoogleEmail();
       allow write: if false;
     }
 
     // Visited stores — scoped to the owning user
     match /visited_stores/{docId} {
-      allow read:   if isAuth();
-      allow create: if isAuth() && request.resource.data.userId == request.auth.uid;
-      allow update: if isAuth() && docOwner() == request.auth.uid;
-      allow delete: if isAuth() && docOwner() == request.auth.uid;
+      allow read:   if isAllowedGoogleEmail();
+      allow create: if isAllowedGoogleEmail() && request.resource.data.userId == request.auth.uid;
+      allow update: if isAllowedGoogleEmail() && docOwner() == request.auth.uid;
+      allow delete: if isAllowedGoogleEmail() && docOwner() == request.auth.uid;
     }
 
     // Saved places — scoped to the owning user
     match /saved_places/{placeId} {
-      allow read:   if isAuth();
-      allow create: if isAuth() && request.resource.data.userId == request.auth.uid;
-      allow update: if isAuth() && docOwner() == request.auth.uid;
-      allow delete: if isAuth() && docOwner() == request.auth.uid;
+      allow read:   if isAllowedGoogleEmail();
+      allow create: if isAllowedGoogleEmail() && request.resource.data.userId == request.auth.uid;
+      allow update: if isAllowedGoogleEmail() && docOwner() == request.auth.uid;
+      allow delete: if isAllowedGoogleEmail() && docOwner() == request.auth.uid;
     }
 
     // Legacy shop_statuses collection — read-only; new writes blocked
     match /shop_statuses/{shopId} {
-      allow read:  if isAuth();
+      allow read:  if isAllowedGoogleEmail();
       allow write: if false;
     }
   }

@@ -5,46 +5,20 @@
       <h1 class="login-title">Tiendas de Motos México</h1>
       <p class="login-subtitle">Mapa 3D · deck.gl + Google Maps</p>
 
-      <form class="login-form" @submit.prevent="handleSignIn">
-        <div class="field">
-          <label class="field-label">Correo electrónico</label>
-          <input
-            v-model="email"
-            type="email"
-            class="field-input"
-            placeholder="correo@ejemplo.com"
-            autocomplete="email"
-            required
-            :disabled="signing"
-          />
-        </div>
-
-        <div class="field">
-          <label class="field-label">Contraseña</label>
-          <div class="password-wrapper">
-            <input
-              v-model="password"
-              :type="showPassword ? 'text' : 'password'"
-              class="field-input"
-              placeholder="••••••••"
-              autocomplete="current-password"
-              required
-              :disabled="signing"
-            />
-            <button type="button" class="toggle-pw" @click="showPassword = !showPassword" tabindex="-1">
-              <svg v-if="!showPassword" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-              <svg v-else width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
-            </button>
-          </div>
-        </div>
-
+      <div class="login-actions">
         <p v-if="authError" class="login-error">{{ authError }}</p>
 
-        <button type="submit" class="submit-btn" :disabled="signing">
-          <span v-if="signing" class="spinner"></span>
-          {{ signing ? 'Iniciando sesión…' : 'Iniciar sesión' }}
+        <button type="button" class="google-btn" :disabled="signing" @click="handleGoogleSignIn">
+          <span v-if="signing" class="spinner" aria-hidden="true"></span>
+          <svg v-else class="google-icon" viewBox="0 0 48 48" width="20" height="20" aria-hidden="true">
+            <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/>
+            <path fill="#FF3D00" d="m6.306 14.691 6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/>
+            <path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.86 11.86 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/>
+            <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/>
+          </svg>
+          {{ signing ? 'Conectando…' : 'Continuar con Google' }}
         </button>
-      </form>
+      </div>
 
       <p class="login-note">Solo cuentas autorizadas tienen acceso.</p>
     </div>
@@ -55,15 +29,12 @@
 import { ref } from 'vue';
 import { useAuth } from '../composables/useAuth.js';
 
-const { signIn, authError } = useAuth();
-const email = ref('');
-const password = ref('');
-const showPassword = ref(false);
+const { signInWithGoogle, authError } = useAuth();
 const signing = ref(false);
 
-async function handleSignIn() {
+async function handleGoogleSignIn() {
   signing.value = true;
-  await signIn(email.value, password.value);
+  await signInWithGoogle();
   signing.value = false;
 }
 </script>
@@ -124,7 +95,7 @@ async function handleSignIn() {
   text-align: center;
 }
 
-.login-form {
+.login-actions {
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -132,104 +103,44 @@ async function handleSignIn() {
   margin-top: 8px;
 }
 
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.field-label {
-  font-size: 12px;
-  font-weight: 600;
-  color: #94a3b8;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.field-input {
-  width: 100%;
-  padding: 11px 14px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  border-radius: 10px;
-  color: #f1f5f9;
-  font-size: 14px;
-  outline: none;
-  transition: border-color 0.15s;
-  box-sizing: border-box;
-}
-
-.field-input::placeholder {
-  color: #475569;
-}
-
-.field-input:focus {
-  border-color: rgba(99, 102, 241, 0.6);
-  background: rgba(255, 255, 255, 0.07);
-}
-
-.field-input:disabled {
-  opacity: 0.5;
-}
-
-.password-wrapper {
-  position: relative;
-}
-
-.password-wrapper .field-input {
-  padding-right: 44px;
-}
-
-.toggle-pw {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  color: #64748b;
-  cursor: pointer;
-  padding: 4px;
-  display: flex;
-  align-items: center;
-}
-
-.toggle-pw:hover {
-  color: #94a3b8;
-}
-
-.submit-btn {
+.google-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
   margin-top: 4px;
-  padding: 13px;
+  padding: 13px 16px;
   width: 100%;
-  background: #6366f1;
-  color: #fff;
-  border: none;
+  background: #fff;
+  color: #1f1f1f;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 10px;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.15s;
+  transition: background 0.15s, box-shadow 0.15s;
+  font-family: inherit;
 }
 
-.submit-btn:hover:not(:disabled) {
-  background: #4f52d3;
+.google-btn:hover:not(:disabled) {
+  background: #f8f9fa;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
 }
 
-.submit-btn:disabled {
-  opacity: 0.65;
+.google-btn:disabled {
+  opacity: 0.7;
   cursor: not-allowed;
 }
 
+.google-icon {
+  flex-shrink: 0;
+}
+
 .spinner {
-  width: 16px;
-  height: 16px;
-  border: 2px solid rgba(255,255,255,0.3);
-  border-top-color: #fff;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-top-color: #4285f4;
   border-radius: 50%;
   animation: spin 0.7s linear infinite;
   flex-shrink: 0;

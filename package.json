@@ -1,5 +1,5 @@
 {
-  "name": "motorcycle-shops-mexico-extractor",
+  "name": "voren-map",
   "version": "1.0.0",
   "description": "Extracts motorcycle repair and parts shop data from Google Maps and INEGI DENUE for all of Mexico",
   "main": "index.js",

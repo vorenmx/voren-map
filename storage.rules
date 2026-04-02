@@ -1,10 +1,17 @@
 rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
-    // CSV data files — readable only by authenticated users.
+    // CSV data files — readable only by allowlisted Google accounts.
+    // Keep in sync with frontend/src/auth/allowed-google-emails.json
     // Cloud Functions access storage via the Admin SDK which bypasses these rules.
     match /csvs/{allPaths=**} {
-      allow read:  if request.auth != null;
+      allow read:  if request.auth != null
+        && request.auth.token.email != null
+        && (
+          request.auth.token.email.lower() == 'hola@voren.com.mx'
+          || request.auth.token.email.lower() == 'alberto@voren.com.mx'
+          || request.auth.token.email.lower() == 'andres@voren.com.mx'
+        );
       allow write: if false;
     }
   }

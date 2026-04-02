@@ -3,7 +3,6 @@
     <div class="login-card">
       <div class="login-logo">🏍</div>
       <h1 class="login-title">Tiendas de Motos México</h1>
-      <p class="login-subtitle">Mapa 3D · deck.gl + Google Maps</p>
 
       <div class="login-actions">
         <p v-if="authError" class="login-error">{{ authError }}</p>
@@ -84,13 +83,6 @@ async function handleGoogleSignIn() {
   font-size: 20px;
   font-weight: 700;
   color: #f1f5f9;
-  margin: 0;
-  text-align: center;
-}
-
-.login-subtitle {
-  font-size: 13px;
-  color: #64748b;
   margin: 0;
   text-align: center;
 }

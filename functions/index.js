@@ -16,13 +16,19 @@ const allowedImportEmailSet = new Set(
   ALLOWED_IMPORT_EMAILS.map((e) => String(e).toLowerCase().trim())
 );
 
-if (!getApps().length) {
-  initializeApp();
+// Lazy Firestore: avoid top-level getFirestore() so deploy analysis does not time out.
+function getDb() {
+  if (!getApps().length) {
+    initializeApp();
+  }
+  return getFirestore();
 }
 
-const db = getFirestore();
 const COLLECTION = 'shops';
+const VISITED_STORES = 'visited_stores';
+const LEGACY_VISITED_BY_EMAIL = 'gonzalo@voren.com.mx';
 const BATCH_SIZE = 400;
+const VISITED_BACKFILL_CHUNK = 500;
 
 function parseNumber(val) {
   const n = parseFloat(val);
@@ -96,10 +102,10 @@ export const importCsv = onRequest(
       // 3. Optionally clear existing documents
       if (clearFirst) {
         console.log('Clearing existing /shops collection...');
-        const existing = await db.collection(COLLECTION).listDocuments();
+        const existing = await getDb().collection(COLLECTION).listDocuments();
         const deleteBatches = [];
         for (let i = 0; i < existing.length; i += BATCH_SIZE) {
-          const batch = db.batch();
+          const batch = getDb().batch();
           existing.slice(i, i + BATCH_SIZE).forEach((ref) => batch.delete(ref));
           deleteBatches.push(batch.commit());
         }
@@ -153,10 +159,10 @@ export const importCsv = onRequest(
       // 5. Batch write in chunks of BATCH_SIZE
       let written = 0;
       for (let i = 0; i < documents.length; i += BATCH_SIZE) {
-        const batch = db.batch();
+        const batch = getDb().batch();
         const chunk = documents.slice(i, i + BATCH_SIZE);
         chunk.forEach((doc) => {
-          const ref = db.collection(COLLECTION).doc();
+          const ref = getDb().collection(COLLECTION).doc();
           batch.set(ref, doc);
         });
         await batch.commit();
@@ -173,6 +179,81 @@ export const importCsv = onRequest(
       });
     } catch (err) {
       console.error('importCsv error:', err);
+      res.status(500).json({ error: err.message });
+    }
+  }
+);
+
+/**
+ * One-time backfill: merge `visitedByEmail` for legacy "visitada" documents that lack it.
+ * Same auth as importCsv: Authorization: Bearer <Firebase ID token>.
+ *
+ * Response: { success, updated, skipped, totalVisitada }
+ */
+export const backfillVisitedByEmail = onRequest(
+  { timeoutSeconds: 300, memory: '512MiB' },
+  async (req, res) => {
+    const authHeader = req.headers.authorization;
+    if (!authHeader?.startsWith('Bearer ')) {
+      res.status(401).json({ error: 'Unauthorized: missing Bearer token' });
+      return;
+    }
+    let decoded;
+    try {
+      decoded = await getAuth().verifyIdToken(authHeader.split('Bearer ')[1]);
+    } catch {
+      res.status(403).json({ error: 'Forbidden: invalid or expired token' });
+      return;
+    }
+    const callerEmail = decoded.email?.toLowerCase()?.trim();
+    if (!callerEmail || !allowedImportEmailSet.has(callerEmail)) {
+      res.status(403).json({ error: 'Forbidden: account not authorized' });
+      return;
+    }
+
+    try {
+      const snapshot = await getDb()
+        .collection(VISITED_STORES)
+        .where('status', '==', 'visitada')
+        .get();
+
+      const refs = [];
+      snapshot.docs.forEach((d) => {
+        const v = d.data().visitedByEmail;
+        if (v == null || String(v).trim() === '') {
+          refs.push(d.ref);
+        }
+      });
+
+      const totalVisitada = snapshot.size;
+      const skipped = totalVisitada - refs.length;
+      let updated = 0;
+
+      for (let i = 0; i < refs.length; i += VISITED_BACKFILL_CHUNK) {
+        const batch = getDb().batch();
+        const chunk = refs.slice(i, i + VISITED_BACKFILL_CHUNK);
+        chunk.forEach((ref) => {
+          batch.set(
+            ref,
+            { visitedByEmail: LEGACY_VISITED_BY_EMAIL },
+            { merge: true }
+          );
+        });
+        await batch.commit();
+        updated += chunk.length;
+        console.log(
+          `backfillVisitedByEmail: committed ${updated}/${refs.length}`
+        );
+      }
+
+      res.json({
+        success: true,
+        updated,
+        skipped,
+        totalVisitada,
+      });
+    } catch (err) {
+      console.error('backfillVisitedByEmail error:', err);
       res.status(500).json({ error: err.message });
     }
   }

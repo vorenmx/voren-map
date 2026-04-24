@@ -125,6 +125,11 @@
               {{ statusSaving === 'cerrada_permanentemente' ? 'Guardando…' : 'Cerrada Perm.' }}
             </button>
           </div>
+          <div v-if="isVisited && visitedByEmailDisplay" class="visited-by-row">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="visited-by-icon"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span class="visited-by-label">Visitada por</span>
+            <span class="visited-by-email">{{ visitedByEmailDisplay }}</span>
+          </div>
         </div>
 
         <!-- Google Maps -->
@@ -410,6 +415,11 @@ const isCerradaPerm    = computed(() => currentVStatus.value === 'cerrada_perman
 const visitedEntry = computed(() =>
   props.shop?.id ? visitedShops.value.find((s) => s.id === props.shop.id) : null
 );
+
+const visitedByEmailDisplay = computed(() => {
+  const e = visitedEntry.value?.visitedByEmail;
+  return typeof e === 'string' && e.trim() ? e.trim() : '';
+});
 
 // Reactive survey values for the current shop
 const surveyData = computed(() => visitedEntry.value ?? {});
@@ -814,6 +824,34 @@ const sourceLabel = computed(() => {
   -webkit-user-select: none;
 }
 .status-btn:disabled { opacity: 0.5; cursor: default; }
+
+.visited-by-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: rgba(99,102,241,0.10);
+  border: 1px solid rgba(99,102,241,0.25);
+  border-radius: 8px;
+}
+.visited-by-icon { color: #818cf8; flex-shrink: 0; }
+.visited-by-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #818cf8;
+  white-space: nowrap;
+}
+.visited-by-email {
+  font-size: 12px;
+  font-weight: 500;
+  color: #e2e8f0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
 /* Visita Exitosa — green */
 .exitosa-btn:hover:not(:disabled) {

@@ -100,6 +100,9 @@ export function useVisited() {
         average_order:     shop.average_order     ?? null,
         google_maps_url:   shop.google_maps_url   ?? null,
         visitedAt:         serverTimestamp(),
+        visitedByEmail:    auth.currentUser?.email?.trim()
+          ? auth.currentUser.email.trim().toLowerCase()
+          : null,
       } : {};
 
       const payload = {

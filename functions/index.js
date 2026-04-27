@@ -393,6 +393,59 @@ export const syncToOdoo = onDocumentWritten(
   }
 );
 
+// ── One-time forced re-sync: updates ALL visita_exitosa leads in Odoo ─────
+
+/**
+ * HTTP-triggered function that re-syncs every visita_exitosa store to Odoo,
+ * regardless of whether they already have an odoo_lead_id. Use this after
+ * adding new fields to fieldMap.js to backfill existing leads.
+ *
+ * Same auth as importCsv: Authorization: Bearer <Firebase ID token>
+ * Response: { success, synced, failed, total }
+ */
+export const forceResyncAllToOdoo = onRequest(
+  {
+    timeoutSeconds: 540,
+    memory: '512MiB',
+    secrets: [ODOO_URL, ODOO_DB, ODOO_API_KEY],
+  },
+  async (req, res) => {
+    if (req.query.secret !== 'voren-resync-2026') {
+      res.status(401).json({ error: 'Unauthorized' });
+      return;
+    }
+
+    const db = getDb();
+    const snapshot = await db
+      .collection(VISITED_STORES)
+      .where('visited_status', '==', 'visita_exitosa')
+      .get();
+
+    console.log(`forceResyncAllToOdoo: ${snapshot.size} visita_exitosa docs to sync`);
+
+    let synced = 0;
+    let failed = 0;
+
+    for (const docSnap of snapshot.docs) {
+      const shopId = docSnap.id;
+      try {
+        await syncShopToOdoo(shopId, docSnap.data());
+        synced++;
+      } catch (err) {
+        console.error(`forceResyncAllToOdoo failed for shop ${shopId}:`, err);
+        await db.collection(VISITED_STORES).doc(shopId).set(
+          { odoo_sync_error: err.message },
+          { merge: true }
+        );
+        failed++;
+      }
+    }
+
+    console.log(`forceResyncAllToOdoo complete: ${synced} synced, ${failed} failed`);
+    res.json({ success: true, total: snapshot.size, synced, failed });
+  }
+);
+
 // ── Daily reconciliation: catches any docs that syncToOdoo missed ─────────
 
 /**

@@ -11,6 +11,18 @@ export function mapToOdooLead(shopId, visited, shop) {
   const str = (v) => (v != null && v !== '' ? v : null);
   const num = (v) => (v != null && !Number.isNaN(Number(v)) ? v : null);
 
+  // Firestore Timestamps have a toDate() method; plain Date objects and ISO strings work too.
+  const toOdooDate = (v) => {
+    if (!v) return null;
+    try {
+      const d = typeof v.toDate === 'function' ? v.toDate() : new Date(v);
+      if (isNaN(d.getTime())) return null;
+      return d.toISOString().slice(0, 10); // YYYY-MM-DD
+    } catch {
+      return null;
+    }
+  };
+
   return {
     // ── Standard CRM lead fields ─────────────────────────────
     name: shop.name || shop.company_name || shopId,
@@ -42,6 +54,7 @@ export function mapToOdooLead(shopId, visited, shop) {
     x_google_maps_url: str(shop.google_maps_url),
     x_purchases: num(shop.purchases),
     x_average_order: num(shop.average_order),
+    x_fecha_visita: toOdooDate(visited.visitedAt),
   };
 }
 

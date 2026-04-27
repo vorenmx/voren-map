@@ -8,7 +8,7 @@ import { defineSecret } from 'firebase-functions/params';
 import admin from 'firebase-admin';
 import { GeoPoint } from 'firebase-admin/firestore';
 import Papa from 'papaparse';
-import { createOrUpdateLead } from './odooClient.js';
+import { createOrUpdateLead, deleteLead } from './odooClient.js';
 
 const getAuth    = () => admin.auth();
 const getStorage = () => admin.storage();
@@ -351,8 +351,30 @@ export const syncToOdoo = onDocumentWritten(
       return;
     }
 
-    const hasLead   = !!after?.odoo_lead_id;
-    const isExitosa = after?.visited_status === 'visita_exitosa';
+    const wasExitosa = before?.visited_status === 'visita_exitosa';
+    const isExitosa  = after?.visited_status  === 'visita_exitosa';
+    const leadId     = before?.odoo_lead_id ?? after?.odoo_lead_id;
+    const hasLead    = !!leadId;
+
+    // Unmarked from exitosa and had an Odoo lead → delete it
+    if (wasExitosa && !isExitosa && hasLead) {
+      console.log(`syncToOdoo: deleting lead ${leadId} for shop ${shopId} — unmarked as exitosa`);
+      try {
+        await deleteLead(getOdooConfig(), leadId);
+        await getDb().collection(VISITED_STORES).doc(shopId).set(
+          { odoo_lead_id: null, odoo_synced_at: null, odoo_sync_error: null },
+          { merge: true }
+        );
+        console.log(`syncToOdoo: lead ${leadId} deleted for shop ${shopId}`);
+      } catch (err) {
+        console.error(`syncToOdoo failed to delete lead ${leadId} for shop ${shopId}:`, err);
+        await getDb().collection(VISITED_STORES).doc(shopId).set(
+          { odoo_sync_error: err.message },
+          { merge: true }
+        );
+      }
+      return;
+    }
 
     if (!hasLead && !isExitosa) {
       console.log(`syncToOdoo: skipping shop ${shopId} — no lead and not exitosa`);

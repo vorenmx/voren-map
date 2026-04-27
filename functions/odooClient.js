@@ -102,3 +102,13 @@ export async function createOrUpdateLead(config, shopId, visited, shop) {
   if (!leadId) throw new Error('Odoo returned no lead ID after create/write');
   return { leadId, action };
 }
+
+/**
+ * Permanently deletes a CRM lead in Odoo by its numeric ID.
+ *
+ * @param {object} config  - { url, db, apiKey }
+ * @param {number|string} leadId - Odoo lead ID to delete
+ */
+export async function deleteLead(config, leadId) {
+  await odooPost(config, 'crm.lead', 'unlink', { ids: [Number(leadId)] });
+}

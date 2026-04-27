@@ -1,0 +1,19 @@
+name,field_description,model_id,ttype,state,store
+x_voren_shop_id,Voren Shop ID,crm.lead,char,manual,True
+x_shop_type,Tipo de tienda,crm.lead,char,manual,True
+x_score_general,Score general,crm.lead,integer,manual,True
+x_score_pains,Score pains,crm.lead,integer,manual,True
+x_score_probabilidad,Prob. de venta,crm.lead,integer,manual,True
+x_score_satisfaccion,Satisf. proveedores,crm.lead,integer,manual,True
+x_tamano_tienda,Tamaño tienda,crm.lead,char,manual,True
+x_credito,Crédito,crm.lead,char,manual,True
+x_metodo_pago,Método de pago,crm.lead,char,manual,True
+x_entrega,Entrega,crm.lead,char,manual,True
+x_principal_proveedor,Proveedor principal,crm.lead,char,manual,True
+x_contacto_personal,Contacto personal,crm.lead,char,manual,True
+x_comentarios,Comentarios,crm.lead,text,manual,True
+x_visitado_por,Visitado por,crm.lead,char,manual,True
+x_fuente_datos,Fuente de datos,crm.lead,char,manual,True
+x_google_maps_url,Google Maps URL,crm.lead,char,manual,True
+x_purchases,Compras,crm.lead,integer,manual,True
+x_average_order,Pedido promedio,crm.lead,float,manual,True

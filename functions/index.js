@@ -2,11 +2,24 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { onRequest } from 'firebase-functions/v2/https';
-import { initializeApp, getApps } from 'firebase-admin/app';
-import { getFirestore, GeoPoint } from 'firebase-admin/firestore';
-import { getStorage } from 'firebase-admin/storage';
-import { getAuth } from 'firebase-admin/auth';
+import { onDocumentWritten } from 'firebase-functions/v2/firestore';
+import { onSchedule } from 'firebase-functions/v2/scheduler';
+import { defineSecret } from 'firebase-functions/params';
+import admin from 'firebase-admin';
+import { GeoPoint } from 'firebase-admin/firestore';
 import Papa from 'papaparse';
+import { createOrUpdateLead } from './odooClient.js';
+
+const getAuth    = () => admin.auth();
+const getStorage = () => admin.storage();
+
+const PROJECT_ID =
+  process.env.GCLOUD_PROJECT || process.env.GOOGLE_CLOUD_PROJECT || 'voren-map';
+
+// ── Odoo secrets (set via: firebase functions:secrets:set ODOO_URL etc.) ──
+const ODOO_URL     = defineSecret('ODOO_URL');
+const ODOO_DB      = defineSecret('ODOO_DB');
+const ODOO_API_KEY = defineSecret('ODOO_API_KEY');
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ALLOWED_IMPORT_EMAILS = JSON.parse(
@@ -16,12 +29,19 @@ const allowedImportEmailSet = new Set(
   ALLOWED_IMPORT_EMAILS.map((e) => String(e).toLowerCase().trim())
 );
 
-// Lazy Firestore: avoid top-level getFirestore() so deploy analysis does not time out.
+// Firestore triggers can leave only *named* apps registered (admin.apps.length > 0)
+// while admin.firestore() still requires the default [DEFAULT] app. Ensure it exists.
+let _db;
 function getDb() {
-  if (!getApps().length) {
-    initializeApp();
+  if (!_db) {
+    try {
+      admin.app();
+    } catch {
+      admin.initializeApp({ projectId: PROJECT_ID });
+    }
+    _db = admin.firestore();
   }
-  return getFirestore();
+  return _db;
 }
 
 const COLLECTION = 'shops';
@@ -256,5 +276,128 @@ export const backfillVisitedByEmail = onRequest(
       console.error('backfillVisitedByEmail error:', err);
       res.status(500).json({ error: err.message });
     }
+  }
+);
+
+// ── Helpers shared by syncToOdoo and reconcileOdoo ────────────────────────
+
+function getOdooConfig() {
+  return {
+    url:    ODOO_URL.value(),
+    db:     ODOO_DB.value(),
+    apiKey: ODOO_API_KEY.value(),
+  };
+}
+
+async function syncShopToOdoo(shopId, visitedData) {
+  const db = getDb();
+
+  // Fetch the corresponding shop document for address / contact fields
+  const shopSnap = await db.collection(COLLECTION).doc(shopId).get();
+  const shopData = shopSnap.exists ? shopSnap.data() : {};
+
+  const config = getOdooConfig();
+  const { leadId, action } = await createOrUpdateLead(config, shopId, visitedData, shopData);
+
+  // Write the Odoo lead ID back to Firestore for idempotency tracking
+  await db.collection(VISITED_STORES).doc(shopId).set(
+    { odoo_lead_id: String(leadId), odoo_sync_error: null, odoo_synced_at: new Date().toISOString() },
+    { merge: true }
+  );
+
+  console.log(`syncShopToOdoo: ${action} lead ${leadId} for shop ${shopId}`);
+  return { leadId, action };
+}
+
+// ── Real-time sync: triggers whenever a visited_stores doc is written ─────
+
+/**
+ * Firestore trigger: creates or updates an Odoo CRM lead whenever a shop's
+ * visited_status is set to 'visita_exitosa'. Skips docs that already have
+ * an odoo_lead_id recorded for the same visita_exitosa status.
+ */
+export const syncToOdoo = onDocumentWritten(
+  { document: 'visited_stores/{shopId}', secrets: [ODOO_URL, ODOO_DB, ODOO_API_KEY] },
+  async (event) => {
+    const shopId = event.params.shopId;
+    const after  = event.data?.after?.data();
+    const before = event.data?.before?.data();
+
+    console.log(`syncToOdoo fired for shop ${shopId}, visited_status=${after?.visited_status}`);
+
+    if (after?.visited_status !== 'visita_exitosa') {
+      console.log(`syncToOdoo: skipping shop ${shopId} — status is not visita_exitosa`);
+      return;
+    }
+
+    const wasAlreadyExitosa = before?.visited_status === 'visita_exitosa';
+    const alreadySynced     = wasAlreadyExitosa && !!before?.odoo_lead_id;
+    if (alreadySynced) {
+      console.log(`syncToOdoo: skipping shop ${shopId} — already synced (lead ${before.odoo_lead_id})`);
+      return;
+    }
+
+    try {
+      await syncShopToOdoo(shopId, after);
+    } catch (err) {
+      console.error(`syncToOdoo failed for shop ${shopId}:`, err);
+      // Record the error in Firestore so reconcileOdoo can retry
+      await getDb().collection(VISITED_STORES).doc(shopId).set(
+        { odoo_sync_error: err.message, odoo_synced_at: null },
+        { merge: true }
+      );
+    }
+  }
+);
+
+// ── Daily reconciliation: catches any docs that syncToOdoo missed ─────────
+
+/**
+ * Runs every day at 08:00 Mexico City time (UTC-6).
+ * Queries visited_stores where visited_status == 'visita_exitosa' and
+ * odoo_lead_id is missing or a previous sync_error was recorded, then
+ * syncs each one to Odoo.
+ */
+export const reconcileOdoo = onSchedule(
+  {
+    schedule: 'every day 08:00',
+    timeZone: 'America/Mexico_City',
+    secrets: [ODOO_URL, ODOO_DB, ODOO_API_KEY],
+  },
+  async () => {
+    const db = getDb();
+
+    // Find all visita_exitosa docs that are not yet synced or had an error
+    const snapshot = await db
+      .collection(VISITED_STORES)
+      .where('visited_status', '==', 'visita_exitosa')
+      .get();
+
+    const pending = snapshot.docs.filter((d) => {
+      const data = d.data();
+      return !data.odoo_lead_id || data.odoo_sync_error;
+    });
+
+    console.log(`reconcileOdoo: ${pending.length} docs to sync out of ${snapshot.size} visita_exitosa`);
+
+    let synced = 0;
+    let failed = 0;
+
+    for (const docSnap of pending) {
+      const shopId = docSnap.id;
+      try {
+        await syncShopToOdoo(shopId, docSnap.data());
+        synced++;
+      } catch (err) {
+        console.error(`reconcileOdoo failed for shop ${shopId}:`, err);
+        await db.collection(VISITED_STORES).doc(shopId).set(
+          { odoo_sync_error: err.message },
+          { merge: true }
+        );
+        failed++;
+      }
+    }
+
+    console.log(`reconcileOdoo complete: ${synced} synced, ${failed} failed`);
   }
 );

@@ -311,10 +311,30 @@ async function syncShopToOdoo(shopId, visitedData) {
 
 // ── Real-time sync: triggers whenever a visited_stores doc is written ─────
 
+// Fields written back by the sync function itself — changes to only these
+// fields must be skipped to prevent an infinite trigger loop.
+const SYNC_META_FIELDS = new Set(['odoo_lead_id', 'odoo_sync_error', 'odoo_synced_at']);
+
+function onlySyncMetaChanged(before, after) {
+  const allKeys = new Set([
+    ...Object.keys(before || {}),
+    ...Object.keys(after || {}),
+  ]);
+  for (const key of allKeys) {
+    if (SYNC_META_FIELDS.has(key)) continue;
+    if (JSON.stringify(before?.[key]) !== JSON.stringify(after?.[key])) return false;
+  }
+  return true;
+}
+
 /**
- * Firestore trigger: creates or updates an Odoo CRM lead whenever a shop's
- * visited_status is set to 'visita_exitosa'. Skips docs that already have
- * an odoo_lead_id recorded for the same visita_exitosa status.
+ * Firestore trigger: creates or updates an Odoo CRM lead on any meaningful
+ * change to a visited_stores document.
+ *
+ * - If a lead already exists (odoo_lead_id set): updates it with latest data.
+ * - If no lead yet and visited_status = 'visita_exitosa': creates it.
+ * - Skips writes that only touched sync-metadata (prevents infinite loop).
+ * - Skips shops not yet marked exitosa and with no existing lead.
  */
 export const syncToOdoo = onDocumentWritten(
   { document: 'visited_stores/{shopId}', secrets: [ODOO_URL, ODOO_DB, ODOO_API_KEY] },
@@ -323,17 +343,19 @@ export const syncToOdoo = onDocumentWritten(
     const after  = event.data?.after?.data();
     const before = event.data?.before?.data();
 
-    console.log(`syncToOdoo fired for shop ${shopId}, visited_status=${after?.visited_status}`);
+    console.log(`syncToOdoo fired for shop ${shopId}, visited_status=${after?.visited_status}, odoo_lead_id=${after?.odoo_lead_id}`);
 
-    if (after?.visited_status !== 'visita_exitosa') {
-      console.log(`syncToOdoo: skipping shop ${shopId} — status is not visita_exitosa`);
+    // Skip writes triggered by the function's own sync-metadata updates
+    if (onlySyncMetaChanged(before, after)) {
+      console.log(`syncToOdoo: skipping shop ${shopId} — only sync metadata changed`);
       return;
     }
 
-    const wasAlreadyExitosa = before?.visited_status === 'visita_exitosa';
-    const alreadySynced     = wasAlreadyExitosa && !!before?.odoo_lead_id;
-    if (alreadySynced) {
-      console.log(`syncToOdoo: skipping shop ${shopId} — already synced (lead ${before.odoo_lead_id})`);
+    const hasLead   = !!after?.odoo_lead_id;
+    const isExitosa = after?.visited_status === 'visita_exitosa';
+
+    if (!hasLead && !isExitosa) {
+      console.log(`syncToOdoo: skipping shop ${shopId} — no lead and not exitosa`);
       return;
     }
 
@@ -341,7 +363,6 @@ export const syncToOdoo = onDocumentWritten(
       await syncShopToOdoo(shopId, after);
     } catch (err) {
       console.error(`syncToOdoo failed for shop ${shopId}:`, err);
-      // Record the error in Firestore so reconcileOdoo can retry
       await getDb().collection(VISITED_STORES).doc(shopId).set(
         { odoo_sync_error: err.message, odoo_synced_at: null },
         { merge: true }

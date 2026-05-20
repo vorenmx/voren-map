@@ -2,15 +2,10 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // Keep in sync with frontend/src/auth/allowed-google-emails.json
     function isAllowedGoogleEmail() {
       return request.auth != null
         && request.auth.token.email != null
-        && (
-          request.auth.token.email.lower() == 'hola@voren.com.mx'
-          || request.auth.token.email.lower() == 'alberto@voren.com.mx'
-          || request.auth.token.email.lower() == 'andres@voren.com.mx'
-        );
+        && request.auth.token.email.lower().matches('.*@voren\\.com\\.mx');
     }
 
     // Returns the userId stored on an existing document, defaulting to the

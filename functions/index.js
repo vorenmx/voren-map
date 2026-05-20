@@ -1,4 +1,3 @@
-import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { onRequest } from 'firebase-functions/v2/https';
@@ -22,12 +21,11 @@ const ODOO_DB      = defineSecret('ODOO_DB');
 const ODOO_API_KEY = defineSecret('ODOO_API_KEY');
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const ALLOWED_IMPORT_EMAILS = JSON.parse(
-  readFileSync(path.join(__dirname, 'allowed-google-emails.json'), 'utf8')
-);
-const allowedImportEmailSet = new Set(
-  ALLOWED_IMPORT_EMAILS.map((e) => String(e).toLowerCase().trim())
-);
+
+const ALLOWED_DOMAIN = 'voren.com.mx';
+function isAllowedEmail(email) {
+  return typeof email === 'string' && email.toLowerCase().trim().endsWith(`@${ALLOWED_DOMAIN}`);
+}
 
 // Firestore triggers can leave only *named* apps registered (admin.apps.length > 0)
 // while admin.firestore() still requires the default [DEFAULT] app. Ensure it exists.
@@ -86,7 +84,7 @@ export const importCsv = onRequest(
       return;
     }
     const callerEmail = decoded.email?.toLowerCase()?.trim();
-    if (!callerEmail || !allowedImportEmailSet.has(callerEmail)) {
+    if (!callerEmail || !isAllowedEmail(callerEmail)) {
       res.status(403).json({ error: 'Forbidden: account not authorized for import' });
       return;
     }
@@ -226,7 +224,7 @@ export const backfillVisitedByEmail = onRequest(
       return;
     }
     const callerEmail = decoded.email?.toLowerCase()?.trim();
-    if (!callerEmail || !allowedImportEmailSet.has(callerEmail)) {
+    if (!callerEmail || !isAllowedEmail(callerEmail)) {
       res.status(403).json({ error: 'Forbidden: account not authorized' });
       return;
     }

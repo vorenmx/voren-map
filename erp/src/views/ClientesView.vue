@@ -6,6 +6,9 @@
       <span class="pill">Sin informe: <strong>{{ clientes.length - conInforme }}</strong></span>
       <span class="pill">Mostrando: <strong>{{ filtrados.length }}</strong></span>
       <button v-if="filtrosActivos" class="btn btn-sm limpiar" @click="limpiarFiltros">Limpiar filtros</button>
+      <button class="btn btn-sm limpiar" :disabled="refrescando" @click="refrescar">
+        {{ refrescando ? 'Actualizando…' : 'Actualizar' }}
+      </button>
     </div>
 
     <div class="filtros">
@@ -132,11 +135,19 @@ const probMin = ref(null);
 const probMax = ref(null);
 const seleccionado = ref(null);
 const resumen = ref({});
+const refrescando = ref(false);
 
-onMounted(async () => {
-  await fetchLeads();
-  resumen.value = await fetchInformesResumen();
-});
+onMounted(() => refrescar());
+
+async function refrescar() {
+  refrescando.value = true;
+  try {
+    await fetchLeads(true);
+    resumen.value = await fetchInformesResumen();
+  } finally {
+    refrescando.value = false;
+  }
+}
 
 function nInformes(c) { return resumen.value[c.id]?.count || 0; }
 
@@ -156,9 +167,44 @@ function prob(c) {
   return Number.isFinite(v) ? v : null;
 }
 function fechasVisita(c) { return resumen.value[c.id]?.fechas || []; }
-function ultimaVisita(c) {
+
+// Accepts a 'YYYY-MM-DD' string, a Firestore Timestamp, or a Date.
+function aDate(val) {
+  if (!val) return null;
+  if (typeof val === 'string') {
+    const m = val.match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if (m) return new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+    const d = new Date(val);
+    return Number.isNaN(d.getTime()) ? null : d;
+  }
+  if (typeof val.toDate === 'function') return val.toDate();
+  if (val.seconds != null) return new Date(val.seconds * 1000);
+  if (val instanceof Date) return val;
+  return null;
+}
+
+function fmtDMY(d) {
+  if (!d) return '';
+  const dd = String(d.getDate()).padStart(2, '0');
+  const mm = String(d.getMonth() + 1).padStart(2, '0');
+  return `${dd}/${mm}/${d.getFullYear()}`;
+}
+
+// 'YYYY-MM-DD' for range comparisons against the <input type="date"> values.
+function ymd(d) {
+  if (!d) return '';
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+
+// The visit date, sourced from the MAP timestamp (visitedAt) first, then
+// statusAt, and finally the latest informe date as a last resort.
+function fechaVisita(c) {
   const fs = fechasVisita(c);
-  return fs.length ? fs[fs.length - 1] : '';
+  return aDate(c.visitedAt || c.statusAt || (fs.length ? fs[fs.length - 1] : null));
+}
+
+function ultimaVisita(c) {
+  return fmtDMY(fechaVisita(c));
 }
 
 const municipios = computed(() =>
@@ -199,12 +245,11 @@ const filtrados = computed(() => {
   if (filtroTipo.value) lista = lista.filter((c) => tipo(c) === filtroTipo.value);
 
   if (fechaDesde.value || fechaHasta.value) {
-    lista = lista.filter((c) =>
-      fechasVisita(c).some((fecha) =>
-        (!fechaDesde.value || fecha >= fechaDesde.value) &&
-        (!fechaHasta.value || fecha <= fechaHasta.value)
-      )
-    );
+    lista = lista.filter((c) => {
+      const f = ymd(fechaVisita(c));
+      if (!f) return false;
+      return (!fechaDesde.value || f >= fechaDesde.value) && (!fechaHasta.value || f <= fechaHasta.value);
+    });
   }
 
   if (probMin.value != null || probMax.value != null) {

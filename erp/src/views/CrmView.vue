@@ -8,6 +8,9 @@
         <span class="pill">Valor abierto: <strong>{{ money(valorAbierto) }}</strong></span>
         <span class="pill">Mostrando: <strong>{{ filtrados.length }}</strong></span>
         <button v-if="filtrosActivos" class="btn btn-sm limpiar" @click="limpiarFiltros">Limpiar filtros</button>
+        <button class="btn btn-sm actualizar" :disabled="refrescando" @click="refrescar">
+          {{ refrescando ? 'Actualizando…' : 'Actualizar' }}
+        </button>
       </div>
     </div>
 
@@ -133,11 +136,21 @@ const seleccionado = ref(null);
 const resumen = ref({});
 const draggingLead = ref(null);
 const overEtapa = ref(null);
+const refrescando = ref(false);
 
-onMounted(async () => {
-  await fetchLeads();
-  resumen.value = await fetchInformesResumen();
-});
+// Force a fresh fetch every time the view opens so leads marked "exitosa" in
+// the map app appear without needing a full page reload.
+onMounted(() => refrescar());
+
+async function refrescar() {
+  refrescando.value = true;
+  try {
+    await fetchLeads(true);
+    resumen.value = await fetchInformesResumen();
+  } finally {
+    refrescando.value = false;
+  }
+}
 
 function nInformes(l) { return resumen.value[l.id]?.count || 0; }
 function responsable(l) { return l.crm_owner_email || l.visitedByEmail || ''; }
@@ -147,6 +160,30 @@ function prob(l) {
   return Number.isFinite(v) ? v : null;
 }
 function fechasVisita(l) { return resumen.value[l.id]?.fechas || []; }
+
+// Accepts a 'YYYY-MM-DD' string, a Firestore Timestamp, or a Date.
+function aDate(val) {
+  if (!val) return null;
+  if (typeof val === 'string') {
+    const m = val.match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if (m) return new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+    const d = new Date(val);
+    return Number.isNaN(d.getTime()) ? null : d;
+  }
+  if (typeof val.toDate === 'function') return val.toDate();
+  if (val.seconds != null) return new Date(val.seconds * 1000);
+  if (val instanceof Date) return val;
+  return null;
+}
+function ymd(d) {
+  if (!d) return '';
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+// Visit date from the MAP timestamp first, then statusAt, then informe date.
+function fechaVisita(l) {
+  const fs = fechasVisita(l);
+  return aDate(l.visitedAt || l.statusAt || (fs.length ? fs[fs.length - 1] : null));
+}
 
 const municipios = computed(() =>
   [...new Set(leads.value.map((l) => l.municipality).filter(Boolean))].sort((a, b) => a.localeCompare(b))
@@ -183,12 +220,11 @@ const filtrados = computed(() => {
   if (filtroTipo.value) lista = lista.filter((l) => tipo(l) === filtroTipo.value);
 
   if (fechaDesde.value || fechaHasta.value) {
-    lista = lista.filter((l) =>
-      fechasVisita(l).some((fecha) =>
-        (!fechaDesde.value || fecha >= fechaDesde.value) &&
-        (!fechaHasta.value || fecha <= fechaHasta.value)
-      )
-    );
+    lista = lista.filter((l) => {
+      const f = ymd(fechaVisita(l));
+      if (!f) return false;
+      return (!fechaDesde.value || f >= fechaDesde.value) && (!fechaHasta.value || f <= fechaHasta.value);
+    });
   }
 
   if (probMin.value != null || probMax.value != null) {
@@ -259,6 +295,7 @@ async function onDrop(etapaId) {
 .crm-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
 .crm-metrics { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .limpiar { margin-left: 4px; }
+.actualizar { margin-left: 4px; }
 .filtros { display: flex; align-items: flex-end; gap: 10px; margin-bottom: 16px; overflow-x: auto; padding-bottom: 4px; }
 .filtros .fg { display: flex; flex-direction: column; gap: 4px; flex: 0 0 auto; }
 .filtros .fg.grow { flex: 1 1 180px; min-width: 160px; }

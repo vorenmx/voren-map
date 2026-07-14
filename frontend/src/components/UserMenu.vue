@@ -21,6 +21,15 @@
           </svg>
           Perfil
         </button>
+        <button class="menu-item" @click="openErp">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"/>
+            <rect x="14" y="3" width="7" height="7"/>
+            <rect x="14" y="14" width="7" height="7"/>
+            <rect x="3" y="14" width="7" height="7"/>
+          </svg>
+          Ir al ERP
+        </button>
         <button class="menu-item danger" @click="emit('sign-out'); isOpen = false">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/>
@@ -46,6 +55,14 @@ const emit = defineEmits(['open-profile', 'sign-out']);
 
 const isOpen = ref(false);
 const wrapperRef = ref(null);
+
+// ERP hosting URL (overridable via VITE_ERP_URL for staging/custom domains).
+const ERP_URL = import.meta.env.VITE_ERP_URL || 'https://voren-erp.web.app';
+
+function openErp() {
+  isOpen.value = false;
+  window.location.assign(ERP_URL);
+}
 
 const initials = computed(() => {
   const name = props.displayName || props.user?.displayName;

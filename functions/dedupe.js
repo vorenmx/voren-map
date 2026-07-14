@@ -39,6 +39,20 @@ export function normAddr(s) {
   return normText(buildAddress(s));
 }
 
+/**
+ * Address usable as a STRONG dedupe signal: only when there is street-level
+ * detail (a real formatted address, or a street/street_number). Without it,
+ * buildAddress falls back to just "municipality state", which is identical for
+ * every addressless shop in the same municipality and would wrongly flag
+ * genuinely different stores as duplicates. Returns '' when not specific.
+ */
+export function specificAddr(s) {
+  const fa = (s.formatted_address || s.full_address || '').trim();
+  if (fa) return normText(fa);
+  if (s.street || s.street_number) return normAddr(s);
+  return '';
+}
+
 function haversineKm(lat1, lng1, lat2, lng2) {
   const toRad = (x) => (x * Math.PI) / 180;
   const R = 6371;
@@ -81,7 +95,7 @@ export async function findDuplicates(db, cand, excludeId) {
 
   const cName = normText(cand.name);
   const cPhone = phone10(cand.phone);
-  const cAddr = normAddr(cand);
+  const cAddr = specificAddr(cand);
   const cLat = Number(cand.latitude);
   const cLng = Number(cand.longitude);
 
@@ -91,7 +105,7 @@ export async function findDuplicates(db, cand, excludeId) {
     const e = d.data();
     let on = null;
     if (cPhone && phone10(e.phone) === cPhone) on = 'telefono';
-    else if (cAddr && normAddr(e) === cAddr) on = 'direccion';
+    else if (cAddr && specificAddr(e) === cAddr) on = 'direccion';
     else if (cName && normText(e.name) === cName) {
       const eLat = Number(e.latitude);
       const eLng = Number(e.longitude);

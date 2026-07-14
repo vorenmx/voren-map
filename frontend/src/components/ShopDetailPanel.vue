@@ -130,6 +130,15 @@
             <span class="visited-by-label">Visitada por</span>
             <span class="visited-by-email">{{ visitedByEmailDisplay }}</span>
           </div>
+          <div v-if="showExitosaValidation && missingExitosaFields.length" class="exitosa-validation">
+            <div class="ev-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            Completa la evaluación antes de marcar como Exitosa
+            </div>
+            <ul class="ev-list">
+              <li v-for="f in missingExitosaFields" :key="f.field">{{ f.label }}</li>
+            </ul>
+          </div>
         </div>
 
         <!-- Google Maps -->
@@ -154,8 +163,8 @@
           <div class="section-title">Evaluación</div>
 
           <!-- Responsable de compras -->
-          <div class="chip-row">
-            <span class="score-label">Nombre del responsable de compras</span>
+          <div class="chip-row" :class="{ 'field-invalid': fieldInvalid('responsable_compras_nombre') }">
+            <span class="score-label">Nombre del responsable de compras <span class="req">*</span></span>
             <input
               class="text-input"
               type="text"
@@ -166,8 +175,8 @@
             />
           </div>
 
-          <div class="chip-row">
-            <span class="score-label">Número de teléfono</span>
+          <div class="chip-row" :class="{ 'field-invalid': fieldInvalid('responsable_compras_telefono') }">
+            <span class="score-label">Número de teléfono <span class="req">*</span></span>
             <input
               class="text-input"
               type="tel"
@@ -181,9 +190,9 @@
           <div class="survey-divider"></div>
 
           <!-- Scores 1-10 -->
-          <div v-for="score in SURVEY_SCORES" :key="score.field" class="score-row">
+          <div v-for="score in SURVEY_SCORES" :key="score.field" class="score-row" :class="{ 'field-invalid': fieldInvalid(score.field) }">
             <span class="score-label">
-              {{ score.label }}
+              {{ score.label }} <span class="req">*</span>
               <button class="help-btn" @mouseenter="showTooltip(score.help, $event)" @mouseleave="hideTooltip" @click.stop="toggleTooltipClick(score.help, $event)">?</button>
             </span>
             <div class="score-btns">
@@ -200,9 +209,9 @@
           <div class="survey-divider"></div>
 
           <!-- Tamaño tienda -->
-          <div class="chip-row">
+          <div class="chip-row" :class="{ 'field-invalid': fieldInvalid('tamano_tienda') }">
             <span class="score-label">
-              Tamaño tienda
+              Tamaño tienda <span class="req">*</span>
               <button class="help-btn" @mouseenter="showTooltip(TAMANO_HELP, $event)" @mouseleave="hideTooltip" @click.stop="toggleTooltipClick(TAMANO_HELP, $event)">?</button>
             </span>
             <div class="chip-group">
@@ -217,8 +226,8 @@
           </div>
 
           <!-- Crédito -->
-          <div class="chip-row">
-            <span class="score-label">Crédito</span>
+          <div class="chip-row" :class="{ 'field-invalid': fieldInvalid('credito') }">
+            <span class="score-label">Crédito <span class="req">*</span></span>
             <div class="chip-group">
               <button
                 v-for="opt in CREDITO_OPTS" :key="opt"
@@ -231,8 +240,8 @@
           </div>
 
           <!-- Método de cobro (multi) -->
-          <div class="chip-row">
-            <span class="score-label">Método de Cobro</span>
+          <div class="chip-row" :class="{ 'field-invalid': fieldInvalid('metodo_pago') }">
+            <span class="score-label">Método de Cobro <span class="req">*</span></span>
             <div class="chip-group">
               <button
                 v-for="opt in PAGO_OPTS" :key="opt"
@@ -245,8 +254,8 @@
           </div>
 
           <!-- Entrega -->
-          <div class="chip-row">
-            <span class="score-label">Entrega</span>
+          <div class="chip-row" :class="{ 'field-invalid': fieldInvalid('entrega') }">
+            <span class="score-label">Entrega <span class="req">*</span></span>
             <div class="chip-group">
               <button
                 v-for="opt in ENTREGA_OPTS" :key="opt"
@@ -259,8 +268,8 @@
           </div>
 
           <!-- Principal proveedor -->
-          <div class="chip-row">
-            <span class="score-label">Proveedor principal</span>
+          <div class="chip-row" :class="{ 'field-invalid': fieldInvalid('principal_proveedor') }">
+            <span class="score-label">Proveedor principal <span class="req">*</span></span>
             <ProveedorSelect
               :model-value="proveedorValue"
               :options="PROVEEDOR_OPTS"
@@ -271,8 +280,8 @@
           </div>
 
           <!-- Contacto personal del tomador de decisión -->
-          <div class="chip-row">
-            <span class="score-label">El tomador de decisión nos dio su contacto personal</span>
+          <div class="chip-row" :class="{ 'field-invalid': fieldInvalid('contacto_personal') }">
+            <span class="score-label">El tomador de decisión nos dio su contacto personal <span class="req">*</span></span>
             <div class="chip-group">
               <button
                 v-for="opt in CONTACTO_OPTS" :key="opt"
@@ -383,6 +392,20 @@ const PROVEEDOR_OPTS = [
   'Sayto', 'Motos y Equipos', 'IMR', 'Palamoto', 'Remo Motos México',
 ];
 
+// Fields that MUST be filled before a store can be marked "Visita exitosa".
+// Keep the order aligned with the form so the missing-list reads top-to-bottom.
+const REQUIRED_EXITOSA_FIELDS = [
+  { field: 'responsable_compras_nombre',   label: 'Nombre del responsable de compras' },
+  { field: 'responsable_compras_telefono', label: 'Número de teléfono' },
+  { field: 'score_probabilidad',           label: 'Prob. de venta' },
+  { field: 'tamano_tienda',                label: 'Tamaño tienda' },
+  { field: 'credito',                      label: 'Crédito' },
+  { field: 'metodo_pago',                  label: 'Método de Cobro' },
+  { field: 'entrega',                      label: 'Entrega' },
+  { field: 'principal_proveedor',          label: 'Proveedor principal' },
+  { field: 'contacto_personal',            label: 'El tomador de decisión nos dio su contacto personal' },
+];
+
 const SURVEY_LABELS = {
   score_general:                'Score general',
   score_pains:                  'Pains',
@@ -404,6 +427,7 @@ const { statusDocs } = useShopStatus();
 
 const statusSaving      = ref(null); // null | 'visita_exitosa' | 'cerrada' | 'cerrada_permanentemente'
 const surveyingSaving   = ref(false);
+const showExitosaValidation = ref(false); // true after a blocked "Exitosa" attempt
 const logOpen           = ref(false);
 const tooltipVisible    = ref(false);
 const tooltipText       = ref('');
@@ -459,6 +483,30 @@ const proveedorValue = computed(() => {
   return Array.isArray(v) ? v : [v];
 });
 
+// ── "Visita exitosa" completeness gate ─────────────────────
+// A field counts as filled based on the live local input (name/phone, which
+// only persist on blur) or the saved survey value for everything else.
+function isFieldFilled(field) {
+  let v;
+  if (field === 'responsable_compras_nombre')        v = responsableNombreLocal.value;
+  else if (field === 'responsable_compras_telefono') v = responsableTelefonoLocal.value;
+  else                                               v = surveyData.value[field];
+  if (v == null) return false;
+  if (Array.isArray(v)) return v.length > 0;
+  if (typeof v === 'string') return v.trim() !== '';
+  return true; // numbers (e.g. score_probabilidad)
+}
+
+const missingExitosaFields = computed(() =>
+  REQUIRED_EXITOSA_FIELDS.filter((f) => !isFieldFilled(f.field))
+);
+
+// Highlights an individual field only after a blocked attempt, and clears
+// itself as soon as the user fills it in.
+function fieldInvalid(field) {
+  return showExitosaValidation.value && !isFieldFilled(field);
+}
+
 async function handleSurveyField(field, value) {
   if (!props.shop?.id || surveyingSaving.value) return;
   surveyingSaving.value = true;
@@ -484,8 +532,36 @@ async function handleMultiField(field, option) {
 }
 async function handleStatusToggle(visitedStatus) {
   if (!props.shop?.id || statusSaving.value) return;
+
+  // Hard gate: setting "Visita exitosa" requires a complete evaluation.
+  // Toggling it off (already exitosa) and the other statuses are unaffected.
+  const turningOnExitosa = visitedStatus === 'visita_exitosa' && !isVisitaExitosa.value;
+  if (turningOnExitosa && missingExitosaFields.value.length > 0) {
+    showExitosaValidation.value = true;
+    return;
+  }
+
+  // When marking exitosa, merge the current evaluation into the SAME write so
+  // the doc satisfies the server-side completeness rule atomically. The local
+  // text inputs (name/phone/comentarios) only persist on blur, so include them.
+  const surveyPayload = turningOnExitosa ? {
+    responsable_compras_nombre:   responsableNombreLocal.value,
+    responsable_compras_telefono: responsableTelefonoLocal.value,
+    comentarios:                  comentariosLocal.value,
+    score_probabilidad:           surveyData.value.score_probabilidad ?? null,
+    tamano_tienda:                surveyData.value.tamano_tienda ?? null,
+    credito:                      surveyData.value.credito ?? null,
+    metodo_pago:                  Array.isArray(surveyData.value.metodo_pago) ? surveyData.value.metodo_pago : [],
+    entrega:                      surveyData.value.entrega ?? null,
+    principal_proveedor:          proveedorValue.value,
+    contacto_personal:            surveyData.value.contacto_personal ?? null,
+  } : null;
+
   statusSaving.value = visitedStatus;
-  try { await setExclusiveStatus(props.shop, visitedStatus); } finally { statusSaving.value = null; }
+  try {
+    await setExclusiveStatus(props.shop, visitedStatus, surveyPayload);
+    showExitosaValidation.value = false;
+  } finally { statusSaving.value = null; }
 }
 
 function formatTs(ts) {
@@ -535,6 +611,7 @@ const activityLogs = computed(() => {
 
 watch(() => props.shop?.id, () => {
   logOpen.value = false;
+  showExitosaValidation.value = false;
   comentariosLocal.value = visitedEntry.value?.comentarios ?? '';
   responsableNombreLocal.value = visitedEntry.value?.responsable_compras_nombre ?? '';
   responsableTelefonoLocal.value = visitedEntry.value?.responsable_compras_telefono ?? '';
@@ -895,6 +972,40 @@ const sourceLabel = computed(() => {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+/* "Exitosa" completeness gate */
+.exitosa-validation {
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: rgba(239,68,68,0.10);
+  border: 1px solid rgba(239,68,68,0.30);
+  border-radius: 8px;
+}
+.ev-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #f87171;
+}
+.ev-title svg { flex-shrink: 0; }
+.ev-list {
+  margin: 6px 0 0;
+  padding-left: 22px;
+  list-style: disc;
+}
+.ev-list li {
+  font-size: 12px;
+  color: #fca5a5;
+  line-height: 1.5;
+}
+.req { color: #f87171; font-weight: 700; }
+.field-invalid .score-label { color: #f87171; }
+.field-invalid .text-input,
+.field-invalid .comentarios-input {
+  border-color: rgba(239,68,68,0.55);
 }
 
 /* Visita Exitosa — green */

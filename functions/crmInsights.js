@@ -159,6 +159,142 @@ export async function buildCrmSnapshot(db) {
   };
 }
 
+/**
+ * Reads CRM data from Firestore and builds a compact snapshot of the ACTIVITY
+ * within a rolling window (default: last 7 days). Everything is aggregated, so
+ * the payload stays small regardless of the number of leads.
+ *
+ * Note: stage changes overwrite `pipeline_stage`/`crm_updated_at` with no
+ * transition history, so "won/lost this week" is approximated as leads whose
+ * current stage is ganado/perdido and whose last update falls inside the window.
+ * The `actividades` subcollection is the reliable "what we did" signal.
+ *
+ * @param {FirebaseFirestore.Firestore} db
+ * @param {number} sinceMs epoch millis marking the start of the window
+ * @returns {Promise<object>} aggregated weekly summary
+ */
+export async function buildWeeklySnapshot(db, sinceMs) {
+  const sinceDate = new Date(sinceMs);
+  const now = Date.now();
+
+  const [actsSnap, visitedSnap, empleadosSnap] = await Promise.all([
+    db.collectionGroup('actividades').where('fecha', '>=', sinceDate).get(),
+    db.collection('visited_stores').get(),
+    db.collection('empleados').get(),
+  ]);
+
+  const nombrePorEmail = new Map();
+  empleadosSnap.docs.forEach((d) => {
+    const e = d.data();
+    if (e.email) nombrePorEmail.set(String(e.email).toLowerCase(), e.nombre || e.email);
+  });
+  const nombreDe = (email) => nombrePorEmail.get(email) || email;
+
+  // Activities logged this week (real "what we did" signal).
+  const actividad = { total: 0, porTipo: {}, porVendedor: {} };
+  actsSnap.docs.forEach((d) => {
+    const a = d.data();
+    actividad.total += 1;
+    const tipo = a.tipo || 'otro';
+    actividad.porTipo[tipo] = (actividad.porTipo[tipo] || 0) + 1;
+    const email = String(a.usuarioEmail || 'sin_asignar').toLowerCase();
+    const nombre = nombreDe(email);
+    actividad.porVendedor[nombre] = (actividad.porVendedor[nombre] || 0) + 1;
+  });
+
+  const leads = visitedSnap.docs
+    .map((d) => ({ id: d.id, ...d.data() }))
+    .filter((l) => l.visited_status === 'visita_exitosa' || l.pipeline_stage);
+
+  const porVendedor = new Map();
+  const ganados = [];
+  const perdidos = [];
+  const nuevos = [];
+  const tocados = [];
+  let valorGanado = 0;
+
+  for (const l of leads) {
+    const updated = toMillis(l.crm_updated_at) ?? toMillis(l.statusAt) ?? toMillis(l.visitedAt);
+    if (updated == null || updated < sinceMs || updated > now) continue;
+
+    const etapa = PIPELINE_STAGES.includes(l.pipeline_stage) ? l.pipeline_stage : 'nuevo';
+    const email = String(l.crm_owner_email || l.visitedByEmail || 'sin_asignar').toLowerCase();
+    const nombre = nombreDe(email);
+    const info = {
+      id: l.id,
+      nombre: l.name || l.company_name || l.id,
+      etapa,
+      vendedor: nombre,
+      valorEstimado: Number(l.valor_estimado) || 0,
+      score_general: l.score_general ?? null,
+    };
+
+    tocados.push(info);
+    if (!porVendedor.has(nombre)) {
+      porVendedor.set(nombre, { vendedor: nombre, tocados: 0, ganados: 0, perdidos: 0 });
+    }
+    const v = porVendedor.get(nombre);
+    v.tocados += 1;
+
+    if (etapa === 'ganado') {
+      ganados.push(info);
+      v.ganados += 1;
+      valorGanado += info.valorEstimado;
+    } else if (etapa === 'perdido') {
+      perdidos.push(info);
+      v.perdidos += 1;
+    }
+
+    const creado = toMillis(l.visitedAt);
+    if (creado != null && creado >= sinceMs) nuevos.push(info);
+  }
+
+  return {
+    generadoEn: new Date().toISOString(),
+    ventana: {
+      desde: sinceDate.toISOString(),
+      hasta: new Date(now).toISOString(),
+      dias: Math.max(1, Math.round((now - sinceMs) / (24 * 60 * 60 * 1000))),
+    },
+    actividad,
+    leadsTocados: { total: tocados.length, nuevos: nuevos.length, ejemplos: tocados.slice(0, 20) },
+    ganados: { total: ganados.length, valorEstimado: Math.round(valorGanado), ejemplos: ganados.slice(0, 20) },
+    perdidos: { total: perdidos.length, ejemplos: perdidos.slice(0, 20) },
+    porVendedor: [...porVendedor.values()],
+  };
+}
+
+/**
+ * Shared Opus call that expects a strict JSON object back and tolerates
+ * accidental markdown fences.
+ */
+async function callOpusJson(apiKey, system, userContent) {
+  const anthropic = new Anthropic({ apiKey });
+
+  const msg = await anthropic.messages.create({
+    model: OPUS_MODEL,
+    max_tokens: 2000,
+    system,
+    messages: [{ role: 'user', content: userContent }],
+  });
+
+  const text = msg.content
+    .filter((b) => b.type === 'text')
+    .map((b) => b.text)
+    .join('\n')
+    .trim();
+
+  let insights;
+  try {
+    const clean = text.replace(/^```(?:json)?/i, '').replace(/```$/, '').trim();
+    insights = JSON.parse(clean);
+  } catch {
+    insights = { narrativa: text, _parseError: true };
+  }
+
+  return { modelo: OPUS_MODEL, insights };
+}
+
 const SYSTEM_PROMPT = `Eres un analista senior de operaciones de ventas (sales ops) para Voren, una empresa que vende a tiendas de motocicletas en Mexico. Recibes un resumen agregado del pipeline CRM y debes producir un analisis accionable en espanol.
 
 Responde UNICAMENTE con un objeto JSON valido (sin texto adicional, sin markdown) con esta estructura exacta:
@@ -173,40 +309,70 @@ Responde UNICAMENTE con un objeto JSON valido (sin texto adicional, sin markdown
 
 Se especifico, usa los numeros del resumen, y prioriza acciones de alto impacto. No inventes datos que no esten en el resumen.`;
 
+const SYSTEM_PROMPT_SEMANAL = `Eres un analista senior de operaciones de ventas (sales ops) para Voren, una empresa que vende a tiendas de motocicletas en Mexico. Recibes un resumen AGREGADO de la ACTIVIDAD DE LA ULTIMA SEMANA del CRM (actividades registradas, leads tocados, nuevos, ganados/perdidos y trabajo por vendedor). Tu tarea es explicar QUE SE HIZO esta semana y que sigue.
+
+Responde UNICAMENTE con un objeto JSON valido (sin texto adicional, sin markdown) con esta estructura exacta:
+{
+  "resumenSemana": "<2-4 frases sobre lo que se hizo esta semana>",
+  "logros": ["<avance o cierre concreto de la semana>", ...],
+  "riesgos": ["<lead en riesgo, caida o falta de actividad>", ...],
+  "accionesProximaSemana": ["<accion concreta y priorizada para la proxima semana>", ...],
+  "observacionesVendedores": ["<observacion por vendedor basada en su actividad>", ...]
+}
+
+Se especifico y usa los numeros del resumen (actividades, ganados, etc.), enfocandote SOLO en la ventana de la semana. No inventes datos que no esten en el resumen. Si no hubo actividad, dilo claramente.`;
+
+const SYSTEM_PROMPT_ACUMULADO = `Eres un analista senior de operaciones de ventas (sales ops) para Voren, una empresa que vende a tiendas de motocicletas en Mexico. Mantienes un reporte ACUMULADO del estado del pipeline CRM que evoluciona semana a semana. Recibes (1) el reporte acumulado ANTERIOR (puede ser null si es el primero) y (2) el reporte de la SEMANA mas reciente. Debes FUSIONARLOS para producir un acumulado actualizado, integrando lo nuevo de la semana con el historial previo. No re-analices todo desde cero: parte del acumulado anterior e incorpora la semana.
+
+Responde UNICAMENTE con un objeto JSON valido (sin texto adicional, sin markdown) con esta estructura exacta:
+{
+  "saludPipeline": { "puntuacion": <0-100>, "resumen": "<1-2 frases>" },
+  "narrativa": "<estado acumulado del pipeline en 3-5 frases>",
+  "tendencias": ["<como ha evolucionado semana a semana>", ...],
+  "logrosAcumulados": ["<logro relevante acumulado>", ...],
+  "riesgosPersistentes": ["<riesgo que persiste o crece>", ...],
+  "accionesPriorizadas": ["<accion priorizada a nivel acumulado>", ...],
+  "semanasIncluidas": <numero entero de semanas consideradas en este acumulado>
+}
+
+Actualiza "semanasIncluidas" sumando 1 a la del acumulado anterior (o 1 si no habia previo). Conserva la memoria historica relevante, sintetiza y evita repetir literalmente. No inventes datos.`;
+
 /**
  * Calls Opus with the aggregated snapshot and returns structured insights.
  * @param {string} apiKey
  * @param {object} snapshot
  */
 export async function generateInsights(apiKey, snapshot) {
-  const anthropic = new Anthropic({ apiKey });
+  return callOpusJson(
+    apiKey,
+    SYSTEM_PROMPT,
+    `Resumen del pipeline CRM (JSON):\n\n${JSON.stringify(snapshot, null, 2)}`
+  );
+}
 
-  const msg = await anthropic.messages.create({
-    model: OPUS_MODEL,
-    max_tokens: 2000,
-    system: SYSTEM_PROMPT,
-    messages: [
-      {
-        role: 'user',
-        content: `Resumen del pipeline CRM (JSON):\n\n${JSON.stringify(snapshot, null, 2)}`,
-      },
-    ],
-  });
+/**
+ * Weekly "what did we do" analysis over the last-7-days snapshot.
+ * @param {string} apiKey
+ * @param {object} snapshot output of buildWeeklySnapshot
+ */
+export async function generateWeeklyInsights(apiKey, snapshot) {
+  return callOpusJson(
+    apiKey,
+    SYSTEM_PROMPT_SEMANAL,
+    `Resumen de actividad de la semana (JSON):\n\n${JSON.stringify(snapshot, null, 2)}`
+  );
+}
 
-  const text = msg.content
-    .filter((b) => b.type === 'text')
-    .map((b) => b.text)
-    .join('\n')
-    .trim();
-
-  let insights;
-  try {
-    // Strip accidental markdown fences if present.
-    const clean = text.replace(/^```(?:json)?/i, '').replace(/```$/, '').trim();
-    insights = JSON.parse(clean);
-  } catch {
-    insights = { narrativa: text, _parseError: true };
-  }
-
-  return { modelo: OPUS_MODEL, insights };
+/**
+ * Cumulative analysis produced by merging the previous cumulative report with
+ * the latest weekly report only (no full historical re-analysis).
+ * @param {string} apiKey
+ * @param {object|null} prevCumulativeInsights previous cumulative insights (or null on first run)
+ * @param {object} weeklyReport compact weekly report to merge in
+ */
+export async function generateCumulativeInsights(apiKey, prevCumulativeInsights, weeklyReport) {
+  const userContent =
+    `Reporte acumulado ANTERIOR (JSON, puede ser null):\n\n${JSON.stringify(prevCumulativeInsights ?? null, null, 2)}\n\n` +
+    `Reporte de la SEMANA mas reciente (JSON):\n\n${JSON.stringify(weeklyReport, null, 2)}`;
+  return callOpusJson(apiKey, SYSTEM_PROMPT_ACUMULADO, userContent);
 }

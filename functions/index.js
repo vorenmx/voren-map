@@ -5,7 +5,12 @@ import { defineSecret } from 'firebase-functions/params';
 import admin from 'firebase-admin';
 import { GeoPoint } from 'firebase-admin/firestore';
 import Papa from 'papaparse';
-import { buildCrmSnapshot, generateInsights } from './crmInsights.js';
+import {
+  buildCrmSnapshot,
+  buildWeeklySnapshot,
+  generateWeeklyInsights,
+  generateCumulativeInsights,
+} from './crmInsights.js';
 import { applyMovement } from './inventory.js';
 import { publishItemToCatalog } from './catalog.js';
 import { findDuplicates, chooseKeeper } from './dedupe.js';
@@ -25,19 +30,41 @@ function isAllowedEmail(email) {
 }
 
 /**
- * Verifies a Firebase ID token from the Authorization header and enforces the
- * @voren.com.mx domain. Returns the decoded token, or writes an error response
- * and returns null.
+ * Reads the Firebase ID token from the `__session` cookie. Firebase Hosting
+ * rewrites to functions strip the Authorization header (and every cookie except
+ * `__session`), so same-origin ERP calls carry the token here instead.
+ */
+function getSessionToken(req) {
+  const raw = req.headers.cookie;
+  if (!raw) return null;
+  for (const part of raw.split(';')) {
+    const eq = part.indexOf('=');
+    if (eq === -1) continue;
+    if (part.slice(0, eq).trim() === '__session') {
+      return decodeURIComponent(part.slice(eq + 1).trim());
+    }
+  }
+  return null;
+}
+
+/**
+ * Verifies a Firebase ID token and enforces the @voren.com.mx domain. The token
+ * comes from the Authorization header (direct calls / local dev) or, when the
+ * request is proxied through Hosting, from the `__session` cookie. Returns the
+ * decoded token, or writes an error response and returns null.
  */
 async function verifyCaller(req, res) {
   const authHeader = req.headers.authorization;
-  if (!authHeader?.startsWith('Bearer ')) {
-    res.status(401).json({ error: 'Unauthorized: missing Bearer token' });
+  const idToken = authHeader?.startsWith('Bearer ')
+    ? authHeader.split('Bearer ')[1]
+    : getSessionToken(req);
+  if (!idToken) {
+    res.status(401).json({ error: 'Unauthorized: missing credentials' });
     return null;
   }
   let decoded;
   try {
-    decoded = await getAuth().verifyIdToken(authHeader.split('Bearer ')[1]);
+    decoded = await getAuth().verifyIdToken(idToken);
   } catch {
     res.status(403).json({ error: 'Forbidden: invalid or expired token' });
     return null;
@@ -342,6 +369,17 @@ export const evitarDuplicadoTienda = onDocumentCreated(
       const keeperId = chooseKeeper([{ id, data: cand }, ...dups]);
       if (keeperId === id) return; // este doc es el que se conserva; los otros se auto-eliminan
 
+      // Red de seguridad: nunca borrar una tienda que ya tiene una visita
+      // registrada (visited_status). Evita destruir un lead real por un falso
+      // positivo del detector de duplicados.
+      const leadSnap = await getDb().collection(VISITED_STORES).doc(id).get();
+      if (leadSnap.exists && leadSnap.data()?.visited_status) {
+        console.warn(
+          `evitarDuplicadoTienda: ${id} parece duplicado de ${keeperId} pero tiene visita registrada; NO se elimina.`
+        );
+        return;
+      }
+
       const motivo = dups[0].on;
       await getDb().collection(COLLECTION).doc(id).delete();
       await getDb().collection(VISITED_STORES).doc(id).delete().catch(() => {});
@@ -386,10 +424,17 @@ export const inicializarLeadCrm = onDocumentWritten(
 
 // ── CRM AI insights (Anthropic Opus) ───────────────────────────────────────
 
-async function runCrmInsights() {
+const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
+
+/**
+ * Weekly "what did we do" report over the last 7 days. Stored in
+ * `crm_semanal/{YYYY-MM-DD}`.
+ */
+async function runWeeklyInsights() {
   const db = getDb();
-  const snapshot = await buildCrmSnapshot(db);
-  const { modelo, insights } = await generateInsights(ANTHROPIC_API_KEY.value(), snapshot);
+  const sinceMs = Date.now() - WEEK_MS;
+  const snapshot = await buildWeeklySnapshot(db, sinceMs);
+  const { modelo, insights } = await generateWeeklyInsights(ANTHROPIC_API_KEY.value(), snapshot);
 
   const fecha = new Date().toISOString().slice(0, 10);
   const payload = {
@@ -398,13 +443,105 @@ async function runCrmInsights() {
     estadisticas: snapshot,
     insights,
   };
-  await db.collection('crm_insights').doc(fecha).set(payload, { merge: true });
+  await db.collection('crm_semanal').doc(fecha).set(payload, { merge: true });
   return payload;
 }
 
 /**
- * On-demand CRM analysis. Auth: Authorization: Bearer <Firebase ID token>.
- * Response: the stored insights document.
+ * Cumulative report produced by LLM-merging the previous cumulative report with
+ * the latest weekly one (no full historical re-analysis). Current pipeline
+ * totals are attached via a cheap aggregation (no extra LLM call) so the health
+ * pills stay accurate. Stored in `crm_acumulado/{YYYY-MM-DD}`.
+ */
+async function runCumulativeInsights(weeklyPayload) {
+  const db = getDb();
+  const fecha = new Date().toISOString().slice(0, 10);
+
+  // Previous cumulative = latest doc from a *different* day, so same-day
+  // regenerations don't double-count semanasIncluidas.
+  const prevSnap = await db
+    .collection('crm_acumulado')
+    .orderBy('generadoEn', 'desc')
+    .limit(2)
+    .get();
+  const prevDoc = prevSnap.docs.find((d) => d.id !== fecha);
+  const prevInsights = prevDoc ? prevDoc.data().insights || null : null;
+
+  const weeklyForMerge = {
+    ventana: weeklyPayload.estadisticas?.ventana,
+    insights: weeklyPayload.insights,
+    numeros: {
+      actividad: weeklyPayload.estadisticas?.actividad,
+      leadsTocados: weeklyPayload.estadisticas?.leadsTocados?.total,
+      nuevos: weeklyPayload.estadisticas?.leadsTocados?.nuevos,
+      ganados: weeklyPayload.estadisticas?.ganados?.total,
+      perdidos: weeklyPayload.estadisticas?.perdidos?.total,
+      valorGanado: weeklyPayload.estadisticas?.ganados?.valorEstimado,
+    },
+  };
+
+  const { modelo, insights } = await generateCumulativeInsights(
+    ANTHROPIC_API_KEY.value(),
+    prevInsights,
+    weeklyForMerge
+  );
+
+  // Cheap full aggregation (no LLM) for accurate current totals.
+  const estadisticas = await buildCrmSnapshot(db);
+
+  const payload = {
+    generadoEn: new Date().toISOString(),
+    modelo,
+    estadisticas,
+    insights,
+  };
+  await db.collection('crm_acumulado').doc(fecha).set(payload, { merge: true });
+  return payload;
+}
+
+/**
+ * On-demand CRM analysis via Firestore job queue. The ERP "Regenerar" button
+ * creates a doc here; procesarAnalisisCrmJob runs the analysis server-side.
+ * Avoids HTTP/IAM issues with private functions under Domain Restricted Sharing.
+ */
+export const procesarAnalisisCrmJob = onDocumentCreated(
+  {
+    document: 'crm_analysis_jobs/{jobId}',
+    secrets: [ANTHROPIC_API_KEY],
+    timeoutSeconds: 300,
+    memory: '512MiB',
+  },
+  async (event) => {
+    const snap = event.data;
+    if (!snap) return;
+    const ref = snap.ref;
+    const data = snap.data();
+    if (data?.status !== 'pending') return;
+
+    await ref.update({ status: 'running', startedAt: new Date().toISOString() });
+    try {
+      const semanal = await runWeeklyInsights();
+      const acumulado = await runCumulativeInsights(semanal);
+      await ref.update({
+        status: 'done',
+        finishedAt: new Date().toISOString(),
+        semanalFecha: semanal.generadoEn?.slice(0, 10),
+        acumuladoFecha: acumulado.generadoEn?.slice(0, 10),
+      });
+    } catch (err) {
+      console.error('procesarAnalisisCrmJob error:', err);
+      await ref.update({
+        status: 'error',
+        error: err.message,
+        finishedAt: new Date().toISOString(),
+      });
+    }
+  }
+);
+
+/**
+ * Legacy HTTP endpoint (curl / direct calls). Auth: Bearer token or __session
+ * cookie. The ERP UI uses the Firestore job queue instead (see above).
  */
 export const generarAnalisisCrm = onRequest(
   {
@@ -419,8 +556,9 @@ export const generarAnalisisCrm = onRequest(
   async (req, res) => {
     if (!(await verifyCaller(req, res))) return;
     try {
-      const payload = await runCrmInsights();
-      res.json({ success: true, ...payload });
+      const semanal = await runWeeklyInsights();
+      const acumulado = await runCumulativeInsights(semanal);
+      res.json({ success: true, semanal, acumulado });
     } catch (err) {
       console.error('generarAnalisisCrm error:', err);
       res.status(500).json({ error: err.message });
@@ -429,7 +567,8 @@ export const generarAnalisisCrm = onRequest(
 );
 
 /**
- * Weekly CRM analysis — Mondays 08:00 Mexico City time.
+ * Weekly CRM analysis — Mondays 08:00 Mexico City time. Produces the weekly
+ * report and updates the cumulative report.
  */
 export const analisisCrmProgramado = onSchedule(
   {
@@ -441,8 +580,11 @@ export const analisisCrmProgramado = onSchedule(
   },
   async () => {
     try {
-      const payload = await runCrmInsights();
-      console.log(`analisisCrmProgramado: análisis guardado (${payload.modelo})`);
+      const semanal = await runWeeklyInsights();
+      const acumulado = await runCumulativeInsights(semanal);
+      console.log(
+        `analisisCrmProgramado: semanal+acumulado guardados (${acumulado.modelo})`
+      );
     } catch (err) {
       console.error('analisisCrmProgramado error:', err);
     }

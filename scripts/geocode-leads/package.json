@@ -1,0 +1,15 @@
+{
+  "name": "geocode-leads",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Reusable tool: finds visited_stores leads with no map pin (or no coordinates) and creates/completes their shops doc via Google Places + Geocoding, so every lead shows up on the map.",
+  "scripts": {
+    "dryrun": "node geocode-and-pin.mjs",
+    "apply": "node geocode-and-pin.mjs --apply"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.7.0",
+    "string-similarity": "^4.0.4"
+  }
+}

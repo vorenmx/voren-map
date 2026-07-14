@@ -40,9 +40,41 @@ service cloud.firestore {
     // Visited stores — also the CRM lead record (extended with pipeline fields).
     // Owners can manage their own docs; sales/managers can update CRM fields.
     match /visited_stores/{docId} {
+      // Status of the visit BEFORE this write ('' when the doc is new).
+      function priorStatus() {
+        return resource != null ? resource.data.get('visited_status', '') : '';
+      }
+      // True only when this write transitions the doc INTO 'visita_exitosa'.
+      // Later edits of an already-exitosa doc are NOT re-validated, so legacy
+      // leads missing fields can still move through the CRM pipeline.
+      function estableceExitosa() {
+        return request.resource.data.get('visited_status', '') == 'visita_exitosa'
+          && priorStatus() != 'visita_exitosa';
+      }
+      // A complete evaluation must accompany a store marked as a successful visit.
+      function evaluacionCompleta(d) {
+        return d.get('responsable_compras_nombre', '') is string
+          && d.get('responsable_compras_nombre', '').trim() != ''
+          && d.get('responsable_compras_telefono', '') is string
+          && d.get('responsable_compras_telefono', '').trim() != ''
+          && d.get('score_probabilidad', null) is number
+          && d.get('tamano_tienda', '') != ''
+          && d.get('credito', '') != ''
+          && d.get('metodo_pago', []) is list
+          && d.get('metodo_pago', []).size() > 0
+          && d.get('entrega', '') != ''
+          && (
+            (d.get('principal_proveedor', []) is list && d.get('principal_proveedor', []).size() > 0)
+            || (d.get('principal_proveedor', '') is string && d.get('principal_proveedor', '') != '')
+          )
+          && d.get('contacto_personal', '') != '';
+      }
+
       allow read:   if isAllowedGoogleEmail();
-      allow create: if isAllowedGoogleEmail() && request.resource.data.userId == request.auth.uid;
-      allow update: if isAllowedGoogleEmail() && (docOwner() == request.auth.uid || esVentas());
+      allow create: if isAllowedGoogleEmail() && request.resource.data.userId == request.auth.uid
+        && (!estableceExitosa() || evaluacionCompleta(request.resource.data));
+      allow update: if isAllowedGoogleEmail() && (docOwner() == request.auth.uid || esVentas())
+        && (!estableceExitosa() || evaluacionCompleta(request.resource.data));
       allow delete: if isAllowedGoogleEmail() && (docOwner() == request.auth.uid || esAdminOGerente());
 
       // CRM activity log — append-only per lead
@@ -98,6 +130,24 @@ service cloud.firestore {
     match /crm_insights/{fecha} {
       allow read:  if isAllowedGoogleEmail();
       allow write: if false;
+    }
+    // Weekly ("what did we do") report — written by Cloud Functions only.
+    match /crm_semanal/{fecha} {
+      allow read:  if isAllowedGoogleEmail();
+      allow write: if false;
+    }
+    // Cumulative report — written by Cloud Functions only.
+    match /crm_acumulado/{fecha} {
+      allow read:  if isAllowedGoogleEmail();
+      allow write: if false;
+    }
+    // On-demand analysis jobs — clients create; Cloud Functions update status.
+    match /crm_analysis_jobs/{jobId} {
+      allow read:  if isAllowedGoogleEmail();
+      allow create: if isAllowedGoogleEmail()
+        && request.resource.data.status == 'pending'
+        && request.resource.data.requestedBy == request.auth.token.email.lower();
+      allow update, delete: if false;
     }
 
     // ── ERP: inventory / almacen ────────────────────────────────────────────

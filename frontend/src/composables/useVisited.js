@@ -50,7 +50,10 @@ export function useVisited() {
   // ── Exclusive visited-status select ────────────────────────
   // visited_status: 'visita_exitosa' | 'cerrada' | 'cerrada_permanentemente'
   // Selecting the active one deselects it (→ no_visitada).
-  async function setExclusiveStatus(shop, visitedStatus) {
+  // `surveyPayload` lets the caller merge evaluation fields into the SAME write
+  // that sets the status. This is required for 'visita_exitosa' so the doc
+  // satisfies the server-side completeness rule atomically (no save race).
+  async function setExclusiveStatus(shop, visitedStatus, surveyPayload = null) {
     const id = shop.id;
     if (!id) return;
 
@@ -104,6 +107,7 @@ export function useVisited() {
 
       const payload = {
         ...shopMeta,
+        ...(surveyPayload && typeof surveyPayload === 'object' ? surveyPayload : {}),
         status:         'visitada',
         visited_status: visitedStatus,
         statusAt:       serverTimestamp(),

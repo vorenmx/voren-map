@@ -73,7 +73,10 @@ let cargado = false;
 export function useCrm() {
   async function fetchLeads(force = false) {
     if (cargado && !force) return;
-    cargando.value = true;
+    // Only show the blocking spinner on the very first load; background
+    // refreshes keep the current board visible while data updates.
+    const firstLoad = leads.value.length === 0;
+    if (firstLoad) cargando.value = true;
     try {
       // Leads = visited stores marked as successful visits (they carry scores).
       const q = query(collection(db, 'visited_stores'), where('visited_status', '==', 'visita_exitosa'));

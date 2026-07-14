@@ -153,6 +153,33 @@
         <div class="section survey-section">
           <div class="section-title">Evaluación</div>
 
+          <!-- Responsable de compras -->
+          <div class="chip-row">
+            <span class="score-label">Nombre del responsable de compras</span>
+            <input
+              class="text-input"
+              type="text"
+              v-model="responsableNombreLocal"
+              placeholder="Escribe el nombre…"
+              :disabled="surveyingSaving"
+              @blur="handleResponsableNombreBlur"
+            />
+          </div>
+
+          <div class="chip-row">
+            <span class="score-label">Número de teléfono</span>
+            <input
+              class="text-input"
+              type="tel"
+              v-model="responsableTelefonoLocal"
+              placeholder="Escribe el teléfono…"
+              :disabled="surveyingSaving"
+              @blur="handleResponsableTelefonoBlur"
+            />
+          </div>
+
+          <div class="survey-divider"></div>
+
           <!-- Scores 1-10 -->
           <div v-for="score in SURVEY_SCORES" :key="score.field" class="score-row">
             <span class="score-label">
@@ -203,9 +230,9 @@
             </div>
           </div>
 
-          <!-- Método de pago (multi) -->
+          <!-- Método de cobro (multi) -->
           <div class="chip-row">
-            <span class="score-label">Método de pago</span>
+            <span class="score-label">Método de Cobro</span>
             <div class="chip-group">
               <button
                 v-for="opt in PAGO_OPTS" :key="opt"
@@ -341,10 +368,7 @@ defineEmits(['close']);
 
 // ── Survey constants ─────────────────────────────────────
 const SURVEY_SCORES = [
-  { field: 'score_general',      label: 'Score general',        help: '¿Qué tan productiva fue la visita? 10 es lo mejor' },
-  { field: 'score_pains',        label: 'Pains',                help: '¿Qué tan fuertes son los pains del cliente? 10 es lo más fuerte' },
   { field: 'score_probabilidad', label: 'Prob. de venta',       help: '¿Qué tan probable es que nos compre? 10 es que nos compra seguro' },
-  { field: 'score_satisfaccion', label: 'Satisf. proveedores',  help: '¿Qué tan satisfecho está con sus proveedores? 10 es máxima satisfacción' },
 ];
 const TAMANO_OPTS    = ['Pequeña', 'Mediana', 'Grande', 'Muy grande'];
 const TAMANO_HELP    = 'Pequeña: menos de 5 empleados · Mediana: 5–10 · Grande: 10–20 · Muy grande: más de 20';
@@ -360,17 +384,19 @@ const PROVEEDOR_OPTS = [
 ];
 
 const SURVEY_LABELS = {
-  score_general:      'Score general',
-  score_pains:        'Pains',
-  score_probabilidad: 'Prob. de venta',
-  score_satisfaccion: 'Satisf. proveedores',
-  tamano_tienda:      'Tamaño tienda',
-  credito:            'Crédito',
-  metodo_pago:        'Método de pago',
-  entrega:            'Entrega',
-  principal_proveedor:'Proveedor principal',
-  contacto_personal:  'Contacto personal del tomador de decisión',
-  comentarios:        'Comentarios',
+  score_general:                'Score general',
+  score_pains:                  'Pains',
+  score_probabilidad:           'Prob. de venta',
+  score_satisfaccion:           'Satisf. proveedores',
+  tamano_tienda:                'Tamaño tienda',
+  credito:                      'Crédito',
+  metodo_pago:                  'Método de Cobro',
+  entrega:                      'Entrega',
+  principal_proveedor:          'Proveedor principal',
+  contacto_personal:            'Contacto personal del tomador de decisión',
+  comentarios:                  'Comentarios',
+  responsable_compras_nombre:   'Nombre del responsable de compras',
+  responsable_compras_telefono: 'Número de teléfono',
 };
 
 const { visitedIds, visitedStatusMap, visitedShops, setExclusiveStatus, updateSurvey } = useVisited();
@@ -384,6 +410,8 @@ const tooltipText       = ref('');
 const tooltipX          = ref(0);
 const tooltipY          = ref(0);
 const comentariosLocal  = ref('');
+const responsableNombreLocal    = ref('');
+const responsableTelefonoLocal  = ref('');
 
 function showTooltip(text, event) {
   const rect = event.currentTarget.getBoundingClientRect();
@@ -508,16 +536,32 @@ const activityLogs = computed(() => {
 watch(() => props.shop?.id, () => {
   logOpen.value = false;
   comentariosLocal.value = visitedEntry.value?.comentarios ?? '';
+  responsableNombreLocal.value = visitedEntry.value?.responsable_compras_nombre ?? '';
+  responsableTelefonoLocal.value = visitedEntry.value?.responsable_compras_telefono ?? '';
 });
 
 watch(visitedEntry, (entry) => {
   comentariosLocal.value = entry?.comentarios ?? '';
+  responsableNombreLocal.value = entry?.responsable_compras_nombre ?? '';
+  responsableTelefonoLocal.value = entry?.responsable_compras_telefono ?? '';
 }, { immediate: true });
 
 async function handleComentariosBlur() {
   const saved = visitedEntry.value?.comentarios ?? '';
   if (comentariosLocal.value === saved) return;
   await updateSurvey(props.shop.id, 'comentarios', comentariosLocal.value);
+}
+
+async function handleResponsableNombreBlur() {
+  const saved = visitedEntry.value?.responsable_compras_nombre ?? '';
+  if (responsableNombreLocal.value === saved) return;
+  await updateSurvey(props.shop.id, 'responsable_compras_nombre', responsableNombreLocal.value);
+}
+
+async function handleResponsableTelefonoBlur() {
+  const saved = visitedEntry.value?.responsable_compras_telefono ?? '';
+  if (responsableTelefonoLocal.value === saved) return;
+  await updateSurvey(props.shop.id, 'responsable_compras_telefono', responsableTelefonoLocal.value);
 }
 
 const typeClass = computed(() => {
@@ -1139,6 +1183,25 @@ const sourceLabel = computed(() => {
   outline: none;
   border-color: rgba(99,179,237,0.4);
 }
+
+.text-input {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 7px;
+  color: #e2e8f0;
+  font-size: 12px;
+  font-family: inherit;
+  padding: 8px 10px;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+.text-input::placeholder { color: #475569; }
+.text-input:focus {
+  outline: none;
+  border-color: rgba(99,179,237,0.4);
+}
+.text-input:disabled { opacity: 0.5; cursor: default; }
 
 .survey-saving {
   font-size: 11px;

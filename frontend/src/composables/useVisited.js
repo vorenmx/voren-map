@@ -2,6 +2,7 @@ import { ref } from 'vue';
 import {
   collection,
   doc,
+  deleteDoc,
   getDocs,
   setDoc,
   serverTimestamp,
@@ -58,13 +59,9 @@ export function useVisited() {
     const alreadySet         = isCurrentlyVisited && currentVStatus === visitedStatus;
 
     if (alreadySet) {
-      // Deselect
-      await setDoc(doc(db, 'visited_stores', id), {
-        userId:         auth.currentUser?.uid ?? null,
-        status:         'no_visitada',
-        visited_status: null,
-        statusAt:       serverTimestamp(),
-      }, { merge: true });
+      // Deselect — unmarking a visit removes the record entirely instead of
+      // just clearing its status, so the shop goes back to a clean slate.
+      await deleteDoc(doc(db, 'visited_stores', id));
 
       const newVIds = new Set(visitedIds.value);
       newVIds.delete(id);
@@ -74,7 +71,7 @@ export function useVisited() {
       newMap.delete(id);
       visitedStatusMap.value = newMap;
 
-      _upsertLocal(id, { status: 'no_visitada', visited_status: null });
+      _removeLocal(id);
     } else {
       // New selection — also record visitedAt if this is the first-ever visit
       const existingDoc = visitedShops.value.find((s) => s.id === id);
@@ -236,6 +233,10 @@ export function useVisited() {
     } else {
       visitedShops.value = [...visitedShops.value, { id, ...patch }];
     }
+  }
+
+  function _removeLocal(id) {
+    visitedShops.value = visitedShops.value.filter((s) => s.id !== id);
   }
 
   return {

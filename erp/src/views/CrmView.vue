@@ -74,30 +74,32 @@
           <span>{{ etapa.label }}</span>
           <span class="col-count">{{ porEtapa(etapa.id).length }}</span>
         </div>
-        <div class="col-body">
+        <div
+          class="col-body"
+          :class="{ 'drag-over': overEtapa === etapa.id }"
+          @dragover.prevent="onDragOver(etapa.id)"
+          @dragleave="onDragLeave(etapa.id)"
+          @drop.prevent="onDrop(etapa.id)"
+        >
           <div
             v-for="lead in porEtapa(etapa.id)"
             :key="lead.id"
             class="lead"
+            :class="{ dragging: draggingLead && draggingLead.id === lead.id }"
+            draggable="true"
+            @dragstart="onDragStart(lead, $event)"
+            @dragend="onDragEnd"
             @click="abrir(lead)"
           >
             <div class="lead-name">{{ lead.name || lead.company_name || lead.id }}</div>
             <div class="lead-meta">
               <span class="pill tipo" :class="tipo(lead)">{{ TIPO_NEGOCIO[tipo(lead)] }}</span>
-              <span v-if="lead.score_general != null" class="pill score" :class="banda(lead.score_general)">
-                Score {{ lead.score_general }}
+              <span v-if="prob(lead) != null" class="pill score" :class="banda(prob(lead))">
+                Prob. de venta {{ prob(lead) }}
               </span>
               <span v-if="lead.valor_estimado" class="dim">{{ money(lead.valor_estimado) }}</span>
             </div>
-            <div class="lead-owner dim">{{ lead.crm_owner_email || lead.visitedByEmail || 'Sin asignar' }}</div>
-            <select
-              class="select lead-move"
-              :value="lead.pipeline_stage"
-              @click.stop
-              @change="mover(lead, $event.target.value)"
-            >
-              <option v-for="e in ETAPAS" :key="e.id" :value="e.id">{{ e.label }}</option>
-            </select>
+            <span class="pill lead-owner">{{ lead.crm_owner_email || lead.visitedByEmail || 'Sin asignar' }}</span>
           </div>
         </div>
       </div>
@@ -129,6 +131,8 @@ const probMin = ref(null);
 const probMax = ref(null);
 const seleccionado = ref(null);
 const resumen = ref({});
+const draggingLead = ref(null);
+const overEtapa = ref(null);
 
 onMounted(async () => {
   await fetchLeads();
@@ -226,6 +230,29 @@ function money(n) {
 async function mover(lead, etapa) { await cambiarEtapa(lead.id, etapa); }
 function abrir(lead) { seleccionado.value = lead; }
 function onUpdated() { /* leads array is mutated in place by the composable */ }
+
+function onDragStart(lead, e) {
+  draggingLead.value = lead;
+  e.dataTransfer.effectAllowed = 'move';
+  e.dataTransfer.setData('text/plain', lead.id);
+}
+function onDragEnd() {
+  draggingLead.value = null;
+  overEtapa.value = null;
+}
+function onDragOver(etapaId) {
+  overEtapa.value = etapaId;
+}
+function onDragLeave(etapaId) {
+  if (overEtapa.value === etapaId) overEtapa.value = null;
+}
+async function onDrop(etapaId) {
+  const lead = draggingLead.value;
+  overEtapa.value = null;
+  draggingLead.value = null;
+  if (!lead || lead.pipeline_stage === etapaId) return;
+  await mover(lead, etapaId);
+}
 </script>
 
 <style scoped>
@@ -242,13 +269,14 @@ function onUpdated() { /* leads array is mutated in place by the composable */ }
 .col { flex: 0 0 240px; background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius-lg); }
 .col-head { display: flex; justify-content: space-between; padding: 10px 12px; border-bottom: 1px solid var(--border); font-weight: 600; font-size: 13px; }
 .col-count { color: var(--text-dim); }
-.col-body { padding: 8px; display: flex; flex-direction: column; gap: 8px; min-height: 40px; max-height: calc(100vh - 220px); overflow-y: auto; }
-.lead { background: var(--panel-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px; cursor: pointer; transition: border-color 0.15s; }
+.col-body { padding: 8px; display: flex; flex-direction: column; gap: 8px; min-height: 60px; max-height: calc(100vh - 220px); overflow-y: auto; border-radius: var(--radius); transition: background-color 0.15s, box-shadow 0.15s; }
+.col-body.drag-over { background-color: rgba(125, 211, 252, 0.08); box-shadow: inset 0 0 0 2px rgba(125, 211, 252, 0.4); }
+.lead { background: var(--panel-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px; cursor: grab; transition: border-color 0.15s, opacity 0.15s, transform 0.15s; }
 .lead:hover { border-color: var(--border-strong); }
+.lead.dragging { opacity: 0.4; cursor: grabbing; }
 .lead-name { font-weight: 600; font-size: 13px; margin-bottom: 6px; text-transform: uppercase; }
 .lead-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
-.lead-owner { font-size: 11px; margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.lead-move { font-size: 11px; padding: 4px 6px; }
+.lead-owner { max-width: 100%; font-size: 11px; color: var(--text-muted); background: rgba(255, 255, 255, 0.1); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .score.alto { color: var(--success); border-color: rgba(52,211,153,0.3); }
 .score.medio { color: var(--warning); border-color: rgba(251,191,36,0.3); }
 .score.bajo { color: var(--danger); border-color: rgba(248,113,113,0.3); }

@@ -88,9 +88,6 @@ const ESQUEMA = [
     titulo: 'Conocer al cliente',
     guion: 'Objetivo: conocer al posible cliente encargado de las compras.',
     campos: [
-      { key: 'encargado_compras', label: '¿Quién es el encargado de compras?' },
-      { key: 'telefono_tienda', label: '¿Cuál es el teléfono de la tienda?' },
-      { key: 'num_empleados', label: '¿Cuántos empleados son?', tipo: 'number' },
       { key: 'ventas_aproximadas', label: 'Ventas aproximadas o ¿cuántas motos reparan a la semana?' },
     ],
   },
@@ -163,6 +160,11 @@ const mensaje = ref('');
 onMounted(() => {
   const previo = props.cliente.primera_visita;
   if (previo) Object.assign(form, previo);
+  // "Encargado de compras" y "teléfono de la tienda" ya se capturan en la
+  // encuesta del mapa (responsable_compras_nombre/telefono) — se heredan
+  // aquí en vez de pedirlos de nuevo en el acercamiento inicial.
+  form.encargado_compras = props.cliente.responsable_compras_nombre || form.encargado_compras || '';
+  form.telefono_tienda = props.cliente.responsable_compras_telefono || form.telefono_tienda || '';
 });
 
 const ultimaActualizacion = computed(() => {

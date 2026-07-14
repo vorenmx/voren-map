@@ -136,6 +136,7 @@
 
         <!-- Actions -->
         <div class="panel-actions">
+          <p v-if="errorMsg" class="error-msg">{{ errorMsg }}</p>
           <!-- Save / unsave button -->
           <button
             class="action-btn save-btn"
@@ -208,6 +209,7 @@ const selectedCategory = ref('importance');
 const customName = ref('');
 const saving = ref(false);
 const logOpen = ref(false);
+const errorMsg = ref('');
 
 const savedEntry = computed(() => props.place ? getSaved(props.place) : null);
 
@@ -260,6 +262,7 @@ watch(
     selectedCategory.value = savedEntry.value?.category ?? 'importance';
     customName.value = savedEntry.value?.customName ?? '';
     logOpen.value = false;
+    errorMsg.value = '';
   },
   { immediate: true }
 );
@@ -276,12 +279,18 @@ watch(savedEntry, (entry) => {
 async function handleSaveToggle() {
   if (!props.place || saving.value) return;
   saving.value = true;
+  errorMsg.value = '';
   try {
     if (savedEntry.value) {
       await deletePlace(savedEntry.value.id);
     } else {
       await savePlace(props.place, description.value, selectedCategory.value, customName.value);
     }
+  } catch (e) {
+    console.error('Failed to save/unsave place:', e);
+    errorMsg.value = e?.code === 'permission-denied'
+      ? 'No tienes permiso para hacer este cambio.'
+      : 'No se pudo guardar. Intenta de nuevo.';
   } finally {
     saving.value = false;
   }
@@ -290,12 +299,18 @@ async function handleSaveToggle() {
 async function handleUpdatePlace() {
   if (!savedEntry.value || saving.value) return;
   saving.value = true;
+  errorMsg.value = '';
   try {
     await updatePlace(savedEntry.value.id, {
       description: description.value,
       category: selectedCategory.value,
       customName: customName.value,
     });
+  } catch (e) {
+    console.error('Failed to update place:', e);
+    errorMsg.value = e?.code === 'permission-denied'
+      ? 'No tienes permiso para hacer este cambio.'
+      : 'No se pudo actualizar. Intenta de nuevo.';
   } finally {
     saving.value = false;
   }
@@ -544,6 +559,16 @@ async function handleUpdatePlace() {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.error-msg {
+  margin: 0;
+  font-size: 12px;
+  color: #f87171;
+  background: rgba(239,68,68,0.08);
+  border: 1px solid rgba(239,68,68,0.25);
+  border-radius: 6px;
+  padding: 7px 10px;
 }
 
 .action-btn {

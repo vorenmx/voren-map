@@ -2,11 +2,19 @@ import { ref } from 'vue';
 import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore';
 import { db, auth } from '../firebase/config.js';
 
+// Prefer same-origin Hosting rewrite (/api/...) so the function can stay
+// private (avoids allUsers IAM / Domain Restricted Sharing deploy failures).
+// Optional VITE_FUNCTIONS_BASE_URL overrides for local/dev against a direct URL.
 const FUNCTIONS_BASE_URL = import.meta.env.VITE_FUNCTIONS_BASE_URL || '';
 
 const analisis = ref([]);       // historical crm_insights docs (newest first)
 const generando = ref(false);
 const error = ref(null);
+
+function analisisCrmUrl() {
+  if (FUNCTIONS_BASE_URL) return `${FUNCTIONS_BASE_URL}/generarAnalisisCrm`;
+  return '/api/generarAnalisisCrm';
+}
 
 export function useInsights() {
   async function fetchAnalisis() {
@@ -19,11 +27,8 @@ export function useInsights() {
     error.value = null;
     generando.value = true;
     try {
-      if (!FUNCTIONS_BASE_URL) {
-        throw new Error('VITE_FUNCTIONS_BASE_URL no está configurado.');
-      }
       const token = await auth.currentUser?.getIdToken();
-      const res = await fetch(`${FUNCTIONS_BASE_URL}/generarAnalisisCrm`, {
+      const res = await fetch(analisisCrmUrl(), {
         method: 'POST',
         headers: { Authorization: `Bearer ${token}` },
       });

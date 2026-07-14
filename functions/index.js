@@ -407,7 +407,15 @@ async function runCrmInsights() {
  * Response: the stored insights document.
  */
 export const generarAnalisisCrm = onRequest(
-  { timeoutSeconds: 300, memory: '512MiB', secrets: [ANTHROPIC_API_KEY], cors: true },
+  {
+    timeoutSeconds: 300,
+    memory: '512MiB',
+    secrets: [ANTHROPIC_API_KEY],
+    cors: true,
+    // Private: public (allUsers) invoker fails under Domain Restricted Sharing.
+    // ERP Hosting rewrites /api/generarAnalisisCrm → this function instead.
+    invoker: 'private',
+  },
   async (req, res) => {
     if (!(await verifyCaller(req, res))) return;
     try {

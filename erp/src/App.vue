@@ -13,17 +13,19 @@
       </div>
 
       <nav class="side-nav">
-        <RouterLink
-          v-for="item in nav"
-          :key="item.to"
-          :to="item.to"
-          class="side-link"
-          active-class="active"
-          @click="mobileOpen = false"
-        >
-          <span class="side-ico">{{ item.icon }}</span>
-          <span>{{ item.label }}</span>
-        </RouterLink>
+        <template v-for="item in nav" :key="item.to || item.type">
+          <div v-if="item.type === 'divider'" class="side-divider" role="separator" />
+          <RouterLink
+            v-else
+            :to="item.to"
+            class="side-link"
+            active-class="active"
+            @click="mobileOpen = false"
+          >
+            <span class="side-ico">{{ item.icon }}</span>
+            <span>{{ item.label }}</span>
+          </RouterLink>
+        </template>
       </nav>
 
       <div class="side-foot">
@@ -68,6 +70,8 @@ const nav = [
   { to: '/clientes', label: 'Clientes', icon: '🧾' },
   { to: '/equipo', label: 'Equipo', icon: '👥' },
   { to: '/almacen', label: 'Almacén', icon: '📦' },
+  { type: 'divider' },
+  { to: '/graficos', label: 'Gráficos', icon: '📊' },
   { to: '/analisis', label: 'Análisis IA', icon: '🤖' },
 ];
 
@@ -97,6 +101,9 @@ const inicial = computed(() => (userDisplayName.value || '?').charAt(0).toUpperC
 .side-logo { font-size: 22px; }
 .side-title { font-weight: 700; font-size: 15px; }
 .side-nav { flex: 1; padding: 12px 10px; display: flex; flex-direction: column; gap: 3px; }
+.side-divider {
+  height: 1px; margin: 8px 12px; background: var(--border); flex-shrink: 0;
+}
 .side-link {
   display: flex; align-items: center; gap: 11px; padding: 9px 12px;
   border-radius: var(--radius); color: var(--text-muted); font-size: 13px; font-weight: 500;

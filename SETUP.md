@@ -200,6 +200,67 @@ Firebase does not move projects between accounts. Export from the **old** projec
 
 ---
 
+## 8b. ERP app (Voren ERP)
+
+The ERP is a second Vue app in `erp/`, deployed as a **second Hosting site** in the
+same `voren-map` project. It shares Firebase Auth (`@voren.com.mx`) with the map app.
+
+### One-time hosting target setup
+
+```bash
+firebase hosting:sites:create voren-erp
+firebase target:apply hosting erp voren-erp
+firebase target:apply hosting map voren-map
+```
+
+`firebase.json` already defines the `map` and `erp` hosting targets.
+
+### Env
+
+Copy `erp/.env.example` to `erp/.env` and fill the same `VITE_FIREBASE_*` values used
+by the map app, plus `VITE_FUNCTIONS_BASE_URL` (the region host of your deployed
+functions, e.g. `https://us-central1-voren-map.cloudfunctions.net`) so the
+"Regenerar" button on the Análisis IA screen can call `generarAnalisisCrm`.
+
+### Roles
+
+Access control is driven by the `empleados` collection (also the people directory).
+Each doc is keyed by lowercased email with a `rol` field: `admin`, `gerente`,
+`ventas`, or `lectura`. The first time anyone signs in, a `lectura` record is created
+automatically; an `admin`/`gerente` can elevate roles from the **Equipo** module.
+Bootstrap the first admin by editing that doc directly in the Firestore console.
+
+### Anthropic (Análisis IA)
+
+The CRM insights functions use the Anthropic Opus API. Set the secret before deploy:
+
+```bash
+firebase functions:secrets:set ANTHROPIC_API_KEY
+# optional: override the model
+# (default is claude-opus-4-1-20250805; set ANTHROPIC_MODEL env in functions if needed)
+```
+
+### Build & deploy
+
+```bash
+cd erp && npm install && npm run build && cd ..
+firebase deploy --only hosting:erp
+firebase deploy --only functions
+```
+
+The ERP will be live at `https://voren-erp.web.app`. Add that domain under
+**Authentication → Settings → Authorized domains**.
+
+### Local dev
+
+```bash
+cd erp
+npm run dev
+# open the printed localhost URL
+```
+
+---
+
 ## 9. Local Development
 
 ```bash
@@ -220,16 +281,26 @@ firebase emulators:start --only functions,firestore,storage
 
 ```
 voren-map/
-├── frontend/              # Vue 3 + Vite app
+├── frontend/              # Vue 3 + Vite map app (Hosting target: map)
 │   ├── src/
 │   │   ├── firebase/      # Firebase SDK init
-│   │   ├── composables/   # useShops, useDeckLayers
+│   │   ├── composables/   # useShops, useDeckLayers, useVisited
 │   │   └── components/    # MapView, FilterPanel, ShopTooltip
 │   └── dist/              # Built app (gitignored)
+├── erp/                   # Vue 3 + Vite ERP app (Hosting target: erp)
+│   ├── src/
+│   │   ├── composables/   # useAuth, useCrm, useEmpleados, useInventario, useEscaner, useInsights
+│   │   ├── components/    # LeadDetalle, ItemDetalle, BarcodeScanner, BarcodeLabel
+│   │   ├── views/         # CRM, Equipo, Almacén, Análisis IA, Dashboard
+│   │   └── styles/        # theme.css (Voren design tokens)
+│   └── dist/              # Built app (gitignored)
 ├── functions/             # Firebase Cloud Functions
-│   └── index.js           # importCsv HTTP function
+│   ├── index.js           # importCsv, CRM insights, inventory, catalog triggers
+│   ├── crmInsights.js     # Anthropic Opus CRM analysis
+│   ├── inventory.js       # atomic stock movements
+│   └── catalog.js         # e-commerce catalog publisher (stub)
 ├── output/                # Generated CSVs
-├── firebase.json          # Firebase config
+├── firebase.json          # Firebase config (map + erp hosting targets)
 ├── firestore.rules        # Firestore security rules
 └── storage.rules          # Storage security rules
 ```

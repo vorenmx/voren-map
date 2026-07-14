@@ -1,13 +1,14 @@
-import { fileURLToPath } from 'node:url';
-import path from 'node:path';
 import { onRequest } from 'firebase-functions/v2/https';
-import { onDocumentWritten } from 'firebase-functions/v2/firestore';
+import { onDocumentWritten, onDocumentCreated } from 'firebase-functions/v2/firestore';
 import { onSchedule } from 'firebase-functions/v2/scheduler';
 import { defineSecret } from 'firebase-functions/params';
 import admin from 'firebase-admin';
 import { GeoPoint } from 'firebase-admin/firestore';
 import Papa from 'papaparse';
-import { createOrUpdateLead, deleteLead } from './odooClient.js';
+import { buildCrmSnapshot, generateInsights } from './crmInsights.js';
+import { applyMovement } from './inventory.js';
+import { publishItemToCatalog } from './catalog.js';
+import { findDuplicates, chooseKeeper } from './dedupe.js';
 
 const getAuth    = () => admin.auth();
 const getStorage = () => admin.storage();
@@ -15,16 +16,38 @@ const getStorage = () => admin.storage();
 const PROJECT_ID =
   process.env.GCLOUD_PROJECT || process.env.GOOGLE_CLOUD_PROJECT || 'voren-map';
 
-// ── Odoo secrets (set via: firebase functions:secrets:set ODOO_URL etc.) ──
-const ODOO_URL     = defineSecret('ODOO_URL');
-const ODOO_DB      = defineSecret('ODOO_DB');
-const ODOO_API_KEY = defineSecret('ODOO_API_KEY');
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+// ── Secrets ───────────────────────────────────────────────────────────────
+const ANTHROPIC_API_KEY = defineSecret('ANTHROPIC_API_KEY');
 
 const ALLOWED_DOMAIN = 'voren.com.mx';
 function isAllowedEmail(email) {
   return typeof email === 'string' && email.toLowerCase().trim().endsWith(`@${ALLOWED_DOMAIN}`);
+}
+
+/**
+ * Verifies a Firebase ID token from the Authorization header and enforces the
+ * @voren.com.mx domain. Returns the decoded token, or writes an error response
+ * and returns null.
+ */
+async function verifyCaller(req, res) {
+  const authHeader = req.headers.authorization;
+  if (!authHeader?.startsWith('Bearer ')) {
+    res.status(401).json({ error: 'Unauthorized: missing Bearer token' });
+    return null;
+  }
+  let decoded;
+  try {
+    decoded = await getAuth().verifyIdToken(authHeader.split('Bearer ')[1]);
+  } catch {
+    res.status(403).json({ error: 'Forbidden: invalid or expired token' });
+    return null;
+  }
+  const callerEmail = decoded.email?.toLowerCase()?.trim();
+  if (!callerEmail || !isAllowedEmail(callerEmail)) {
+    res.status(403).json({ error: 'Forbidden: account not authorized' });
+    return null;
+  }
+  return decoded;
 }
 
 // Firestore triggers can leave only *named* apps registered (admin.apps.length > 0)
@@ -70,24 +93,7 @@ function parseInteger(val) {
 export const importCsv = onRequest(
   { timeoutSeconds: 540, memory: '1GiB' },
   async (req, res) => {
-    // Verify Firebase Auth ID token — only authenticated users may trigger imports
-    const authHeader = req.headers.authorization;
-    if (!authHeader?.startsWith('Bearer ')) {
-      res.status(401).json({ error: 'Unauthorized: missing Bearer token' });
-      return;
-    }
-    let decoded;
-    try {
-      decoded = await getAuth().verifyIdToken(authHeader.split('Bearer ')[1]);
-    } catch {
-      res.status(403).json({ error: 'Forbidden: invalid or expired token' });
-      return;
-    }
-    const callerEmail = decoded.email?.toLowerCase()?.trim();
-    if (!callerEmail || !isAllowedEmail(callerEmail)) {
-      res.status(403).json({ error: 'Forbidden: account not authorized for import' });
-      return;
-    }
+    if (!(await verifyCaller(req, res))) return;
 
     const filePath = req.query.file || 'csvs/merged.csv';
     const clearFirst = req.query.clear === 'true';
@@ -174,25 +180,74 @@ export const importCsv = onRequest(
 
       console.log(`Writing ${documents.length} valid documents to Firestore...`);
 
-      // 5. Batch write in chunks of BATCH_SIZE
+      // 5. Resolve target doc for each row to AVOID duplicates on re-import.
+      // Priority: google_place_id -> denue_id -> name+municipality+phone(10).
+      // Existing docs are matched and merged (CRM/pipeline fields preserved).
+      const norm = (s) => String(s || '').trim().toLowerCase().replace(/\s+/g, ' ');
+      const phone10 = (s) => {
+        const d = String(s || '').replace(/\D/g, '');
+        return d.length >= 10 ? d.slice(-10) : '';
+      };
+
+      const existingSnap = await getDb()
+        .collection(COLLECTION)
+        .select('google_place_id', 'denue_id', 'name', 'municipality', 'phone')
+        .get();
+      const byPlace = new Map();
+      const byDenue = new Map();
+      const byComposite = new Map();
+      existingSnap.forEach((d) => {
+        const pid = d.get('google_place_id');
+        const did = d.get('denue_id');
+        const ph = phone10(d.get('phone'));
+        if (pid) byPlace.set(pid, d.id);
+        if (did) byDenue.set(did, d.id);
+        if (ph) byComposite.set(`${norm(d.get('name'))}|${norm(d.get('municipality'))}|${ph}`, d.id);
+      });
+
+      const resolved = new Map(); // docId -> document (last row wins for same key)
+      let newCount = 0;
+      let matchedCount = 0;
+      for (const doc of documents) {
+        const ph = phone10(doc.phone);
+        const composite = ph ? `${norm(doc.name)}|${norm(doc.municipality)}|${ph}` : '';
+        let id = null;
+        if (doc.google_place_id && byPlace.has(doc.google_place_id)) id = byPlace.get(doc.google_place_id);
+        else if (doc.denue_id && byDenue.has(doc.denue_id)) id = byDenue.get(doc.denue_id);
+        else if (composite && byComposite.has(composite)) id = byComposite.get(composite);
+
+        if (id) {
+          matchedCount++;
+        } else {
+          id = getDb().collection(COLLECTION).doc().id;
+          newCount++;
+          if (doc.google_place_id) byPlace.set(doc.google_place_id, id);
+          if (doc.denue_id) byDenue.set(doc.denue_id, id);
+          if (composite) byComposite.set(composite, id);
+        }
+        resolved.set(id, doc);
+      }
+
+      // 6. Batch write (merge) in chunks of BATCH_SIZE
+      const entries = [...resolved.entries()];
       let written = 0;
-      for (let i = 0; i < documents.length; i += BATCH_SIZE) {
+      for (let i = 0; i < entries.length; i += BATCH_SIZE) {
         const batch = getDb().batch();
-        const chunk = documents.slice(i, i + BATCH_SIZE);
-        chunk.forEach((doc) => {
-          const ref = getDb().collection(COLLECTION).doc();
-          batch.set(ref, doc);
+        entries.slice(i, i + BATCH_SIZE).forEach(([id, doc]) => {
+          batch.set(getDb().collection(COLLECTION).doc(id), doc, { merge: true });
         });
         await batch.commit();
-        written += chunk.length;
-        console.log(`  Written ${written}/${documents.length}`);
+        written += Math.min(BATCH_SIZE, entries.length - i);
+        console.log(`  Written ${written}/${entries.length}`);
       }
 
       res.json({
         success: true,
         file: filePath,
         parsed: rows.length,
-        written: documents.length,
+        written: entries.length,
+        new: newCount,
+        updated: matchedCount,
         skipped: rows.length - documents.length,
       });
     } catch (err) {
@@ -211,23 +266,7 @@ export const importCsv = onRequest(
 export const backfillVisitedByEmail = onRequest(
   { timeoutSeconds: 300, memory: '512MiB' },
   async (req, res) => {
-    const authHeader = req.headers.authorization;
-    if (!authHeader?.startsWith('Bearer ')) {
-      res.status(401).json({ error: 'Unauthorized: missing Bearer token' });
-      return;
-    }
-    let decoded;
-    try {
-      decoded = await getAuth().verifyIdToken(authHeader.split('Bearer ')[1]);
-    } catch {
-      res.status(403).json({ error: 'Forbidden: invalid or expired token' });
-      return;
-    }
-    const callerEmail = decoded.email?.toLowerCase()?.trim();
-    if (!callerEmail || !isAllowedEmail(callerEmail)) {
-      res.status(403).json({ error: 'Forbidden: account not authorized' });
-      return;
-    }
+    if (!(await verifyCaller(req, res))) return;
 
     try {
       const snapshot = await getDb()
@@ -277,221 +316,175 @@ export const backfillVisitedByEmail = onRequest(
   }
 );
 
-// ── Helpers shared by syncToOdoo and reconcileOdoo ────────────────────────
+// ── Anti-duplicados: evita guardar tiendas repetidas ───────────────────────
 
-function getOdooConfig() {
-  return {
-    url:    ODOO_URL.value(),
-    db:     ODOO_DB.value(),
-    apiKey: ODOO_API_KEY.value(),
-  };
-}
+/**
+ * Cuando se CREA una tienda en `shops`, comprueba si ya existe otra con el
+ * mismo teléfono, la misma dirección, o el mismo nombre a menos de 150 m.
+ * Si es duplicado, conserva el registro original (más antiguo / más completo)
+ * y elimina el recién creado (y su lead en `visited_stores`, si lo tuviera).
+ *
+ * Funciona para cualquier vía de alta: importCsv, alta manual, etc.
+ */
+export const evitarDuplicadoTienda = onDocumentCreated(
+  { document: 'shops/{shopId}' },
+  async (event) => {
+    const snap = event.data;
+    if (!snap) return;
+    const id = event.params.shopId;
+    const cand = snap.data();
+    if (!cand) return;
 
-async function syncShopToOdoo(shopId, visitedData) {
-  const db = getDb();
+    try {
+      const dups = await findDuplicates(getDb(), cand, id);
+      if (dups.length === 0) return;
 
-  // Fetch the corresponding shop document for address / contact fields
-  const shopSnap = await db.collection(COLLECTION).doc(shopId).get();
-  const shopData = shopSnap.exists ? shopSnap.data() : {};
+      const keeperId = chooseKeeper([{ id, data: cand }, ...dups]);
+      if (keeperId === id) return; // este doc es el que se conserva; los otros se auto-eliminan
 
-  const config = getOdooConfig();
-  const { leadId, action } = await createOrUpdateLead(config, shopId, visitedData, shopData);
-
-  // Write the Odoo lead ID back to Firestore for idempotency tracking
-  await db.collection(VISITED_STORES).doc(shopId).set(
-    { odoo_lead_id: String(leadId), odoo_sync_error: null, odoo_synced_at: new Date().toISOString() },
-    { merge: true }
-  );
-
-  console.log(`syncShopToOdoo: ${action} lead ${leadId} for shop ${shopId}`);
-  return { leadId, action };
-}
-
-// ── Real-time sync: triggers whenever a visited_stores doc is written ─────
-
-// Fields written back by the sync function itself — changes to only these
-// fields must be skipped to prevent an infinite trigger loop.
-const SYNC_META_FIELDS = new Set(['odoo_lead_id', 'odoo_sync_error', 'odoo_synced_at']);
-
-function onlySyncMetaChanged(before, after) {
-  const allKeys = new Set([
-    ...Object.keys(before || {}),
-    ...Object.keys(after || {}),
-  ]);
-  for (const key of allKeys) {
-    if (SYNC_META_FIELDS.has(key)) continue;
-    if (JSON.stringify(before?.[key]) !== JSON.stringify(after?.[key])) return false;
+      const motivo = dups[0].on;
+      await getDb().collection(COLLECTION).doc(id).delete();
+      await getDb().collection(VISITED_STORES).doc(id).delete().catch(() => {});
+      console.warn(
+        `evitarDuplicadoTienda: ${id} es duplicado por ${motivo} de ${keeperId}; eliminado.`
+      );
+    } catch (err) {
+      console.error('evitarDuplicadoTienda error:', err);
+    }
   }
-  return true;
+);
+
+// ── CRM: initialize a lead's pipeline stage on first successful visit ───────
+
+/**
+ * When a store is marked `visita_exitosa` and has no pipeline stage yet, seed
+ * `pipeline_stage='nuevo'` so it enters the CRM pipeline automatically. Also
+ * stamps `crm_updated_at` on meaningful changes. Guards against infinite loops
+ * by only writing when a change is actually needed.
+ */
+export const inicializarLeadCrm = onDocumentWritten(
+  { document: 'visited_stores/{shopId}' },
+  async (event) => {
+    const shopId = event.params.shopId;
+    const after = event.data?.after?.data();
+    if (!after) return;
+
+    const isExitosa = after.visited_status === 'visita_exitosa';
+    if (!isExitosa) return;
+    if (after.pipeline_stage) return; // already in the pipeline
+
+    await getDb().collection(VISITED_STORES).doc(shopId).set(
+      {
+        pipeline_stage: 'nuevo',
+        crm_updated_at: new Date().toISOString(),
+      },
+      { merge: true }
+    );
+    console.log(`inicializarLeadCrm: lead ${shopId} -> etapa 'nuevo'`);
+  }
+);
+
+// ── CRM AI insights (Anthropic Opus) ───────────────────────────────────────
+
+async function runCrmInsights() {
+  const db = getDb();
+  const snapshot = await buildCrmSnapshot(db);
+  const { modelo, insights } = await generateInsights(ANTHROPIC_API_KEY.value(), snapshot);
+
+  const fecha = new Date().toISOString().slice(0, 10);
+  const payload = {
+    generadoEn: new Date().toISOString(),
+    modelo,
+    estadisticas: snapshot,
+    insights,
+  };
+  await db.collection('crm_insights').doc(fecha).set(payload, { merge: true });
+  return payload;
 }
 
 /**
- * Firestore trigger: creates or updates an Odoo CRM lead on any meaningful
- * change to a visited_stores document.
- *
- * - If a lead already exists (odoo_lead_id set): updates it with latest data.
- * - If no lead yet and visited_status = 'visita_exitosa': creates it.
- * - Skips writes that only touched sync-metadata (prevents infinite loop).
- * - Skips shops not yet marked exitosa and with no existing lead.
+ * On-demand CRM analysis. Auth: Authorization: Bearer <Firebase ID token>.
+ * Response: the stored insights document.
  */
-export const syncToOdoo = onDocumentWritten(
-  { document: 'visited_stores/{shopId}', secrets: [ODOO_URL, ODOO_DB, ODOO_API_KEY] },
-  async (event) => {
-    const shopId = event.params.shopId;
-    const after  = event.data?.after?.data();
-    const before = event.data?.before?.data();
-
-    console.log(`syncToOdoo fired for shop ${shopId}, visited_status=${after?.visited_status}, odoo_lead_id=${after?.odoo_lead_id}`);
-
-    // Skip writes triggered by the function's own sync-metadata updates
-    if (onlySyncMetaChanged(before, after)) {
-      console.log(`syncToOdoo: skipping shop ${shopId} — only sync metadata changed`);
-      return;
-    }
-
-    const wasExitosa = before?.visited_status === 'visita_exitosa';
-    const isExitosa  = after?.visited_status  === 'visita_exitosa';
-    const leadId     = before?.odoo_lead_id ?? after?.odoo_lead_id;
-    const hasLead    = !!leadId;
-
-    // Unmarked from exitosa and had an Odoo lead → delete it
-    if (wasExitosa && !isExitosa && hasLead) {
-      console.log(`syncToOdoo: deleting lead ${leadId} for shop ${shopId} — unmarked as exitosa`);
-      try {
-        await deleteLead(getOdooConfig(), leadId);
-        await getDb().collection(VISITED_STORES).doc(shopId).set(
-          { odoo_lead_id: null, odoo_synced_at: null, odoo_sync_error: null },
-          { merge: true }
-        );
-        console.log(`syncToOdoo: lead ${leadId} deleted for shop ${shopId}`);
-      } catch (err) {
-        console.error(`syncToOdoo failed to delete lead ${leadId} for shop ${shopId}:`, err);
-        await getDb().collection(VISITED_STORES).doc(shopId).set(
-          { odoo_sync_error: err.message },
-          { merge: true }
-        );
-      }
-      return;
-    }
-
-    if (!hasLead && !isExitosa) {
-      console.log(`syncToOdoo: skipping shop ${shopId} — no lead and not exitosa`);
-      return;
-    }
-
+export const generarAnalisisCrm = onRequest(
+  { timeoutSeconds: 300, memory: '512MiB', secrets: [ANTHROPIC_API_KEY], cors: true },
+  async (req, res) => {
+    if (!(await verifyCaller(req, res))) return;
     try {
-      await syncShopToOdoo(shopId, after);
+      const payload = await runCrmInsights();
+      res.json({ success: true, ...payload });
     } catch (err) {
-      console.error(`syncToOdoo failed for shop ${shopId}:`, err);
-      await getDb().collection(VISITED_STORES).doc(shopId).set(
-        { odoo_sync_error: err.message, odoo_synced_at: null },
+      console.error('generarAnalisisCrm error:', err);
+      res.status(500).json({ error: err.message });
+    }
+  }
+);
+
+/**
+ * Weekly CRM analysis — Mondays 08:00 Mexico City time.
+ */
+export const analisisCrmProgramado = onSchedule(
+  {
+    schedule: 'every monday 08:00',
+    timeZone: 'America/Mexico_City',
+    secrets: [ANTHROPIC_API_KEY],
+    timeoutSeconds: 300,
+    memory: '512MiB',
+  },
+  async () => {
+    try {
+      const payload = await runCrmInsights();
+      console.log(`analisisCrmProgramado: análisis guardado (${payload.modelo})`);
+    } catch (err) {
+      console.error('analisisCrmProgramado error:', err);
+    }
+  }
+);
+
+// ── Inventory (Almacen) ─────────────────────────────────────────────────────
+
+/**
+ * Applies each new inventory movement to the per-warehouse stock row in a
+ * transaction. Movements are an immutable ledger; stock is derived here.
+ */
+export const aplicarMovimientoInventario = onDocumentCreated(
+  { document: 'inventory_movements/{movId}' },
+  async (event) => {
+    const mov = event.data?.data();
+    if (!mov) return;
+    try {
+      const result = await applyMovement(getDb(), mov);
+      await event.data.ref.set(
+        { aplicado: true, aplicado_en: new Date().toISOString(), resultado: result },
+        { merge: true }
+      );
+      console.log(
+        `aplicarMovimientoInventario: ${mov.tipo} ${mov.cantidad} de ${mov.itemId} en ${mov.almacenId} -> ${result.nueva}`
+      );
+    } catch (err) {
+      console.error('aplicarMovimientoInventario error:', err);
+      await event.data.ref.set(
+        { aplicado: false, error: err.message },
         { merge: true }
       );
     }
   }
 );
 
-// ── One-time forced re-sync: updates ALL visita_exitosa leads in Odoo ─────
-
 /**
- * HTTP-triggered function that re-syncs every visita_exitosa store to Odoo,
- * regardless of whether they already have an odoo_lead_id. Use this after
- * adding new fields to fieldMap.js to backfill existing leads.
- *
- * Same auth as importCsv: Authorization: Bearer <Firebase ID token>
- * Response: { success, synced, failed, total }
+ * Publishes a public-safe catalog mirror when a sellable item or its stock
+ * changes. Currently a stub: it computes the public payload and logs it. Wire
+ * the cross-project write once the e-commerce Firebase project exists.
  */
-export const forceResyncAllToOdoo = onRequest(
-  {
-    timeoutSeconds: 540,
-    memory: '512MiB',
-    secrets: [ODOO_URL, ODOO_DB, ODOO_API_KEY],
-  },
-  async (req, res) => {
-    if (req.query.secret !== 'voren-resync-2026') {
-      res.status(401).json({ error: 'Unauthorized' });
-      return;
+export const publicarCatalogo = onDocumentWritten(
+  { document: 'inventory_items/{itemId}' },
+  async (event) => {
+    const itemId = event.params.itemId;
+    const after = event.data?.after?.data();
+    try {
+      await publishItemToCatalog(getDb(), itemId, after);
+    } catch (err) {
+      console.error('publicarCatalogo error:', err);
     }
-
-    const db = getDb();
-    const snapshot = await db
-      .collection(VISITED_STORES)
-      .where('visited_status', '==', 'visita_exitosa')
-      .get();
-
-    console.log(`forceResyncAllToOdoo: ${snapshot.size} visita_exitosa docs to sync`);
-
-    let synced = 0;
-    let failed = 0;
-
-    for (const docSnap of snapshot.docs) {
-      const shopId = docSnap.id;
-      try {
-        await syncShopToOdoo(shopId, docSnap.data());
-        synced++;
-      } catch (err) {
-        console.error(`forceResyncAllToOdoo failed for shop ${shopId}:`, err);
-        await db.collection(VISITED_STORES).doc(shopId).set(
-          { odoo_sync_error: err.message },
-          { merge: true }
-        );
-        failed++;
-      }
-    }
-
-    console.log(`forceResyncAllToOdoo complete: ${synced} synced, ${failed} failed`);
-    res.json({ success: true, total: snapshot.size, synced, failed });
-  }
-);
-
-// ── Daily reconciliation: catches any docs that syncToOdoo missed ─────────
-
-/**
- * Runs every day at 08:00 Mexico City time (UTC-6).
- * Queries visited_stores where visited_status == 'visita_exitosa' and
- * odoo_lead_id is missing or a previous sync_error was recorded, then
- * syncs each one to Odoo.
- */
-export const reconcileOdoo = onSchedule(
-  {
-    schedule: 'every day 08:00',
-    timeZone: 'America/Mexico_City',
-    secrets: [ODOO_URL, ODOO_DB, ODOO_API_KEY],
-  },
-  async () => {
-    const db = getDb();
-
-    // Find all visita_exitosa docs that are not yet synced or had an error
-    const snapshot = await db
-      .collection(VISITED_STORES)
-      .where('visited_status', '==', 'visita_exitosa')
-      .get();
-
-    const pending = snapshot.docs.filter((d) => {
-      const data = d.data();
-      return !data.odoo_lead_id || data.odoo_sync_error;
-    });
-
-    console.log(`reconcileOdoo: ${pending.length} docs to sync out of ${snapshot.size} visita_exitosa`);
-
-    let synced = 0;
-    let failed = 0;
-
-    for (const docSnap of pending) {
-      const shopId = docSnap.id;
-      try {
-        await syncShopToOdoo(shopId, docSnap.data());
-        synced++;
-      } catch (err) {
-        console.error(`reconcileOdoo failed for shop ${shopId}:`, err);
-        await db.collection(VISITED_STORES).doc(shopId).set(
-          { odoo_sync_error: err.message },
-          { merge: true }
-        );
-        failed++;
-      }
-    }
-
-    console.log(`reconcileOdoo complete: ${synced} synced, ${failed} failed`);
   }
 );

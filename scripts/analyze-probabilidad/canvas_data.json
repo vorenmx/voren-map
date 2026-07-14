@@ -1,0 +1,433 @@
+{
+  "generado_en": "2026-07-14T04:01:36.739Z",
+  "cobertura": {
+    "informes_total": 225,
+    "con_score_crm": 196,
+    "comparables": 196,
+    "sin_score_crm": 29
+  },
+  "metricas": {
+    "pearson": 0.822,
+    "spearman": 0.773,
+    "mae": 0.86,
+    "bias": 0.34,
+    "acuerdo_pm1": 80.6,
+    "acuerdo_pm2": 95.9,
+    "acuerdo_bucket": 77.6,
+    "prom_asignado": 5.36,
+    "prom_estimado": 5.02,
+    "corr_score_vs_pain_informe": 0.603,
+    "corr_pains_crm_vs_informe": 0.231
+  },
+  "confusion": {
+    "Bajo": {
+      "Bajo": 34,
+      "Medio": 3,
+      "Alto": 0
+    },
+    "Medio": {
+      "Bajo": 31,
+      "Medio": 113,
+      "Alto": 1
+    },
+    "Alto": {
+      "Bajo": 0,
+      "Medio": 9,
+      "Alto": 5
+    }
+  },
+  "scatter": [
+    {
+      "asignado": 7,
+      "estimada": 7,
+      "n": 17
+    },
+    {
+      "asignado": 7,
+      "estimada": 6,
+      "n": 12
+    },
+    {
+      "asignado": 6,
+      "estimada": 6,
+      "n": 35
+    },
+    {
+      "asignado": 8,
+      "estimada": 7,
+      "n": 8
+    },
+    {
+      "asignado": 1,
+      "estimada": 1,
+      "n": 13
+    },
+    {
+      "asignado": 5,
+      "estimada": 4,
+      "n": 9
+    },
+    {
+      "asignado": 6,
+      "estimada": 7,
+      "n": 16
+    },
+    {
+      "asignado": 1,
+      "estimada": 2,
+      "n": 7
+    },
+    {
+      "asignado": 1,
+      "estimada": 3,
+      "n": 2
+    },
+    {
+      "asignado": 5,
+      "estimada": 5,
+      "n": 4
+    },
+    {
+      "asignado": 3,
+      "estimada": 2,
+      "n": 2
+    },
+    {
+      "asignado": 5,
+      "estimada": 3,
+      "n": 8
+    },
+    {
+      "asignado": 5,
+      "estimada": 6,
+      "n": 12
+    },
+    {
+      "asignado": 5,
+      "estimada": 2,
+      "n": 2
+    },
+    {
+      "asignado": 9,
+      "estimada": 8,
+      "n": 2
+    },
+    {
+      "asignado": 4,
+      "estimada": 2,
+      "n": 5
+    },
+    {
+      "asignado": 6,
+      "estimada": 5,
+      "n": 12
+    },
+    {
+      "asignado": 6,
+      "estimada": 4,
+      "n": 7
+    },
+    {
+      "asignado": 2,
+      "estimada": 2,
+      "n": 1
+    },
+    {
+      "asignado": 2,
+      "estimada": 1,
+      "n": 1
+    },
+    {
+      "asignado": 3,
+      "estimada": 1,
+      "n": 1
+    },
+    {
+      "asignado": 6,
+      "estimada": 3,
+      "n": 4
+    },
+    {
+      "asignado": 8,
+      "estimada": 8,
+      "n": 3
+    },
+    {
+      "asignado": 7,
+      "estimada": 5,
+      "n": 3
+    },
+    {
+      "asignado": 3,
+      "estimada": 5,
+      "n": 1
+    },
+    {
+      "asignado": 6,
+      "estimada": 2,
+      "n": 1
+    },
+    {
+      "asignado": 7,
+      "estimada": 8,
+      "n": 1
+    },
+    {
+      "asignado": 4,
+      "estimada": 5,
+      "n": 1
+    },
+    {
+      "asignado": 4,
+      "estimada": 4,
+      "n": 2
+    },
+    {
+      "asignado": 5,
+      "estimada": 7,
+      "n": 2
+    },
+    {
+      "asignado": 1,
+      "estimada": 5,
+      "n": 1
+    },
+    {
+      "asignado": 8,
+      "estimada": 6,
+      "n": 1
+    }
+  ],
+  "hist": [
+    {
+      "diff": -4,
+      "n": 1
+    },
+    {
+      "diff": -2,
+      "n": 5
+    },
+    {
+      "diff": -1,
+      "n": 37
+    },
+    {
+      "diff": 0,
+      "n": 75
+    },
+    {
+      "diff": 1,
+      "n": 46
+    },
+    {
+      "diff": 2,
+      "n": 25
+    },
+    {
+      "diff": 3,
+      "n": 6
+    },
+    {
+      "diff": 4,
+      "n": 1
+    }
+  ],
+  "veredicto": "Alta",
+  "veredicto_nota": "El score asignado coincide bien con la evidencia de los informes.",
+  "top_sobrevalorados": [
+    {
+      "shopName": "HOSPITAL DE MOTOS",
+      "municipio": "Coyoacán",
+      "asignado": 6,
+      "estimada": 2,
+      "diff": 4,
+      "j": "Experiencia nula, persona arrogante; recomienda no volver."
+    },
+    {
+      "shopName": "Taller de motos Constitucion De 1917 1",
+      "municipio": "Iztapalapa",
+      "asignado": 5,
+      "estimada": 2,
+      "diff": 3,
+      "j": "Es vulcanizadora; baja posibilidad de venta según el propio reporte."
+    },
+    {
+      "shopName": "MOTO SERVICIO PIRAÑA",
+      "municipio": "Tláhuac",
+      "asignado": 5,
+      "estimada": 2,
+      "diff": 3,
+      "j": "Refaccionaria de autos/motos; el reporte dice probabilidad nula."
+    },
+    {
+      "shopName": "ESCUELA DE MECANICA DE MOTOCICLETAS ATM RACING",
+      "municipio": "Tláhuac",
+      "asignado": 6,
+      "estimada": 3,
+      "diff": 3,
+      "j": "Es escuela de mecánica; rara vez opera como taller."
+    },
+    {
+      "shopName": "MOTO RACING SHOP",
+      "municipio": "Iztapalapa",
+      "asignado": 6,
+      "estimada": 3,
+      "diff": 3,
+      "j": "Tienda de refacciones que no hace reparaciones; sin oportunidad."
+    },
+    {
+      "shopName": "MOTOS 2085",
+      "municipio": "Tlalpan",
+      "asignado": 6,
+      "estimada": 3,
+      "diff": 3,
+      "j": "Pequeño de pura mano de obra; sin oportunidad."
+    },
+    {
+      "shopName": "MOTOS WLOF",
+      "municipio": "Tlalpan",
+      "asignado": 6,
+      "estimada": 3,
+      "diff": 3,
+      "j": "Tienda/taller grande que declara no interesarle."
+    },
+    {
+      "shopName": "MOTO SERVICIO PIVER",
+      "municipio": "Iztapalapa",
+      "asignado": 5,
+      "estimada": 3,
+      "diff": 2,
+      "j": "Pequeño y abre poco; el propio reporte nota baja probabilidad."
+    },
+    {
+      "shopName": "SERVICIO DE MOTOS BEDEN",
+      "municipio": "Iztapalapa",
+      "asignado": 5,
+      "estimada": 3,
+      "diff": 2,
+      "j": "Muy pequeño y solo mano de obra; el reporte nota baja probabilidad."
+    },
+    {
+      "shopName": "BLACK DOG GARAGE",
+      "municipio": "Iztapalapa",
+      "asignado": 4,
+      "estimada": 2,
+      "diff": 2,
+      "j": "No le interesa la entrevista; no proporciona información."
+    },
+    {
+      "shopName": "TALLER DE MOTOS MAJO",
+      "municipio": "Xochimilco",
+      "asignado": 6,
+      "estimada": 4,
+      "diff": 2,
+      "j": "Reporte indica explícitamente probabilidad de venta baja."
+    },
+    {
+      "shopName": "ROWDY CICLES",
+      "municipio": "Iztapalapa",
+      "asignado": 5,
+      "estimada": 3,
+      "diff": 2,
+      "j": "Especializado en Harley/chopper; concluye que no le interesa pese a buen trato."
+    }
+  ],
+  "top_subvalorados": [
+    {
+      "shopName": "SIX SPEED SERVICIO MECANICA PARA MOTOS",
+      "municipio": "Iztapalapa",
+      "asignado": 1,
+      "estimada": 5,
+      "diff": -4,
+      "j": "Pain de personal y refacciones costosas; abierto al catálogo y kits."
+    },
+    {
+      "shopName": "TALLER DE REPARACION DE MOTOCICLETAS GARAGE DE CHARLY",
+      "municipio": "Coyoacán",
+      "asignado": 1,
+      "estimada": 3,
+      "diff": -2,
+      "j": "Solo alta cilindrada; no encaja con baja/media cc pese a buena atención."
+    },
+    {
+      "shopName": "TALLER DE MOTO SERVICIO LOS REYES",
+      "municipio": "Tláhuac",
+      "asignado": 3,
+      "estimada": 5,
+      "diff": -2,
+      "j": "Sin pain claro; solo ofrecimiento de crédito, requiere 2da visita."
+    },
+    {
+      "shopName": "Taller de motos Pedregar De Santa Ursula 1",
+      "municipio": "Coyoacán",
+      "asignado": 1,
+      "estimada": 3,
+      "diff": -2,
+      "j": "Dueño mayor por retirarse; ellos son sus propios proveedores, sin oportunidad."
+    },
+    {
+      "shopName": "CSR MOTOCICLETAS",
+      "municipio": "Iztapalapa",
+      "asignado": 5,
+      "estimada": 7,
+      "diff": -2,
+      "j": "Grande, todo tipo de cc; abierto a catálogo, 24hrs y crédito, buena disposición."
+    },
+    {
+      "shopName": "TALLER MOTO RATON",
+      "municipio": "Iztapalapa",
+      "asignado": 5,
+      "estimada": 7,
+      "diff": -2,
+      "j": "Interesado en revender refacciones a amigos refaccionarios; buen recibimiento."
+    },
+    {
+      "shopName": "SERVICIO DE MOTOS REYNA",
+      "municipio": "Iztapalapa",
+      "asignado": 6,
+      "estimada": 7,
+      "diff": -1,
+      "j": "Flujo diario y abierto a nuevo proveedor; pocas refacciones = buena oportunidad."
+    },
+    {
+      "shopName": "TALLER DE MOTOCICLETAS",
+      "municipio": "Iztapalapa",
+      "asignado": 6,
+      "estimada": 7,
+      "diff": -1,
+      "j": "Interesado en 2das visitas; pain de precios altos y falta refacciones, encaja catálogo."
+    },
+    {
+      "shopName": "R L MOTOCICLISMO",
+      "municipio": "Iztapalapa",
+      "asignado": 6,
+      "estimada": 7,
+      "diff": -1,
+      "j": "Muchas oportunidades de compra y buenas recomendaciones; atractivo entregas rápidas."
+    },
+    {
+      "shopName": "REPARACION DE MOTOCICLETAS",
+      "municipio": "Iztapalapa",
+      "asignado": 6,
+      "estimada": 7,
+      "diff": -1,
+      "j": "Mucho trabajo y abierto a crédito y entregas 24hrs."
+    },
+    {
+      "shopName": "TALLER MECANICO PERSEO MOTORS",
+      "municipio": "Coyoacán",
+      "asignado": 1,
+      "estimada": 2,
+      "diff": -1,
+      "j": "Taller de autos; las motos no son su giro."
+    },
+    {
+      "shopName": "GODIKE MOTORS",
+      "municipio": "Iztapalapa",
+      "asignado": 5,
+      "estimada": 6,
+      "diff": -1,
+      "j": "Especializado bajaj/vento/ktm; abierto a mejorar oferta vs Remo y a crédito."
+    }
+  ]
+}

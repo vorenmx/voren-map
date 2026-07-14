@@ -1,0 +1,2707 @@
+[
+  {
+    "id": "0ZBymCShXd1wrfZWdiul",
+    "visited_stores": {
+      "formatted_address": "09970, Valle de San Lorenzo, Iztapalapa, 09970 Ciudad de México, CDMX, México",
+      "website": "",
+      "purchases": 2468,
+      "latitude": 19.2984037,
+      "municipality": "",
+      "rating": 4.4,
+      "review_count": 7,
+      "visited_status": "visita_exitosa",
+      "source": "google",
+      "average_order": 2555.44,
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "visitedAt": {
+        "_seconds": 1780364635,
+        "_nanoseconds": 170000000
+      },
+      "phone": "56 2511 1588",
+      "street": "",
+      "name": "Moto servicio fiu fiu",
+      "shop_type": "Repair",
+      "shopId": "0ZBymCShXd1wrfZWdiul",
+      "state": "",
+      "statusAt": {
+        "_seconds": 1780364635,
+        "_nanoseconds": 170000000
+      },
+      "google_maps_url": "https://maps.google.com/?cid=3264340160346585017&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.078646,
+      "status": "visitada",
+      "visitedByEmail": "omar@voren.com.mx",
+      "odoo_sync_error": null,
+      "odoo_lead_id": "85",
+      "score_general": 10,
+      "score_pains": 10,
+      "score_probabilidad": 8,
+      "score_satisfaccion": 8,
+      "tamano_tienda": "Pequeña",
+      "credito": "Sí",
+      "metodo_pago": [
+        "Efectivo"
+      ],
+      "entrega": "Delivery",
+      "contacto_personal": "Sí",
+      "surveyUpdatedAt": {
+        "_seconds": 1780364655,
+        "_nanoseconds": 45000000
+      },
+      "surveyLog": [
+        {
+          "field": "score_general",
+          "value": "10",
+          "ts": "2026-06-02T01:45:01.303Z"
+        },
+        {
+          "field": "score_pains",
+          "value": "10",
+          "ts": "2026-06-02T01:45:04.014Z"
+        },
+        {
+          "field": "score_probabilidad",
+          "value": "8",
+          "ts": "2026-06-02T01:45:05.498Z"
+        },
+        {
+          "field": "score_satisfaccion",
+          "value": "8",
+          "ts": "2026-06-02T01:45:06.764Z"
+        },
+        {
+          "field": "tamano_tienda",
+          "value": "Pequeña",
+          "ts": "2026-06-02T01:45:08.643Z"
+        },
+        {
+          "field": "credito",
+          "value": "Sí",
+          "ts": "2026-06-02T01:45:09.809Z"
+        },
+        {
+          "field": "metodo_pago",
+          "value": "Efectivo",
+          "ts": "2026-06-02T01:45:11.452Z"
+        },
+        {
+          "field": "entrega",
+          "value": "Tienda física",
+          "ts": "2026-06-02T01:45:14.258Z"
+        },
+        {
+          "field": "entrega",
+          "value": "Delivery",
+          "ts": "2026-06-02T01:45:15.742Z"
+        },
+        {
+          "field": "contacto_personal",
+          "value": "Sí",
+          "ts": "2026-06-02T01:45:18.728Z"
+        }
+      ],
+      "odoo_synced_at": "2026-06-02T01:44:15.254Z"
+    },
+    "shops": {
+      "name": "Moto servicio fiu fiu",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "09970, Valle de San Lorenzo, Iztapalapa, 09970 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "56 2511 1588",
+      "email": "",
+      "website": "",
+      "latitude": 19.2984037,
+      "longitude": -99.078646,
+      "location": {
+        "_latitude": 19.2984037,
+        "_longitude": -99.078646
+      },
+      "rating": 4.4,
+      "review_count": 7,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 9:00–18:00 | martes: 9:00–18:00 | miércoles: 9:00–18:00 | jueves: 9:00–18:00 | viernes: 9:00–18:00 | sábado: 9:00–14:00 | domingo: Cerrado",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=3264340160346585017&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJDdLELy0DzoURufd_oxRETS0",
+      "purchases": 2468,
+      "average_order": 2555.44,
+      "imported_at": "2026-03-05T18:14:57.179Z"
+    }
+  },
+  {
+    "id": "5U46vMCpnQJGIIiJiatf",
+    "visited_stores": {
+      "formatted_address": "Cuauhtémoc 198, San José, Iztapalapa, 09000 Ciudad de México, CDMX, México",
+      "website": "",
+      "purchases": 2829,
+      "latitude": 19.3644568,
+      "municipality": "",
+      "rating": 4.8,
+      "review_count": 45,
+      "visited_status": "visita_exitosa",
+      "source": "google",
+      "average_order": 3301.55,
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "visitedAt": {
+        "_seconds": 1780594887,
+        "_nanoseconds": 455000000
+      },
+      "phone": "55 4137 9228",
+      "street": "",
+      "name": "Taller de motos \"Mayder\"",
+      "shop_type": "Repair",
+      "shopId": "5U46vMCpnQJGIIiJiatf",
+      "state": "",
+      "statusAt": {
+        "_seconds": 1780594887,
+        "_nanoseconds": 455000000
+      },
+      "google_maps_url": "https://maps.google.com/?cid=11109080209579174693&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.0888635,
+      "status": "visitada",
+      "visitedByEmail": "omar@voren.com.mx",
+      "odoo_sync_error": null,
+      "odoo_lead_id": "107",
+      "score_general": 10,
+      "score_pains": 10,
+      "score_probabilidad": 9,
+      "score_satisfaccion": 7,
+      "tamano_tienda": "Mediana",
+      "credito": "No",
+      "metodo_pago": [
+        "Efectivo"
+      ],
+      "entrega": "Tienda física",
+      "contacto_personal": "Sí",
+      "surveyUpdatedAt": {
+        "_seconds": 1780594916,
+        "_nanoseconds": 357000000
+      },
+      "surveyLog": [
+        {
+          "field": "score_general",
+          "value": "10",
+          "ts": "2026-06-04T17:41:33.433Z"
+        },
+        {
+          "field": "score_pains",
+          "value": "10",
+          "ts": "2026-06-04T17:41:35.186Z"
+        },
+        {
+          "field": "score_probabilidad",
+          "value": "9",
+          "ts": "2026-06-04T17:41:36.503Z"
+        },
+        {
+          "field": "score_satisfaccion",
+          "value": "7",
+          "ts": "2026-06-04T17:41:40.135Z"
+        },
+        {
+          "field": "tamano_tienda",
+          "value": "Mediana",
+          "ts": "2026-06-04T17:41:41.245Z"
+        },
+        {
+          "field": "credito",
+          "value": "No",
+          "ts": "2026-06-04T17:41:42.390Z"
+        },
+        {
+          "field": "metodo_pago",
+          "value": "Efectivo",
+          "ts": "2026-06-04T17:41:44.777Z"
+        },
+        {
+          "field": "entrega",
+          "value": "Tienda física",
+          "ts": "2026-06-04T17:41:45.949Z"
+        },
+        {
+          "field": "contacto_personal",
+          "value": "Sí",
+          "ts": "2026-06-04T17:41:48.894Z"
+        },
+        {
+          "field": "comentarios",
+          "value": "su proovedor es dr motos",
+          "ts": "2026-06-04T17:41:59.298Z"
+        }
+      ],
+      "comentarios": "su proovedor es dr motos",
+      "odoo_synced_at": "2026-06-04T17:41:56.701Z"
+    },
+    "shops": {
+      "name": "Taller de motos \"Mayder\"",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "Cuauhtémoc 198, San José, Iztapalapa, 09000 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "55 4137 9228",
+      "email": "",
+      "website": "",
+      "latitude": 19.3644568,
+      "longitude": -99.0888635,
+      "location": {
+        "_latitude": 19.3644568,
+        "_longitude": -99.0888635
+      },
+      "rating": 4.8,
+      "review_count": 45,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: Abierto 24 horas | martes: Abierto 24 horas | miércoles: Abierto 24 horas | jueves: Abierto 24 horas | viernes: Abierto 24 horas | sábado: Abierto 24 horas | domingo: Abierto 24 horas",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=11109080209579174693&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJB5RrmnL90YURJetJmZdhK5o",
+      "purchases": 2829,
+      "average_order": 3301.55,
+      "imported_at": "2026-03-05T18:09:37.789Z"
+    }
+  },
+  {
+    "id": "UMsPx9WiOh40SdYVTEb2",
+    "visited_stores": {
+      "formatted_address": "C. Dalia 50, San Lorenzo, Xochimilco, 16040 Ciudad de México, CDMX, México",
+      "website": "",
+      "purchases": 1533,
+      "latitude": 19.2651065,
+      "municipality": "",
+      "rating": 5,
+      "review_count": 3,
+      "visited_status": "visita_exitosa",
+      "source": "google",
+      "average_order": 1331.99,
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "visitedAt": {
+        "_seconds": 1783620484,
+        "_nanoseconds": 396000000
+      },
+      "phone": "55 2173 2526",
+      "street": "",
+      "name": "MOTOSERVICIO GARCIA",
+      "shop_type": "Repair",
+      "shopId": "UMsPx9WiOh40SdYVTEb2",
+      "state": "",
+      "statusAt": {
+        "_seconds": 1783620484,
+        "_nanoseconds": 396000000
+      },
+      "google_maps_url": "https://maps.google.com/?cid=5226095776322446402&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.0983247,
+      "status": "visitada",
+      "visitedByEmail": "omar@voren.com.mx",
+      "odoo_sync_error": null,
+      "odoo_lead_id": "<html>\n   <head>\n      <title>Database not available</title>\n      <link href=\"//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic\" rel=\"stylesheet\" type=\"text/css\">\n      <link href=\"/static/http_error.css\" rel=\"stylesheet\" type=\"text/css\">\n   </head>\n   <body>\n      <div id=\"http_error\">\n          <div class=\"message\">\n            <a href=\"https://www.odoo.com\"><img src=\"/static/logo_oe_white_t.png\" alt=\"Odoo: Open Source Business Apps\"></a>\n            <h2>This database is currently locked</h2>\n            \n                <p>\n                    Renew your subscription to unlock your database instantly.\n                </p>\n                <p>\n                    <a class=\"button\" href=\"https://www.odoo.com/odoo-enterprise/upgrade-online/5bc24a60-cfc8-4240-beb2-f59f22b753e6\">Review Subscription</a>\n                </p>\n            \n            <p class=\"note\">\n                Not sure what to do? <a href=\"https://www.odoo.com/help\">Contact us!</a>\n            </p>\n          </div>\n      </div>\n   </body>\n</html>",
+      "odoo_synced_at": "2026-07-09T18:08:05.841Z"
+    },
+    "shops": {
+      "name": "MOTOSERVICIO GARCIA",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "C. Dalia 50, San Lorenzo, Xochimilco, 16040 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "55 2173 2526",
+      "email": "",
+      "website": "",
+      "latitude": 19.2651065,
+      "longitude": -99.0983247,
+      "location": {
+        "_latitude": 19.2651065,
+        "_longitude": -99.0983247
+      },
+      "rating": 5,
+      "review_count": 3,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 9:00–19:30 | martes: 9:00–19:30 | miércoles: 9:00–19:30 | jueves: 9:00–19:30 | viernes: 9:00–19:30 | sábado: 9:00–19:30 | domingo: 9:00–19:30",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=5226095776322446402&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJjX77B7wDzoURQmTeZWvShkg",
+      "purchases": 1533,
+      "average_order": 1331.99,
+      "imported_at": "2026-03-05T18:14:57.178Z"
+    }
+  },
+  {
+    "id": "V8hw5sWjAI3TdmEJZV93",
+    "visited_stores": {
+      "formatted_address": "Calz. de las Bombas 128-int.103, Coapa, Ex-Ejido Sta Úrsula Coapa 27 Bis, Coyoacán, 04890 Ciudad de México, CDMX, México",
+      "website": "",
+      "purchases": 2053,
+      "latitude": 19.3106307,
+      "municipality": "",
+      "rating": 4.9,
+      "review_count": 33,
+      "visited_status": "visita_exitosa",
+      "source": "google",
+      "average_order": 3263.5,
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "visitedAt": {
+        "_seconds": 1781645903,
+        "_nanoseconds": 253000000
+      },
+      "phone": "55 8263 9537",
+      "street": "",
+      "name": "Taller Ari motos",
+      "shop_type": "Repair",
+      "shopId": "V8hw5sWjAI3TdmEJZV93",
+      "state": "",
+      "statusAt": {
+        "_seconds": 1781645903,
+        "_nanoseconds": 253000000
+      },
+      "google_maps_url": "https://maps.google.com/?cid=15292719034278753575&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.1266763,
+      "status": "visitada",
+      "visitedByEmail": "omar@voren.com.mx",
+      "odoo_sync_error": null,
+      "odoo_lead_id": "189",
+      "score_general": 10,
+      "score_pains": 6,
+      "score_probabilidad": 6,
+      "score_satisfaccion": 7,
+      "tamano_tienda": "Pequeña",
+      "credito": "No",
+      "surveyUpdatedAt": {
+        "_seconds": 1781645923,
+        "_nanoseconds": 907000000
+      },
+      "surveyLog": [
+        {
+          "field": "score_general",
+          "value": "10",
+          "ts": "2026-06-16T21:38:34.394Z"
+        },
+        {
+          "field": "score_pains",
+          "value": "6",
+          "ts": "2026-06-16T21:38:37.276Z"
+        },
+        {
+          "field": "score_probabilidad",
+          "value": "6",
+          "ts": "2026-06-16T21:38:43.770Z"
+        },
+        {
+          "field": "score_satisfaccion",
+          "value": "7",
+          "ts": "2026-06-16T21:38:46.025Z"
+        },
+        {
+          "field": "tamano_tienda",
+          "value": "Pequeña",
+          "ts": "2026-06-16T21:38:49.478Z"
+        },
+        {
+          "field": "credito",
+          "value": "No",
+          "ts": "2026-06-16T21:38:51.553Z"
+        }
+      ],
+      "odoo_synced_at": "2026-06-16T21:38:44.185Z"
+    },
+    "shops": {
+      "name": "Taller Ari motos",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "Calz. de las Bombas 128-int.103, Coapa, Ex-Ejido Sta Úrsula Coapa 27 Bis, Coyoacán, 04890 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "55 8263 9537",
+      "email": "",
+      "website": "",
+      "latitude": 19.3106307,
+      "longitude": -99.1266763,
+      "location": {
+        "_latitude": 19.3106307,
+        "_longitude": -99.1266763
+      },
+      "rating": 4.9,
+      "review_count": 33,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 10:00–19:00 | martes: 10:00–19:00 | miércoles: 10:00–19:00 | jueves: 10:00–19:00 | viernes: 10:00–19:00 | sábado: 10:00–19:00 | domingo: Cerrado",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=15292719034278753575&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJk3cqNtUBzoURJzUK-O-mOtQ",
+      "purchases": 2053,
+      "average_order": 3263.5,
+      "imported_at": "2026-03-05T18:12:00.436Z"
+    }
+  },
+  {
+    "id": "nArUVZEFnms91XPCDwdg",
+    "visited_stores": {
+      "formatted_address": "Calle Lirio Acuático 79, Xaltocan, Xochimilco, 16090 Ciudad de México, CDMX, México",
+      "website": "",
+      "purchases": 1563,
+      "latitude": 19.2520083,
+      "municipality": "",
+      "rating": 4,
+      "review_count": 3,
+      "source": "google",
+      "average_order": 2295.31,
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "visitedAt": {
+        "_seconds": 1783621123,
+        "_nanoseconds": 428000000
+      },
+      "phone": "55 2761 5082",
+      "street": "",
+      "name": "Taller De Motos Sierro",
+      "shop_type": "Repair",
+      "shopId": "nArUVZEFnms91XPCDwdg",
+      "state": "",
+      "google_maps_url": "https://maps.google.com/?cid=9894982480688091402&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.1016958,
+      "visitedByEmail": "omar@voren.com.mx",
+      "odoo_sync_error": null,
+      "surveyUpdatedAt": {
+        "_seconds": 1783621278,
+        "_nanoseconds": 159000000
+      },
+      "surveyLog": [
+        {
+          "field": "score_general",
+          "value": "10",
+          "ts": "2026-07-09T18:21:19.162Z"
+        }
+      ],
+      "score_general": 10,
+      "visited_status": "visita_exitosa",
+      "statusAt": {
+        "_seconds": 1783621315,
+        "_nanoseconds": 250000000
+      },
+      "status": "visitada",
+      "odoo_lead_id": "<html>\n   <head>\n      <title>Database not available</title>\n      <link href=\"//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic\" rel=\"stylesheet\" type=\"text/css\">\n      <link href=\"/static/http_error.css\" rel=\"stylesheet\" type=\"text/css\">\n   </head>\n   <body>\n      <div id=\"http_error\">\n          <div class=\"message\">\n            <a href=\"https://www.odoo.com\"><img src=\"/static/logo_oe_white_t.png\" alt=\"Odoo: Open Source Business Apps\"></a>\n            <h2>This database is currently locked</h2>\n            \n                <p>\n                    Renew your subscription to unlock your database instantly.\n                </p>\n                <p>\n                    <a class=\"button\" href=\"https://www.odoo.com/odoo-enterprise/upgrade-online/5bc24a60-cfc8-4240-beb2-f59f22b753e6\">Review Subscription</a>\n                </p>\n            \n            <p class=\"note\">\n                Not sure what to do? <a href=\"https://www.odoo.com/help\">Contact us!</a>\n            </p>\n          </div>\n      </div>\n   </body>\n</html>",
+      "odoo_synced_at": "2026-07-09T18:21:56.117Z"
+    },
+    "shops": {
+      "name": "Taller De Motos Sierro",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "Calle Lirio Acuático 79, Xaltocan, Xochimilco, 16090 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "55 2761 5082",
+      "email": "",
+      "website": "",
+      "latitude": 19.2520083,
+      "longitude": -99.1016958,
+      "location": {
+        "_latitude": 19.2520083,
+        "_longitude": -99.1016958
+      },
+      "rating": 4,
+      "review_count": 3,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 9:00–19:00 | martes: 9:00–19:00 | miércoles: 9:00–19:00 | jueves: 9:00–19:00 | viernes: 9:00–19:00 | sábado: 9:00–5:00 | domingo: Cerrado",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=9894982480688091402&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJQSiJaQYBzoURCpEg7CMKUok",
+      "purchases": 1563,
+      "average_order": 2295.31,
+      "imported_at": "2026-03-05T18:14:57.178Z"
+    }
+  },
+  {
+    "id": "D9UUiMcKCAEsLU3k3WsW",
+    "visited_stores": {
+      "formatted_address": "Av. Guadalupe I. Ramírez 715-C, Santa María Tepepan, Xochimilco, 16020 Ciudad de México, CDMX, México",
+      "website": "",
+      "purchases": 1211,
+      "latitude": 19.2698836,
+      "municipality": "",
+      "rating": null,
+      "review_count": null,
+      "visited_status": "visita_exitosa",
+      "source": "google",
+      "average_order": 3521.61,
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "visitedAt": {
+        "_seconds": 1783667623,
+        "_nanoseconds": 552000000
+      },
+      "phone": "",
+      "street": "",
+      "name": "MV Taller de Motos",
+      "shop_type": "Repair",
+      "shopId": "D9UUiMcKCAEsLU3k3WsW",
+      "state": "",
+      "statusAt": {
+        "_seconds": 1783667623,
+        "_nanoseconds": 552000000
+      },
+      "google_maps_url": "https://maps.google.com/?cid=12174301556685604109&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.1288446,
+      "status": "visitada",
+      "visitedByEmail": "omar@voren.com.mx",
+      "odoo_sync_error": null,
+      "odoo_lead_id": "<html>\n   <head>\n      <title>Database not available</title>\n      <link href=\"//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic\" rel=\"stylesheet\" type=\"text/css\">\n      <link href=\"/static/http_error.css\" rel=\"stylesheet\" type=\"text/css\">\n   </head>\n   <body>\n      <div id=\"http_error\">\n          <div class=\"message\">\n            <a href=\"https://www.odoo.com\"><img src=\"/static/logo_oe_white_t.png\" alt=\"Odoo: Open Source Business Apps\"></a>\n            <h2>This database is currently locked</h2>\n            \n                <p>\n                    Renew your subscription to unlock your database instantly.\n                </p>\n                <p>\n                    <a class=\"button\" href=\"https://www.odoo.com/odoo-enterprise/upgrade-online/5bc24a60-cfc8-4240-beb2-f59f22b753e6\">Review Subscription</a>\n                </p>\n            \n            <p class=\"note\">\n                Not sure what to do? <a href=\"https://www.odoo.com/help\">Contact us!</a>\n            </p>\n          </div>\n      </div>\n   </body>\n</html>",
+      "surveyUpdatedAt": {
+        "_seconds": 1783667629,
+        "_nanoseconds": 871000000
+      },
+      "surveyLog": [
+        {
+          "field": "score_general",
+          "value": "10",
+          "ts": "2026-07-10T07:13:49.822Z"
+        }
+      ],
+      "score_general": 10,
+      "odoo_synced_at": "2026-07-10T07:13:50.387Z"
+    },
+    "shops": {
+      "name": "MV Taller de Motos",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "Av. Guadalupe I. Ramírez 715-C, Santa María Tepepan, Xochimilco, 16020 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "",
+      "email": "",
+      "website": "",
+      "latitude": 19.2698836,
+      "longitude": -99.1288446,
+      "location": {
+        "_latitude": 19.2698836,
+        "_longitude": -99.1288446
+      },
+      "rating": null,
+      "review_count": null,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 9:00–20:00 | martes: 9:00–20:00 | miércoles: 9:00–20:00 | jueves: 9:00–20:00 | viernes: 9:00–20:00 | sábado: 9:00–20:00 | domingo: 10:00–19:00",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=12174301556685604109&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJA1AcSrMBzoURDQW7esPO86g",
+      "purchases": 1211,
+      "average_order": 3521.61,
+      "imported_at": "2026-03-05T18:09:37.789Z"
+    }
+  },
+  {
+    "id": "EJX8mQUhvBFXB56IXoyC",
+    "visited_stores": {
+      "formatted_address": "Av. Guadalupe I. Ramírez 715-C, Santa María Tepepan, Xochimilco, 16020 Ciudad de México, CDMX, México",
+      "website": "",
+      "purchases": 1211,
+      "latitude": 19.2698836,
+      "municipality": "",
+      "rating": null,
+      "review_count": null,
+      "visited_status": "visita_exitosa",
+      "source": "google",
+      "average_order": 3521.61,
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "visitedAt": {
+        "_seconds": 1783667616,
+        "_nanoseconds": 261000000
+      },
+      "phone": "",
+      "street": "",
+      "name": "MV Taller de Motos",
+      "shop_type": "Repair",
+      "shopId": "EJX8mQUhvBFXB56IXoyC",
+      "state": "",
+      "statusAt": {
+        "_seconds": 1783667616,
+        "_nanoseconds": 261000000
+      },
+      "google_maps_url": "https://maps.google.com/?cid=12174301556685604109&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.1288446,
+      "status": "visitada",
+      "visitedByEmail": "omar@voren.com.mx",
+      "odoo_sync_error": null,
+      "odoo_lead_id": "<html>\n   <head>\n      <title>Database not available</title>\n      <link href=\"//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic\" rel=\"stylesheet\" type=\"text/css\">\n      <link href=\"/static/http_error.css\" rel=\"stylesheet\" type=\"text/css\">\n   </head>\n   <body>\n      <div id=\"http_error\">\n          <div class=\"message\">\n            <a href=\"https://www.odoo.com\"><img src=\"/static/logo_oe_white_t.png\" alt=\"Odoo: Open Source Business Apps\"></a>\n            <h2>This database is currently locked</h2>\n            \n                <p>\n                    Renew your subscription to unlock your database instantly.\n                </p>\n                <p>\n                    <a class=\"button\" href=\"https://www.odoo.com/odoo-enterprise/upgrade-online/5bc24a60-cfc8-4240-beb2-f59f22b753e6\">Review Subscription</a>\n                </p>\n            \n            <p class=\"note\">\n                Not sure what to do? <a href=\"https://www.odoo.com/help\">Contact us!</a>\n            </p>\n          </div>\n      </div>\n   </body>\n</html>",
+      "odoo_synced_at": "2026-07-10T07:13:37.392Z"
+    },
+    "shops": {
+      "name": "MV Taller de Motos",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "Av. Guadalupe I. Ramírez 715-C, Santa María Tepepan, Xochimilco, 16020 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "",
+      "email": "",
+      "website": "",
+      "latitude": 19.2698836,
+      "longitude": -99.1288446,
+      "location": {
+        "_latitude": 19.2698836,
+        "_longitude": -99.1288446
+      },
+      "rating": null,
+      "review_count": null,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 9:00–20:00 | martes: 9:00–20:00 | miércoles: 9:00–20:00 | jueves: 9:00–20:00 | viernes: 9:00–20:00 | sábado: 9:00–20:00 | domingo: 10:00–19:00",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=12174301556685604109&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJA1AcSrMBzoURDQW7esPO86g",
+      "purchases": 1211,
+      "average_order": 3521.61,
+      "imported_at": "2026-03-05T18:14:57.179Z"
+    }
+  },
+  {
+    "id": "cTBosePsIWZmhc8GgqVX",
+    "visited_stores": {
+      "shopId": "cTBosePsIWZmhc8GgqVX",
+      "name": "Escaner Multimarcas Para Motos y Taller de Servicio Especializado",
+      "shop_type": "Repair",
+      "source": "google",
+      "latitude": 19.3895789,
+      "longitude": -99.167941,
+      "formatted_address": "Adolfo Prieto 810, Col del Valle Centro, Benito Juárez, 03100 Ciudad de México, CDMX, México",
+      "street": null,
+      "municipality": null,
+      "state": null,
+      "phone": "55 5296 2187",
+      "website": null,
+      "rating": 5,
+      "review_count": 39,
+      "purchases": 3810,
+      "average_order": 4150.91,
+      "google_maps_url": "https://maps.google.com/?cid=8630709565071558557&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "visitedAt": {
+        "_seconds": 1773083357,
+        "_nanoseconds": 62000000
+      },
+      "visited_status": "visita_exitosa",
+      "status": "visitada",
+      "visitedByEmail": "gonzalo@voren.com.mx",
+      "odoo_sync_error": null,
+      "odoo_lead_id": "19",
+      "odoo_synced_at": "2026-04-27T23:28:50.366Z"
+    },
+    "shops": {
+      "name": "Escaner Multimarcas Para Motos y Taller de Servicio Especializado",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "Adolfo Prieto 810, Col del Valle Centro, Benito Juárez, 03100 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "55 5296 2187",
+      "email": "",
+      "website": "",
+      "latitude": 19.3895789,
+      "longitude": -99.167941,
+      "location": {
+        "_latitude": 19.3895789,
+        "_longitude": -99.167941
+      },
+      "rating": 5,
+      "review_count": 39,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 10:00–19:00 | martes: 10:00–19:00 | miércoles: 10:00–19:00 | jueves: 10:00–19:00 | viernes: 10:00–19:00 | sábado: Cerrado | domingo: Cerrado",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=8630709565071558557&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJW4KCJSb_0YURnQeoOZ9wxnc",
+      "purchases": 3810,
+      "average_order": 4150.91,
+      "imported_at": "2026-03-05T18:12:00.434Z"
+    }
+  },
+  {
+    "id": "jcH12BFFM7cKnRpa2g0N",
+    "visited_stores": {
+      "formatted_address": "Ferrocarril del Valle 69, Tizapán San Ángel, Tizapán, Álvaro Obregón, 01090 Ciudad de México, CDMX, México",
+      "website": "",
+      "purchases": 1584,
+      "latitude": 19.3399965,
+      "municipality": "",
+      "rating": 4.5,
+      "review_count": 120,
+      "visited_status": "visita_exitosa",
+      "source": "google",
+      "average_order": 4984.8,
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "visitedAt": {
+        "_seconds": 1782695665,
+        "_nanoseconds": 470000000
+      },
+      "phone": "56 2418 3556",
+      "street": "",
+      "name": "Taller de motos Lincks Biker's",
+      "shop_type": "Repair",
+      "shopId": "jcH12BFFM7cKnRpa2g0N",
+      "state": "",
+      "statusAt": {
+        "_seconds": 1782695665,
+        "_nanoseconds": 470000000
+      },
+      "google_maps_url": "https://maps.google.com/?cid=17817376987884302378&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.1963765,
+      "status": "visitada",
+      "visitedByEmail": "omar@voren.com.mx",
+      "odoo_sync_error": null,
+      "odoo_lead_id": "249",
+      "odoo_synced_at": "2026-06-29T01:14:26.076Z"
+    },
+    "shops": {
+      "name": "Taller de motos Lincks Biker's",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "Ferrocarril del Valle 69, Tizapán San Ángel, Tizapán, Álvaro Obregón, 01090 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "56 2418 3556",
+      "email": "",
+      "website": "",
+      "latitude": 19.3399965,
+      "longitude": -99.1963765,
+      "location": {
+        "_latitude": 19.3399965,
+        "_longitude": -99.1963765
+      },
+      "rating": 4.5,
+      "review_count": 120,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 9:00–20:00 | martes: 9:00–20:00 | miércoles: 9:00–20:00 | jueves: 9:00–20:00 | viernes: 9:00–20:00 | sábado: 9:00–17:00 | domingo: 9:00–17:00",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=17817376987884302378&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJkR53OUAB0oURKjAQUPgJRPc",
+      "purchases": 1584,
+      "average_order": 4984.8,
+      "imported_at": "2026-03-05T18:14:57.179Z"
+    }
+  },
+  {
+    "id": "GKubb0pzhlbV613LdYar",
+    "visited_stores": {
+      "formatted_address": "San Ricardo entre San Jorge y avenida santa ursula, Pedregal de Sta Úrsula, Coyoacán, 04600 Ciudad de México, CDMX, México",
+      "website": "https://www.facebook.com/Motos-Charly-469812333391099/",
+      "purchases": 1625,
+      "latitude": 19.3092664,
+      "municipality": "",
+      "rating": 4.4,
+      "review_count": 78,
+      "visited_status": "visita_exitosa",
+      "source": "google",
+      "average_order": 1095.52,
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "visitedAt": {
+        "_seconds": 1779922618,
+        "_nanoseconds": 471000000
+      },
+      "phone": "55 4829 6056",
+      "street": "",
+      "name": "Taller De Motos Charly",
+      "shop_type": "Repair",
+      "shopId": "GKubb0pzhlbV613LdYar",
+      "state": "",
+      "statusAt": {
+        "_seconds": 1779922618,
+        "_nanoseconds": 471000000
+      },
+      "google_maps_url": "https://maps.google.com/?cid=2582492375413978865&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.157607,
+      "status": "visitada",
+      "visitedByEmail": "omar@voren.com.mx",
+      "odoo_sync_error": null,
+      "odoo_lead_id": "65",
+      "score_general": 10,
+      "score_pains": 9,
+      "score_probabilidad": 6,
+      "score_satisfaccion": 6,
+      "tamano_tienda": "Mediana",
+      "surveyUpdatedAt": {
+        "_seconds": 1779922630,
+        "_nanoseconds": 714000000
+      },
+      "surveyLog": [
+        {
+          "field": "score_general",
+          "value": "10",
+          "ts": "2026-05-27T22:57:01.740Z"
+        },
+        {
+          "field": "score_pains",
+          "value": "9",
+          "ts": "2026-05-27T22:57:03.538Z"
+        },
+        {
+          "field": "score_probabilidad",
+          "value": "6",
+          "ts": "2026-05-27T22:57:04.874Z"
+        },
+        {
+          "field": "score_satisfaccion",
+          "value": "6",
+          "ts": "2026-05-27T22:57:06.636Z"
+        },
+        {
+          "field": "tamano_tienda",
+          "value": "Mediana",
+          "ts": "2026-05-27T22:57:08.311Z"
+        },
+        {
+          "field": "metodo_pago",
+          "value": "Efectivo",
+          "ts": "2026-05-27T22:57:10.642Z"
+        }
+      ],
+      "metodo_pago": [
+        "Efectivo"
+      ],
+      "odoo_synced_at": "2026-05-27T22:57:13.964Z"
+    },
+    "shops": {
+      "name": "Taller De Motos Charly",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "San Ricardo entre San Jorge y avenida santa ursula, Pedregal de Sta Úrsula, Coyoacán, 04600 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "55 4829 6056",
+      "email": "",
+      "website": "https://www.facebook.com/Motos-Charly-469812333391099/",
+      "latitude": 19.3092664,
+      "longitude": -99.157607,
+      "location": {
+        "_latitude": 19.3092664,
+        "_longitude": -99.157607
+      },
+      "rating": 4.4,
+      "review_count": 78,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 9:00–20:00 | martes: 9:00–20:00 | miércoles: 9:00–20:00 | jueves: 9:00–20:00 | viernes: 9:00–20:00 | sábado: 9:00–19:00 | domingo: 9:00–19:00",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=2582492375413978865&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJYV0TezoBzoUR8Xa0_yHb1iM",
+      "purchases": 1625,
+      "average_order": 1095.52,
+      "imported_at": "2026-03-05T18:09:37.789Z"
+    }
+  },
+  {
+    "id": "T8hRfWwicRJGGjp5wGX3",
+    "visited_stores": {
+      "formatted_address": "San Ricardo entre San Jorge y avenida santa ursula, Pedregal de Sta Úrsula, Coyoacán, 04600 Ciudad de México, CDMX, México",
+      "website": "https://www.facebook.com/Motos-Charly-469812333391099/",
+      "purchases": 1625,
+      "latitude": 19.3092664,
+      "municipality": "",
+      "rating": 4.4,
+      "review_count": 78,
+      "visited_status": "visita_exitosa",
+      "source": "google",
+      "average_order": 1095.52,
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "visitedAt": {
+        "_seconds": 1779922610,
+        "_nanoseconds": 604000000
+      },
+      "phone": "55 4829 6056",
+      "street": "",
+      "name": "Taller De Motos Charly",
+      "shop_type": "Repair",
+      "shopId": "T8hRfWwicRJGGjp5wGX3",
+      "state": "",
+      "statusAt": {
+        "_seconds": 1779922610,
+        "_nanoseconds": 604000000
+      },
+      "google_maps_url": "https://maps.google.com/?cid=2582492375413978865&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.157607,
+      "status": "visitada",
+      "visitedByEmail": "omar@voren.com.mx",
+      "odoo_sync_error": null,
+      "odoo_lead_id": "64",
+      "odoo_synced_at": "2026-05-27T22:56:51.398Z"
+    },
+    "shops": {
+      "name": "Taller De Motos Charly",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "San Ricardo entre San Jorge y avenida santa ursula, Pedregal de Sta Úrsula, Coyoacán, 04600 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "55 4829 6056",
+      "email": "",
+      "website": "https://www.facebook.com/Motos-Charly-469812333391099/",
+      "latitude": 19.3092664,
+      "longitude": -99.157607,
+      "location": {
+        "_latitude": 19.3092664,
+        "_longitude": -99.157607
+      },
+      "rating": 4.4,
+      "review_count": 78,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 9:00–20:00 | martes: 9:00–20:00 | miércoles: 9:00–20:00 | jueves: 9:00–20:00 | viernes: 9:00–20:00 | sábado: 9:00–19:00 | domingo: 9:00–19:00",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=2582492375413978865&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJYV0TezoBzoUR8Xa0_yHb1iM",
+      "purchases": 1625,
+      "average_order": 1095.52,
+      "imported_at": "2026-03-05T18:12:00.436Z"
+    }
+  },
+  {
+    "id": "LcmtVoMtv29rF8f6gCyG",
+    "visited_stores": {
+      "formatted_address": "Av. Nuevo León, Caltongo, Xochimilco, 16083 Ciudad de México, CDMX, México",
+      "website": "",
+      "purchases": 4712,
+      "latitude": 19.2587026,
+      "municipality": "",
+      "rating": 5,
+      "review_count": 3,
+      "source": "google",
+      "average_order": 593.39,
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "visitedAt": {
+        "_seconds": 1783214228,
+        "_nanoseconds": 594000000
+      },
+      "phone": "",
+      "street": "",
+      "name": "Moto Servicio \"Garcia\"",
+      "shop_type": "Repair",
+      "shopId": "LcmtVoMtv29rF8f6gCyG",
+      "state": "",
+      "google_maps_url": "https://maps.google.com/?cid=7030255123576332972&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.0837994,
+      "visitedByEmail": "omar@voren.com.mx",
+      "odoo_sync_error": null,
+      "visited_status": "visita_exitosa",
+      "statusAt": {
+        "_seconds": 1783214255,
+        "_nanoseconds": 72000000
+      },
+      "status": "visitada",
+      "odoo_lead_id": "308",
+      "score_general": 10,
+      "score_pains": 4,
+      "score_probabilidad": 5,
+      "tamano_tienda": "Mediana",
+      "credito": "Sí",
+      "metodo_pago": [
+        "Efectivo"
+      ],
+      "contacto_personal": "Sí",
+      "surveyUpdatedAt": {
+        "_seconds": 1783215434,
+        "_nanoseconds": 635000000
+      },
+      "surveyLog": [
+        {
+          "field": "score_general",
+          "value": "10",
+          "ts": "2026-07-05T01:36:57.848Z"
+        },
+        {
+          "field": "score_pains",
+          "value": "4",
+          "ts": "2026-07-05T01:37:01.021Z"
+        },
+        {
+          "field": "score_probabilidad",
+          "value": "5",
+          "ts": "2026-07-05T01:37:04.050Z"
+        },
+        {
+          "field": "tamano_tienda",
+          "value": "Mediana",
+          "ts": "2026-07-05T01:37:06.857Z"
+        },
+        {
+          "field": "credito",
+          "value": "Sí",
+          "ts": "2026-07-05T01:37:09.476Z"
+        },
+        {
+          "field": "metodo_pago",
+          "value": "Efectivo",
+          "ts": "2026-07-05T01:37:10.688Z"
+        },
+        {
+          "field": "contacto_personal",
+          "value": "Sí",
+          "ts": "2026-07-05T01:37:14.500Z"
+        }
+      ],
+      "odoo_synced_at": "2026-07-05T01:37:14.911Z"
+    },
+    "shops": {
+      "name": "Moto Servicio \"Garcia\"",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "Av. Nuevo León, Caltongo, Xochimilco, 16083 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "",
+      "email": "",
+      "website": "",
+      "latitude": 19.2587026,
+      "longitude": -99.0837994,
+      "location": {
+        "_latitude": 19.2587026,
+        "_longitude": -99.0837994
+      },
+      "rating": 5,
+      "review_count": 3,
+      "business_status": "OPERATIONAL",
+      "business_hours": "",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=7030255123576332972&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJd63HDvIDzoURrCIjecl7kGE",
+      "purchases": 4712,
+      "average_order": 593.39,
+      "imported_at": "2026-03-05T18:14:57.179Z"
+    }
+  },
+  {
+    "id": "xLTHHKS3m1h1nVsmnaXE",
+    "visited_stores": {
+      "formatted_address": "Av. Nuevo León, Caltongo, Xochimilco, 16083 Ciudad de México, CDMX, México",
+      "website": "",
+      "purchases": 4712,
+      "latitude": 19.2587026,
+      "municipality": "",
+      "rating": 5,
+      "review_count": 3,
+      "source": "google",
+      "average_order": 593.39,
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "visitedAt": {
+        "_seconds": 1783214201,
+        "_nanoseconds": 118000000
+      },
+      "phone": "",
+      "street": "",
+      "name": "Moto Servicio \"Garcia\"",
+      "shop_type": "Repair",
+      "shopId": "xLTHHKS3m1h1nVsmnaXE",
+      "state": "",
+      "google_maps_url": "https://maps.google.com/?cid=7030255123576332972&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.0837994,
+      "visitedByEmail": "omar@voren.com.mx",
+      "odoo_sync_error": null,
+      "status": "visitada",
+      "visited_status": "visita_exitosa",
+      "statusAt": {
+        "_seconds": 1783214217,
+        "_nanoseconds": 680000000
+      },
+      "odoo_lead_id": "305",
+      "odoo_synced_at": "2026-07-05T01:16:57.971Z"
+    },
+    "shops": {
+      "name": "Moto Servicio \"Garcia\"",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "Av. Nuevo León, Caltongo, Xochimilco, 16083 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "",
+      "email": "",
+      "website": "",
+      "latitude": 19.2587026,
+      "longitude": -99.0837994,
+      "location": {
+        "_latitude": 19.2587026,
+        "_longitude": -99.0837994
+      },
+      "rating": 5,
+      "review_count": 3,
+      "business_status": "OPERATIONAL",
+      "business_hours": "",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=7030255123576332972&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJd63HDvIDzoURrCIjecl7kGE",
+      "purchases": 4712,
+      "average_order": 593.39,
+      "imported_at": "2026-03-05T18:12:00.436Z"
+    }
+  },
+  {
+    "id": "JlLDZdZEjNFmHteheCn6",
+    "visited_stores": {
+      "formatted_address": "Viad. Tlalpan 191-accesoria c y d, Huipulco, Tlalpan, 14370 Ciudad de México, CDMX, México",
+      "website": "https://www.instagram.com/p/CVbXE_yvAFJ/?utm_medium=copy_link",
+      "purchases": 31,
+      "latitude": 19.2926001,
+      "municipality": "",
+      "rating": 4.8,
+      "review_count": 28,
+      "visited_status": "visita_exitosa",
+      "source": "google",
+      "average_order": 2578.92,
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "visitedAt": {
+        "_seconds": 1781772245,
+        "_nanoseconds": 135000000
+      },
+      "phone": "55 1295 8880",
+      "street": "",
+      "name": "Insane Taller de motocicletas Suzuki, Kawazaki, Honda y Yamaha",
+      "shop_type": "Repair",
+      "shopId": "JlLDZdZEjNFmHteheCn6",
+      "state": "",
+      "statusAt": {
+        "_seconds": 1781772245,
+        "_nanoseconds": 135000000
+      },
+      "google_maps_url": "https://maps.google.com/?cid=17341746883427119732&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.1484475,
+      "status": "visitada",
+      "visitedByEmail": "omar@voren.com.mx",
+      "odoo_sync_error": null,
+      "odoo_lead_id": "194",
+      "score_general": 10,
+      "score_pains": 5,
+      "score_probabilidad": 5,
+      "score_satisfaccion": 10,
+      "tamano_tienda": "Grande",
+      "credito": "No",
+      "metodo_pago": [
+        "Efectivo"
+      ],
+      "entrega": "Tienda física",
+      "contacto_personal": "Sí",
+      "surveyUpdatedAt": {
+        "_seconds": 1781772275,
+        "_nanoseconds": 59000000
+      },
+      "surveyLog": [
+        {
+          "field": "score_general",
+          "value": "10",
+          "ts": "2026-06-18T08:44:07.921Z"
+        },
+        {
+          "field": "score_pains",
+          "value": "5",
+          "ts": "2026-06-18T08:44:10.277Z"
+        },
+        {
+          "field": "score_probabilidad",
+          "value": "5",
+          "ts": "2026-06-18T08:44:12.956Z"
+        },
+        {
+          "field": "score_satisfaccion",
+          "value": "10",
+          "ts": "2026-06-18T08:44:14.418Z"
+        },
+        {
+          "field": "tamano_tienda",
+          "value": "Grande",
+          "ts": "2026-06-18T08:44:15.454Z"
+        },
+        {
+          "field": "credito",
+          "value": "No",
+          "ts": "2026-06-18T08:44:18.079Z"
+        },
+        {
+          "field": "metodo_pago",
+          "value": "Efectivo",
+          "ts": "2026-06-18T08:44:19.263Z"
+        },
+        {
+          "field": "entrega",
+          "value": "Tienda física",
+          "ts": "2026-06-18T08:44:21.035Z"
+        },
+        {
+          "field": "contacto_personal",
+          "value": "Sí",
+          "ts": "2026-06-18T08:44:23.050Z"
+        },
+        {
+          "field": "comentarios",
+          "value": "no le interesan refacciones chinas",
+          "ts": "2026-06-18T08:44:35.022Z"
+        }
+      ],
+      "comentarios": "no le interesan refacciones chinas",
+      "odoo_synced_at": "2026-06-18T08:44:35.422Z"
+    },
+    "shops": {
+      "name": "Insane Taller de motocicletas Suzuki, Kawazaki, Honda y Yamaha",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "Viad. Tlalpan 191-accesoria c y d, Huipulco, Tlalpan, 14370 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "55 1295 8880",
+      "email": "",
+      "website": "https://www.instagram.com/p/CVbXE_yvAFJ/?utm_medium=copy_link",
+      "latitude": 19.2926001,
+      "longitude": -99.1484475,
+      "location": {
+        "_latitude": 19.2926001,
+        "_longitude": -99.1484475
+      },
+      "rating": 4.8,
+      "review_count": 28,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 9:00–18:00 | martes: 9:00–18:00 | miércoles: 9:00–18:00 | jueves: 9:00–18:00 | viernes: 9:00–18:00 | sábado: 9:00–14:00 | domingo: Cerrado",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=17341746883427119732&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJQQFt0CUBzoURdDJp8-hCqvA",
+      "purchases": 31,
+      "average_order": 2578.92,
+      "imported_at": "2026-03-05T18:09:37.789Z"
+    }
+  },
+  {
+    "id": "Ntis4CNEns9K2cLMHoz9",
+    "visited_stores": {
+      "formatted_address": "04480, Coapa, Culhuacan CTM Zona X, Coyoacán, 04480 Ciudad de México, CDMX, México",
+      "website": "",
+      "purchases": 2354,
+      "latitude": 19.3066087,
+      "municipality": "",
+      "rating": null,
+      "review_count": null,
+      "source": "google",
+      "average_order": 2739.53,
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "visitedAt": {
+        "_seconds": 1781639886,
+        "_nanoseconds": 233000000
+      },
+      "phone": "55 3877 1004",
+      "street": "",
+      "name": "Taller de Servicio Automotriz y Motos",
+      "shop_type": "Repair",
+      "shopId": "Ntis4CNEns9K2cLMHoz9",
+      "state": "",
+      "google_maps_url": "https://maps.google.com/?cid=7183162652316258469&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.1091364,
+      "visitedByEmail": "omar@voren.com.mx",
+      "odoo_sync_error": null,
+      "score_general": 10,
+      "score_pains": 5,
+      "score_probabilidad": 6,
+      "score_satisfaccion": 9,
+      "tamano_tienda": "Mediana",
+      "credito": "Sí",
+      "metodo_pago": [
+        "Transferencia"
+      ],
+      "entrega": "Delivery",
+      "principal_proveedor": [
+        "La Casa de la Moto"
+      ],
+      "contacto_personal": "Sí",
+      "surveyUpdatedAt": {
+        "_seconds": 1781640115,
+        "_nanoseconds": 289000000
+      },
+      "surveyLog": [
+        {
+          "field": "score_general",
+          "value": "10",
+          "ts": "2026-06-16T20:01:37.277Z"
+        },
+        {
+          "field": "score_pains",
+          "value": "5",
+          "ts": "2026-06-16T20:01:40.697Z"
+        },
+        {
+          "field": "score_probabilidad",
+          "value": "6",
+          "ts": "2026-06-16T20:01:42.102Z"
+        },
+        {
+          "field": "score_satisfaccion",
+          "value": "9",
+          "ts": "2026-06-16T20:01:46.086Z"
+        },
+        {
+          "field": "tamano_tienda",
+          "value": "Mediana",
+          "ts": "2026-06-16T20:01:47.881Z"
+        },
+        {
+          "field": "credito",
+          "value": "Sí",
+          "ts": "2026-06-16T20:01:50.356Z"
+        },
+        {
+          "field": "metodo_pago",
+          "value": "Transferencia",
+          "ts": "2026-06-16T20:01:52.323Z"
+        },
+        {
+          "field": "entrega",
+          "value": "Delivery",
+          "ts": "2026-06-16T20:01:54.983Z"
+        },
+        {
+          "field": "principal_proveedor",
+          "value": "La Casa de la Moto",
+          "ts": "2026-06-16T20:02:01.079Z"
+        },
+        {
+          "field": "contacto_personal",
+          "value": "Sí",
+          "ts": "2026-06-16T20:02:02.933Z"
+        }
+      ],
+      "visited_status": "visita_exitosa",
+      "statusAt": {
+        "_seconds": 1781640121,
+        "_nanoseconds": 878000000
+      },
+      "status": "visitada",
+      "odoo_lead_id": "182",
+      "odoo_synced_at": "2026-06-16T20:02:02.334Z"
+    },
+    "shops": {
+      "name": "Taller de Servicio Automotriz y Motos",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "04480, Coapa, Culhuacan CTM Zona X, Coyoacán, 04480 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "55 3877 1004",
+      "email": "",
+      "website": "",
+      "latitude": 19.3066087,
+      "longitude": -99.1091364,
+      "location": {
+        "_latitude": 19.3066087,
+        "_longitude": -99.1091364
+      },
+      "rating": null,
+      "review_count": null,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 9:00–18:00 | martes: 9:00–18:00 | miércoles: 9:00–18:00 | jueves: 9:00–18:00 | viernes: 9:00–18:00 | sábado: 9:00–13:00 | domingo: Cerrado",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=7183162652316258469&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJv-VAe80BzoURpdApz1-4r2M",
+      "purchases": 2354,
+      "average_order": 2739.53,
+      "imported_at": "2026-03-05T18:09:37.789Z"
+    }
+  },
+  {
+    "id": "U9rHwAZd6YRBrbOO9R1U",
+    "visited_stores": {
+      "formatted_address": "Prol. División del Nte. 701, San Lorenzo la Cebada, Xochimilco, 16035 Ciudad de México, CDMX, México",
+      "website": "http://www.reparaciónderinesmotoyauto.com/",
+      "purchases": 2035,
+      "latitude": 19.2780115,
+      "municipality": "",
+      "rating": 5,
+      "review_count": 9,
+      "source": "google",
+      "average_order": 4831.83,
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "visitedAt": {
+        "_seconds": 1783717152,
+        "_nanoseconds": 918000000
+      },
+      "phone": "56 5753 5354",
+      "street": "",
+      "name": "REPARACIÓN DE RINES DE AUTO Y MOTO VAQUERITOS",
+      "shop_type": "Repair",
+      "shopId": "U9rHwAZd6YRBrbOO9R1U",
+      "state": "",
+      "google_maps_url": "https://maps.google.com/?cid=3331740802453919964&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.1221458,
+      "visitedByEmail": "omar@voren.com.mx",
+      "odoo_sync_error": null,
+      "visited_status": "visita_exitosa",
+      "statusAt": {
+        "_seconds": 1783717190,
+        "_nanoseconds": 800000000
+      },
+      "status": "visitada",
+      "odoo_lead_id": "<html>\n   <head>\n      <title>Database not available</title>\n      <link href=\"//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic\" rel=\"stylesheet\" type=\"text/css\">\n      <link href=\"/static/http_error.css\" rel=\"stylesheet\" type=\"text/css\">\n   </head>\n   <body>\n      <div id=\"http_error\">\n          <div class=\"message\">\n            <a href=\"https://www.odoo.com\"><img src=\"/static/logo_oe_white_t.png\" alt=\"Odoo: Open Source Business Apps\"></a>\n            <h2>This database is currently locked</h2>\n            \n                <p>\n                    Renew your subscription to unlock your database instantly.\n                </p>\n                <p>\n                    <a class=\"button\" href=\"https://www.odoo.com/odoo-enterprise/upgrade-online/5bc24a60-cfc8-4240-beb2-f59f22b753e6\">Review Subscription</a>\n                </p>\n            \n            <p class=\"note\">\n                Not sure what to do? <a href=\"https://www.odoo.com/help\">Contact us!</a>\n            </p>\n          </div>\n      </div>\n   </body>\n</html>",
+      "odoo_synced_at": "2026-07-10T20:59:51.263Z"
+    },
+    "shops": {
+      "name": "REPARACIÓN DE RINES DE AUTO Y MOTO VAQUERITOS",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "Prol. División del Nte. 701, San Lorenzo la Cebada, Xochimilco, 16035 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "56 5753 5354",
+      "email": "",
+      "website": "http://www.reparaciónderinesmotoyauto.com/",
+      "latitude": 19.2780115,
+      "longitude": -99.1221458,
+      "location": {
+        "_latitude": 19.2780115,
+        "_longitude": -99.1221458
+      },
+      "rating": 5,
+      "review_count": 9,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 9:00–19:00 | martes: 9:00–19:00 | miércoles: 9:00–19:00 | jueves: 9:00–19:00 | viernes: 9:00–19:00 | sábado: 9:00–19:00 | domingo: 9:00–19:00",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=3331740802453919964&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJO-LDIQABzoUR3NjwhZu4PC4",
+      "purchases": 2035,
+      "average_order": 4831.83,
+      "imported_at": "2026-03-05T18:14:57.179Z"
+    }
+  },
+  {
+    "id": "x53ql8EnmzzGmURtJ75Y",
+    "visited_stores": {
+      "formatted_address": "Av. Nuevo León 850, San Gregorio Atlapulco, Xochimilco, 16630 Ciudad de México, CDMX, México",
+      "website": "",
+      "purchases": 2257,
+      "latitude": 19.2560777,
+      "municipality": "",
+      "rating": 5,
+      "review_count": 3,
+      "source": "google",
+      "average_order": 757.57,
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "visitedAt": {
+        "_seconds": 1782974390,
+        "_nanoseconds": 23000000
+      },
+      "phone": "55 5843 7864",
+      "street": "",
+      "name": "STANCE GARAGE taller de mecanica automotriz y motocicletas",
+      "shop_type": "Repair",
+      "shopId": "x53ql8EnmzzGmURtJ75Y",
+      "state": "",
+      "google_maps_url": "https://maps.google.com/?cid=8614257250308768368&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.071079,
+      "visitedByEmail": "omar@voren.com.mx",
+      "score_general": 10,
+      "score_pains": 6,
+      "odoo_sync_error": null,
+      "score_probabilidad": 6,
+      "score_satisfaccion": 8,
+      "tamano_tienda": "Mediana",
+      "credito": "Sí",
+      "surveyUpdatedAt": {
+        "_seconds": 1782974405,
+        "_nanoseconds": 200000000
+      },
+      "surveyLog": [
+        {
+          "field": "score_general",
+          "value": "10",
+          "ts": "2026-07-02T06:39:55.888Z"
+        },
+        {
+          "field": "score_pains",
+          "value": "6",
+          "ts": "2026-07-02T06:39:57.638Z"
+        },
+        {
+          "field": "score_probabilidad",
+          "value": "6",
+          "ts": "2026-07-02T06:39:58.913Z"
+        },
+        {
+          "field": "score_satisfaccion",
+          "value": "8",
+          "ts": "2026-07-02T06:40:00.467Z"
+        },
+        {
+          "field": "tamano_tienda",
+          "value": "Mediana",
+          "ts": "2026-07-02T06:40:03.068Z"
+        },
+        {
+          "field": "credito",
+          "value": "Sí",
+          "ts": "2026-07-02T06:40:04.389Z"
+        },
+        {
+          "field": "metodo_pago",
+          "value": "Efectivo",
+          "ts": "2026-07-02T06:40:06.038Z"
+        },
+        {
+          "field": "metodo_pago",
+          "value": "Efectivo,Transferencia",
+          "ts": "2026-07-02T06:40:07.201Z"
+        }
+      ],
+      "metodo_pago": [
+        "Efectivo",
+        "Transferencia"
+      ],
+      "visited_status": "visita_exitosa",
+      "statusAt": {
+        "_seconds": 1782974414,
+        "_nanoseconds": 71000000
+      },
+      "status": "visitada",
+      "odoo_lead_id": "266",
+      "odoo_synced_at": "2026-07-02T06:40:14.420Z"
+    },
+    "shops": {
+      "name": "STANCE GARAGE taller de mecanica automotriz y motocicletas",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "Av. Nuevo León 850, San Gregorio Atlapulco, Xochimilco, 16630 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "55 5843 7864",
+      "email": "",
+      "website": "",
+      "latitude": 19.2560777,
+      "longitude": -99.071079,
+      "location": {
+        "_latitude": 19.2560777,
+        "_longitude": -99.071079
+      },
+      "rating": 5,
+      "review_count": 3,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 10:00–19:00 | martes: 10:00–19:00 | miércoles: 10:00–19:00 | jueves: 10:00–19:00 | viernes: 10:00–19:00 | sábado: Cerrado | domingo: 0:00–16:00",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=8614257250308768368&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJgSPkuUcDzoURcMJ8MFT9i3c",
+      "purchases": 2257,
+      "average_order": 757.57,
+      "imported_at": "2026-03-05T18:12:00.436Z"
+    }
+  },
+  {
+    "id": "X1DxraQV4S8npm0KFc43",
+    "visited_stores": {
+      "formatted_address": "La Canadá, San Lucas Xochimanca, Xochimilco, 16220 Ciudad de México, CDMX, México",
+      "website": "",
+      "purchases": 3464,
+      "latitude": 19.2434351,
+      "municipality": "",
+      "rating": null,
+      "review_count": null,
+      "visited_status": "visita_exitosa",
+      "source": "google",
+      "average_order": 1511.9,
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "visitedAt": {
+        "_seconds": 1780774138,
+        "_nanoseconds": 217000000
+      },
+      "phone": "56 3751 2623",
+      "street": "",
+      "name": "Taller de motos yoshi a domicilio igual",
+      "shop_type": "Repair",
+      "shopId": "X1DxraQV4S8npm0KFc43",
+      "state": "",
+      "statusAt": {
+        "_seconds": 1780774138,
+        "_nanoseconds": 217000000
+      },
+      "google_maps_url": "https://maps.google.com/?cid=11525386047848206581&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.1173558,
+      "status": "visitada",
+      "visitedByEmail": "omar@voren.com.mx",
+      "odoo_sync_error": null,
+      "odoo_lead_id": "132",
+      "odoo_synced_at": "2026-06-06T19:28:59.177Z"
+    },
+    "shops": {
+      "name": "Taller de motos yoshi a domicilio igual",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "La Canadá, San Lucas Xochimanca, Xochimilco, 16220 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "56 3751 2623",
+      "email": "",
+      "website": "",
+      "latitude": 19.2434351,
+      "longitude": -99.1173558,
+      "location": {
+        "_latitude": 19.2434351,
+        "_longitude": -99.1173558
+      },
+      "rating": null,
+      "review_count": null,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: Abierto 24 horas | martes: Abierto 24 horas | miércoles: Abierto 24 horas | jueves: Abierto 24 horas | viernes: Abierto 24 horas | sábado: Abierto 24 horas | domingo: Abierto 24 horas",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=11525386047848206581&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJ2cri5vsBzoUR9VA84Ytl8p8",
+      "purchases": 3464,
+      "average_order": 1511.9,
+      "imported_at": "2026-03-05T18:12:00.436Z"
+    }
+  },
+  {
+    "id": "XxALcdzzkYGXJ6Frd1Hr",
+    "visited_stores": {
+      "formatted_address": "San León, Pedregal de Sta Úrsula, Coyoacán, 04600 Ciudad de México, CDMX, México",
+      "website": "https://www.facebook.com/MecanicaDeLaMotoSanLeon/",
+      "purchases": 4563,
+      "latitude": 19.3086492,
+      "municipality": "",
+      "rating": 4.9,
+      "review_count": 32,
+      "visited_status": "visita_exitosa",
+      "source": "google",
+      "average_order": 3481.15,
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "visitedAt": {
+        "_seconds": 1779912227,
+        "_nanoseconds": 56000000
+      },
+      "phone": "55 5067 4620",
+      "street": "",
+      "name": "Taller de Motos JACK'S GARAGE",
+      "shop_type": "Repair",
+      "shopId": "XxALcdzzkYGXJ6Frd1Hr",
+      "state": "",
+      "statusAt": {
+        "_seconds": 1779912227,
+        "_nanoseconds": 56000000
+      },
+      "google_maps_url": "https://maps.google.com/?cid=15899105705536571650&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.1498259,
+      "status": "visitada",
+      "visitedByEmail": "omar@voren.com.mx",
+      "odoo_sync_error": null,
+      "odoo_lead_id": "60",
+      "score_general": 7,
+      "score_pains": 6,
+      "score_probabilidad": 4,
+      "tamano_tienda": "Mediana",
+      "credito": "No",
+      "surveyUpdatedAt": {
+        "_seconds": 1779912251,
+        "_nanoseconds": 926000000
+      },
+      "surveyLog": [
+        {
+          "field": "score_general",
+          "value": "7",
+          "ts": "2026-05-27T20:03:52.565Z"
+        },
+        {
+          "field": "score_pains",
+          "value": "6",
+          "ts": "2026-05-27T20:03:54.089Z"
+        },
+        {
+          "field": "score_probabilidad",
+          "value": "8",
+          "ts": "2026-05-27T20:03:56.945Z"
+        },
+        {
+          "field": "score_probabilidad",
+          "value": "4",
+          "ts": "2026-05-27T20:04:06.671Z"
+        },
+        {
+          "field": "tamano_tienda",
+          "value": "Mediana",
+          "ts": "2026-05-27T20:04:10.693Z"
+        },
+        {
+          "field": "credito",
+          "value": "No",
+          "ts": "2026-05-27T20:04:12.099Z"
+        }
+      ],
+      "odoo_synced_at": "2026-05-27T20:04:12.187Z"
+    },
+    "shops": {
+      "name": "Taller de Motos JACK'S GARAGE",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "San León, Pedregal de Sta Úrsula, Coyoacán, 04600 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "55 5067 4620",
+      "email": "",
+      "website": "https://www.facebook.com/MecanicaDeLaMotoSanLeon/",
+      "latitude": 19.3086492,
+      "longitude": -99.1498259,
+      "location": {
+        "_latitude": 19.3086492,
+        "_longitude": -99.1498259
+      },
+      "rating": 4.9,
+      "review_count": 32,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 9:00–18:00 | martes: 9:00–18:00 | miércoles: 9:00–18:00 | jueves: 9:00–18:00 | viernes: 9:00–18:00 | sábado: 10:00–16:00 | domingo: Cerrado",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=15899105705536571650&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJlQjTANABzoURAsnk8Gb4pNw",
+      "purchases": 4563,
+      "average_order": 3481.15,
+      "imported_at": "2026-03-05T18:14:57.179Z"
+    }
+  },
+  {
+    "id": "kY87RrMgJ66vCq7IIA1b",
+    "visited_stores": {
+      "formatted_address": "Prol. Vicente Guerrero 25a, San Andrés Ahuayucan, Xochimilco, 16810 Ciudad de México, CDMX, México",
+      "website": "",
+      "purchases": 3358,
+      "latitude": 19.2214073,
+      "municipality": "",
+      "rating": null,
+      "review_count": null,
+      "visited_status": "visita_exitosa",
+      "source": "google",
+      "average_order": 512.65,
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "visitedAt": {
+        "_seconds": 1783791728,
+        "_nanoseconds": 66000000
+      },
+      "phone": "55 7516 9749",
+      "street": "",
+      "name": "Taller de motos DON AMBROSIO 1",
+      "shop_type": "Repair",
+      "shopId": "kY87RrMgJ66vCq7IIA1b",
+      "state": "",
+      "statusAt": {
+        "_seconds": 1783791728,
+        "_nanoseconds": 66000000
+      },
+      "google_maps_url": "https://maps.google.com/?cid=8759518070462452253&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.1035027,
+      "status": "visitada",
+      "visitedByEmail": "omar@voren.com.mx",
+      "pipeline_stage": "nuevo",
+      "crm_updated_at": "2026-07-11T17:42:08.268Z"
+    },
+    "shops": {
+      "name": "Taller de motos DON AMBROSIO 1",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "Prol. Vicente Guerrero 25a, San Andrés Ahuayucan, Xochimilco, 16810 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "55 7516 9749",
+      "email": "",
+      "website": "",
+      "latitude": 19.2214073,
+      "longitude": -99.1035027,
+      "location": {
+        "_latitude": 19.2214073,
+        "_longitude": -99.1035027
+      },
+      "rating": null,
+      "review_count": null,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 9:00–18:00 | martes: 9:00–18:00 | miércoles: 9:00–18:00 | jueves: 9:00–18:00 | viernes: 9:00–18:00 | sábado: 9:00–18:00 | domingo: Cerrado",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=8759518070462452253&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJEQOFFQAHzoURHZKHcUYPkHk",
+      "purchases": 3358,
+      "average_order": 512.65,
+      "imported_at": "2026-03-05T18:14:57.179Z"
+    }
+  },
+  {
+    "id": "qmzQm9QRyQHdYZrVLANC",
+    "visited_stores": {
+      "formatted_address": "Prol. Matamoros 1, San José Zacatepec, San Mateo Xalpa, Xochimilco, 16800 Ciudad de México, CDMX, México",
+      "website": "https://www.facebook.com/Old.Schooll.Taller.de.Motos",
+      "purchases": 814,
+      "latitude": 19.2362258,
+      "municipality": "",
+      "rating": null,
+      "review_count": null,
+      "visited_status": "visita_exitosa",
+      "source": "google",
+      "average_order": 3911.8,
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "visitedAt": {
+        "_seconds": 1783758545,
+        "_nanoseconds": 649000000
+      },
+      "phone": "56 1310 9907",
+      "street": "",
+      "name": "Taller de Motos",
+      "shop_type": "Repair",
+      "shopId": "qmzQm9QRyQHdYZrVLANC",
+      "state": "",
+      "statusAt": {
+        "_seconds": 1783758545,
+        "_nanoseconds": 649000000
+      },
+      "google_maps_url": "https://maps.google.com/?cid=16016184939065471070&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.1202882,
+      "status": "visitada",
+      "visitedByEmail": "omar@voren.com.mx",
+      "pipeline_stage": "nuevo",
+      "crm_updated_at": "2026-07-11T08:29:05.820Z"
+    },
+    "shops": {
+      "name": "Taller de Motos",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "Prol. Matamoros 1, San José Zacatepec, San Mateo Xalpa, Xochimilco, 16800 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "56 1310 9907",
+      "email": "",
+      "website": "https://www.facebook.com/Old.Schooll.Taller.de.Motos",
+      "latitude": 19.2362258,
+      "longitude": -99.1202882,
+      "location": {
+        "_latitude": 19.2362258,
+        "_longitude": -99.1202882
+      },
+      "rating": null,
+      "review_count": null,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 9:30–18:00 | martes: 9:30–18:00 | miércoles: 9:30–18:00 | jueves: 9:30–18:00 | viernes: 9:30–18:00 | sábado: 9:30–18:00 | domingo: Cerrado",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=16016184939065471070&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJ327gltIHzoURXnD1PVjrRN4",
+      "purchases": 814,
+      "average_order": 3911.8,
+      "imported_at": "2026-03-05T18:14:57.179Z"
+    }
+  },
+  {
+    "id": "uTLoMQZocnzxW9uE1eGU",
+    "visited_stores": {
+      "formatted_address": "Ramon Rodriguez 206, Conchita B, Tláhuac, 13360 Ciudad de México, CDMX, México",
+      "website": "",
+      "purchases": 3324,
+      "latitude": 19.2839496,
+      "municipality": "",
+      "rating": 4.8,
+      "review_count": 32,
+      "visited_status": "visita_exitosa",
+      "source": "google",
+      "average_order": 1853.94,
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "visitedAt": {
+        "_seconds": 1781052542,
+        "_nanoseconds": 847000000
+      },
+      "phone": "56 1664 0332",
+      "street": "",
+      "name": "Taller de motos Garcia's",
+      "shop_type": "Repair",
+      "shopId": "uTLoMQZocnzxW9uE1eGU",
+      "state": "",
+      "statusAt": {
+        "_seconds": 1781052542,
+        "_nanoseconds": 847000000
+      },
+      "google_maps_url": "https://maps.google.com/?cid=16123982949195119149&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.0321117,
+      "status": "visitada",
+      "visitedByEmail": "omar@voren.com.mx",
+      "odoo_sync_error": null,
+      "odoo_lead_id": "156",
+      "odoo_synced_at": "2026-06-10T00:49:03.330Z"
+    },
+    "shops": {
+      "name": "Taller de motos Garcia's",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "Ramon Rodriguez 206, Conchita B, Tláhuac, 13360 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "56 1664 0332",
+      "email": "",
+      "website": "",
+      "latitude": 19.2839496,
+      "longitude": -99.0321117,
+      "location": {
+        "_latitude": 19.2839496,
+        "_longitude": -99.0321117
+      },
+      "rating": 4.8,
+      "review_count": 32,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 11:00–19:00 | martes: 11:00–19:00 | miércoles: 11:00–19:00 | jueves: 11:00–17:00 | viernes: 11:00–19:00 | sábado: 11:00–16:00 | domingo: Cerrado",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=16123982949195119149&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJhYakFRIDzoURLfo6UxDlw98",
+      "purchases": 3324,
+      "average_order": 1853.94,
+      "imported_at": "2026-03-05T18:14:57.219Z"
+    }
+  },
+  {
+    "id": "wIchSUp4Ez2wIl3xVEJW",
+    "visited_stores": {
+      "formatted_address": "Piña y Palacios 70, San Mateo Xalpa, Xochimilco, 16800 Ciudad de México, CDMX, México",
+      "website": "",
+      "purchases": 629,
+      "latitude": 19.2347573,
+      "municipality": "",
+      "rating": 4.8,
+      "review_count": 5,
+      "visited_status": "visita_exitosa",
+      "source": "google",
+      "average_order": 1723.63,
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "visitedAt": {
+        "_seconds": 1780782346,
+        "_nanoseconds": 490000000
+      },
+      "phone": "55 8794 6061",
+      "street": "",
+      "name": "Taller de motos Motomono",
+      "shop_type": "Repair",
+      "shopId": "wIchSUp4Ez2wIl3xVEJW",
+      "state": "",
+      "statusAt": {
+        "_seconds": 1780782346,
+        "_nanoseconds": 490000000
+      },
+      "google_maps_url": "https://maps.google.com/?cid=4242180883588301036&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.1225501,
+      "status": "visitada",
+      "visitedByEmail": "omar@voren.com.mx",
+      "odoo_sync_error": null,
+      "odoo_lead_id": "133",
+      "score_general": 10,
+      "score_pains": 6,
+      "score_probabilidad": 7,
+      "score_satisfaccion": 6,
+      "tamano_tienda": "Mediana",
+      "credito": "No",
+      "metodo_pago": [
+        "Efectivo"
+      ],
+      "entrega": "Tienda física",
+      "contacto_personal": "Sí",
+      "surveyUpdatedAt": {
+        "_seconds": 1781228648,
+        "_nanoseconds": 818000000
+      },
+      "surveyLog": [
+        {
+          "field": "score_general",
+          "value": "10",
+          "ts": "2026-06-12T01:43:55.769Z"
+        },
+        {
+          "field": "score_pains",
+          "value": "6",
+          "ts": "2026-06-12T01:43:59.371Z"
+        },
+        {
+          "field": "score_probabilidad",
+          "value": "7",
+          "ts": "2026-06-12T01:44:00.189Z"
+        },
+        {
+          "field": "score_satisfaccion",
+          "value": "6",
+          "ts": "2026-06-12T01:44:02.058Z"
+        },
+        {
+          "field": "tamano_tienda",
+          "value": "Mediana",
+          "ts": "2026-06-12T01:44:03.260Z"
+        },
+        {
+          "field": "credito",
+          "value": "No",
+          "ts": "2026-06-12T01:44:04.359Z"
+        },
+        {
+          "field": "metodo_pago",
+          "value": "Efectivo",
+          "ts": "2026-06-12T01:44:06.446Z"
+        },
+        {
+          "field": "entrega",
+          "value": "Tienda física",
+          "ts": "2026-06-12T01:44:07.128Z"
+        },
+        {
+          "field": "contacto_personal",
+          "value": "Sí",
+          "ts": "2026-06-12T01:44:08.780Z"
+        }
+      ],
+      "odoo_synced_at": "2026-06-12T01:44:09.056Z"
+    },
+    "shops": {
+      "name": "Taller de motos Motomono",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "Piña y Palacios 70, San Mateo Xalpa, Xochimilco, 16800 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "55 8794 6061",
+      "email": "",
+      "website": "",
+      "latitude": 19.2347573,
+      "longitude": -99.1225501,
+      "location": {
+        "_latitude": 19.2347573,
+        "_longitude": -99.1225501
+      },
+      "rating": 4.8,
+      "review_count": 5,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 10:00–19:00 | martes: 10:00–19:00 | miércoles: 10:00–19:00 | jueves: 10:00–19:00 | viernes: 10:00–19:00 | sábado: 10:00–16:00 | domingo: Cerrado",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=4242180883588301036&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJzcitm3kHzoUR7MA7nwlB3zo",
+      "purchases": 629,
+      "average_order": 1723.63,
+      "imported_at": "2026-03-05T18:12:00.436Z"
+    }
+  },
+  {
+    "id": "lWzAGpQAn3YiMTyC0kYr",
+    "visited_stores": {
+      "score_satisfaccion": null,
+      "principal_proveedor": null,
+      "formatted_address": "Av. Jesús G. Y Villa 7, Jardín Balbuena, Venustiano Carranza, 15900 Ciudad de México, CDMX, México",
+      "website": "",
+      "purchases": 4273,
+      "latitude": 19.4213926,
+      "municipality": "",
+      "rating": 5,
+      "review_count": 16,
+      "visited_status": "visita_exitosa",
+      "source": "google",
+      "average_order": 3666.5,
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "visitedAt": {
+        "_seconds": 1782419826,
+        "_nanoseconds": 584000000
+      },
+      "phone": "56 5918 0940",
+      "street": "",
+      "name": "Taller de Motos “La Vieja Guardia”",
+      "shop_type": "Repair",
+      "shopId": "lWzAGpQAn3YiMTyC0kYr",
+      "state": "",
+      "statusAt": {
+        "_seconds": 1782419826,
+        "_nanoseconds": 584000000
+      },
+      "google_maps_url": "https://maps.google.com/?cid=3924974634085004381&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.0998588,
+      "status": "visitada",
+      "visitedByEmail": "omar@voren.com.mx",
+      "surveyUpdatedAt": {
+        "_seconds": 1782419829,
+        "_nanoseconds": 413000000
+      },
+      "surveyLog": [
+        {
+          "field": "score_satisfaccion",
+          "value": "2",
+          "ts": "2026-03-13T00:08:03.264Z"
+        },
+        {
+          "field": "score_satisfaccion",
+          "value": null,
+          "ts": "2026-03-13T00:08:04.678Z"
+        },
+        {
+          "field": "principal_proveedor",
+          "value": "Motometa",
+          "ts": "2026-03-13T00:11:20.722Z"
+        },
+        {
+          "field": "principal_proveedor",
+          "value": null,
+          "ts": "2026-03-13T00:11:22.315Z"
+        },
+        {
+          "field": "score_general",
+          "value": "10",
+          "ts": "2026-06-25T20:37:11.966Z"
+        }
+      ],
+      "score_general": 10,
+      "odoo_sync_error": null,
+      "odoo_lead_id": "220",
+      "odoo_synced_at": "2026-06-25T20:37:23.169Z"
+    },
+    "shops": {
+      "name": "Taller de Motos “La Vieja Guardia”",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "Av. Jesús G. Y Villa 7, Jardín Balbuena, Venustiano Carranza, 15900 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "56 5918 0940",
+      "email": "",
+      "website": "",
+      "latitude": 19.4213926,
+      "longitude": -99.0998588,
+      "location": {
+        "_latitude": 19.4213926,
+        "_longitude": -99.0998588
+      },
+      "rating": 5,
+      "review_count": 16,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 9:30–19:00 | martes: 9:30–19:00 | miércoles: 9:30–19:00 | jueves: 9:30–19:00 | viernes: 9:30–19:00 | sábado: 9:30–17:00 | domingo: Cerrado",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=3924974634085004381&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJhyQHaAD90YURXTQOYaJPeDY",
+      "purchases": 4273,
+      "average_order": 3666.5,
+      "imported_at": "2026-03-05T18:14:57.177Z"
+    }
+  },
+  {
+    "id": "pcyu6dDsyVRJZwxXo6OK",
+    "visited_stores": {
+      "formatted_address": "Isabel La Católica & José María Roa Bárcenas, Obrera, Cuauhtémoc, 06800 Ciudad de México, CDMX, México",
+      "website": "",
+      "purchases": 1851,
+      "latitude": 19.4116126,
+      "municipality": "",
+      "rating": 5,
+      "review_count": 1,
+      "visited_status": "visita_exitosa",
+      "source": "google",
+      "average_order": 991.23,
+      "userId": "BW3iPuNK0Sc49lJyVNkpe66h8VU2",
+      "visitedAt": {
+        "_seconds": 1780529901,
+        "_nanoseconds": 547000000
+      },
+      "phone": "55 3864 2624",
+      "street": "",
+      "name": "Taller de motos charly",
+      "shop_type": "Repair",
+      "shopId": "pcyu6dDsyVRJZwxXo6OK",
+      "state": "",
+      "statusAt": {
+        "_seconds": 1780529901,
+        "_nanoseconds": 547000000
+      },
+      "google_maps_url": "https://maps.google.com/?cid=17256275610120885818&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.1390903,
+      "status": "visitada",
+      "visitedByEmail": "andres@voren.com.mx",
+      "odoo_sync_error": null,
+      "odoo_lead_id": "93",
+      "score_general": 3,
+      "score_pains": 1,
+      "score_probabilidad": 3,
+      "score_satisfaccion": 4,
+      "tamano_tienda": "Pequeña",
+      "contacto_personal": "No",
+      "surveyUpdatedAt": {
+        "_seconds": 1780529954,
+        "_nanoseconds": 173000000
+      },
+      "surveyLog": [
+        {
+          "field": "score_general",
+          "value": "3",
+          "ts": "2026-06-03T23:38:27.317Z"
+        },
+        {
+          "field": "score_pains",
+          "value": "1",
+          "ts": "2026-06-03T23:38:30.962Z"
+        },
+        {
+          "field": "score_probabilidad",
+          "value": "3",
+          "ts": "2026-06-03T23:38:32.891Z"
+        },
+        {
+          "field": "score_satisfaccion",
+          "value": "4",
+          "ts": "2026-06-03T23:38:35.571Z"
+        },
+        {
+          "field": "tamano_tienda",
+          "value": "Pequeña",
+          "ts": "2026-06-03T23:38:36.755Z"
+        },
+        {
+          "field": "comentarios",
+          "value": "5546934125",
+          "ts": "2026-06-03T23:38:51.153Z"
+        },
+        {
+          "field": "contacto_personal",
+          "value": "No",
+          "ts": "2026-06-03T23:38:51.156Z"
+        },
+        {
+          "field": "comentarios",
+          "value": "5546934125 \nHable con Marta, la tomadora de decisiones no estaba",
+          "ts": "2026-06-03T23:39:15.970Z"
+        }
+      ],
+      "comentarios": "5546934125 \nHable con Marta, la tomadora de decisiones no estaba",
+      "odoo_synced_at": "2026-06-03T23:39:14.993Z"
+    },
+    "shops": {
+      "name": "Taller de motos charly",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "Isabel La Católica & José María Roa Bárcenas, Obrera, Cuauhtémoc, 06800 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "55 3864 2624",
+      "email": "",
+      "website": "",
+      "latitude": 19.4116126,
+      "longitude": -99.1390903,
+      "location": {
+        "_latitude": 19.4116126,
+        "_longitude": -99.1390903
+      },
+      "rating": 5,
+      "review_count": 1,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: Abierto 24 horas | martes: Abierto 24 horas | miércoles: Abierto 24 horas | jueves: Abierto 24 horas | viernes: Abierto 24 horas | sábado: Abierto 24 horas | domingo: Abierto 24 horas",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=17256275610120885818&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJ9SDifgD_0YUROhZ-Xz2beu8",
+      "purchases": 1851,
+      "average_order": 991.23,
+      "imported_at": "2026-03-05T18:14:57.177Z"
+    }
+  },
+  {
+    "id": "stsX0npFxNvzUkLIi93l",
+    "visited_stores": {
+      "formatted_address": "Juan Cuamatzin 26, La Merced, Zona Centro, Venustiano Carranza, 15100 Ciudad de México, CDMX, México",
+      "website": "",
+      "purchases": 4940,
+      "latitude": 19.42339,
+      "municipality": "",
+      "rating": 5,
+      "review_count": 2,
+      "visited_status": "visita_exitosa",
+      "source": "google",
+      "average_order": 1675.42,
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "visitedAt": {
+        "_seconds": 1782420780,
+        "_nanoseconds": 146000000
+      },
+      "phone": "",
+      "street": "",
+      "name": "Taller de Motos Santys",
+      "shop_type": "Repair",
+      "shopId": "stsX0npFxNvzUkLIi93l",
+      "state": "",
+      "statusAt": {
+        "_seconds": 1782420780,
+        "_nanoseconds": 146000000
+      },
+      "google_maps_url": "https://maps.google.com/?cid=14194019567806181658&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.1242967,
+      "status": "visitada",
+      "visitedByEmail": "omar@voren.com.mx",
+      "odoo_sync_error": null,
+      "odoo_lead_id": "222",
+      "comentarios": "5582018851",
+      "contacto_personal": "Sí",
+      "surveyUpdatedAt": {
+        "_seconds": 1782420879,
+        "_nanoseconds": 581000000
+      },
+      "surveyLog": [
+        {
+          "field": "comentarios",
+          "value": "5582018851",
+          "ts": "2026-06-25T20:54:41.885Z"
+        },
+        {
+          "field": "contacto_personal",
+          "value": "Sí",
+          "ts": "2026-06-25T20:54:41.987Z"
+        }
+      ],
+      "odoo_synced_at": "2026-06-25T20:54:40.381Z"
+    },
+    "shops": {
+      "name": "Taller de Motos Santys",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "Juan Cuamatzin 26, La Merced, Zona Centro, Venustiano Carranza, 15100 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "",
+      "email": "",
+      "website": "",
+      "latitude": 19.42339,
+      "longitude": -99.1242967,
+      "location": {
+        "_latitude": 19.42339,
+        "_longitude": -99.1242967
+      },
+      "rating": 5,
+      "review_count": 2,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 9:00–18:00 | martes: 9:00–18:00 | miércoles: 9:00–18:00 | jueves: 9:00–18:00 | viernes: 9:00–18:00 | sábado: 9:00–18:00 | domingo: Cerrado",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=14194019567806181658&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJncS6ZgD_0YURGvEHAphJ-8Q",
+      "purchases": 4940,
+      "average_order": 1675.42,
+      "imported_at": "2026-03-05T18:14:57.177Z"
+    }
+  },
+  {
+    "id": "sAyaog1aqX1QLEbiFQPg",
+    "visited_stores": {
+      "formatted_address": "Nigromante 7, Periodista, Benito Juárez, 03620 Ciudad de México, CDMX, México",
+      "website": "https://www.motogruanarvarte.com/",
+      "purchases": 1712,
+      "latitude": 19.3810741,
+      "municipality": "",
+      "rating": 4.9,
+      "review_count": 25,
+      "visited_status": "visita_exitosa",
+      "source": "google",
+      "average_order": 63.8,
+      "visitedAt": {
+        "_seconds": 1773433523,
+        "_nanoseconds": 988000000
+      },
+      "phone": "55 1785 1764",
+      "street": "",
+      "name": "Taller Mecanico de Motos, Vulcanizadora, Reparación de Rines - #SOYBIKER",
+      "shop_type": "Repair",
+      "shopId": "sAyaog1aqX1QLEbiFQPg",
+      "state": "",
+      "statusAt": {
+        "_seconds": 1773433523,
+        "_nanoseconds": 988000000
+      },
+      "google_maps_url": "https://maps.google.com/?cid=15203609123890118243&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.1436849,
+      "status": "visitada",
+      "contacto_personal": "No",
+      "surveyUpdatedAt": {
+        "_seconds": 1773433562,
+        "_nanoseconds": 270000000
+      },
+      "surveyLog": [
+        {
+          "field": "contacto_personal",
+          "value": "No",
+          "ts": "2026-03-13T20:25:27.861Z"
+        },
+        {
+          "field": "comentarios",
+          "value": "Solo trabaja con cauchos o llantas. Es vulcanizadora ",
+          "ts": "2026-03-13T20:26:02.202Z"
+        }
+      ],
+      "comentarios": "Solo trabaja con cauchos o llantas. Es vulcanizadora ",
+      "visitedByEmail": "gonzalo@voren.com.mx",
+      "odoo_sync_error": null,
+      "odoo_lead_id": "31",
+      "odoo_synced_at": "2026-04-27T23:28:57.366Z"
+    },
+    "shops": {
+      "name": "Taller Mecanico de Motos, Vulcanizadora, Reparación de Rines - #SOYBIKER",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "Nigromante 7, Periodista, Benito Juárez, 03620 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "55 1785 1764",
+      "email": "",
+      "website": "https://www.motogruanarvarte.com/",
+      "latitude": 19.3810741,
+      "longitude": -99.1436849,
+      "location": {
+        "_latitude": 19.3810741,
+        "_longitude": -99.1436849
+      },
+      "rating": 4.9,
+      "review_count": 25,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 9:00–22:00 | martes: 9:00–22:00 | miércoles: 9:00–22:00 | jueves: 9:00–22:00 | viernes: 9:00–22:00 | sábado: 9:00–14:00 | domingo: Cerrado",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=15203609123890118243&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJx_8PFVT_0YURY75bLfIR_tI",
+      "purchases": 1712,
+      "average_order": 63.8,
+      "imported_at": "2026-03-05T18:12:00.434Z"
+    }
+  }
+]

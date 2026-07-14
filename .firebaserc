@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "voren-map"
+  },
+  "targets": {
+    "voren-map": {
+      "hosting": {
+        "map": [
+          "voren-map"
+        ],
+        "erp": [
+          "voren-erp"
+        ]
+      }
+    }
   }
 }

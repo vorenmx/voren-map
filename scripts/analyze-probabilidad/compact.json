@@ -1,0 +1,1352 @@
+[
+ {
+  "id": "2026-06-01__dyP7QkKLC99reaL5zAgS__0",
+  "shopName": "TALLER DE MOTOS PITBIKER",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: En la visita deduce que la ubicación no es la correcta en el mapa de voren por la cual la corregi también comentan que realizan trabajos a 3 marcas india chinas entre otras multimarcas es un taller mediano también realizan trabajos como ajustes y afinaciones | PERFIL: Taller encargado de reparacion de motocicleta principalmente motos de 200 cc Media / baja cilindrada, Alta cilindrada | PAINS: La falta de refacciones y precios más accesibles | OPORTUNIDADES: Posible oportunidad de ofrecerle nuestro catálogo de voren en donde hay variedad de refacciones e incluso la oportunidad de que su mercancía le llegue en 24 hrs tambien la facilidad de una linea de credito | OBSERVACIONES: Buena disposición del mecánico para poderlo hablar con su patron y que esté más convencido con nosotros y lo que podemos ofrecerle Ya que si nosotros le resolvemos en 24 hrs el flujo de refacciones tenemos ganancias para todos"
+ },
+ {
+  "id": "2026-06-01__WZMGRtxzWVHMhROolCTP__1",
+  "shopName": "SERVIMOTOS RUBA",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: Se logró hablar con el mecánico Pichardo amigo mío de la secundaria es un taller mediano en la que es una casa tipo garage dedicada a la reparación de motos en servicios de prevención cambio de balatas chicotes entre otras | PERFIL: Atienden motos de todo tipo de cilindraje | PAINS: La falta de productividad en refacciones y servicios | OPORTUNIDADES: sondear sus necesidades y con base a su economia ofrecerle un excelente credito | OBSERVACIONES: Siempre buen recibimiento buena disponibilidad excelente taller"
+ },
+ {
+  "id": "2026-06-01__loexSDyJD4fe3DZugVv9__2",
+  "shopName": "LOS VIEJOS TIEMPOS",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: En la visita es una accesoria pequeña realizan trabajos preventivos como afinaciones entre otras principalmente motonetas y motos de trabajo | PERFIL: Taller especializado en servicios de mecánica para motocicletas de media y baja cilindrada como motonetas y ft tipo de trabajo | PAINS: Refacciones dificiles de conseguir como culatas y pistones para motoneta pastas de clutch reguladores bobinas y fusibles | OPORTUNIDADES: La rapidez que tiene voren para entregar sus productos ya que le mencione que en un lapso de 24 hrs las tiene disponibles y lo mejor es que se las podemos mandar por delivery no menciona alguna linea de credito ya que él prefiere transferencia | OBSERVACIONES: Una buena conversación nítida y clara de lo que es voren y lo rapidez en la que entregamos las refacciones"
+ },
+ {
+  "id": "2026-06-01__qU9CERpOGOyQmbldeGIQ__3",
+  "shopName": "Moto servicio fiu fiu",
+  "prob_asignado": 8,
+  "texto": "CONTEXTO: En la visita se logra apreciar un taller de servicio preventivos y que maneja el tambien refacciones como aceites comenta que en la visita que su mayor distribución son los aceites | PERFIL: Taller encargado de reparacion de motocicleta de baja media y alta cilindrada baja y media cilindrada | PAINS: Precios elevados con voren | OPORTUNIDADES: La oportunidad de ofrecerle un crédito y un excelentes precios al por mayor | OBSERVACIONES: Buena disposición del mecánico para atender la entrevista y excelente información"
+ },
+ {
+  "id": "2026-06-01__EXdzZ5Ow5op4WhNZg0T7__4",
+  "shopName": "MOTO SERVICIO GES",
+  "prob_asignado": 1,
+  "texto": "CONTEXTO: Se logró hablar con el señor pineda que al principio se porta amable después de la entrevista se le menciona la empresa voren por la cual se pone agresivo se termina de inmediato la entrevista | PERFIL: Atienden motos de baja y media cilindrad | PAINS: SIN INFORMACION | OPORTUNIDADES: SIN INFORMACION | OBSERVACIONES: CLIENTE GROSERO"
+ },
+ {
+  "id": "2026-06-01__g1qd6jFbRzOYULCOvooh__5",
+  "shopName": "Taller de motos JOSHUA",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: En la visita el señor Roberto se presenta como mecánico general se encarga de supervisor y se encarga de la revisión de motos | PERFIL: Taller especializado en servicios de mecánica para motocicletas de media cilindrada y baja | PAINS: Solo la falta de personal y espacio del taller ya que no cuenta donde guardarlas | OPORTUNIDADES: No detecto oportunidades solo seguir visitando para algún cambio de opinión | OBSERVACIONES: Buena comunicación y toda la disposición de una entrevista aclarando que no necesita algun proveedor extra para su local pero comenta que en un futuro estaría abierto en nuevos proveedores"
+ },
+ {
+  "id": "2026-06-01__l2XLZI245nleGOfeGSwL__6",
+  "shopName": "MW MOTOS",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: En esta visita en lugar estaba cerrado por la cual investigue la hora de entrada y cierre y es de 10 am a 4 pm por lo que agendo segunda visita para llegar a entrevistar | PERFIL: Logro notar un taller mediano encargado de reparacion de motos de baja y media cilindrada | PAINS: Sin información | OPORTUNIDADES: No detecto oportunidades en el taller | OBSERVACIONES: Visita mas temprano"
+ },
+ {
+  "id": "2026-06-01__dkVTP4db7YmBQqNZzHTl__7",
+  "shopName": "TALLER DE MOTOS SIN NOMBRE",
+  "prob_asignado": 1,
+  "texto": "CONTEXTO: Se logró hablar con los vecinos con la que mencionaron que el mecánico alfredo cerró su taller temporal fue amable de proporcionar su número | PERFIL: Sin información | PAINS: Ningun problema detectado | OPORTUNIDADES: Solo visitar el taller para encontrarlo abierto | OBSERVACIONES: Taller pequeño"
+ },
+ {
+  "id": "2026-06-01__XsJyEr9jg5LtbsA63LL5__8",
+  "shopName": "TALLER DE MOTOS EL PATO",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: En la visita emmanuel hernández se mostró muy amable pude apreciar un taller mediano en donde tenían 5 motos para reparación por lo cual pregunte cual era su mayor flujo de motos para reparación por la cual comenta que son motos de media y alta cilindrada | PERFIL: Taller especializado en servicios de mecánica para motocicletas de media cilindrada y baja | PAINS: Refacciones dificiles de conseguir como culatas y pistones para motoneta pastas de clutch reguladores bobinas y fusibles | OPORTUNIDADES: La rapidez que tiene voren para entregar sus productos ya que le mencione que en un lapso de 24 hrs las tiene disponibles y lo mejor es que se las podemos mandar por delivery no menciona alguna linea de credito ya que él prefiere transferencia | OBSERVACIONES: Una buena conversación nítida y clara de lo que es voren y lo rapidez en la que entregamos las refacciones"
+ },
+ {
+  "id": "2026-06-01__PNvHwWxtEsrBhl9RuZsG__9",
+  "shopName": "SERVICIO DE MOTOS REYNA",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: En la visita se logra detectar el amplio trabajo de motos de la marca bajaj e italika cómo yamaha cargo menciona que los clientes se encargan de llevar las refacciones es un taller mediano en la que el flujo de motos es diario por lo que estaría abierto a un nuevo proveedor | PERFIL: Taller encargado de reparacion de motocicleta principalmente chopper baja y media cilindrada | PAINS: Pocas refacciones en el mercado con su proveedor buena oportunidad para voren | OPORTUNIDADES: Seguir visitando el taller para enterarse que ya hay más clientes con motos de baja y media cilindrada | OBSERVACIONES: Buena disposición del mecánico para atender la entrevista ya que a pesar de que atiende motos chopper se prestó para una entrevista"
+ },
+ {
+  "id": "2026-06-01__TctOkNYkJuneHn1Mdlg9__10",
+  "shopName": "TALLER DE MOTOCICLETAS",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: En la visita se logra detectar el amplio trabajo de motos de la marca bajaj cómo yamaha menciona que los clientes se encargan de llevar las refacciones en la que el flujo de motos es diario por lo que estaría interesado en segundas visitas para el amplio catalogo | PERFIL: Atienden motos de baja y media cilindrada | PAINS: La falta de refacciones ya que manejan precios altos | OPORTUNIDADES: Ofrecerle el amplio catálogo y los kits que tenemos disponibles para su crecimiento | OBSERVACIONES: Buena conversación y disposición de su papá para crecimiento y rotación de negocio y refacciones"
+ },
+ {
+  "id": "2026-07-01__ScTOMKHBLswL71orhVXw__11",
+  "shopName": "Taller de Motos Gutiérrez y Contreras",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Afinaciones,cambios de filtros,cambios de aceites,ajustes de valvulas,cambio de piezas | PERFIL: taller mediano | OPORTUNIDADES: ofrecimiento de crédito y entregas | OBSERVACIONES: taller muy bien ubicado"
+ },
+ {
+  "id": "2026-07-01__XtcEB99JaXSZGHrVaIos__12",
+  "shopName": "R L MOTOCICLISMO",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Cambios de aceites,cambios de piezas,molduras,comandos,ajustes de banda y cadenas | PERFIL: taller mediano | PAINS: tiene muchas oportunidades de compra | OPORTUNIDADES: nueva marca con facilidad de entregas rápidas | OBSERVACIONES: taller con buenas recomendaciones"
+ },
+ {
+  "id": "2026-07-01__N29aKVHoYSna6d5WBhtG__13",
+  "shopName": "THE DOCTOR MOTOS",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Cambios de aceite,afinacion,cambios de piezas,cambios de refacciones,yugos,tazas,partes electrónicas | PERFIL: taller mediano | PAINS: problemas de confianza | OPORTUNIDADES: ofrecimiento de crédito y nueva marcas | OBSERVACIONES: facilidad de entrega no credtios"
+ },
+ {
+  "id": "2026-07-01__Vkdzu7LOV5ofAx5xtgrp__14",
+  "shopName": "REPARACION DE MOTOCICLETAS",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: taller encargado en las revisiones de motor afinaciones partes eléctricas alternadores bielas valvulas accesorios lineas electricas | PERFIL: taller mediano | OPORTUNIDADES: ofrecimiento de crédito entregas en 24 hrs | OBSERVACIONES: taller con mucho trabajo"
+ },
+ {
+  "id": "2026-06-02__EojWVSeQveCPBgD5pdem__15",
+  "shopName": "MOTO GARAGE EL MATA",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: En la visita se aprecia un establecimiento chico en la que es un garage como así lo menciona su nombre encargado de la realización de trabajos rapidos y express como cambios de aceite afinaciones o de vez en cuando ajustes de motor pero solo con anticipación realizan trabajos de electronica | PERFIL: taller encargado de atender motos de baja y media cilindrada sobre todo motonetas 125 cc y 150cc | PAINS: Bujias centrales para bajaj la falta de refacciones y que es un taller pequeño aceites caros con proveedor | OPORTUNIDADES: Ofrecerle el catálogo de voren con las bujías para la marca bajaj y las bandas para motonetas | OBSERVACIONES: taller amable y comprensivo atento a las necesidades del taller"
+ },
+ {
+  "id": "2026-06-02__tXFJDjWCErqnQtn6YbQ4__16",
+  "shopName": "MOTOS ZIGMA",
+  "prob_asignado": 1,
+  "texto": "CONTEXTO: En la visita se logra apreciar un taller automotriz le pregunte al señor marco sobre si habia un taller de motos cerca de la zona a cual responde que desconce sobre algun taller llamada zigma | PERFIL: TALLER MECANICO | PAINS: NINGUN PROBLEMA DETECTADO | OPORTUNIDADES: NO DETECTÓ OPORTUNIDAD | OBSERVACIONES: Actualizar ubicación en el mapa ya que no hay ninguno taller de motos con el nombre motos zigma"
+ },
+ {
+  "id": "2026-06-02__jAPPLQyDj3vJG5lXEAzd__17",
+  "shopName": "TALLER MOTOS SIN NOMBRE",
+  "prob_asignado": 8,
+  "texto": "CONTEXTO: Aunque en el mapa aparece como cerrado permanente el taller sigue activo es un taller mediano encargado en la realización para motos de media y baja cilindrada como motonetas ft o tipo delivery también como servicios y motolavado | PERFIL: Taller mediano en realizar servicios de mecánica en general y moto lavado | OPORTUNIDADES: ofrecimiento para un crédito entrega a domicilio y el amplio catálogo de voren | OBSERVACIONES: Conversación nítida y clara ya que si logramos adaptarnos a sus necesidades hay probabilidades de venta"
+ },
+ {
+  "id": "2026-06-02__IyGZeUWOE6yzDmqgalx0__18",
+  "shopName": "TALLER MECANICO PERSEO MOTORS",
+  "prob_asignado": 1,
+  "texto": "CONTEXTO: En la visita proporciona información sobre un taller para autos sobre todo para cambios de clutch y afinaciones y frenos hice la pregunta si realizaba trabajos para motos y comenta que muy rara la vez ya que no es su fuerte o su giro de trabajo | PERFIL: Taller mecanico | PAINS: Falta de experiencia para la reparaciones de motocicletas | OBSERVACIONES: Muy amable del señor Torres en la que nos recibe nos escuchó se deja folleto pero no es su giro de trabajo las motos"
+ },
+ {
+  "id": "2026-06-02__pfG57vBFbV5eqeL4ZOr8__19",
+  "shopName": "TALLER DE REPARACION DE MOTOCICLETAS GARAGE DE CHARLY",
+  "prob_asignado": 1,
+  "texto": "CONTEXTO: En la visita el señor Benitez nos comenta que su fuerte son las motos de media y alta cilindrada pocas veces hace trabajos para motos de baja cc pero que la mayoría de sus trabajos son para motos de alta cc es un taller grande y amplio | PERFIL: Taller dedicado a las motos tipo adventur pista o naked servicios de prevención ajustes y cambios de pastas | PAINS: Solo que manejen motos de media y baja cc | OPORTUNIDADES: Seguir visitando para recomendaciones | OBSERVACIONES: Excelente atención a sus clientes y buena disposición de conversación"
+ },
+ {
+  "id": "2026-07-02__OEtYc4hwVe72VVzF1pJk__20",
+  "shopName": "TALLER MECANICO SERVICIO ROCKO",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: se encarga a lavados de carburador calibrar balancines,servicios preventivos,servicios a motonetas,cambio de cadenas y coronas para servicios de motos ktm kawasaki y bajaj consiguen refacciones en agencia ya que argumenta que no hay refacciones chinas para ese tipo de motos en italika las compra en cualquier refaccionaria | PERFIL: taller mediano | PAINS: tiene muchos provedores | OPORTUNIDADES: nueva marca y calidad | OBSERVACIONES: taller con muchas recomendaciones"
+ },
+ {
+  "id": "2026-07-02__fcCfwNyAR868VVW9W9vJ__21",
+  "shopName": "PITS MOTORION",
+  "prob_asignado": 3,
+  "texto": "CONTEXTO: Todo tipo de mecanica en general | PERFIL: taller pequeño | PAINS: NO BUSCA PROVEDOR | OPORTUNIDADES: NINGUNA | OBSERVACIONES: NO INTERESADO"
+ },
+ {
+  "id": "2026-07-02__p3qIvb5b937oa4A9Cspv__22",
+  "shopName": "MOTO SERVICIO PIVER",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: Servicio preventivos cambios de yugos y barras para motonetas cambios de aceites y filtros | PERFIL: pequeño | PAINS: taller pequeño | OPORTUNIDADES: ofrecimiento de credito pequeño | OBSERVACIONES: noto una baja probabilidad de venta ya que no abre muy seguido"
+ },
+ {
+  "id": "2026-07-02__ODFwKwjdpVjlj0BiiGNF__23",
+  "shopName": "GODIKE MOTORS",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: Taller especializado en bajaj vento y ktm un servicio echo por ingenieros con diagnosticos precisos y claros servicios preventivos, afinaciones,ajustes de motor trabajos para motos de alta media y baja cc siempre con escaner refacciones originales de vez en cuando refacciones chinas a excepciones de los clientes de lo que quieran invertir | PERFIL: taller mediano | OPORTUNIDADES: ofrecimiento de credito y mejorar oferta que remo motos iztapalapa | OBSERVACIONES: taller especializado en bajaj y vento"
+ },
+ {
+  "id": "2026-07-02__TKHnHPi9Pd4vbmgUlQ4w__24",
+  "shopName": "MOTO ESTRELLA",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: Taller dedicado a la reparacion y mantenimiento de motos de baja media y alta cc asi como tipo pista adventure motos dificiles de reparar como ktm bajaj bmw que comparte piezas con tvs servicios preventivos servicios de ajustes cambio de piezas | PERFIL: taller mediano | OPORTUNIDADES: ofrecimiento de marcar nueva calidad y precio taller con buena oportunidad de venta"
+ },
+ {
+  "id": "2026-07-02__ESH8poSjvJRajRP0q5GP__25",
+  "shopName": "SERVICIO DE MOTOS BEDEN",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: Taller pequeño y dificil de encontrar ya que se realizan otro tipo de trabajos y solo se rige por mano de obra | PERFIL: taller pequeño | PAINS: taller muy pequeño | OPORTUNIDADES: ninguna | OBSERVACIONES: baja probabilidad de venta"
+ },
+ {
+  "id": "2026-07-02__WThoTyXGJn5g3G5WsfMb__26",
+  "shopName": "AF-5 Servicio Técnico de Motocicletas",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: Taller encargado en la reaparición de motos culatas valvulas afinaciones,cambios de piezas para piezas de bajaj consiguen en pulsar factory agencia o distribuidor autorizado igual que ktm kawasaki,tvs los consiguen en mundi moto | PERFIL: taller mediano | PAINS: saturacion de trabajo | OPORTUNIDADES: nueva marca,entregas en 24 hrs"
+ },
+ {
+  "id": "2026-07-02__7a0kYRU68USRZpdUGevq__27",
+  "shopName": "Taller de motos Constitucion De 1917 1",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: Es un taller dedicado a la vulcanizadora de motos asi como cambio de llantas y venta de aceites pequeñas refacciones de rapido cambio asi como parches y ajuste de cadena | PERFIL: pequeño | PAINS: es vulcanizadora | OPORTUNIDADES: no encuentro oportunidades | OBSERVACIONES: ya se habia visitado ese taller en la que especifique que veo una baja posibilidad de venta ya que es vulcanizadora"
+ },
+ {
+  "id": "2026-06-03__CCWS1hvUH2oyLFX6nLCE__28",
+  "shopName": "TALLER DE REPARACION DE MOTOCICLETAS FRAN MOTOS",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: A primera vista es un taller pequeño en la que atienden motos de baja y media cilindrada como servicios de afinaciones o cambio de piezas para motos de reparto entre otras | PERFIL: Taller pequeño tipo garage encargado en reparacion de motos de tipo cargo naked y motonetas servicios de afinacion ajustes cambios de piezas cadenas bandas etc | PAINS: Al ser un taller pequeño el problema seria donde almacenar las piezas así como los trabajos que son pocos | OBSERVACIONES: Buena disposición excelente taller con una buena puntuación en el mapa pero con baja probabilidad de venta"
+ },
+ {
+  "id": "2026-06-03__BrrIBeAZagAcl5OSNhV8__29",
+  "shopName": "TALLER DE MOTOS",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: Se realizan 3 intentos para buscar el taller pero no tuve suerte por lo cual vecina del lugar me comenta que ese taller se encontraba cerrado hace tiempo que desconoce si volverían abrir nuevamente ya que el señor (Fernando) que presume ser el mecánico enfermo | PERFIL: Taller mediano tipo accesoria | PAINS: SIN DATOS | OPORTUNIDADES: SIN DATOS | OBSERVACIONES: Seguir visitando en taller para poder entrevistar al mecánico fernando"
+ },
+ {
+  "id": "2026-06-03__dnB1greQk7zcu9zyfDbC__30",
+  "shopName": "MOTO SERVICIO BELTRAN",
+  "prob_asignado": 1,
+  "texto": "CONTEXTO: Me entrevisto con el señor Beltran y menciona que cerró su taller y puso otro negocio pero que de ves en cuando realiza trabajos solo pequeños en casa | PERFIL: Taller mediano CERRADO | PAINS: Taller cerrado | OPORTUNIDADES: Ninguna | OBSERVACIONES: Buena conversación y recibimiento"
+ },
+ {
+  "id": "2026-06-03__ltE4KysNnKbHBREN43Bt__31",
+  "shopName": "CERBI MOTOS ROOTS",
+  "prob_asignado": 9,
+  "texto": "CONTEXTO: Se aprecia un taller grande con dos accesorias en el lugar se ven motos de alta cc por lo cual me di a la tarea de preguntar cuál era su principal problema con la motos de media cilindrada a lo cual comenta que también las realiza como servicios cortos o de afinación | PERFIL: Taller grande en reparacion para motos de alta media y baja cilindrada | OBSERVACIONES: Excelente atención buena comunicación y sobre todo probabilidad de venta"
+ },
+ {
+  "id": "2026-06-03__HLby57mQH069H9Wl1VAx__32",
+  "shopName": "Taller de motos \"Mayder\"",
+  "prob_asignado": 9,
+  "texto": "CONTEXTO: Taller mediano dedicado atender a motos de media y baja cc como motonetas motos naked y de trabajo el taller cierra tarde por lo cual tiene flujo de clientes de motos en servicios express como cambios de cadenas de bandas cambio de aceite cambio de balatas | PERFIL: Taller mediano en la realización de trabajos preventivos para las urgencias de los clientes | OBSERVACIONES: Muy amable el chino atento y buena probabilidad de venta"
+ },
+ {
+  "id": "2026-06-03__qV3gaXTru6TU2qQD8kGw__33",
+  "shopName": "XTREME MOTORS",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: En la visita brandon nos comenta que se dedica a la reparación de motos de media y baja cc así como motos de alta cc su mayor flujo de trabajos son los repartidores de la zona | PERFIL: taller mediano en la realización de trabajos como afinaciones ajustes de cadenillas de tiempo cambios de aceites rectificaciones de culatas | OBSERVACIONES: Muy amable excelente conversación y sobre todo disponibilidad de entrevistas"
+ },
+ {
+  "id": "2026-06-03__XjApA8nKWL50GTz7Ywhv__34",
+  "shopName": "TALLER DE MOTOS MONSTER",
+  "prob_asignado": 3,
+  "texto": "CONTEXTO: El señor díaz se encarga a la revisión eléctrica de las motos por lo cual los clientes le llevan las refacciones ya que él no se hace responsable en fallas electrónicas | PERFIL: Taller mediano en trabajos de mecánica general y electrónica | PAINS: NO DETECTÓ PROBLEMAS | OPORTUNIDADES: NINGUNA | OBSERVACIONES: El señor díaz es un poco grosero por lo cual en sus palabras dice no le interesa"
+ },
+ {
+  "id": "2026-06-03__x6cKhTbQgkxHmLLpI2QF__35",
+  "shopName": "BLACK DOG GARAGE",
+  "prob_asignado": 4,
+  "texto": "CONTEXTO: El señor misael comenta que no le interesa la entrevista por lo cual no proporciona información entrevistarlo otro dia | PERFIL: Taller pequeño"
+ },
+ {
+  "id": "2026-06-03__l996qWX6qyvkOU7rW9I3__36",
+  "shopName": "BEARS BIKES",
+  "prob_asignado": 1,
+  "texto": "CONTEXTO: Es una refaccionaria en la cual venden accesorios por la cual su fuerte es la venta de refacciones al mayoreo y menudeo no les interesa tener otro proveedor | PAINS: No detectó | OPORTUNIDADES: Recomendaciones con otros talleres | OBSERVACIONES: Personal muy amable y comentan con nos recomendarían con otros talleres"
+ },
+ {
+  "id": "2026-07-03__bv882TqiVQpztwTuEpVq__37",
+  "shopName": "TALLER MECANICO DE MOTOCICLETAS MOTO CHUY",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Dedicado a la mano de obra y venta de refacciones de mayor rotación al ser un taller pequeño su venta de refacciones son los kits de afinacion y sus servicios a motos son preventivos y de facil reparacion | PERFIL: taller pequeño | PAINS: taller muy pequeño | OBSERVACIONES: probabilidad de venta media"
+ },
+ {
+  "id": "2026-07-03__sIqWWpSv9eeFpRnZBEWE__38",
+  "shopName": "MOTO SERVICIO TEXON",
+  "prob_asignado": 1,
+  "texto": "CONTEXTO: Taller pequeño pero con amplio espacio para trabajar principalmente en la vulcanizada de las llantas servicios preventivos lo catalogo como zona roja ya que es una zona de alto riesgo en iztapalapa por lo cual rechazan toda ´propuesta | PERFIL: vulcanizadora y taller pequeño | PAINS: muy groseros | OPORTUNIDADES: ninguna | OBSERVACIONES: zona de ALTO RIESGO"
+ },
+ {
+  "id": "2026-07-03__1hVc55UHJBra3obW3BTs__39",
+  "shopName": "TALLER MECANICO PARA MOTOS MISFIT",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: Taller que trabaja a puerta cerrada pues es una casa tipo garaje en la que realiza servicios preventivos fabricación y soldaduras de moto taxis asi como cambios de kits de arrastre y servicios para motonetas se sigue sintiendo un ambiente pesado de zona roja pues manifiesta que ha sufrido de asaltos y clientes que no pagan por lo que su trabajo no es mucho | PERFIL: taller mediano | PAINS: taller con poco trabajo zona roja | OPORTUNIDADES: venta de kits de afinación | OBSERVACIONES: taller en zona roja"
+ },
+ {
+  "id": "2026-07-03__smBwxhSntMAKXM9SVs7H__40",
+  "shopName": "CENTRO DE FOTOCOPIADO LAS MOTOS",
+  "prob_asignado": 1,
+  "texto": "CONTEXTO: Se llega al lugar y se apreció un local de copiado teniendo el nombre de motos favor de corregir la ubicación y nombre y que el taller mas cercano es de carros y de mofles | PERFIL: centro de copias | PAINS: dirección y taller equivocado | OPORTUNIDADES: ninguna | OBSERVACIONES: checar bien la ubicacion que esta marcada en el mapa ya que el negocio esta enfrente de un bachilleres no es taller"
+ },
+ {
+  "id": "2026-07-03__N419VgvToY6mXpXRgL83__41",
+  "shopName": "ARMANDO MOTOS",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: taller grande encargado en servicios para motos de multimarca en motos chinas indias austriacas y mexicanas en refacciones como la marca tvs,bajaj y ktm son difíciles de conseguir por lo que los clientes lo llevan o van a un centro autorizado por la marca como en mundi moto | PERFIL: taller grande | OPORTUNIDADES: lo pensara en conocernos taller grande con buena oportunidad"
+ },
+ {
+  "id": "2026-07-03__u1XsL583kzjXdzGJXJ5p__42",
+  "shopName": "MOTORSPORT GUZMAN",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: Taller encargado al servicio preventivo y correctivo ajustes de culatas cambio de piezas servicios eléctricos cambio de comandos y focos asi como chequeo de lineas y cableados arnes etc | PERFIL: taller grande | PAINS: taller con falta de confianza | OPORTUNIDADES: nueva marca creditos amplios entregas rapidas | OBSERVACIONES: excelente taller"
+ },
+ {
+  "id": "2026-07-03__zRkE7buYcSO0a2S6Qsjp__43",
+  "shopName": "Moto servicio delmonte Xolalpa",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: Cambio de aceites,cambio de bujia,filtros de aire de aceite lavado de carburador servicios completos ajustes de motor servicio electrico | PERFIL: taller mediano | PAINS: inicio apenas con mendoza | OPORTUNIDADES: ofrecimiento de nueva marca y entregas oportunidad de venta por credtio"
+ },
+ {
+  "id": "2026-07-03__cQscqq07UdJ0wSBMSZqu__44",
+  "shopName": "REPARACION DE MOTOS HARRYS BIKERS",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: Servicios preventivos venta de refacciones ajustes de cadenas,servicos a las motonetas motos de media y baja cc asi como cambio de llantas y camaras lubricación de baleros | PERFIL: taller pequeño | PAINS: taller pequeño | OPORTUNIDADES: nueva marca con disponibilidad de entrega | OBSERVACIONES: ofrecimiento de credito"
+ },
+ {
+  "id": "2026-07-03__Vlx21m89kwTSBmOzwJ9I__45",
+  "shopName": "TALLER DE MOTOS MAJO",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Taller dedicado a servicios para motonetas motos de media y baja cc asi como afinaciones cambio de cadenas de bandas y servicios electrcios | PERFIL: taller mediano | OBSERVACIONES: probabilidad de venta baja"
+ },
+ {
+  "id": "2026-06-04__h49m2xfb523KSPbP8tSV__46",
+  "shopName": "GEORGE STUNT",
+  "prob_asignado": 1,
+  "texto": "CONTEXTO: En la visita logre notar un taller mediano dedicado a la mecánica automotriz por lo cual le comento al señor que si hace trabajos de motos pero servicios rápidos solo cambio de llantas y ajustes de cadena NO ES UN TALLER DE MOTOS | PERFIL: Taller mediano dedicado al clutch de autos servicios express para motos | PAINS: Sólo que las ubicaciones sean más precisas y que sean talleres de motos | OPORTUNIDADES: NINGUNA | OBSERVACIONES: Logro notar que las ubicaciones no son las correctas al mapa pero se hace el intento de buscarlos pero esta vez no es taller de motos"
+ },
+ {
+  "id": "2026-06-04__zPWsPCtHwYM5UI1sBQRj__47",
+  "shopName": "ZEUS RAMOS LUNA ASOCIACION",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: En la visita logre notar motos de alta cilindrada por lo cual noto motos tipo chopper servicios preventivos ajustes cambios de alternadores y coronas así como servicios eléctricos no realiza trabajos para motos de baja cilindrada esto por que su giro de negocio siempre han sido las choppers | PERFIL: taller de motos para alta cc tipo chopper | PAINS: La complejidad de conseguir partes eléctricas como coronas sensores alternadores fusibles | OBSERVACIONES: Muy amable buena disposición y buen recibimiento"
+ },
+ {
+  "id": "2026-06-04__e42cMBHZsuNazD5i0pDy__48",
+  "shopName": "TALLER DE MOTOS SERVICIO FRANCO",
+  "prob_asignado": 8,
+  "texto": "CONTEXTO: En la visita logró notar motos de baja media y alta cilindrada me percate que tenia trabajos para motos de alta cilindrada hacen trabajos también de electrónica afinaciones ajustes cambios de valvulas mecanica en general | PERFIL: taller especializado en trabajos para motos de baja media y alta cc | OPORTUNIDADES: Buena conversación en la que se puede aprovechar una oportunidad de venta"
+ },
+ {
+  "id": "2026-06-04__hW63es7DkJxGExkCcVpN__49",
+  "shopName": "ITALIKA",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: Me recibe la gerente karla en la que muy amablemente me presente la agencia de motos en la que se dedica a servicios para motos de la marca asi como tambien sus refacciones originales | PAINS: No detectó problemas | OPORTUNIDADES: NINGUNA | OBSERVACIONES: Buen recibimiento atención y dudas claras"
+ },
+ {
+  "id": "2026-06-04__BrrIBeAZagAcl5OSNhV8__50",
+  "shopName": "TALLER DE MOTOS",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: En la visita se logra ver un taller chico en la que su giro de clientes son motos de baja y media cc asi como tambien servicios preventivos | PERFIL: SERVICIO EN GENERAL | OPORTUNIDADES: Ninguna | OBSERVACIONES: Buen recibimiento a voren estar en contacto para futuras referencias"
+ },
+ {
+  "id": "2026-06-04__J0A23wuU1ZjxHTM1kceZ__51",
+  "shopName": "ROWDY CICLES",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: Taller especializado en motos chopper harley davidson así como la venta de accesorios ropa asientos etc tambien para motos de tipo custom | PERFIL: Taller mediano para reparación de motos harley y tipo chopper | PAINS: Que no repara motos de media y baja cc | OPORTUNIDADES: Ninguna | OBSERVACIONES: Buen recibimiento del taller y buena conversación asi que llegamos a la conclusión de que no le interesa"
+ },
+ {
+  "id": "2026-06-04__tEqCC7P3LiOI073snal6__52",
+  "shopName": "Taller de motos | BMW | Harley | SOLO CON CITAS | Battle Machine, Sede 1 Nativitas",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: En la visita se puede observar que son motos de alta cc como chopper adventure y motonetas de alta cc sporting servicios como rectificaciones de cabezas valvulas bielas ajustes de motor servicios etc | PERFIL: MOTOS DE ALTA CC | OPORTUNIDADES: Ninguna | OBSERVACIONES: taller grande servicios de calidad para motos de alta cc"
+ },
+ {
+  "id": "2026-06-04__zMs89PeAGfp47XbJ3GTH__53",
+  "shopName": "MOTORCYCLES JR S SERVICIO MECANICO",
+  "prob_asignado": 8,
+  "texto": "CONTEXTO: Se logra visualizar un taller chico pero con amplio flujo de motos de alta media y baja cc en la que realizan cualquier tipo de trabajo como servicios generales | PERFIL: Taller especializado en motocicletas de alta media y baja cc | OBSERVACIONES: Un taller profesional en la reparación de motos de todo tipo de cilindrada asi como buena atencion en la entrevista"
+ },
+ {
+  "id": "2026-06-04__9ysI4wq09qKWXFaJ9ouV__54",
+  "shopName": "MECANICA DE MOTOS",
+  "prob_asignado": 8,
+  "texto": "CONTEXTO: Se logra visualizar un taller chico y es hermano de andrés rivera el taller que se visitó anteriormente pero con amplio flujo de motos de alta media y baja cc en la que realizan cualquier tipo de trabajo como servicios generales | PERFIL: Taller especializado en motocicletas de alta media y baja cc | OBSERVACIONES: Un taller profesional en la reparación de motos de todo tipo de cilindrada asi como buena atencion en la entrevista"
+ },
+ {
+  "id": "2026-06-05__czas37Wbs2a0k8iXTLPa__55",
+  "shopName": "SERVICIO MECANICO PARA MOTOS CHIVAS CUSTOMS",
+  "prob_asignado": 2,
+  "texto": "CONTEXTO: Es un taller muy pequeño tenía en servicio solo dos motos se rige más por mano de obra y trabajos rápidos ya que el taller es un lugar de estacionamiento | PERFIL: Taller muy pequeño solo cobra mano de obra | OPORTUNIDADES: Niguna | OBSERVACIONES: El taller se encuentra dentro de unos condominios"
+ },
+ {
+  "id": "2026-06-05__CwB57tNhMXEbyjpwqx4m__56",
+  "shopName": "MOTO SERVICIO PIRAÑA",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: Es una refaccionaria de autos y motos por la cual sus servicios se enfocan más en refacciones y servicios cortos para moto así como de baja y media cc como cambio de aceite y cambios de clutch | PERFIL: Taller mecanico y servicio motos | PAINS: Como es un taller de carros no se enfocan a las motos pues la probabilidad de venta es nula | OPORTUNIDADES: solo recomendaciones con otros talleres | OBSERVACIONES: se la deja folleto de voren para futuras recomendaciones con talleres en la zona"
+ },
+ {
+  "id": "2026-06-05__bU2xFMaz1OxjLwiM92iE__57",
+  "shopName": "THE KING MOTOR",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: Es una accesoria pequeña en la que realiza trabajos a los moto taxis de la zona tláhuac así como a sus calandrias servicios rápidos para que puedan seguir trabajando asi como ajustes de cadena y banda para motonetas | PERFIL: venta y servicio rápido | OPORTUNIDADES: adaptarnos a su presupuesto para ofrecerle un credito | OBSERVACIONES: Buena conversación y atencion"
+ },
+ {
+  "id": "2026-06-05__C43UBVJ932Qlkf4adlVQ__58",
+  "shopName": "TALLER MECANICO BULLBIKERS",
+  "prob_asignado": 2,
+  "texto": "CONTEXTO: En la visita fue una atención nula ya que al momento de proporcionar información dijeron que no están interesados en ninguna propagando o proveedor | PERFIL: Taller de servicio y vulcanizadora | PAINS: falta de atención | OPORTUNIDADES: ninguna | OBSERVACIONES: no visitarlo a demas esta catalogado como punto rojo"
+ },
+ {
+  "id": "2026-06-05__urFLefYKx6gcArSclPid__59",
+  "shopName": "MOTO SERVICIO CUATRO HERMANOS",
+  "prob_asignado": 1,
+  "texto": "CONTEXTO: taller difícil de encontrar por lo que preguntando me di cuenta que es un taller pequeño en la que tiene dos trabajadores su novio y polet se encargan en la reparación básica solo vulcanizadora y cambios de chicotes muy pocas veces cambios de aceites | PERFIL: Taller pequeño | PAINS: falta de experiencia en reparaciones | OPORTUNIDADES: ninguna | OBSERVACIONES: Buenas personas pero no cuentan con capital y experiencia necesaria"
+ },
+ {
+  "id": "2026-06-05__1mXbo3lD09wIV6dMggIx__60",
+  "shopName": "TALLER DE REPARACION DE MOTOCICLETAS SIN NOMBRE",
+  "prob_asignado": 3,
+  "texto": "CONTEXTO: En la visita logró notar un taller pequeño lo cual sale una vecina y nos da información del que el taller tiene 2 semanas que no se abre que desconoce el motivo ya que el señor issac era el dueño | PERFIL: taller de motos y servicios"
+ },
+ {
+  "id": "2026-06-05__Av38MPDuBSPcRs2464g9__61",
+  "shopName": "SERVICIO MECANICO VERA",
+  "prob_asignado": 1,
+  "texto": "CONTEXTO: Es un taller mecanico de autos no de carros | PERFIL: mecanico de autos | PAINS: Lugar incorrecto no es de motos"
+ },
+ {
+  "id": "2026-06-05__sIFXkhGaAFdADVmqBTNe__62",
+  "shopName": "TALLER DE MOTOS MOTOLOCOS",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: es un taller mediano dedicado al apoyo de motos de baja media y alta cc rara la vez realiza esos trabajos sólo cuando el cliente lleva sus refacciones y bajo su propia responsabilidad servicios como calibrador de balancines válvulas entre otras | PERFIL: Mecanico de moto en general | OPORTUNIDADES: ofrecimiento de voren en 24 hrs y crédito Buena disposición y oportunidad de venta"
+ },
+ {
+  "id": "2026-07-06__wcZO44iELpkWloArK7j3__63",
+  "shopName": "Taller de motos Selene 1",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: taller dedicado en la fabricación de calandrias para moto taxis servicios preventivos a motos de trabajo,motonetas,mantenimiento a cadenas bandas ajustes de frenos lineas de frenos e instalación eléctrica para las calandrias llantas camaras etc | PAINS: es un taller pequeño | OPORTUNIDADES: no detecto ninguna oportunidad | OBSERVACIONES: taller dedicado a la fabricación de calandrias"
+ },
+ {
+  "id": "2026-07-06__WYDyBauNGToGztvvYUp8__64",
+  "shopName": "CASA BIKER",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: taller dedicado a mano de obra servicio preventivo servicio eléctrico entre otras cosas reparacion de motor | PERFIL: taller mediano | OPORTUNIDADES: ofrecimiento de credito al ser nueva marca | OBSERVACIONES: taller con buena ubicación"
+ },
+ {
+  "id": "2026-07-06__dudijTuGifEu10AJ2lai__65",
+  "shopName": "Taller de motos Santa Cecilia 1",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Taller dedicado al servicio y preventivo y correctivo de motos marcas de motos chinas e indias asi como las bajaj en la que consigue las refacciones de origen de buena calidad en la que realiza ajustes de motor cambios de culatas y aceites balancines y barras para bajaj servicos para motonetas y motos de trabajo | PERFIL: taller mediano | PAINS: taller con un horario corto | OPORTUNIDADES: nueva marca en el mercado taller con buena oportunidad de venta"
+ },
+ {
+  "id": "2026-07-06__jxOiuWb1bzY2NOZmPjRk__66",
+  "shopName": "TALLER DE MOTOS PAVEL",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Se dedica al servicio preventivo y correctivo de motos de trabajo asi como motonetas y motos de 2 tiempos como son las mini motos pocket mencionan que un proveedor como tal no tiene ya que se va con el que le de buen precio ya que refacciones lazo le da buenos precios | PAINS: taller con falta de confianza | OPORTUNIDADES: nueva marca | OBSERVACIONES: taller en contra esquina no tiene ningun letrero"
+ },
+ {
+  "id": "2026-07-06__wZo85T1O6FxhNS2tWdUT__67",
+  "shopName": "TALLER DE MOTOS SERVICIO PALACIOS",
+  "prob_asignado": 4,
+  "texto": "CONTEXTO: taller dedicado a pura mano de obra no consigue refacciones ni mucho menos busca proveedores | PERFIL: taller pequeño | PAINS: taller muy pequeño | OPORTUNIDADES: ninguna | OBSERVACIONES: baja probabilidad de venta"
+ },
+ {
+  "id": "2026-07-06__iSVASBMjRTOZdVyRJjzc__68",
+  "shopName": "REPARACION DE MOTOCICLETAS MOTOS Y BURROS",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: taller dedicado en la reparación de motos servicios preventivos y servicios para carritos de golf que se usan en tláhuac así como motonetas motos de trabajo en la que también servicios eléctricos cambio de luces y mandos clutch para motonetas | PERFIL: taller mediano | PAINS: no realizan entregas | OPORTUNIDADES: entregas y entregas en 24 hrs nueva marca taller con buena oportunidad de venta"
+ },
+ {
+  "id": "2026-07-06__sGgq8THbK5JZrRPKPdWH__69",
+  "shopName": "Taller de motos La Magdalena 1",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: se logra hacer la entrevista a pesar de que el negocio estaba por cerrar en la que gustavo menciona que no tiene proveedor pero que compra sus refacciones con eddie misma ya mencionada en los reportes actuales el también manda a sus clientes con esa refaccionaria servicios cortos y preventivos de facil y rapido trabajo | PERFIL: taller pequeño | PAINS: taller con un horario corto | OPORTUNIDADES: no las detecto | OBSERVACIONES: llegar a una proxima visita más temprano"
+ },
+ {
+  "id": "2026-07-07__YYJscnGc8fskvQHFOhkp__70",
+  "shopName": "TALLER DE MOTOS CHARLY",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: Taller dedicado a la mano de obra servicios cortos y de rapida solucion dedicado servicios de motonetas de trabajo y media cc en las motos de media cc consigue refacciones en agencia como kawasaki y dominar no tiene proveedor solo compra con base a la necesidad del cliente | PERFIL: taller mediano | PAINS: taller tipo casa | OPORTUNIDADES: nueva marca entregas en domicilio buena oportunidad de venta"
+ },
+ {
+  "id": "2026-07-07__8g0vAaI4raQSvDdmo5qL__71",
+  "shopName": "MG MOTOS",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Cambio de aceite,cambio de bujía,limpieza de filtro de aire,limpieza de cedazo de aceite,limpieza de cadena y lubricación de cadena,lubricación de chicotes,afinación de chicotes,apriete de tornilleria,calibracion de punterias,verificacion electrica,cambio de liquido de frenos | PERFIL: taller mediano | OPORTUNIDADES: nueva marca y entregas en 24 hrs"
+ },
+ {
+  "id": "2026-07-07__GCBEuZBDT85LHqe8Fw51__72",
+  "shopName": "MECANICO DE MOTOCICLETAS LEX BIKER",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Taller dedicado a motos de trabajo de media cc y motos de la india asi como la dominar y pulsar en ese tipo de motos consigue refacciones en pulsar factory y un distribuidor autorizado otro tipo de motos no hay problema de meter refacciones chinas | PAINS: es un taller pequeño | OPORTUNIDADES: oportunidades de venta media"
+ },
+ {
+  "id": "2026-07-07__zKyj7D7QTXQ3929Phn3H__73",
+  "shopName": "REFACCONARIA Y TALLER DE MOTOS MONTIEL",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: Es un taller y refaccionaria a la vez dedicado más a la venta de refacciones los servicios son preventivos y de rapido solucion ya que no tiene mecánico pero se logra notar buena atención y probabilidad de venta ya que es una refaccionaria concurrida por clientes | OBSERVACIONES: no es taller como tal"
+ },
+ {
+  "id": "2026-07-07__vqQAQmb4EdeUI3hPcsOb__74",
+  "shopName": "ESCUELA DE MECANICA DE MOTOCICLETAS ATM RACING",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Es una escuela de enseñanza en una casa en la que realiza practicas y cursos para estudiantes servicios de mecanica de motos ajustes luces reguladores entre otros servicios taller de motos muy rara la vez lo realizan | PERFIL: escuela mediana | PAINS: no se dedica al taller de motos | OBSERVACIONES: no es taller es escuela y taller"
+ },
+ {
+  "id": "2026-07-07__gdoOzpXyq42ubsB50Xxv__75",
+  "shopName": "SERVICIO TECNICO PARA MOTOS OWLS",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Ajustes,afinaciones,servicio eléctrico,refacciones,balanceo de rines,colocación de accesorios,servicio a full injection,lavado de motocicleta,carga de baterías,mantenimiento de frenos,lavado de inyectores,cambio de cajas de velocidades,cambios de barras y yugos,servicio y mantenimiento de clutch | PERFIL: taller mediano | OPORTUNIDADES: nueva marca y entrega a domicilio buena oportunidad de venta"
+ },
+ {
+  "id": "2026-07-07__nQ8VwKomyIbF15QW3Wea__76",
+  "shopName": "MOTO ASISTENCIA",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: Es un taller tipo casa encargado a la reparación y afinaciones para motos de baja y media cc asi como servicios preventivos y correctivos lavado de inyectores y servicio de frenos liberación de chicotes y cadenas como bandas para motonetas | PERFIL: taller mediano | PAINS: taller en tipo cerro | OPORTUNIDADES: nueva marca,entregas en 24 horas | OBSERVACIONES: seguir visitando para toma de desiciones"
+ },
+ {
+  "id": "2026-07-07__EhbpuRGVaUF05yZEM4DI__77",
+  "shopName": "MOTO SERVICIO SIN NOMBRE",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: servicios eléctricos y mecánico en general como servicios preventivos | PERFIL: taller mediano | PAINS: abre muy tarde y cierra temprano | OPORTUNIDADES: entregas en 24 hrs y buena comunicación | OBSERVACIONES: ponerse de acuerdo para horarios de entregas"
+ },
+ {
+  "id": "2026-07-07__GJ2adO9Kd6R4cfsOYJq9__78",
+  "shopName": "MOTO SERVICIO DOMINIC MOTORS",
+  "prob_asignado": 4,
+  "texto": "CONTEXTO: servicio electrico,servicio mecanica en general,lubraciones de cadenas y fácil reparación así como servicios a motonetas | PERFIL: taller pequeño | PAINS: no proporcionar | OPORTUNIDADES: descartado | OBSERVACIONES: taller pequeño"
+ },
+ {
+  "id": "2026-06-08__Xs7BYAkwcyUI8X55tZOh__79",
+  "shopName": "SERVICIO DE MOTOS MOTO BIKE",
+  "prob_asignado": 8,
+  "texto": "CONTEXTO: El nombre real es motobike jackson en la que es un taller de motos encargado al servicio preventivo de motos como de baja media y alta su mayor giro son los moto taxis en la que atiende 4 mototaxis al dia la cual la ganancia es mucho | PERFIL: Taller de motos pequeño | OPORTUNIDADES: ofrecimiento de accesibles precios y oportunidad de venta | OBSERVACIONES: escucha activa por parte del señor e interés con voren"
+ },
+ {
+  "id": "2026-06-08__q9beboqDPmcbGxJAyyrS__80",
+  "shopName": "TALLER DE MOTOCICLETAS CLON MOTORS",
+  "prob_asignado": 8,
+  "texto": "CONTEXTO: Es un taller grande dedicado a la reparación de motos de todo tipo de cc cualquier marca no importa si es china japones o indian cualquier marca la trabaja el taller se encuentra a pie de calle sobre av tláhuac motos como tipo chopper pista trabajo entre otras | PERFIL: taller grande en reparación de todo tipo de marcas | OPORTUNIDADES: ofrecimiento de crédito entregas en 24 hrs un taller muy amplio con excelente servicios oportunidad de venta alta"
+ },
+ {
+  "id": "2026-06-08__iL4oA8FpwppEQsq7s2og__81",
+  "shopName": "TALLER DE MOTOCICLETAS MOTO SERVICIO",
+  "prob_asignado": 8,
+  "texto": "CONTEXTO: Es un taller mediano ubicado sobre la calz de tláhuac dedicado a la reparación de rines cambios de llantas y fabricación de calandrias de vez en cuando servicios cortos para motos de trabajo | PERFIL: taller mediano en reparación de motos | OPORTUNIDADES: ofrecimiento de venta de aceites bujias y bandas | OBSERVACIONES: buena disposición excelente conversacion"
+ },
+ {
+  "id": "2026-06-08__XrtPh2xKBqmraKkKTsAr__82",
+  "shopName": "TALLER DE MOTOS VARGAS",
+  "prob_asignado": 8,
+  "texto": "CONTEXTO: el señor julio vargas tuvo la amabilidad de pasarnos a su taller por lo cual logró notar un taller mediano tipo casa en la que realiza trabajos de todo tipo como ajustes cambios de aceites ajustes de motor entre otras | PERFIL: taller mediano | PAINS: pedidos fuera de tiempo además que les cobran el servicio a domicilio | OPORTUNIDADES: el servicio de voren en 24 hrs precios justos y oportunidad de credito"
+ },
+ {
+  "id": "2026-06-08__tE5XdCFz0FuL4xrOkId0__83",
+  "shopName": "Taller de motos La Concha 1",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: es un taller muy pequeño en la que solo se dedica a la reparación de mofles y rines para moto asi como cambios de chapas | PERFIL: taller pequeño | PAINS: falta de espacio para mercancía | OBSERVACIONES: buena disposición taller difícil de encontrar pero aun asi se logro tener la visita exitosa"
+ },
+ {
+  "id": "2026-06-08__g1qwPzRrROXm1Yl2iB8d__84",
+  "shopName": "Taller de motos Garcia's",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: se brinda servicio de mantenimiento cambio de balatas chequeo electrico afinaciones cambios de aceite instalacion de piezas | PERFIL: taller mediano | PAINS: ningún problema | OPORTUNIDADES: por el momento solo recomendaciones con otro taller ya que inicio contrato con remo motos segundas visitas para oportunidades de venta"
+ },
+ {
+  "id": "2026-06-08__t8XQZUnAL7SG1bi0I3FT__85",
+  "shopName": "TALLER DE MOTOS VARELA",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: es una casa por lo cual solo se rige por manos de obra de fácil reparación ya que su hogar no le permite hacer trabajos de mayor complicación | PERFIL: taller en casa mediano | PAINS: solo mano de obra | OPORTUNIDADES: no la detecto | OBSERVACIONES: taller en un callejón escondido no interesado en invertir"
+ },
+ {
+  "id": "2026-06-08__wBBRk0wysFYCd8b6tHzI__86",
+  "shopName": "MOTO SERVICIO JERRY",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: al llegar me percato que es un servicio y agencia para la marca vento | PERFIL: agencia de vento | OBSERVACIONES: buen recibimiento por parte del promotor de venta"
+ },
+ {
+  "id": "2026-07-08__xdszosXGYE298f4BuYgb__87",
+  "shopName": "REPARACION DE MOTOS MOTO SERVICIO",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Cambios de aceite,cambios de bujias,servicio a motos full injection,servicio a barras,servicio de freno sistema electrico,sistema de lineas,mandos luces adaptaciones cambio de piezas y venta | PERFIL: taller mediano | OPORTUNIDADES: creditos y entregas en 24 hrs buena oportunidad de venta"
+ },
+ {
+  "id": "2026-07-08__s4UH3ufCIWwRqqSDxjNY__88",
+  "shopName": "Moto servicio Salcedo",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Afinaciones,cambios de aceites,cambios de bujias,ajustes de cadenas,cambio de bandas,magnetos,reguladores,barras,tazas,mantenimiento a chicotes,entre otros servicios generales | PERFIL: taller mediano | OPORTUNIDADES: nueva marca entregas en domicilio y ofrecimiento de credito | OBSERVACIONES: taller enfrente del tren ligero xochimilco"
+ },
+ {
+  "id": "2026-07-08__EkXIW0viJuk39YsMYOJW__89",
+  "shopName": "Totomoto",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Es un taller grande en la que se dedica al mantenimiento preventivo y correctivo de las motos asi como sistema al carburador lavado de inyectores servicio a las motos de full inyection mantenimiento a las barras,yugos o brazos asi como motos de alta cc | PERFIL: taller grande | OPORTUNIDADES: llegar acuerdos en precios y entregas | OBSERVACIONES: taller grande"
+ },
+ {
+  "id": "2026-07-08__HnC5hVmJF8UO6uffOK7F__90",
+  "shopName": "MOTO GB",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Taller encargado a las motos de baja media y alta cc asi como motos tipo chopper y tipo pista motos de marcas nuevas chinas como cf moto en la que sus piezas se consiguen en mundi motos asi como refacciones de la tvs las de bajaj las consigue en pulsar factory xochimilco originales taller encargado a cambios de clutch ajustes de motor con buenas y malas reseñas por los clientes en la que la mayoría son buenas | PERFIL: taller grande | OBSERVACIONES: taller grande con buenas recomendaciones"
+ },
+ {
+  "id": "2026-07-08__nLFxnfrd2SOQVUNYLanY__91",
+  "shopName": "MOTO SERVICIO VIOLETA",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: Afinaciones,cambios de aceites,servicios preventivos,ajustes de cadenas,servicio electrcio sencillo | PERFIL: taller pequeño | PAINS: taller pequeño | OPORTUNIDADES: no interesada | OBSERVACIONES: taller pequeño en casa"
+ },
+ {
+  "id": "2026-07-08__U6kR5oVKPHbmzgHvrezY__92",
+  "shopName": "SSERVICIOS SAN DIEGO",
+  "prob_asignado": 4,
+  "texto": "CONTEXTO: taller encargado a solo manos de obra trabajos de facil reparacion ya que no cuenta con el espacio suficiente para guardar las motos además que ha sufrido 3 pérdidas por las lluvias ya que las motos se inundan y tiene que pagar más dinero | PERFIL: taller pequeño | OPORTUNIDADES: ninguna | OBSERVACIONES: taller grosero"
+ },
+ {
+  "id": "2026-07-08__8Y8daJL7vllUBIcpu5Fa__93",
+  "shopName": "MOTOSERVICIO GARCIA",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Escuela de mecanica y taller en general mantenimiento a motos carburadas full inyection diagramas electricos ajustes de motor,ajustes de cadena cambio de clutch a motonetas y reparacion de transmisiones | PERFIL: taller pequeño | OPORTUNIDADES: ofrecimiento de credito entregas en 24 hrs | OBSERVACIONES: taller pequeño probabilidad de venta media"
+ },
+ {
+  "id": "2026-07-08__BoCQv5bVs1yol9wO2XIa__94",
+  "shopName": "TALLER DE MOTOS LORENZO",
+  "prob_asignado": 1,
+  "texto": "CONTEXTO: el taller se encuentra cerrado por causas naturales debidas al mal tiempo pero se logra hablar con el señor lorenzo quien menciona agendar visita y número pera apertura de su taller menciona que hacía trabajos como afinaciones mantenimiento y ajustes de chicotes limpieza de motos servicio a motonetas principalmente | PERFIL: taller mediano | PAINS: taller muy escondido | OPORTUNIDADES: ninguna | OBSERVACIONES: cerrado por lluvias"
+ },
+ {
+  "id": "2026-07-08__BaaXf4LgPflnNNbm1dlp__95",
+  "shopName": "Taller De Motos Sierro",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Talachas,cambio de llantas,camaras,rines,balanceo de rines,afinaciones,cambios de piezas,cambios de bujias,soplete para los filtros chequeo de mangueras,mantenimiento a las barras | OPORTUNIDADES: entregas en 24 hrs y credito | OBSERVACIONES: taller ubicado en cerro en xochimilco"
+ },
+ {
+  "id": "2026-07-08__dBzzUAxjUUMY7w69yYqu__96",
+  "shopName": "MotoSport Xaltocan",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: servicio a motos de trabajo,motonetas a honda cargo yamaha ybr motonetas sus bandas frenos liquido de frenos cambios de kits de arrastre cambio de pastas de clutch servicio eléctrico y servicio de soldadura | PERFIL: taller mediano | PAINS: no dejar contacto y no le dan credito | OPORTUNIDADES: ofrecimiento de credito y entregas en domicilio | OBSERVACIONES: buenas recomendaciones del sr victor"
+ },
+ {
+  "id": "2026-06-09__fBfnXTtj8bbMAimW9SWq__97",
+  "shopName": "TALLER MECANICO DE MOTOCICLETAS EL BOTAS",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Es un taller mediano en la que logró hablar con el dueño que se hizo llamar el botas yo escuche a un cliente llamarlo (roberto) desconozco si es su nombre taller dedicado a la reparación de motos de baja y media cc en servicios preventivos así como venta de refacciones y cambios de aceites | PERFIL: taller mediano con buenas recomendaciones | PAINS: el horario en la que tardan en entregar y precios | OPORTUNIDADES: ofrecimiento en nosotros en 24 hrs y linea de credito | OBSERVACIONES: el taller esta a unos tres pasos atrás pero la ubicación es la correcta en el mapa"
+ },
+ {
+  "id": "2026-06-09__W0qmIEITmoF69IcsROSo__98",
+  "shopName": "CENTRO DE SERVICIO ROGA",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Es un taller mediano encargado al servicio de motos cambios de aceite eléctrico y piezas para tu moto tambien se dedica a la pintura de motos cambios de aceite y pastas | PERFIL: taller de motos mediano | PAINS: no es taller que abran mucho tiene horarios de apertura así como escaso trabajo | OPORTUNIDADES: taller amplio pero una oportunidad de venta de 6 ya que tiene dos provedores"
+ },
+ {
+  "id": "2026-06-09__wX6ERgVsoyBM84Ce9dhl__99",
+  "shopName": "TALLER DE MOTOS EL SONIC",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: se presenta como el sonic como apodo es un taller en un callejón mediano en una casa en la que realiza servicios preventivos como cambios de aceites, afinaciones, cambios de piezas y bandas para motonetas | PERFIL: taller en casa | PAINS: es un joven a cargo del taller y escaso trabajo | OBSERVACIONES: taller en casa"
+ },
+ {
+  "id": "2026-06-09__zb0feewbidHSlu6djVej__100",
+  "shopName": "TALLER DE MOTOS 701",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: En la visita me atienden correctamente en la que es un taller con accesoria con buenas recomendaciones y servicios preventivos cambios de aceites y piezas para moto asi como ajustes de valvulas | PERFIL: taller mediano | OPORTUNIDADES: ofrecimiento de entrega en 24 hrs linea de credito | OBSERVACIONES: buen recibimiento buena disponibilidad"
+ },
+ {
+  "id": "2026-06-09__aiMyCel8RDKc5k3uymUM__101",
+  "shopName": "TALLER DE MOTO SERVICIO LOS REYES",
+  "prob_asignado": 3,
+  "texto": "CONTEXTO: Es un taller mediano encargado a realizar trabajos preventivos como afinaciones cambios de aceite cambio de balatas entre otras así como reparaciones de motos de media y baja cc | PERFIL: taller mediano | PAINS: no lo detecto | OPORTUNIDADES: solo el ofrecimiento a credito | OBSERVACIONES: taller muy bien ubicado realizar segunda visita para notar mas a fondo sus necesidades"
+ },
+ {
+  "id": "2026-06-09__m4GFWl7n2Soi9Bg0irOu__102",
+  "shopName": "TALLER DE MOTOS",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: Es taller pequeño en la que sus trabajos ya son nulos por lo que comenta el señor que cambiaría de negocio | PERFIL: taller mecanico pequeño | OBSERVACIONES: taller pequeño cerrará pronto por lo que no pongo mas infomacion"
+ },
+ {
+  "id": "2026-07-09__VmEe7gEDWLGItwdaQtC4__103",
+  "shopName": "CENTRO DE SERVICIO REPARACIONES VELAZQUEZ",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Cambios de aceites,lubricacion de cadenas,lubricación de chicotes,mantenimiento a los frenos,servicios preventivos,ajustes de válvulas,lavado de motor servicio a motos fi y limpieza de carburador | PERFIL: grande | OPORTUNIDADES: venta al por mayor y entregas en 24 hrs | OBSERVACIONES: taller en tipo plaza"
+ },
+ {
+  "id": "2026-07-09__hjwdwRQAz9BW3dsffXIX__104",
+  "shopName": "Taller mecánico servicios osorio",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: se logra llegar al taller y se logra ver que es taller mecanico automotriz y de motos servicios eléctricos servicios preventivos asi como soluciones al motor barras frenos cadenas bandas magnetos a motos chopper y coronas a motos de pista reparación de alternadores para las motos de pista | PERFIL: taller grande | PAINS: dedicado más a mecánica de auto | OBSERVACIONES: taller de dos giros"
+ },
+ {
+  "id": "2026-07-09__r95E1kVuFu7jZg6IStKh__105",
+  "shopName": "TALLER DE MOTOS OSCAR",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: El señor oscar se rige por manos de obra o el puede conseguir las refacciones asi como servicios eléctricos,cambio de piezas chinas u originales depende de la necesidad de cliente mantenimiento a motonetas y servicos completos o correctivos | PERFIL: taller mediano | PAINS: taller no abre seguido | OPORTUNIDADES: ofrecimiento de crédito de 10 mil pesos | OBSERVACIONES: cerca de un centro de U.H.N tepepan"
+ },
+ {
+  "id": "2026-07-09__EYoQZsL50ovQCafeEeAx__106",
+  "shopName": "VENTO XOCHIMILCO",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Me atiende lucio vendedor de la tienda y taller para vento en la que comenta que se dedica a la reparación y mantenimientos para las motos vento ya sea motonetas tipo chopper tipo naked adventure y de trabajo, trabajos como servicios cambios de piezas servicios eléctricos servicios de prevención servicio a las barras para las vento crossmax venta de bandas paras las motonetas y kit de arrastre para las rocketman | PERFIL: taller mediano | PAINS: solo se dedica a una marca | OPORTUNIDADES: que conozca a voren | OBSERVACIONES: es un taller para vento"
+ },
+ {
+  "id": "2026-07-09__Mpfy93RI4zwoo3lKfpVY__107",
+  "shopName": "REPARACIÓN DE RINES DE AUTO Y MOTO VAQUERITOS",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: De primera mano tiene buenas calificaciones pero no se dedica hacer un taller si no a la reparación de rines de todo tipo de moto desde baja cc hasta alta cc asi como de vez en cuando hacen solo cambios de aceites con su respectiva bujia y filtro pero no es taller | PERFIL: taller reparadora de rines | PAINS: mal tipificado en el mapa ya que no es taller | OPORTUNIDADES: si voren tiene y ofrece rines y llantas venderles | OBSERVACIONES: no es taller de motos"
+ },
+ {
+  "id": "2026-07-09__jUH9JVJc2el1QAhEC1zd__108",
+  "shopName": "Taller de motos Amg motogarage",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: cambio de aceites,servicio completo,servicio a las barras,servicio al motor,servicio al carburador,lavado de inyectores,servicio a motos fi reparaciones de motos pulsar las piezas en especial de la marca bajaj las consigue en mundimoto o pulsar factory,cambios de pastas de clutch | PERFIL: taller mediano | PAINS: no le dan credito | OPORTUNIDADES: crédito para el taller y entregas | OBSERVACIONES: es un taller en casa"
+ },
+ {
+  "id": "2026-06-10__s3NhRVvKZKk1srg4rClr__109",
+  "shopName": "INGENIERIA EN MOTOCICLISMO",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: Taller dedicado a llantas luces pintura diseño de vinil, ajustes de motor, servicios preventivos, servicio de electricidad | PERFIL: taller mediano | PAINS: ninguno | OPORTUNIDADES: solo ofrecimiento de credito | OBSERVACIONES: taller en casa pero se deja folletos para recomendaciones"
+ },
+ {
+  "id": "2026-06-10__DAaq5jVM8nmbO6PPLaco__110",
+  "shopName": "TALLER DE MOTOS LAIR",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: es un taller en casa en la que se encarga de realizar trabajos preventivos asi como ajustes de motor mecanico en general | PERFIL: taller en casa | PAINS: escasez de trabajo | OPORTUNIDADES: ofrecimiento de crédito | OBSERVACIONES: taller con poco flujo de trabajo"
+ },
+ {
+  "id": "2026-06-10__VoAHfVTPXbVv7d86ds4b__111",
+  "shopName": "HOUSE OF BIKER",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: es un taller difícil de encontrar pero es un taller mediano dedicado a mecanica en general y servicio eléctrico | PERFIL: taller mediano | OPORTUNIDADES: ofrecimiento de entrega en 24 hrs | OBSERVACIONES: buena disposición y habla"
+ },
+ {
+  "id": "2026-06-10__JTFVw67wIeBp2reg1uJE__112",
+  "shopName": "TALLER DE MOTOS CHIBIS",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: es un taller dedicado a reparar motonetas y motos de dos tiempos asi como sus servicios preventivos y afinaciones | PERFIL: taller mediano | OPORTUNIDADES: convencerlo y hacerle saber por que somos los mejores | OBSERVACIONES: buena atención excelente recibimiento"
+ },
+ {
+  "id": "2026-06-10__SNYzsiiWEvecHe2hWCuq__113",
+  "shopName": "MARCANDO LAS DOCE CDMX",
+  "prob_asignado": 1,
+  "texto": "CONTEXTO: es un taller pequeño en la que se rige por mano de obra en motos de baja y media cc asi como los bici taxis | PERFIL: taller pequeño | PAINS: TALLER PEQUEÑO | OPORTUNIDADES: NINGUNA | OBSERVACIONES: TALLER EN PURA MANO DE OBRA"
+ },
+ {
+  "id": "2026-06-10__ywyUFfOc9EMeEyDFTNgJ__114",
+  "shopName": "ARTE Y DISEÑO EN MOTO",
+  "prob_asignado": 4,
+  "texto": "CONTEXTO: es un taller dedicado a la pintura y detallado de motos vinilos sticker o reparaciones de rines | PERFIL: taller de pintura | PAINS: no es taller de motos | OPORTUNIDADES: solo ofrecerle rines para motos | OBSERVACIONES: taller de pintura"
+ },
+ {
+  "id": "2026-06-10__4lpyYLbClJkBZTZmr9qR__115",
+  "shopName": "MOTO RACING SHOP",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Es un lugar grande dedicada a la venta de refacciones de motos y carros no hacen reparaciones y si hacen servicio es preventivo y con cita pero no lo hacen muy a menudo | PERFIL: tienda de motos y carros | PAINS: no es taller | OPORTUNIDADES: ninguna | OBSERVACIONES: tienda grande de autos"
+ },
+ {
+  "id": "2026-06-10__Jlfkxq4B3zGUvHOwMVvb__116",
+  "shopName": "TALLER DE MOTOS TWENTY ONE BIKES",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Es un taller mediano encargado al servicio preventivo de motos como afinaciones y cambios de piezas trabaja mano de obra y también consigue las refacciones con pedido del cliente motos de baja media cc asi como los moto taxis | PERFIL: taller mediano | OPORTUNIDADES: ofrecimiento en credito y entrega en 24 hrs buen taller execelente oportunidad de venta"
+ },
+ {
+  "id": "2026-07-10__nDWQlPNVMYiml35sPLOD__117",
+  "shopName": "Taller de Moto Servicio Sporting Bike",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: es un taller pequeño dedicado a los servicios de motos y motonetas asi como motos de trabajo y delivery servicio a las barras cambios de accesorios y piezas asi como la limpieza al carburador lubricación a tus chicotes y frenos de tambor y disco | PERFIL: taller pequeño | PAINS: taller escondido | OPORTUNIDADES: que conozca la marca y su beneficio de entrega a domicilio | OBSERVACIONES: diferentes horarios de apertura"
+ },
+ {
+  "id": "2026-07-10__f4ISpk47uk3i0XuXh9Vv__118",
+  "shopName": "Taller de motos 1",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Afinaciones,cambios de aceites,servicios completos,lavados de carburado,servicio a motos fi,servicio eléctrico,servicio a las barras,y sliders asi como lubricantes a los chicotes y tornilleria | PERFIL: :taller mediano | OPORTUNIDADES: nueva marca,credito y entregas | OBSERVACIONES: taller en el cerro"
+ },
+ {
+  "id": "2026-07-10__g4K8xf6ip9UfLtKiHWqb__119",
+  "shopName": "Taller de motos Motomono",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: Dedicado a cualquier tipo de cilindrada así como baja media y alta cc motos de pista de salto tipo naked hasta motonetas servicios eléctricos cambios de aceites,lavado de inyectores,cambio de monedas a las ktm,ajustes de punterías para las bajaj ns kits de pistón a motonetas servicio a las bandas entre mas cosas | PERFIL: taller mediano taller con buen perfil | PAINS: no los detecto | OPORTUNIDADES: solo que nos conozca y ofrecimiento de crédito"
+ },
+ {
+  "id": "2026-07-10__HQDN8sz9324r1BBFK1ZK__120",
+  "shopName": "MOTO SERVICIO MARTINEZ",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: Mecanica en general especializado en motos de baja cc y servicios electricos asi como afinacion de motor lavado de carburadores lubricación de tornillería pastas de clutch y cambio de balatas | PERFIL: taller pequeño | PAINS: no tiene horario fijo de apertura | OPORTUNIDADES: nueva marca poder de convencimiento | OBSERVACIONES: taller tipo casa"
+ },
+ {
+  "id": "2026-07-10__m8fMJsMaHG8lcFCyX1fe__121",
+  "shopName": "TALLER DE MOTOS EL CHINO",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: Servicios correctivos,servicios completos,afinaciones,cambio de piezas,cambio de pastas para motonetas,cambio de frenos y accesorios pastas para motos y motos como italikas de facil reparacion como las ft 150cc 110cc cambios de kits de arrastre | PERFIL: taller mediano | OPORTUNIDADES: entregas a domicilio y en 24 hrs | OBSERVACIONES: taller en cerro sobre carretera"
+ },
+ {
+  "id": "2026-07-10__Vlx21m89kwTSBmOzwJ9I__122",
+  "shopName": "TALLER DE MOTOS MAJO",
+  "prob_asignado": 6,
+  "texto": "PERFIL: taller mediano | PAINS: moto rey no da crédito a ese taller | OPORTUNIDADES: ofrecimiento de crédito entregas en domicilio | OBSERVACIONES: taller en cerro"
+ },
+ {
+  "id": "2026-07-10__oAw4oB3cPf16Wq1W7tDp__123",
+  "shopName": "TALLER DE MOTOS GAARAGE MONKEY",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: Servicios,preventivos,servicios correctivos,frenos,motor,servicio eléctrico,full injection,suspension barras,cambio de reguladores,coronas,ajustes | PERFIL: taller mediano | PAINS: falta de personal | OPORTUNIDADES: ofrecimiento de crédito al ser nueva marca | OBSERVACIONES: taller con buenas recomendaciones"
+ },
+ {
+  "id": "2026-07-10__fwjvdV03bajxRtxvciZU__124",
+  "shopName": "AFRICA MOTORCYCLES",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: servicio eléctrico,servicio preventivo,servicio correctivo diagnóstico,ajuste de punterías,mantenimiento a las barras kits de arrastre,cadenas y bandas,lavado de carburador a motos y motonetas reparación a motos bajaj las refacciones las consigue en pulsar factory | PERFIL: taller mediano | PAINS: no dan crédito | OPORTUNIDADES: ofrecimiento de crédito y entregas | OBSERVACIONES: excelente taller con buenas reseñas"
+ },
+ {
+  "id": "2026-07-10__a4Fw9p8lSywP7IODgBLj__125",
+  "shopName": "Taller de motos DON AMBROSIO 1",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: Taller rígido en el ámbito de mano de obra solamente y cambio de piezas solo bajo cita o pedido ya que consigue las refacciones en el centro de méxico por la cual es un taller baja probabilidad de venta realiza afinaciones,cambios de aceite | PERFIL: taller mediano | OPORTUNIDADES: no las detecto | OBSERVACIONES: taller tipo casa"
+ },
+ {
+  "id": "2026-06-15__x2BulzydFSLDko4Kn2sy__126",
+  "shopName": "MOTOS MEXICO COAPA",
+  "prob_asignado": 1,
+  "texto": "CONTEXTO: Es una aseguradora tipo taller encargada a solo trabajar con motos de aseguradora GNP por lo cual las piezas y refacciones las consiguen en agencia o distribuidor por lo cual al ser taller de aseguradora solo reparan motos por accidentes o inundaciones no hacen trabajos de mecanica en general | PERFIL: Agencia de aseguradora | PAINS: no es taller para público en general | OPORTUNIDADES: Ninguna | OBSERVACIONES: Al llegar si llega a preciar que dice aseguradora para motos"
+ },
+ {
+  "id": "2026-06-15__THKPFyLerTJyx1fqAJCG__127",
+  "shopName": "MOTOS LUIS",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: En la llegada logró notar un taller mediano con la que me entrevisto con luis quien dice ser el encargado del taller realiza trabajos para motos de baja media cc en la que realiza mantenimientos preventivos ajustes o cambios de aceites asi como cambio de piezas para la moto servicio electrico | PERFIL: taller mediano | PAINS: precios altos para la marca vento | OPORTUNIDADES: ofrecimiento de crédito y entrega a domicilio | OBSERVACIONES: taller ubicado en buena zona"
+ },
+ {
+  "id": "2026-06-15__rIknUi87ymogrZsmNitW__128",
+  "shopName": "MOTO SERVICIO PRO BIKES",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: taller encargado en mantenimiento y servicio generales para motos de baja y media cc así como motos de trabajo cambios de aceite cambios de kits de arrastre afinaciones o motonetas pregunto para motos bajaj pero no las trabaja al menos de que el cliente consiga las refacciones ya que son motos de difícil reparación además que son caras en refacciones | PERFIL: taller mediano | PAINS: trabajo escaso | OPORTUNIDADES: ofrecimiento de crédito pequeño | OBSERVACIONES: taller muy bien ubicado pero competencia al rededor"
+ },
+ {
+  "id": "2026-06-15__zEU1E5sN0CwtqkdEMG4z__129",
+  "shopName": "PRO ACTION",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Es un taller que solo se rige por medio de cita y atiende a puerta cerrada trabaja motos de cualquier tipo asi como bajaj o cf moto como servicios de mantenimiento afinaciones cambios de aceite cambios de motor y piezas | PERFIL: taller grande | PAINS: servicio solo con cita | OBSERVACIONES: muy buen taller buena platica"
+ },
+ {
+  "id": "2026-06-15__bskFadCfoftCdmTe8Fjy__130",
+  "shopName": "Taller de motos muñeco",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: cuando llegue todo su personal se dirige con él como el muñeco en la que hace trabajos de mantenimiento afinaciones cambios de piezas e incluso algunos ajustes para motos de alta cc solo bajo pedido tambien se encarga de diagnosticos electricos como cambios de coronas alternadores y bobinas menciona que sus provedores le dan credito pero muy poco cada semana | PERFIL: taller mediano | PAINS: crédito que tiene disponible es poco para el buen trabajo que tiene | OPORTUNIDADES: ofrecimiento de crédito alto para algunas competencias buen recibimiento buena platica oportunidad de venta media"
+ },
+ {
+  "id": "2026-06-15__AG97lKGg3djDfDn3b5sX__131",
+  "shopName": "Taller Ari motos",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: es un talle pequeño en la que se dedica a la reparación y mantenimiento de baja y media cc asi como cambios de frenos liquidos ajustes de motor cambio de vielas entre otras | PERFIL: taller en mecanica en general | PAINS: con la marca bajaj | OBSERVACIONES: excelente atención proporcionada"
+ },
+ {
+  "id": "2026-06-16__jjjSGNuPEbFvkoEmV1rL__132",
+  "shopName": "Moto Servicio San Fernando",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: En la entrevista se logra notar un taller mediano se encarga en realización de mantenimientos afinaciones ajustes de válvulas ajustes de motor para la marca bajaj las refacciones las consigue en agencia y con previa cita reparaciones en motonetas y bici taxis | PERFIL: taller mediano | PAINS: trabajos tardíos | OBSERVACIONES: muy amable el señor fernando sin embargo dudas en posible venta"
+ },
+ {
+  "id": "2026-06-16__lBNh6WvGfou1YMp1jPJh__133",
+  "shopName": "MOTO SERVICIO CATANA",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Es un taller mediano escondido pero se logra dar con el taller trabajan medio mano de obra en cuestiones de motos no muy conocidas pero en marcas chinas como italika consiguen refacciones en italika o remo muy contentos con su proveedor taller encargado en mantenimiento de motos afinaciones y ajustes de valvulas | PERFIL: taller mediano | PAINS: remo tarda en entregar las piezas | OPORTUNIDADES: servico de entrega en 24 hrs | OBSERVACIONES: taller con buenas recomendaciones seguir visitando"
+ },
+ {
+  "id": "2026-06-16__osSh7CkxWdsTrJWEKmF6__134",
+  "shopName": "XANCHEZ ENGINGS",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: Es un taller encargado en la reparación de motos de media cc y motonetas así como motos de delivery mantenimiento y servicio preventivo como afinaciones y servicios electricos cambio de piezas | PERFIL: taller mediano | PAINS: precios altos y entregas tardias | OPORTUNIDADES: ofrecimiento de credito | OBSERVACIONES: recibimiento algo brusco pero se deja informacion"
+ },
+ {
+  "id": "2026-06-16__EfmAN7OHUfZlIJS77PZx__135",
+  "shopName": "TALLER DE MOTOS CANTERA",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: En la visita se logra hablar con el señor carlos que se presentó como el dueño del taller pero me atiende su hijo daniel en la que se encargan en la reparación de motos de baja media cc así como motonetas servicios electricos tambien consiguen refacciones en caso de refacciones bajaj no las consigue solo en agencia | PERFIL: taller mediano | OPORTUNIDADES: oportunidad de ofrecimiento de credito y entrega de 24 hrs | OBSERVACIONES: en busca de mejores precios"
+ },
+ {
+  "id": "2026-06-16__p5yW2txb2muUNIREEdbj__136",
+  "shopName": "Insane Taller de motocicletas Suzuki, Kawazaki, Honda y Yamaha",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: De primera vista es un taller grande en la que arreglan motos de origen japones asi como mantenimientos preventivos y correctivos como sistemas electrónicos motos de baja media y alta cc se dirigen con proveedores en agencias aun asi en la entrevista jamas fueron groseros | PERFIL: taller grande | OPORTUNIDADES: ninguna | OBSERVACIONES: al ser agencia solo trabajas las marcas como lo dice en el titulo"
+ },
+ {
+  "id": "2026-05-19__nDWQlPNVMYiml35sPLOD__137",
+  "shopName": "Taller de Moto Servicio Sporting Bike",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: En la visita el señor Juan se presenta como encargado de la toma de pedidos y encargado de revisar la disponibilidad de refacciones con su proveedor se muestra muy abierto al hablar | PERFIL: Taller especializado en servicios de mecánica para motocicletas de media cilindrada y baja | PAINS: Refacciones dificiles de conseguir como culatas y pistones para motoneta pastas de clutch reguladores bobinas y fusibles | OPORTUNIDADES: La rapidez que tiene voren para entregar sus productos ya que le mencione que en un lapso de 24 hrs las tiene disponibles y lo mejor es que se las podemos mandar por delivery no menciona alguna linea de credito ya que él prefiere transferencia | OBSERVACIONES: Una buena conversación nítida y clara de lo que es voren y lo rapidez en la que entregamos las refacciones"
+ },
+ {
+  "id": "2026-05-20__tJhrb8qceMmkoa4zhSXO__138",
+  "shopName": "HOSPITAL DE MOTOS",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: En esta entrevista tuve una experiencia nula ya que no brinda nada de información una persona arrogante y mala presentación | PERFIL: Logro notar un taller mediano encargado de reparacion de motos de baja y media cilindrada | PAINS: Sin información | OPORTUNIDADES: No detecto oportunidades en el taller | OBSERVACIONES: No volver a visitar el negocio"
+ },
+ {
+  "id": "2026-05-20__nDWQlPNVMYiml35sPLOD__139",
+  "shopName": "Taller de Moto Servicio Sporting Bike",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: En la visita el señor Hugo Mora brinda una amable bienvenida ya que es un taller pequeño pero se concentra más en cerrar por las tardes ya que este taller lo visite a las 9 pm por lo cual pude hacer la entrevista | PERFIL: Reparación de motos de media cilindrada de 125 cc hasta 300 cc | OPORTUNIDADES: La rapidez que tiene voren para entregar sus productos ya que le mencione que en un lapso de 24 hrs las tiene disponibles y lo mejor es que se las podemos mandar por delivery no menciona alguna linea de credito ya que él prefiere transferencia | OBSERVACIONES: Una buena conversación nítida y clara de lo que es voren y lo rapidez en la que entregamos las refacciones"
+ },
+ {
+  "id": "2026-05-20__yBUyODo56G2hX0OS02Oz__140",
+  "shopName": "Taller De Motos Charly",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: En la visita el señor Juan se presenta como encargado de la toma de pedidos y encargado de revisar la disponibilidad de refacciones con su proveedor se muestra muy abierto al hablar | PERFIL: Taller especializado en servicios de mecánica para motocicletas de media cilindrada y baja | PAINS: Refacciones dificiles de conseguir como culatas y pistones para motoneta pastas de clutch reguladores bobinas y fusibles | OPORTUNIDADES: La rapidez que tiene voren para entregar sus productos ya que le mencione que en un lapso de 24 hrs las tiene disponibles y lo mejor es que se las podemos mandar por delivery no menciona alguna linea de credito ya que él prefiere transferencia | OBSERVACIONES: Una buena conversación nítida y clara de lo que es voren y lo rapidez en la que entregamos las refacciones"
+ },
+ {
+  "id": "2026-05-21__BrrIBeAZagAcl5OSNhV8__141",
+  "shopName": "TALLER DE MOTOS",
+  "prob_asignado": null,
+  "texto": "PERFIL: TALLER CERRADO Atienden motos de Atendían motos de media y baja cilindrada | PAINS: También la dueña mencionó que el taller no abría seguido por la cual se atrasaron con la renta del local | OPORTUNIDADES: No se detectan oportunidades | OBSERVACIONES: ● Buena disposición de la dueña del local ya que proporciona información para así saber que el taller de motos ya no opera."
+ },
+ {
+  "id": "2026-05-21__ScTOMKHBLswL71orhVXw__142",
+  "shopName": "Taller de Motos Gutiérrez y Contreras",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Se logró hablar con el dueño del taller Alfonso que se encarga de revisión y supervisión del trabajo de sus empleados para el mantenimiento de las motocicletas especialmente de media cilindrada | PERFIL: Taller especializado en servicios de mecánica para motocicletas de alto cilindraje. Atienden motos de ● MEDIA/ ALTA CILINDRADA | PAINS: La falta de refacciones ya que demoran hasta 3 dias en entregar | OPORTUNIDADES: La rapidez que tiene voren para entregar sus productos ya que le mencione que en un lapso de 24 hrs las tiene disponibles y lo mejor es que se las podemos mandar por delivery no menciona alguna linea de credito ya que él prefiere transferencia | OBSERVACIONES: ● Conversación excelente al principio no quería escuchar sobre voren por la cual le interesa lo rapido que somos al entregar las refacciones por lo cual regrese por la tarde y quedo más convencido de quienes somos y lo facil que le podemos hacer el trabajo con voren"
+ },
+ {
+  "id": "2026-05-21__bskFadCfoftCdmTe8Fjy__143",
+  "shopName": "Taller de motos muñeco",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: Se logró hablar con el mecánico Bustamante que es el que se encarga del manejo de refacciones inventario y reparación de pequeños servicios como servicios preventivos | PERFIL: Taller especializado en servicios de mecánica para motocicletas de todo tipo y de 2 tiempos Atienden motos de ● Media / baja cilindrada ● Alta cilindrada | PAINS: EN BUSCA DE PROOVEDOR | OPORTUNIDADES: Posible oportunidad de ofrecer refacciones de alta rotación para motos Italika, Vento y Bajaj, especialmente consumibles que tienen movimiento constante en el taller. | OBSERVACIONES: ● Buena disposición del encargado de compras para conversar. ● Taller con operación enfocada en motos de uso diario, lo que implica alta rotación de consumibles. ● Potencial cliente para distribución de refacciones básicas."
+ },
+ {
+  "id": "2026-06-22__juPtz0DJtNxct0VwMyP9__144",
+  "shopName": "CHARLIES MOTOS",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Es una accesoria pequeña en la que se observa motos de baja y media cc asi como motonetas y tipo naked encargado a la reparacion y mantenimiento de motos como afinaciones ajustes cambio de piezas y servicios electricos maneja pocas piezas | PERFIL: taller pequeño | PAINS: taller pequeño lo que permite solo hacer servicios express | OPORTUNIDADES: ofrecimiento de crédito y entrega en 24 hrs | OBSERVACIONES: taller difícil de encontrar por le tamaño pues no cuenta con ningún letrero que diga que es taller pero buena atencion"
+ },
+ {
+  "id": "2026-06-22__lDnLioru8RZAuWTliK5T__145",
+  "shopName": "TECNICA EN MOTOS RAMS",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: Taller encargado a la reparación de motor servicio eléctrico cambios de aceites cambios de bandas para motonetas y kits de arrastre asi como servicios express | PERFIL: taller mediano | PAINS: taller con un solo personal | OBSERVACIONES: buena atención no proporciona toda la atención en persona"
+ },
+ {
+  "id": "2026-06-22__qtRc3NLdTwl4ymzwyddN__146",
+  "shopName": "MOTO SERVICIO MORALES",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: taller encargado a la reparación de motos servicios preventivos así como pura mano de obra anexo que también no tiene proveedor ya que ninguno le vende bujias aceites y chicotes | PERFIL: taller mediano | OBSERVACIONES: excelente servicio buen recibimiento"
+ },
+ {
+  "id": "2026-06-22__P6Y70o50cmoBJAFGvLqf__147",
+  "shopName": "LINAEFLOT MOTO Y AUTO SERVICIO",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: es un taller grande en la que solo realiza afinaciones de motos solo servicios preventivos y reparaciones express como cambios de cadenas camaras llantas o accesorios ya que también es taller de autos | PERFIL: taller grande | PAINS: taller de autos y motos | OBSERVACIONES: taller grande no proporciona numero pero agendo 2 visita el 25 de junio"
+ },
+ {
+  "id": "2026-06-23__6c6l4r7QkYGasrL5ysCn__148",
+  "shopName": "TALLER REPARACION MOTOS DE FARMACIA DEL AHORRO",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Es un taller grande en la reparación de motos delivery de la marca honda | PERFIL: taller grande | PAINS: compran en agencia piezas escasas | OPORTUNIDADES: Ofrecimiento de crédito | OBSERVACIONES: taller grande buena conversacion"
+ },
+ {
+  "id": "2026-06-23__FfO0EW2DdQwNZznrbWwb__149",
+  "shopName": "TALLER MECANICO DR COBI",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Es un taller pequeño en la que se realizan trabajos pequeños así como servicios preventivos afinaciones y cambios de piezas servicios eléctricos | PERFIL: taller pequeño | PAINS: taller muy pequeño | OBSERVACIONES: taller tipo casa"
+ },
+ {
+  "id": "2026-06-23__tOypoVHZulCQbh1TOOQC__150",
+  "shopName": "SERVICIO HERMANOS FLORES",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Es un taller en reparación de servicios preventivos servicios cortos cambios de piezas servicio eléctrico ajustes de valvulas | PERFIL: taller mediano | PAINS: taller bajo citas | OPORTUNIDADES: entregas en 24 hrs | OBSERVACIONES: taller mediano buena conversación se agenda 2 visita"
+ },
+ {
+  "id": "2026-06-23__ozxNA285nUo0ABN6z1C6__151",
+  "shopName": "TALLER MECANICO DE MOTOCICLETAS BAGGER HOUSE MOTORCYCLE",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Es un taller encargado de servicio de mecanica en general servicios preventivos servicios de ajustes y piezas como cambio de clutch frenos líquidos | PERFIL: taller mediano | OPORTUNIDADES: ofrecimiento de crédito buena atención buena oportunidad de venta"
+ },
+ {
+  "id": "2026-06-23__7Vm6bmsdiOAU63vckWJR__152",
+  "shopName": "TALLER DE MOTOS MULTIMARCA",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: Taller en servicios preventivos como afinaciones servicios eléctricos servicio de vulcanizadora cambio de llantas y ajustes | PERFIL: taller mediano | OPORTUNIDADES: ofrecimiento de calidad y buen servicio | OBSERVACIONES: buena atención excelente servicio"
+ },
+ {
+  "id": "2026-06-23__tJhrb8qceMmkoa4zhSXO__153",
+  "shopName": "HOSPITAL DE MOTOS",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Taller encargado en la reparación y mantenimientos para las motos de baja y media cc así como cambios de piezas fallas eléctricas ajustes cambios de piezas clutch frenos cambios de kits de arrastre servicio a las cajas para las motonetas así como sus cambios de aceite afinaciones alineamiento de barras cambio de llantas | PERFIL: taller mediano | PAINS: taller con límite de efectivo | OPORTUNIDADES: ofrecimiento de crédito entrega y trato efectivo al cliente al llegar comentan vecinos y amigos que es buen lugar eficaz en su trabajo buena oportunidad de venta"
+ },
+ {
+  "id": "2026-06-23__aj8oKvUTII7a8qSZQTBZ__154",
+  "shopName": "INTERMOTO REPARACION Y SERVICIO TALLER MECANICO",
+  "prob_asignado": 4,
+  "texto": "CONTEXTO: Es un taller en la reparación de motos de baja media y alta cc así como motos de trabajo convenios con personas de delivery afinaciones cambios de coronas como partes electricas arnes entre otras | PERFIL: taller mediano | OPORTUNIDADES: ofrecimiento de entrega en 24 hrs precios justos | OBSERVACIONES: excelente taller buena comunicación pero probabilidad de venta bajo"
+ },
+ {
+  "id": "2026-06-23__qoj8IxsHeYQ4MUfeTZFZ__155",
+  "shopName": "MOTOSERVICIO MRAMONTES",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Es un taller en la que solo se rige en motos de media y alta cc asi como motos de baja cc en motos de baja cc solo son servicios express en las demas manejan cambios de bujias aceites afinaciones ajustes de motor partes electricas siempre compra en agencia no le gusta lo chino | PERFIL: taller mediano | PAINS: no mete piezas chinas cierra temprano | OBSERVACIONES: taller muy bien organizado pero veo baja probabilidad de venta"
+ },
+ {
+  "id": "2026-06-23__rmBqTzW7y6pKApqIoS6v__156",
+  "shopName": "ASTEX MOTORCYCLES RACING",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: taller encargado a la reparación y mantenimiento de motos de baja media y alta cc asi como cambios de piezas mano de obra todo tipo de mecanica para motos chinas indian austriacas o mexicanas servicio a motonetas cambios de bandas ajustes de motor | PERFIL: taller mediano | OPORTUNIDADES: servicio de entrega en 24 hrs y credito | OBSERVACIONES: buen taller excelente ambiente"
+ },
+ {
+  "id": "2026-06-24__j9Dn3u74pgFGOQJP2tQU__157",
+  "shopName": "Taller de Motos “La Vieja Guardia”",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Es un taller dedicado al servicio preventivo y correctivo de motos de baja media y alta cc con buenas recomendaciones también trabajan motonetas y tipo pista cambios de pasta frenos coronas y alternadores asi como cambio de piezas también consiguen piezas o trabajan mano de obra | PERFIL: taller mediano | OPORTUNIDADES: ofrecimiento de crédito entrega en 24 hrs | OBSERVACIONES: un taller con buena recomendación"
+ },
+ {
+  "id": "2026-06-24__U60uvp6pgrH5igBCYdrC__158",
+  "shopName": "REPARACION DE MOTOS CASA SANABRIA",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: Es un taller mediano en la que se encarga en la reparación de motos de baja media y alta cc asi como mantenimiento servicios cortos cambio de piezas y servicio eléctrico se rige por medio de cita y mano de obra servicio a las motos de trabajo | PERFIL: taller mediano | PAINS: entregas tardías | OPORTUNIDADES: nuevos en el mercado por lo cual le interesa probar cosas diferentes | OBSERVACIONES: excelente taller buena ubicacion"
+ },
+ {
+  "id": "2026-06-24__tamYfg2VsN5Ie3JWsMPC__159",
+  "shopName": "GRUPO RACING MOTO CENTER PONCE",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: taller dedicado al servicio preventivo y expres a motos de baja y media cc así como motos de reparto como motonetas, cambio de aceites, kits de afinación, cambios de cadena, cambios de banda y kits de cilindro para motoneta. | PERFIL: taller mediano | PAINS: entregas tardías, precios altos. | OPORTUNIDADES: ofrecimiento de crédito y entregas en 24hrs | OBSERVACIONES: excelente taller con probabilidad de venta."
+ },
+ {
+  "id": "2026-06-24__gu5TfUnufoiKpRLb4JhB__160",
+  "shopName": "Servicio y reparación de Motocicletas Launizar Biker",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: Taller encargado en la realización de motor ajustes de cadenillas bandas cadenas cambios de aceites filtros frenos, cambios de partes electricas asi como alternadores y coronas | PERFIL: taller mediano | PAINS: taller con muchos competidores | OBSERVACIONES: excelente taller con una buena probabilidad de venta"
+ },
+ {
+  "id": "2026-06-24__sbp7WqhBjtDyBDmU4yDv__161",
+  "shopName": "Ponce Racing Eje 2",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: Es un taller encargado en trabajos express como afinaciones trabajos de cambios de aceites cambios de partes eléctricas cambios de llantas cámaras focos bandas para motonetas cadenas como kits de arrastre | PERFIL: taller mediano | PAINS: falta de trabajo | OPORTUNIDADES: ofrecimiento de crédito servicio express | OBSERVACIONES: buen taller pero con poca probabilidad de venta"
+ },
+ {
+  "id": "2026-06-24__mQ1rNzwE6cjZEAw67sio__162",
+  "shopName": "Taller de motos charly",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: taller encargado en la reparación de cualquier tipo de trabajo así como mantenimiento servicios cortos y para motos de reparto asi como motonetas servicios a moto taxis motos de baja y media cc puede conseguir refacciones o te pueden cambiar la pieza solicitada taller con buena ubicación | PERFIL: taller mediano | OPORTUNIDADES: nueva marca en el mercado | OBSERVACIONES: segunda visita para convencimiento"
+ },
+ {
+  "id": "2026-06-24__khMEt3nL6y102DxKNGgg__163",
+  "shopName": "TALLER MECANICO DE MOTOS",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: taller especializado en motos japones chinas indias y otras más en el mercado servicio eléctrico servicio preventivo servicio para repartidores de aplicación ajustes de motor personalización servicio eléctrico entre otras | PERFIL: taller mediano | OPORTUNIDADES: entregas en 24 hrs con voren | OBSERVACIONES: excelente taller buena atencion"
+ },
+ {
+  "id": "2026-05-25__1jFCqkxiQDDWTPN96lwh__164",
+  "shopName": "SKR MOTOS",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: En la visita se logra apreciar un taller de mediano en la que cuenta con 2 trabajadores en especial ricardo magon menciona que su mayores clientes son motos de 150 cc a 200cc entre otras una de las ventajas que cierran tarde ya que está sobre la avenida | PERFIL: Taller encargado de reparacion de motocicleta principalmente motos de 200 cc Media / baja cilindrada, | PAINS: La falta de refacciones ya que sus amigos tardan en conseguir las piezas abierto a segunda visita | OPORTUNIDADES: Posible oportunidad de ofrecerle nuestro catálogo de voren en donde hay variedad de refacciones e incluso la oportunidad de que su mercancía le llegue en 24 hrs tambien la facilidad de una linea de credito | OBSERVACIONES: Buena disposición del mecánico para poderlo hablar con su patron y que esté más convencido con nosotros y lo que podemos ofrecerle Ya que si nosotros le resolvemos en 24 hrs el flujo de refacciones tenemos ganancias para todos"
+ },
+ {
+  "id": "2026-05-25__vk9xH7gURraZBBgOlhul__165",
+  "shopName": "MOTOSERVICIO HERNANDEZ",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: En la visita emmanuel hernández se mostró muy amable pude apreciar un taller mediano en donde tenían 5 motos para reparación por lo cual pregunte cual era su mayor flujo de motos para reparación por la cual comenta que son motos de media y alta cilindrada | PERFIL: Taller especializado en servicios de mecánica para motocicletas de media cilindrada y baja | PAINS: Refacciones dificiles de conseguir como culatas y pistones para motoneta pastas de clutch reguladores bobinas y fusibles | OPORTUNIDADES: La rapidez que tiene voren para entregar sus productos ya que le mencione que en un lapso de 24 hrs las tiene disponibles y lo mejor es que se las podemos mandar por delivery no menciona alguna linea de credito ya que él prefiere transferencia | OBSERVACIONES: Una buena conversación nítida y clara de lo que es voren y lo rapidez en la que entregamos las refacciones"
+ },
+ {
+  "id": "2026-05-25__WQ5SYEumX1Vs3Y1naIlo__166",
+  "shopName": "MOTOS CARLITOS",
+  "prob_asignado": 8,
+  "texto": "CONTEXTO: En la visita se logra detectar el amplio trabajo de motos de la marca bajaj e italika cómo yamaha cargo menciona que los clientes se encargan de llevar las refacciones es un taller mediano en la que el flujo de motos es diario por lo que estaría abierto a un nuevo proveedor | PERFIL: Taller encargado de reparacion de motocicleta principalmente chopper baja y media cilindrada | PAINS: Pocas refacciones en el mercado con su proveedor buena oportunidad para voren | OPORTUNIDADES: Seguir visitando el taller para enterarse que ya hay más clientes con motos de baja y media cilindrada | OBSERVACIONES: Buena disposición del mecánico para atender la entrevista ya que a pesar de que atiende motos chopper se prestó para una entrevista"
+ },
+ {
+  "id": "2026-06-25__yskKFH6FjnXYnbMUJ3ET__167",
+  "shopName": "SPORT MOTOS",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Es un taller en la reparación de motos servicios cortos servicios preventivos asi como motos para delivery cambios de kits de arrastre cambios de servicios electricos mantenimiento a las motonetas | PERFIL: taller mediano | PAINS: taller escondido trabajo algo bajo | OBSERVACIONES: taller ubicado en cerro"
+ },
+ {
+  "id": "2026-06-25__sUQYc2rrnZnA7uFgEpkT__168",
+  "shopName": "TALLER DE MOTOS PINEDA",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: taller tipo garaje en la que su giro de trabajo es mano de obra las refacciones que él consigue solo son de giro rápido en la que no ocupen mucho espacio trabaja motos de baja y media cc ya que por el espacio no puede almacenar motos las refacciones el las vende igual por lo cual tiene un proveedor realiza trabajos para motonetas | PERFIL: taller pequeño | PAINS: taller pequeño | OBSERVACIONES: taller ubicado en cerro"
+ },
+ {
+  "id": "2026-06-25__lzyXekFbXuDmzYFAgBKJ__169",
+  "shopName": "REPARACION DE MOTOS MILLARI",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: es un taller en la que realizan trabajos de cambios de aceites cambios de piezas y servicios electrónicos y principalmente cambio de llantas trabajos para motonetas y motos delivery | PERFIL: taller mediano | OPORTUNIDADES: ofrecimiento de nueva marca y entrega en 24 hrs | OBSERVACIONES: taller ubicado en cerro"
+ },
+ {
+  "id": "2026-06-25__Cm8R7enf0Tr6lXru8bRd__170",
+  "shopName": "MOTOS BENIGNO",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Taller con servicios,reparaciones para motos de baja media y alta cc para motos de alta cc los clientes llevan las refacciones o las llegan a conseguir chinas trabaja cambios de aceites cadenas bandas clutch pastas,lubricantes partes electricas | PERFIL: taller mediano | OPORTUNIDADES: ofrecimiento de crédito y entrega en 24 hrs | OBSERVACIONES: taller ubicado en carretera"
+ },
+ {
+  "id": "2026-06-25__BA4xMlgpoiybLYpDog2c__171",
+  "shopName": "TALLER DE MOTOS MAFIA CALLEJERA",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: taller encargado a realizar trabajos de cualquier tipo ya que está ubicado en la carretera federal libre servicios rápidos y express | PERFIL: taller mediano | PAINS: taller no abre muy seguido | OBSERVACIONES: taller en carretera por lo cual cierra temprano no deja contacto"
+ },
+ {
+  "id": "2026-06-25__bmfelZUFeE1Byuj476Ho__172",
+  "shopName": "CC MOTORS",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: taller encarga en mano de obra y servicios preventivos asi como cambios de aceites cambios de balatas ajustes y cambio de piezas electrónicas asi como servicio a motonetas | PERFIL: taller mediano | PAINS: taller con bajo trabajo | OBSERVACIONES: taller en carretera"
+ },
+ {
+  "id": "2026-06-25__uSUzGZa8K2IuC15hwatm__173",
+  "shopName": "TALLER DE MOTOS",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: taller con trabajos en solo mano de obra en la que los clientes son encargados de llevar las refacciones y solo motos de baja cc como motos de trabajo motonetas de 100 a 125 cc | PERFIL: taller mediano | PAINS: solo trabaja motos de baja cc | OPORTUNIDADES: ninguna | OBSERVACIONES: taller con baja probabilidad de venta"
+ },
+ {
+  "id": "2026-06-25__XaqG97cIha0TvSBGc9Kh__174",
+  "shopName": "TALLER DE MOTOS FOCKING MASTER",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Taller encargado afinaciones cambios de aceites ajustes de válvulas partes electricas | PERFIL: taller mediano | PAINS: entregas tardías | OPORTUNIDADES: ofrecimiento de crédito entregas en 24 hrs excelente oportunidad de venta"
+ },
+ {
+  "id": "2026-06-25__uSUzGZa8K2IuC15hwatm__175",
+  "shopName": "TALLER DE MOTOS",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: solo trabaja bajo manos de obra y servicios preventivos | PERFIL: taller pequeño | OPORTUNIDADES: ninguna | OBSERVACIONES: sin probabilidad de venta"
+ },
+ {
+  "id": "2026-05-26__Y8FwtyGNXR9DWnVFnA3Y__176",
+  "shopName": "TALLER DE MOTOS ICONIC MOTOS",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: En la visita Alexis se presenta como mecánico general se encarga de los mantenimientos generales y se encarga de la revisión de motos es un taller mediano en donde pude apreciar motos de media y baja cilindrada | PERFIL: Taller especializado en servicios de mecánica para motocicletas de media cilindrada y baja | PAINS: Solo la falta de personal y espacio del taller ya que no cuenta donde guardarlas | OPORTUNIDADES: seguir visitando el taller ya que veo oportunidades de venta | OBSERVACIONES: Buena comunicación y toda la disposición de una entrevista aclarando que no necesita algun proveedor extra para su local pero comenta que en un futuro estaría abierto en nuevos proveedores"
+ },
+ {
+  "id": "2026-05-26__ZWfDEz7eCfangcmBfES3__177",
+  "shopName": "MOTO SERVICIO JESUS",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: En la entrevista me percato que es un taller mediano en la que también veo que reparan autos en la que amablemente su mayor giro de negocio me percato que la ubicación no es la correcta y el taller se llama servicio castro | PERFIL: Logro notar un taller mediano en la que se dedican a la reparación automotriz comentan que muy pocas veces trabajan motocicletas manifiesta que también realiza pocos servicios | PAINS: Sin información | OPORTUNIDADES: No detecto oportunidades en el taller | OBSERVACIONES: Retomar segunda visita para obtener información ya que tenian trabajos pendientes por lo que solo brindan poco info"
+ },
+ {
+  "id": "2026-05-26__mdFO91x9MMOUGHxZWmVs__178",
+  "shopName": "Taller de Motos JACK'S GARAGE",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: En la entrevista el señor Luis que se presenta con ese nombre se encarga a todo los que es el sistema eléctrico de las motocicletas que le llegan al taller | PERFIL: Taller especializado en servicios de mecánica para motocicletas de media cilindrada y baja | PAINS: Refacciones dificiles de conseguir como partes eléctricas ya que comenta que su patrón mete cosas chinas y de baja calidad | OPORTUNIDADES: La rapidez que tiene voren para entregar sus productos ya que le mencione que en un lapso de 24 hrs las tiene disponibles y lo mejor es que se las podemos mandar por delivery no menciona alguna linea de credito ya que él prefiere transferencia | OBSERVACIONES: Una buena conversación nítida y clara de lo que es voren y lo rapidez en la que entregamos las refacciones"
+ },
+ {
+  "id": "2026-05-26__YhaM4Ik5HIgBg7qR8cym__179",
+  "shopName": "Taller de motos Pedregar De Santa Ursula 1",
+  "prob_asignado": 1,
+  "texto": "CONTEXTO: En la visita don Eustorgio una persona mayor siempre se ha dedicado a la reparación de motos por lo que por su edad ya se va a retirar por lo que dejará al taller en manos de sus hijos | PERFIL: Taller mediano durante toda su experiencia solo hacía trabajos pequeños donde solo realizaba afinaciones cambios de aceite frenos pocas veces hacía ajustes por lo que ahora en adelante hablar con sus hijos | PAINS: No reporta algún tipo de problema ya que no los menciona en la entrevista | OPORTUNIDADES: No detecto alguna oportunidad ya que ellos son sus proveedores | OBSERVACIONES: Una buena conversación nítida y clara de lo que es voren y lo rapidez en la que entregamos las refacciones"
+ },
+ {
+  "id": "2026-05-26__k5TQgtZkj6dkGymKdDqv__180",
+  "shopName": "MOTO SERVICIO AZTECA",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: En la visita el señor Jorge se presenta como encargado de la toma de pedidos y encargado de revisar la disponibilidad de refacciones en su negocio ya que también es refaccionaria | PERFIL: Taller especializado en servicios de mecánica para motocicletas de todo tipo ya que también con un amplio catálogo de refacciones los servicios que realizan son de mecanica en general | PAINS: Refacciones dificiles de conseguir como culatas y pistones para motoneta pastas de clutch reguladores bobinas y fusibles | OPORTUNIDADES: La rapidez que tiene voren para entregar sus productos ya que le mencione que en un lapso de 24 hrs las tiene disponibles y lo mejor es que se las podemos mandar por delivery no menciona alguna linea de credito ya que él prefiere transferencia | OBSERVACIONES: Una buena conversación nítida y clara de lo que es voren y lo rapidez en la que entregamos las refacciones"
+ },
+ {
+  "id": "2026-06-26__EgL8U2fDNz0ALloomBUr__181",
+  "shopName": "Taller de motos Lincks Biker's",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: Es un taller con aproximadamente 5 trabajadores entre ellas 2 mujeres en la que se dedican a la reparación afinaciones ajustes frenos,clutch piezas incluso con servicio de grúa y servicio a domicilio con un amplio catálogo de refacciones ya que vi de todo tipo de cc incluso clientes que estaban ahi y habia de todo tipo de comentarios desde los más buenos hasta los malos, pero el comentario que escuche más fue de que eran muy careros con esa expresión buena oportunidad de voren en precio y calidad | PERFIL: taller mediano | OPORTUNIDADES: ofrecimiento de precios más accesibles y entregas"
+ },
+ {
+  "id": "2026-06-26__TPjGRsB4zHQGNU7QIaDH__182",
+  "shopName": "MOTO SERVICE GARAGE",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Es un taller dedicado en el cambio de piezas afinaciones cambios de piezas y servicios electricos asi como cambios de llantas camaras servicios para las motonetas ajustes de válvulas servicio para las motos de alta cc como las suzukis honda yamaha para la marca bajaj y hero hunk todo ese tipo de refacciones se consiguen en agencia asi como las ktm | PERFIL: taller mediano | PAINS: trabajos tardios | OBSERVACIONES: muy amable me pide que deje 15 flayers para recomendaciones"
+ },
+ {
+  "id": "2026-06-26__dVpCmA7AmtGcfTDvWqad__183",
+  "shopName": "DIEHARD DOGS MOTO RACE",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Taller encargado a la reparación de motos de baja media y alta cc así como motos chinas e indias de la marca bajaj ktm bmw para ese tipo de motos las refacciones las pide en agencias o los clientes las traen ya que el solo es mano de obra en cuestión de las motos de la marca italika si puede conseguir las refacciones así como afinaciones ajustes | PERFIL: taller pequeño | PAINS: taller muy pequeño | OBSERVACIONES: taller sobre la carretera cerca de desierto de los leones"
+ },
+ {
+  "id": "2026-06-26__N54E5OGWutLQ8xkXz9VP__184",
+  "shopName": "BALAGARDOS",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: Taller ubicado por la zona en la que se dedica a mantenimientos y reparaciones de cualquier tipo sobre todo las chopper como las herley,honda, y kawasaki italika asi como partes electrónicas alternadores,coronas etc rectificaciones de cabezas | PERFIL: taller mediano | OPORTUNIDADES: nueva marca en el pais | OBSERVACIONES: buen taller buen ubicacion"
+ },
+ {
+  "id": "2026-05-27__Len5Ys3ysjymCaUeQHmS__185",
+  "shopName": "TALLER DE MOTOS HERSAN MOTORS",
+  "prob_asignado": 1,
+  "texto": "CONTEXTO: En la visita nos recibe el señor Gonzalo por la cual dice que en su casa estaba ese taller pero que desconoce a donde se cambiaron | PERFIL: Taller se encargaba en la reparación de motos | PAINS: SIN INFORMACIÓN | OPORTUNIDADES: NO HAY OPORTUNIDAD | OBSERVACIONES: Buena disposición del señor Gonzalo ya que al ya estar cerrado nos brinda información"
+ },
+ {
+  "id": "2026-05-27__ksVe8Hgdu0ZR1KLGPHir__186",
+  "shopName": "EL TORO BIKER",
+  "prob_asignado": 4,
+  "texto": "CONTEXTO: Se logró hablar con el mecánico Roberto en la que solo realiza trabajos preventivos y todo para las motos italika | PERFIL: Atienden motos italika media y baja cc | PAINS: El flujo de refacciones como las bujías y carburadores para las motonetas italikas | OPORTUNIDADES: Solo visitar el taller para referencias con otros talleres | OBSERVACIONES: Siempre buen recibimiento buena disponibilidad excelente taller"
+ },
+ {
+  "id": "2026-05-27__WjC3psfEtzGTj4cvAwpw__187",
+  "shopName": "MOTO TALLER ANGEL 07",
+  "prob_asignado": 1,
+  "texto": "CONTEXTO: Taller cerrado permanente | PERFIL: Atendían motos de todo tipo de cilindraje | PAINS: No lo manifiesta | OPORTUNIDADES: NINGUNA | OBSERVACIONES: Una zona de alto riesgo por la cual es peligroso visitar esa zona"
+ },
+ {
+  "id": "2026-05-27__a4kvjwy1Eo0dB13W1ZK5__188",
+  "shopName": "TALLER DE MOTOS CHARLY",
+  "prob_asignado": 1,
+  "texto": "CONTEXTO: En la visita la ubicacion esta mal marca como una taquería al llegar informan vecinos que tiene días el taller cerrado pues se aprecia un taller pequeño | PERFIL: Taller mecánico en la propaganda mencionan que realizan trabajos de todo tipo | PAINS: SIN INFORMACIÓN | OPORTUNIDADES: NINGUNA | OBSERVACIONES: ZONA ROJA PRECAUCIÓN AL VISITAR ESA ZONA"
+ },
+ {
+  "id": "2026-05-28__vbUV8F1Tug3nyxZMorTt__189",
+  "shopName": "CSR MOTOCICLETAS",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: En la visita se logra apreciar un taller grande tipo casa cochera pude visualizar de todo tipo de motocicletas como chopper tipo pista media y baja cilindrada emmanuel se encarga de realizaciones de trabajos como ajustes afinaciones calibrador entre otras su mayor fuerte son las motos de tipo trabajo como ft italika o vento | PERFIL: Taller encargado de reparacion de motocicletas de todo tipo pues se enfocan a la necesidad del cliente tanto como alta media y baja cilindrada Alta, Media y baja cilindrada, | OPORTUNIDADES: Posible oportunidad de ofrecerle nuestro catálogo de voren en donde hay variedad de refacciones e incluso la oportunidad de que su mercancía le llegue en 24 hrs tambien la facilidad de una linea de credito | OBSERVACIONES: Buena disposición del mecánico para poderlo hablar con su patron y que esté más convencido con nosotros y lo que podemos ofrecerle Ya que si nosotros le resolvemos en 24 hrs el flujo de refacciones tenemos ganancias para todos"
+ },
+ {
+  "id": "2026-05-28__pMp58dFSXrVMGpv6IAmH__190",
+  "shopName": "TALLER MOTO RATON",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: Puntos muy importantes la ubicación que marca esta mal por lo que puede ser un poco confuso pero solo son unos metros más adelante logró ver un taller pequeño en la que las motos que trabajan son motos chinas como italikas y vento | PERFIL: El señor Alfonso indica que solo realizan trabajos pequeños ya que el espacio en su taller es chico por lo que a veces les es difícil hacer trabajos como ajustes de motor o cambios de culatas | PAINS: El que está interesado para la venta de refacciones ya que conoce amigos que tienen refaccionarias y le gustaría venderles | OPORTUNIDADES: La oportunidad de venderle refacciones al por mayor y hacer un giro de negocio | OBSERVACIONES: Siempre buen recibimiento buena disponibilidad excelente taller"
+ },
+ {
+  "id": "2026-05-28__CsR6WgyfDEoyOr2XmGJN__191",
+  "shopName": "REFRACCIONES Y SERVICIO PARA MOTOCICLETAS Y BICICLETAS SIN NOMBRE",
+  "prob_asignado": 4,
+  "texto": "CONTEXTO: Es un taller muy pequeño en la que su giro de negocio son las bicicletas y pocas las refacciones de motos como pequeñas composturas como cambios de aceites pinchaduras y cambio de bujías | PERFIL: Taller y refaccionaria para motos y bicicletas servicios más pequeños como cambios de aceite bujias y servicio a motos de baja cilindrada | PAINS: El taller es muy pequeño pero se le podría ofrecer el catálogo para que puede ampliar sus refacciones | OPORTUNIDADES: Ofrecerle el catálogo de refacciones para ampliar su variación de refacciones | OBSERVACIONES: Una buena conversación nítida y clara de lo que es voren y lo rapidez en la que entregamos las refacciones"
+ },
+ {
+  "id": "2026-05-28__9UV7flGagyMEfUPEWuNI__192",
+  "shopName": "SERVICIO DE MOTOS MECACHON",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: En la visita se corrige la ubicación y se logra notar un taller de mecanica en general por la que me percate que también se dedican a la mecánica automotriz servicios exprés para motocicleta como afinaciones y cambio de bujias mencionan que pueden hacer trabajos como ajustes de motor pero el cliente tiene que llevar la refacción | PERFIL: Taller encargado de servicios simples y rápidos ya que se quiere evitar problemas con proveedores que le queden mal | PAINS: La falta de confianza en los provedores anteriores y actuales | OPORTUNIDADES: Seguir visitando el taller para enterarse que ya hay más clientes con motos de baja y media cilindrada | OBSERVACIONES: Buena disposición del mecánico para atender la entrevista ya que a pesar de que atiende motos chopper se prestó para una entrevista"
+ },
+ {
+  "id": "2026-05-28__c1X5xKd3nL41pLo0SHDy__193",
+  "shopName": "SIX SPEED SERVICIO MECANICA PARA MOTOS",
+  "prob_asignado": 1,
+  "texto": "CONTEXTO: Se logra entrevistar a natividad como mecánico y responsable del taller en donde realizan cualquier tipo de servicio como mecanico y electrico como cambio de líneas o alternadores nuevamente logró apreciar la falta de precisión para la ubicación en el mapa | PERFIL: Atienden motos de baja y media cilindrada | PAINS: Solo la falta de personal y las refacciones que hay algunas más costosas | OPORTUNIDADES: Ofrecerle el amplio catálogo y los kits que tenemos disponibles para su crecimiento | OBSERVACIONES: Buena conversación y disposición de su papá para crecimiento y rotación de negocio y refacciones"
+ },
+ {
+  "id": "2026-05-28__STCZIKKFtLzPUK6PcLcn__194",
+  "shopName": "MOTOS URI",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: En la visita uriel se presenta como mecánico general se encarga de supervisor y se encarga de la revisión de motos tiene dos accesorias por lo que le permite realizar trabajos para motos de alta cilindrada ya que abundan yamahas como 07 y 09 | PERFIL: Se dedica a las reparaciones de todo tipo como naked sport pista y de trabajo afinaciones ajustes y también en cuestiones de electricidad | PAINS: Economizar precios y que le manejan precios accesibles al por mayor | OPORTUNIDADES: La oportunidad de nuestro catálogo las facilidades de ´pago y el manejo de crédito | OBSERVACIONES: Buena comunicación y toda la disposición de una entrevista aclarando que no necesita algun proveedor extra para su local pero comenta que en un futuro estaría abierto en nuevos proveedores"
+ },
+ {
+  "id": "2026-05-29__JrF6we7qaatadAjnf0nH__195",
+  "shopName": "MOTO L.A FLEX",
+  "prob_asignado": 8,
+  "texto": "CONTEXTO: En la visita logró notar un taller pequeño en la que se carga de la reparación y mantenimiento a motos de baja y media cc así como mini motos y cuatrimotos servicios como ajustes cambio de llantas y aceites al ser un taller pequeño maneja refacciones sobre pedido | PERFIL: Taller pequeño | PAINS: la falta de espacio y escaso trabajo | OPORTUNIDADES: Ofrecimiento de refaciones de cómo las bujías y los chicotes de la italika"
+ },
+ {
+  "id": "2026-05-29__k9OKq1Ukc0CcXPFkhIWS__196",
+  "shopName": "MOTO TALLER LUIS SOSA",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Es una taller mediano dedicado a los servicios a motos de baja y media cc entre las que se encuentran motonetas y tipo de trabajo, trabajos como afinaciones y cambios de llantas como kits de arrastre | PERFIL: Taller para servicios generales entre otras | OBSERVACIONES: un taller muy escondido para la ubicación pero siempre buena atención"
+ },
+ {
+  "id": "2026-05-29__df3HWSstbWHA4wpetVIG__197",
+  "shopName": "SYLCAR",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: Es un taller mediano en la que se encarga a la reparación de las motos de la marca vento e italika asi como mantenimientos y reparaciones | PERFIL: Taller mediano especializado en 2 marcas | OBSERVACIONES: Taller escondido ubicación no tan precisa pero buena disponibilidad"
+ },
+ {
+  "id": "2026-05-29__c2piNP09z45f8xAdpagH__198",
+  "shopName": "EDU MOTOGARAGE",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: Es un taller en un garage de casa en la que realizan reparaciones de motonetas, motos de trabajo, naked y tipo pista | PERFIL: Taller dentro de una casa mediana | OBSERVACIONES: taller difícil de encontrar de vez en cuando abre"
+ },
+ {
+  "id": "2026-05-29__onWrdjUZR33JUNd6Ct0K__199",
+  "shopName": "MOTOS 2085",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Es un taller pequeño en la que solo se rige solo mano de obra ya que esta a pie de la calz de tlalpan | PERFIL: taller pequeño solo mano de obra | OPORTUNIDADES: Ninguna | OBSERVACIONES: Un taller pequeño a pie de la calz de tlalpan"
+ },
+ {
+  "id": "2026-05-29__PT1hN01IA1AdDhwUB69p__200",
+  "shopName": "MOTOS WLOF",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Es una tienda grande en la que es taller y refaccionaria también se dedica a la venta de motos servicios de motos de renta ajustes y cambios de kits de arrastre ruedas y cadenas | OPORTUNIDADES: Ninguna ya que no les interesa | OBSERVACIONES: Taller muy grande a pie de carretera cerca del pueblo san pedro martir"
+ },
+ {
+  "id": "2026-05-29__HwHUVdfIrXWYglvPubnQ__201",
+  "shopName": "TALLER MECANICO JARQUIN MOTOS",
+  "prob_asignado": 1,
+  "texto": "CONTEXTO: Al llegar me percato que es un taller mecánico en la encontre vehículos deportivos y de lujo hize la pregunta si realizan trabajos para motos la cual me respondió que la persona que se encargaba a las reparaciones renunció por la cual ya que no hay seguimiento a este taller | PERFIL: Taller automotriz | PAINS: sin información | OPORTUNIDADES: sin información | OBSERVACIONES: Taller incorrecto"
+ },
+ {
+  "id": "2026-06-29__DyrD0WBrb1abGDlfaAN1__202",
+  "shopName": "ILEMAN MOTORS",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Es un taller encargado de servicios para motos de baja media cc entre ellas motos de la marca ktm,bajaj motos difíciles de reparar y conseguir piezas pues esas refacciones solo las consiguen en agencia y bajo pedido todo original afinaciones para motos cambios de bandas para motoneta | PERFIL: TALLER MEDIANO | PAINS: entregas tardías | OPORTUNIDADES: entregas en 24 hrs y precios a credito | OBSERVACIONES: excelente taller buena probabilidad"
+ },
+ {
+  "id": "2026-06-29__gn7XORV8ENf7eUanFBZm__203",
+  "shopName": "URI MOTOS",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: Afinaciones,cambios de piezas,partes eléctricas,accesorios,kits de arrastre para marcas de ktm y bajaj en agencia y solo trabajos rápidos ya que para ajustes de motor o reparaciones internas del motor no reparan | PERFIL: taller mediano | OPORTUNIDADES: entregas en 24 hrs nueva marca en el pais buena oportunidad de venta"
+ },
+ {
+  "id": "2026-06-29__CeqpQMSnMXboNVEmURN6__204",
+  "shopName": "TIENDA MOTO TURNER PRO",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: Reparacion y mecanica en general para las marcas más conocidas en la marca, bmw solo repara la 310 ya que comparte piezas con la tvs pero para esas refacciones es en agencia o mundi motos | PERFIL: taller grande | OPORTUNIDADES: entregas a domicilio y crédito excelente oportunidad de venta"
+ },
+ {
+  "id": "2026-06-29__nhfhVsyUDl4eiMwUvROx__205",
+  "shopName": "MOTO JORCH SERVICIOS PARA MOTOS",
+  "prob_asignado": 8,
+  "texto": "CONTEXTO: Afinaciones,cambios de aceite,partes eléctricas,ajustes de motor,servicios cortos,cambios de kits de arrastre | PERFIL: Taller grande | OPORTUNIDADES: nueva marca en el país entregas en 24 hrs taller muy bien ubicado buena oportunidad de venta"
+ },
+ {
+  "id": "2026-06-29__bxBbxgQs6d1dXuPmHnft__206",
+  "shopName": "V-MOTO",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: Afinación,cambios de piezas,cambios de aceite,accesorios,cambio de piezas,cambio de yugos o tazas de direccion cambio de barras y mono shock | PERFIL: Taller pequeño | OPORTUNIDADES: ofrecimiento de credito y entrega a domicilio excelente taller con buena oportunidad"
+ },
+ {
+  "id": "2026-06-29__1lhp7IWk42oBj7RMyoyO__207",
+  "shopName": "MOTOS SERVICIOS",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: se rige por mano de obra en servicios cortos y rápidos ya que es un taller muy pequeño y no cuenta con bodega por lo que no le interesa tener proveedor solo compra refacciones en refaccionarias de motos con efectivo y tarjeta | PERFIL: taller pequeño | PAINS: taller muy pequeño | OPORTUNIDADES: ninguna | OBSERVACIONES: taller en contra esquina"
+ },
+ {
+  "id": "2026-06-29__mCeF5gT3mUlE2dvuo9gX__208",
+  "shopName": "TALLER DE MOTOS",
+  "prob_asignado": 1,
+  "texto": "CONTEXTO: llegando a taller lo encuentro cerrado por lo cual una persona me intercepta preguntando si busco el taller por lo cual se presenta como santiago quien expresa que el taller esta cerrado pero que por el momento se encontrara de vacaciones por lo cual quedo en espera de una segunda visita para el reporte correspondiente | PERFIL: taller mediano | PAINS: el taller estaba cerrado | OPORTUNIDADES: seguir visitando para encontrarlo abierto | OBSERVACIONES: seguir pasando hasta encontrarlo activo"
+ },
+ {
+  "id": "2026-06-30__NpWI8N5sPJjamzBPSwij__209",
+  "shopName": "STANCE GARAGE taller de mecanica automotriz y motocicletas",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: Dedicado a las afinaciones de motores cambios de piezas ajustes de cadenas cambio de barras chicotes pastas para clutch cambio de partes electricas partes para calandrias entre otras | PERFIL: taller mediano | PAINS: tiene 3 provedores | OPORTUNIDADES: precios accesibles entregas al taller en 24 hrs excelente oportunidad de venta"
+ },
+ {
+  "id": "2026-06-30__Yx7a09SFe8IkcY4dxyfk__210",
+  "shopName": "TALLER MOTOS PAKAL BRAYAN",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Afinaciones,ajustes de cadena de motor,ajustes de valvulas cambio de tazas o yugo ajustes de mono shock cambio de partes electrónicas | PERFIL: taller mediano | OPORTUNIDADES: ofrecimiento amplio de credito y la entrega a domicilio excelente oportunidad para conocernos"
+ },
+ {
+  "id": "2026-06-30__Y0bcertgbVlezJXiAQOa__211",
+  "shopName": "MOTOS ROBLES",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: Afinaciones,partes electricas,lineas,manillares, comandos,ajustes de cadenas y cambio de bandas a motonetas asi como servicios cortos | PERFIL: taller mediano | PAINS: no le ofrecen credito amplio | OBSERVACIONES: segunda visita para convencimiento"
+ },
+ {
+  "id": "2026-06-30__ZyMHJl7Kl9SSME2gM8ra__212",
+  "shopName": "ALMAS MOTO SERVICE",
+  "prob_asignado": 6,
+  "texto": "CONTEXTO: Cambios de aceite,filtros,partes electricas,accesorios | PERFIL: taller pequeño | OPORTUNIDADES: oportunidad de credito nueva marca excelente oportunidad de ofrecimiento"
+ },
+ {
+  "id": "2026-06-30__RLC55UXroxO9fQqyCsh3__213",
+  "shopName": "MOTOSERVICIO EL CALVARIO",
+  "prob_asignado": 1,
+  "texto": "CONTEXTO: no se encuentra el taller se tipifica como cerrado no tiene whatsapp y al marcar manda buzon | PERFIL: taller mediano | PAINS: taller cerrado | OPORTUNIDADES: ninguna | OBSERVACIONES: recorrer otro dia el taller"
+ },
+ {
+  "id": "gonzalo__CyNvKh0QhCNN1ZHTGOye__214",
+  "shopName": "MOTO TECNICA AVANZADA",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: Se realizó una visita al taller para conocer el tipo de trabajo que realizan y su posible consumo de refacciones. Durante la conversación se identificó que el enfoque principal del negocio es la reparación de motocicletas accidentadas. | PERFIL: Taller especializado en reparación de motocicletas chocadas o siniestradas. Características del taller: Trabajan todo tipo de marcas Manejan diferentes modelos Atienden todas las cilindradas | PAINS: No se mencionaron durante la visita. | OPORTUNIDADES: Actualmente no representa un cliente potencial para venta de refacciones, ya que el taller: No realiza servicios frecuentes de mantenimiento No compra refacciones de manera regular | OBSERVACIONES: Taller con enfoque muy específico en motos accidentadas. Bajo consumo de refacciones de mantenimiento o consumibles. No es un cliente prioritario para venta de refacciones de alta rotación."
+ },
+ {
+  "id": "gonzalo__mkGDtLs1ml73uNoaH8ax__215",
+  "shopName": "VIPITS",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: Durante la visita se logró conversar sobre la operación del taller y el manejo de refacciones. El taller tiene actividad importante relacionada con motocicletas siniestradas, aunque también realizan servicios mecánicos regulares, lo que genera un buen flujo de trabajo. | PERFIL: Taller enfocado en: Reparación de motos accidentadas o siniestradas Servicios mecánicos generales El taller maneja un alto flujo de motocicletas. | PAINS: Se identificó un problema importante: En ocasiones se quedan sin refacciones disponibles. Cuando ocurre, deben trasladarse a otros lugares para abastecerse. Esto puede generar pérdida de tiempo y retrasos en las reparaciones. | OPORTUNIDADES: Existe posibilidad de convertirse en proveedor de refacciones para el taller. Oportunidades: Suministro rápido de refacciones Evitar que el taller tenga que desplazarse para conseguir piezas Posible relación comercial constante debido al buen flujo de trabajo del taller | OBSERVACIONES: Taller con flujo constante de motocicletas. Manejan varias marcas populares del mercado mexicano. Dependencia actual de proveedores ubicados en Vallejo. Cliente potencial para suministro de refacciones. Cuando se tenga un catálogo enviar."
+ },
+ {
+  "id": "gonzalo__beZQlOi7Fl9OUZThyIRD__216",
+  "shopName": "GARAGE VICTORIA",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: Durante la visita se logró conversar con el encargado de compras del taller, quien compartió información sobre el tipo de motocicletas que trabajan y el manejo de refacciones. El taller tiene un enfoque importante en motocicletas de alto cilindraje, aunque en la práctica terminan reparando motos de todo tipo. | PERFIL: Taller mecánico que atiende diferentes tipos de motocicletas y cilindradas. Trabajan con motos de: Baja cilindrada Media / baja cilindrada Media / alta cilindrada Alta cilindrada Aunque su enfoque principal está en motos de mayor cilindraje. | PAINS: Se identificó un problema recurrente con los proveedores actuales: Los proveedores tardan mucho en entregar las refacciones. Durante la conversación preguntaron en cuánto tiempo se podrían hacer las entregas. Esto indica que el tiempo de suministro es un factor importante para el taller. | OPORTUNIDADES: Posible oportunidad para ofrecer: Suministro rápido de refacciones Consumibles de alta rotación El interés en saber tiempos de entrega indica apertura para evaluar nuevos proveedores. | OBSERVACIONES: Taller con capacidad para trabajar motos de todas las cilindradas. Aunque se enfocan en alto cilindraje, atienden también motos de uso cotidiano. Consumo constante de refacciones de mantenimiento y alta rotación. El tiempo de entrega de proveedores actuales es un problema."
+ },
+ {
+  "id": "gonzalo__psUuTSD0L2EAla6sTqLM__217",
+  "shopName": "Bestiario Moto Service",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: Durante la visita se logró hablar con el encargado del taller. Aunque el encargado no fue muy receptivo durante la conversación, se logró obtener los datos de contacto para poder compartir posteriormente un catálogo de refacciones. | PERFIL: Taller enfocado en servicios mecánicos y mantenimiento de motocicletas. Trabajan principalmente con motos de: Baja cilindrada Media cilindrada | PAINS: No se mencionaron problemas específicos durante la conversación. | OPORTUNIDADES: Existe posibilidad de contacto posterior para compartir: Catálogo de refacciones Información de productos La oportunidad dependerá de generar interés posterior mediante el catálogo o seguimiento comercial. | OBSERVACIONES: Taller enfocado en mantenimiento de motos de baja y media cilindrada. Manejan marcas populares del mercado mexicano. Consumo principalmente en refacciones de alta rotación. Recepción inicial poco abierta, aunque se logró obtener contacto para seguimiento."
+ },
+ {
+  "id": "gonzalo__uOFdWmjnZimO874om2tz__218",
+  "shopName": "AGENCIA DE MOTOS CF MOTO CDMX",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: Durante la visita se logró conversar con uno de los encargados del taller, quien fue amable y explicó el enfoque actual del negocio. | PERFIL: El taller se especializa actualmente en reparación y servicio de motocicletas de alto cilindraje. Anteriormente el taller también trabajaba: Baja cilindrada Media cilindrada Sin embargo, desde hace más de un año cambiaron su enfoque exclusivamente a motocicletas de alto cilindraje. | OPORTUNIDADES: El taller no trabaja actualmente con motos de baja o media cilindrada, por lo que la oportunidad comercial dependerá del tipo de refacciones disponibles. | OBSERVACIONES: Taller especializado en motos de alto cilindraje. Cambio estratégico del negocio hace más de un año. Posible consumo de refacciones específicas para motos premium o de mayor cilindrada."
+ },
+ {
+  "id": "gonzalo__n8Bb3lImgRRleEoVm4uq__219",
+  "shopName": "MOTOFEEL",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: Durante la visita se logró conversar con el encargado del negocio, quien se mostró muy amable y abierto a platicar sobre el tipo de motos que manejan y su operación. Se compartió información sobre las motocicletas que comercializan y el tipo de refacciones que utilizan. | PERFIL: El negocio se enfoca principalmente en: Venta de motocicletas Motos a consignación Además, cuentan con servicio mecánico especializado, principalmente enfocado en motocicletas de alto rendimiento. | OPORTUNIDADES: La oportunidad comercial estaría enfocada únicamente en refacciones para motos de media/alta y alta cilindrada. No representa un cliente para: Refacciones de baja cilindrada Consumibles del mercado masivo | OBSERVACIONES: Negocio enfocado principalmente en venta de motocicletas y consignación. Servicio mecánico especializado en motos premium o de alto rendimiento. Encargado amable y dispuesto a conversar. Consumo de refacciones limitado a motos de mayor cilindrada."
+ },
+ {
+  "id": "gonzalo__JIrb62Q5E5LwdaERrezY__220",
+  "shopName": "REPARACION DE MOTOS BIKER WINERY",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: Durante la visita se logró conversar directamente con el dueño del taller, en una charla larga y muy enriquecedora sobre el mercado de motocicletas, refacciones y problemas actuales del sector. El dueño compartió información relevante sobre marcas de motos, refacciones más buscadas y oportunidades en el mercado. | PERFIL: Taller enfocado en: Mecánica fuerte Servicios de mantenimiento Refacciones de alta rotación y consumibles Trabajan principalmente con motos de mayor cilindrada, aunque también atienden otras marcas del mercado. | OPORTUNIDADES: El dueño mencionó que sí movería ciertas refacciones en su taller si se pueden conseguir. Especialmente: Retenes Balatas Direccionales Faros Filtros de aceite Filtros de aire Especialmente para motos de mayor cilindrada. También destacó la oportunidad en el nicho de refacciones para CF Moto. | OBSERVACIONES: Conversación muy abierta y enriquecedora con el dueño del taller. Alto conocimiento del mercado de motocicletas y refacciones. Identificación de oportunidad en refacciones para CF Moto. Interés en continuar la conversación. El dueño mencionó que podrían tener una reunión futura para seguir intercambiando información y retroalimentación sobre el mercado."
+ },
+ {
+  "id": "gonzalo__GLokUg8lIHa6TIvPwLyM__221",
+  "shopName": "GUZBIKER GARAGE TALLER DE MOTOS",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: Durante la visita se logró conversar con el encargado del taller, quien compartió información sobre el tipo de motocicletas que trabajan y el enfoque del negocio. El taller se especializa exclusivamente en mecánica para motocicletas de alto cilindraje. | PERFIL: Taller enfocado en servicios mecánicos especializados para motocicletas de alto cilindraje. Características del taller: Solo trabajan motocicletas Manejan mecánica general para motos grandes | PAINS: No se mencionaron problemas específicos de suministro, pero el encargado compartió una observación importante del mercado. | OPORTUNIDADES: Posible oportunidad comercial en: Aceites para motocicletas de alto cilindraje Insumos de mantenimiento para motos grandes | OBSERVACIONES: Taller especializado en motocicletas premium o de alto rendimiento. Enfoque exclusivo en mecánica de motos grandes. Se identificó oportunidad de negocio en aceites especializados para este tipo de motocicletas."
+ },
+ {
+  "id": "gonzalo__yCpyl6pvdmZ9NUT9hhUo__222",
+  "shopName": "MONSTER S BIKE",
+  "prob_asignado": null,
+  "texto": "CONTEXTO: Durante la visita se logró conversar con el dueño del negocio, quien fue muy amable y compartió información sobre la operación de sus talleres. Comentó que actualmente maneja dos talleres, cada uno enfocado en diferentes tipos de motocicletas. | PERFIL: El negocio cuenta con dos talleres especializados: Taller 1 Enfocado en motos de media / alta cilindrada Taller 2 Especializado en motos de alto cilindraje | PAINS: El dueño comentó que no tiene problemas significativos con sus proveedores actuales, ya que su proveedor principal le da buen precio y suministro constante. | OPORTUNIDADES: La oportunidad comercial podría presentarse principalmente cuando: Llegan motocicletas chinas al taller Necesitan refacciones específicas fuera de su proveedor habitual | OBSERVACIONES: Dueño muy abierto y amable durante la conversación. Negocio con dos talleres especializados. Enfoque principal en motos de media/alta y alta cilindrada. Dependencia principal de un proveedor establecido (Moto Remo)."
+ },
+ {
+  "id": "gonzalo__vWDH75QgqExDfwJhUSxA__223",
+  "shopName": "TALLER DE MOTOCICLETAS BSA INGENIERIA EN MOTOCICLISMO",
+  "prob_asignado": 5,
+  "texto": "CONTEXTO: Durante la visita no fue posible obtener mucha información, ya que: La encargada de compras no se encontraba en el lugar. Los mecánicos estaban ocupados trabajando. Por lo tanto, no se pudo profundizar en temas de proveedores o refacciones que manejan. | PERFIL: Por observación del taller y el tipo de operación, parece ser un negocio que ofrece: Mecánica general para motocicletas Servicios de mantenimiento Atienden motos de: Baja cilindrada Media cilindrada Alta cilindrada | PAINS: (No se detectaron durante la visita) | OPORTUNIDADES: Debido a la falta de información, la oportunidad comercial debe explorarse en una segunda visita o llamada. | OBSERVACIONES: Taller con servicio mecánico y venta de accesorios. Atienden diferentes tipos de motocicletas. No se pudo hablar con la persona encargada de compras."
+ },
+ {
+  "id": "gonzalo__iR41HPFf7fmThCX1MGO1__224",
+  "shopName": "CENTRO DE SERVICIOS ITALIKA TALLER DE MOTO",
+  "prob_asignado": 7,
+  "texto": "CONTEXTO: Se sostuvo una muy buena conversación con Josué, quien trabaja como mecánico en el taller.Aunque no es el encargado de compras, compartió información importante sobre proveedores y tiempos de entrega. | PERFIL: Taller enfocado principalmente en servicio y mecánica profunda de motocicletas Italika. Para otras marcas como: Vento Solo realizan servicios básicos y mantenimiento (consumibles). | PAINS: Se detectaron varios problemas importantes con los proveedores: | OPORTUNIDADES: Existe una oportunidad interesante de negocio si se logra ofrecer: Refacciones para Italika de alta rotación Entrega más rápida Disponibilidad de piezas que Italika no tiene Posible suministro constante de consumibles | OBSERVACIONES: Taller especializado en motos Italika. Alto movimiento en servicio y mantenimiento. Dependencia fuerte del proveedor Italika. Problemas frecuentes con tiempos de entrega y disponibilidad de piezas. | PROB_INFORME: 🟡 Probabilidad media – buena oportunidad si se mejora la disponibilidad y rapidez de entrega. Especialmente en: Consumibles Refacciones de alta rotación para Italika"
+ }
+]

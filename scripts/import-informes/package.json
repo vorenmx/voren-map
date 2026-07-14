@@ -1,0 +1,16 @@
+{
+  "name": "import-informes",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "ETL: parse .docx visit reports, match to shops, upsert visited_stores + informes subcollection",
+  "scripts": {
+    "dryrun": "node import.mjs",
+    "apply": "node import.mjs --apply"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.7.0",
+    "mammoth": "^1.8.0",
+    "string-similarity": "^4.0.4"
+  }
+}

@@ -14,18 +14,52 @@ service cloud.firestore {
       return resource.data.get('userId', request.auth.uid);
     }
 
+    // ── Role lookup (empleados collection is the role store) ────────────────
+    // empleados docs are keyed by the lowercased email.
+    function empleadoPath() {
+      return /databases/$(database)/documents/empleados/$(request.auth.token.email.lower());
+    }
+    function rolActual() {
+      return isAllowedGoogleEmail() && exists(empleadoPath())
+        ? get(empleadoPath()).data.rol
+        : null;
+    }
+    function esAdminOGerente() {
+      return rolActual() in ['admin', 'gerente'];
+    }
+    function esVentas() {
+      return rolActual() in ['admin', 'gerente', 'ventas'];
+    }
+
     // Shop catalogue — read-only for authenticated users, never writable from client
     match /shops/{shopId} {
       allow read: if isAllowedGoogleEmail();
       allow write: if false;
     }
 
-    // Visited stores — scoped to the owning user
+    // Visited stores — also the CRM lead record (extended with pipeline fields).
+    // Owners can manage their own docs; sales/managers can update CRM fields.
     match /visited_stores/{docId} {
       allow read:   if isAllowedGoogleEmail();
       allow create: if isAllowedGoogleEmail() && request.resource.data.userId == request.auth.uid;
-      allow update: if isAllowedGoogleEmail() && docOwner() == request.auth.uid;
-      allow delete: if isAllowedGoogleEmail() && docOwner() == request.auth.uid;
+      allow update: if isAllowedGoogleEmail() && (docOwner() == request.auth.uid || esVentas());
+      allow delete: if isAllowedGoogleEmail() && (docOwner() == request.auth.uid || esAdminOGerente());
+
+      // CRM activity log — append-only per lead
+      match /actividades/{actId} {
+        allow read:   if isAllowedGoogleEmail();
+        allow create: if esVentas();
+        allow update, delete: if false;
+      }
+    }
+
+    // Visit reports ("informes") stored per lead under visited_stores/{id}/informes.
+    // Declared at collection-group scope so both per-lead reads and
+    // collectionGroup('informes') queries are authorized.
+    match /{path=**}/informes/{informeId} {
+      allow read:           if isAllowedGoogleEmail();
+      allow create, update: if esVentas();
+      allow delete:         if esAdminOGerente();
     }
 
     // Saved places — scoped to the owning user
@@ -40,6 +74,50 @@ service cloud.firestore {
     match /shop_statuses/{shopId} {
       allow read:  if isAllowedGoogleEmail();
       allow write: if false;
+    }
+
+    // ── ERP: team / people management ───────────────────────────────────────
+    match /empleados/{empId} {
+      allow read: if isAllowedGoogleEmail();
+      // Self-bootstrap: a user may create ONLY their own record as 'lectura'.
+      // Admins/managers can create/update/delete any record (and elevate roles).
+      allow create: if esAdminOGerente()
+        || (isAllowedGoogleEmail()
+            && empId == request.auth.token.email.lower()
+            && request.resource.data.rol == 'lectura');
+      allow update, delete: if esAdminOGerente();
+    }
+    match /equipos/{equipoId} {
+      allow read:  if isAllowedGoogleEmail();
+      allow write: if esAdminOGerente();
+    }
+
+    // ── ERP: CRM AI insights (written by Cloud Functions only) ──────────────
+    match /crm_insights/{fecha} {
+      allow read:  if isAllowedGoogleEmail();
+      allow write: if false;
+    }
+
+    // ── ERP: inventory / almacen ────────────────────────────────────────────
+    match /almacenes/{almacenId} {
+      allow read:  if isAllowedGoogleEmail();
+      allow write: if esAdminOGerente();
+    }
+    match /inventory_items/{itemId} {
+      allow read:  if isAllowedGoogleEmail();
+      allow write: if esAdminOGerente();
+    }
+    // Stock is derived from the movements ledger by Cloud Functions only.
+    match /inventory_stock/{stockId} {
+      allow read:  if isAllowedGoogleEmail();
+      allow write: if false;
+    }
+    // Immutable ledger — create only; the Cloud Function stamps results via Admin SDK.
+    match /inventory_movements/{movId} {
+      allow read:   if isAllowedGoogleEmail();
+      allow create: if esVentas()
+        && request.resource.data.usuarioEmail == request.auth.token.email.lower();
+      allow update, delete: if false;
     }
   }
 }

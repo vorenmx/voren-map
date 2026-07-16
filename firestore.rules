@@ -5,7 +5,10 @@ service cloud.firestore {
     function isAllowedGoogleEmail() {
       return request.auth != null
         && request.auth.token.email != null
-        && request.auth.token.email.lower().matches('.*@voren\\.com\\.mx');
+        && (
+          request.auth.token.email.lower().matches('.*@voren\\.com\\.mx')
+          || request.auth.token.email.lower() == 'enderson@propik.co'
+        );
     }
 
     // Returns the userId stored on an existing document, defaulting to the

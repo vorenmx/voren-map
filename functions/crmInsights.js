@@ -10,7 +10,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 
 // Latest Opus model; override with the ANTHROPIC_MODEL env var if needed.
-const OPUS_MODEL = process.env.ANTHROPIC_MODEL || 'claude-opus-4-1-20250805';
+const OPUS_MODEL = process.env.ANTHROPIC_MODEL || 'claude-opus-4-8';
 
 const PIPELINE_STAGES = [
   'nuevo',

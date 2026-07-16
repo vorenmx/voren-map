@@ -6,7 +6,10 @@ service firebase.storage {
     match /csvs/{allPaths=**} {
       allow read:  if request.auth != null
         && request.auth.token.email != null
-        && request.auth.token.email.lower().matches('.*@voren\\.com\\.mx');
+        && (
+          request.auth.token.email.lower().matches('.*@voren\\.com\\.mx')
+          || request.auth.token.email.lower() == 'enderson@propik.co'
+        );
       allow write: if false;
     }
   }

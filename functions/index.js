@@ -14,6 +14,7 @@ import {
 import { applyMovement } from './inventory.js';
 import { publishItemToCatalog } from './catalog.js';
 import { findDuplicates, chooseKeeper } from './dedupe.js';
+import extraAllowedEmails from './allowed-google-emails.json' with { type: 'json' };
 
 const getAuth    = () => admin.auth();
 const getStorage = () => admin.storage();
@@ -25,8 +26,11 @@ const PROJECT_ID =
 const ANTHROPIC_API_KEY = defineSecret('ANTHROPIC_API_KEY');
 
 const ALLOWED_DOMAIN = 'voren.com.mx';
+const EXTRA_ALLOWED = new Set(extraAllowedEmails.map((e) => e.toLowerCase().trim()));
 function isAllowedEmail(email) {
-  return typeof email === 'string' && email.toLowerCase().trim().endsWith(`@${ALLOWED_DOMAIN}`);
+  if (typeof email !== 'string') return false;
+  const normalized = email.toLowerCase().trim();
+  return normalized.endsWith(`@${ALLOWED_DOMAIN}`) || EXTRA_ALLOWED.has(normalized);
 }
 
 /**

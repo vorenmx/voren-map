@@ -237,7 +237,7 @@ The CRM insights functions use the Anthropic Opus API. Set the secret before dep
 ```bash
 firebase functions:secrets:set ANTHROPIC_API_KEY
 # optional: override the model
-# (default is claude-opus-4-1-20250805; set ANTHROPIC_MODEL env in functions if needed)
+# (default is claude-opus-4-8; set ANTHROPIC_MODEL env in functions if needed)
 ```
 
 ### Build & deploy

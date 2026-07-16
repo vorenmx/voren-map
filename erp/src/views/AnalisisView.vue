@@ -6,6 +6,7 @@
         <p class="dim" style="margin:4px 0 0">Generado con Anthropic Opus a partir de los datos del CRM.</p>
       </div>
       <button class="btn btn-primary" @click="regenerar" :disabled="generando">
+        <span v-if="generando" class="btn-spin" aria-hidden="true"></span>
         {{ generando ? 'Generando…' : '🤖 Regenerar' }}
       </button>
     </div>
@@ -17,8 +18,36 @@
 
     <p v-if="error" class="err">{{ error }}</p>
 
+    <div v-if="generando" class="card loading-card" role="status" aria-live="polite">
+      <div class="spinner" aria-hidden="true"></div>
+      <div>
+        <div class="loading-title">Generando análisis con IA…</div>
+        <p class="dim loading-sub">Esto puede tomar hasta un minuto. El reporte se guardará en el historial.</p>
+      </div>
+    </div>
+
     <!-- ── Semanal ─────────────────────────────────────────────────────── -->
     <template v-if="tab === 'semanal'">
+      <div v-if="semanal.length" class="card hist-card">
+        <div class="hist-head">
+          <h4 style="margin:0">Reportes semanales guardados</h4>
+          <span class="dim gen">{{ semanal.length }} en historial · 1 por día</span>
+        </div>
+        <div class="hist">
+          <button
+            v-for="a in semanal"
+            :key="a.id"
+            type="button"
+            class="hist-btn"
+            :class="{ active: a.id === ultimoSem?.id }"
+            @click="ultimoSem = a"
+          >
+            <span class="hist-date">{{ fechaCorta(a.id) }}</span>
+            <span class="hist-meta">{{ a.id === semanal[0]?.id ? 'Más reciente' : a.id }}</span>
+          </button>
+        </div>
+      </div>
+
       <div v-if="!ultimoSem && !generando" class="card dim">
         Aún no hay reporte semanal. Presiona "Regenerar" para crear el primero.
       </div>
@@ -61,19 +90,6 @@
           <div class="card">
             <h4>Observaciones por vendedor</h4>
             <ul><li v-for="(x, i) in insSem.observacionesVendedores || []" :key="i">{{ x }}</li></ul>
-          </div>
-        </div>
-
-        <div v-if="semanal.length > 1" class="card">
-          <h4>Historial semanal</h4>
-          <div class="hist">
-            <button
-              v-for="a in semanal"
-              :key="a.id"
-              class="btn btn-sm"
-              :class="{ 'btn-primary': a.id === ultimoSem.id }"
-              @click="ultimoSem = a"
-            >{{ a.id }}</button>
           </div>
         </div>
       </div>
@@ -129,19 +145,6 @@
             <span class="pill">Estancados: {{ estAcum.estancados?.total }}</span>
           </div>
         </div>
-
-        <div v-if="acumulado.length > 1" class="card">
-          <h4>Historial acumulado</h4>
-          <div class="hist">
-            <button
-              v-for="a in acumulado"
-              :key="a.id"
-              class="btn btn-sm"
-              :class="{ 'btn-primary': a.id === ultimoAcum.id }"
-              @click="ultimoAcum = a"
-            >{{ a.id }}</button>
-          </div>
-        </div>
       </div>
     </template>
   </div>
@@ -184,6 +187,14 @@ function fecha(iso) {
   return iso ? new Date(iso).toLocaleString('es-MX', { dateStyle: 'medium', timeStyle: 'short' }) : '';
 }
 
+/** Format Firestore doc id `YYYY-MM-DD` for the history picker. */
+function fechaCorta(id) {
+  if (!id) return '';
+  const d = new Date(`${id}T12:00:00`);
+  if (Number.isNaN(d.getTime())) return id;
+  return d.toLocaleDateString('es-MX', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+}
+
 function money(n) {
   if (n == null) return '—';
   return new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 }).format(n);
@@ -206,6 +217,42 @@ function money(n) {
 .cols h4, .card h4 { margin: 0 0 10px; font-size: 13px; }
 .cols ul, .cols ol { margin: 0; padding-left: 18px; line-height: 1.7; }
 .stats { display: flex; flex-wrap: wrap; gap: 8px; }
-.hist { display: flex; flex-wrap: wrap; gap: 6px; }
+.hist-card { margin-bottom: 14px; }
+.hist-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+.hist { display: flex; flex-wrap: wrap; gap: 8px; }
+.hist-btn {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 2px;
+  padding: 8px 12px; border-radius: var(--radius); cursor: pointer;
+  background: var(--panel-2); border: 1px solid var(--border); color: inherit;
+  text-align: left; min-width: 140px;
+}
+.hist-btn:hover { border-color: var(--primary-hover); }
+.hist-btn.active { border-color: var(--primary); background: rgba(29, 78, 216, 0.18); }
+.hist-date { font-weight: 600; font-size: 13px; text-transform: capitalize; }
+.hist-meta { font-size: 11px; color: var(--muted, #94a3b8); }
 .err { color: var(--danger); font-size: 13px; margin-bottom: 12px; }
+
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; }
+.btn-spin {
+  width: 14px; height: 14px; border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+.loading-card {
+  display: flex; align-items: center; gap: 16px;
+  margin-bottom: 14px;
+  min-height: 88px;
+}
+.spinner {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 3px solid var(--border);
+  border-top-color: var(--primary-hover);
+  animation: spin 0.8s linear infinite;
+  flex-shrink: 0;
+}
+.loading-title { font-weight: 700; margin-bottom: 4px; }
+.loading-sub { margin: 0; font-size: 13px; }
+@keyframes spin { to { transform: rotate(360deg); } }
 </style>

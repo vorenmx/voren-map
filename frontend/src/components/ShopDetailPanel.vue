@@ -130,10 +130,15 @@
             <span class="visited-by-label">Visitada por</span>
             <span class="visited-by-email">{{ visitedByEmailDisplay }}</span>
           </div>
-          <div v-if="showExitosaValidation && missingExitosaFields.length" class="exitosa-validation">
+          <div
+            v-if="showExitosaValidation && missingExitosaFields.length"
+            ref="exitosaValidationRef"
+            class="exitosa-validation"
+            role="alert"
+          >
             <div class="ev-title">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-            Completa la evaluación antes de marcar como Exitosa
+              Completa la evaluación antes de marcar como Exitosa
             </div>
             <ul class="ev-list">
               <li v-for="f in missingExitosaFields" :key="f.field">{{ f.label }}</li>
@@ -163,7 +168,11 @@
           <div class="section-title">Evaluación</div>
 
           <!-- Responsable de compras -->
-          <div class="chip-row" :class="{ 'field-invalid': fieldInvalid('responsable_compras_nombre') }">
+          <div
+            class="chip-row"
+            data-field="responsable_compras_nombre"
+            :class="{ 'field-invalid': fieldInvalid('responsable_compras_nombre') }"
+          >
             <span class="score-label">Nombre del responsable de compras <span class="req">*</span></span>
             <input
               class="text-input"
@@ -173,9 +182,14 @@
               :disabled="surveyingSaving"
               @blur="handleResponsableNombreBlur"
             />
+            <span v-if="fieldInvalid('responsable_compras_nombre')" class="field-error">Campo requerido</span>
           </div>
 
-          <div class="chip-row" :class="{ 'field-invalid': fieldInvalid('responsable_compras_telefono') }">
+          <div
+            class="chip-row"
+            data-field="responsable_compras_telefono"
+            :class="{ 'field-invalid': fieldInvalid('responsable_compras_telefono') }"
+          >
             <span class="score-label">Número de teléfono <span class="req">*</span></span>
             <input
               class="text-input"
@@ -185,12 +199,31 @@
               :disabled="surveyingSaving"
               @blur="handleResponsableTelefonoBlur"
             />
+            <span v-if="fieldInvalid('responsable_compras_telefono')" class="field-error">Campo requerido</span>
+          </div>
+
+          <div class="chip-row">
+            <span class="score-label">Número de teléfono adicional</span>
+            <input
+              class="text-input"
+              type="tel"
+              v-model="responsableTelefono2Local"
+              placeholder="Otro teléfono (opcional)…"
+              :disabled="surveyingSaving"
+              @blur="handleResponsableTelefono2Blur"
+            />
           </div>
 
           <div class="survey-divider"></div>
 
           <!-- Scores 1-10 -->
-          <div v-for="score in SURVEY_SCORES" :key="score.field" class="score-row" :class="{ 'field-invalid': fieldInvalid(score.field) }">
+          <div
+            v-for="score in SURVEY_SCORES"
+            :key="score.field"
+            class="score-row"
+            :data-field="score.field"
+            :class="{ 'field-invalid': fieldInvalid(score.field) }"
+          >
             <span class="score-label">
               {{ score.label }} <span class="req">*</span>
               <button class="help-btn" @mouseenter="showTooltip(score.help, $event)" @mouseleave="hideTooltip" @click.stop="toggleTooltipClick(score.help, $event)">?</button>
@@ -204,12 +237,17 @@
                 @click="handleSurveyField(score.field, surveyData[score.field] === n ? null : n)"
               >{{ n }}</button>
             </div>
+            <span v-if="fieldInvalid(score.field)" class="field-error">Campo requerido</span>
           </div>
 
           <div class="survey-divider"></div>
 
           <!-- Tamaño tienda -->
-          <div class="chip-row" :class="{ 'field-invalid': fieldInvalid('tamano_tienda') }">
+          <div
+            class="chip-row"
+            data-field="tamano_tienda"
+            :class="{ 'field-invalid': fieldInvalid('tamano_tienda') }"
+          >
             <span class="score-label">
               Tamaño tienda <span class="req">*</span>
               <button class="help-btn" @mouseenter="showTooltip(TAMANO_HELP, $event)" @mouseleave="hideTooltip" @click.stop="toggleTooltipClick(TAMANO_HELP, $event)">?</button>
@@ -223,10 +261,15 @@
                 @click="handleSurveyField('tamano_tienda', surveyData.tamano_tienda === opt ? null : opt)"
               >{{ opt }}</button>
             </div>
+            <span v-if="fieldInvalid('tamano_tienda')" class="field-error">Campo requerido</span>
           </div>
 
           <!-- Crédito -->
-          <div class="chip-row" :class="{ 'field-invalid': fieldInvalid('credito') }">
+          <div
+            class="chip-row"
+            data-field="credito"
+            :class="{ 'field-invalid': fieldInvalid('credito') }"
+          >
             <span class="score-label">Crédito <span class="req">*</span></span>
             <div class="chip-group">
               <button
@@ -237,10 +280,15 @@
                 @click="handleSurveyField('credito', surveyData.credito === opt ? null : opt)"
               >{{ opt }}</button>
             </div>
+            <span v-if="fieldInvalid('credito')" class="field-error">Campo requerido</span>
           </div>
 
           <!-- Método de cobro (multi) -->
-          <div class="chip-row" :class="{ 'field-invalid': fieldInvalid('metodo_pago') }">
+          <div
+            class="chip-row"
+            data-field="metodo_pago"
+            :class="{ 'field-invalid': fieldInvalid('metodo_pago') }"
+          >
             <span class="score-label">Método de Cobro <span class="req">*</span></span>
             <div class="chip-group">
               <button
@@ -251,10 +299,15 @@
                 @click="handleMultiField('metodo_pago', opt)"
               >{{ opt }}</button>
             </div>
+            <span v-if="fieldInvalid('metodo_pago')" class="field-error">Campo requerido</span>
           </div>
 
           <!-- Entrega -->
-          <div class="chip-row" :class="{ 'field-invalid': fieldInvalid('entrega') }">
+          <div
+            class="chip-row"
+            data-field="entrega"
+            :class="{ 'field-invalid': fieldInvalid('entrega') }"
+          >
             <span class="score-label">Entrega <span class="req">*</span></span>
             <div class="chip-group">
               <button
@@ -265,10 +318,15 @@
                 @click="handleSurveyField('entrega', surveyData.entrega === opt ? null : opt)"
               >{{ opt }}</button>
             </div>
+            <span v-if="fieldInvalid('entrega')" class="field-error">Campo requerido</span>
           </div>
 
           <!-- Principal proveedor -->
-          <div class="chip-row" :class="{ 'field-invalid': fieldInvalid('principal_proveedor') }">
+          <div
+            class="chip-row"
+            data-field="principal_proveedor"
+            :class="{ 'field-invalid': fieldInvalid('principal_proveedor') }"
+          >
             <span class="score-label">Proveedor principal <span class="req">*</span></span>
             <ProveedorSelect
               :model-value="proveedorValue"
@@ -277,10 +335,15 @@
               placeholder="Buscar proveedor…"
               @update:modelValue="handleSurveyField('principal_proveedor', $event)"
             />
+            <span v-if="fieldInvalid('principal_proveedor')" class="field-error">Campo requerido</span>
           </div>
 
           <!-- Contacto personal del tomador de decisión -->
-          <div class="chip-row" :class="{ 'field-invalid': fieldInvalid('contacto_personal') }">
+          <div
+            class="chip-row"
+            data-field="contacto_personal"
+            :class="{ 'field-invalid': fieldInvalid('contacto_personal') }"
+          >
             <span class="score-label">El tomador de decisión nos dio su contacto personal <span class="req">*</span></span>
             <div class="chip-group">
               <button
@@ -291,6 +354,7 @@
                 @click="handleSurveyField('contacto_personal', surveyData.contacto_personal === opt ? null : opt)"
               >{{ opt }}</button>
             </div>
+            <span v-if="fieldInvalid('contacto_personal')" class="field-error">Campo requerido</span>
           </div>
 
           <!-- Comentarios -->
@@ -364,7 +428,7 @@
 </template>
 
 <script setup>
-import { computed, ref, watch } from 'vue';
+import { computed, nextTick, ref, watch } from 'vue';
 import { useVisited } from '../composables/useVisited.js';
 import { useShopStatus } from '../composables/useShopStatus.js';
 import ProveedorSelect from './ProveedorSelect.vue';
@@ -418,8 +482,9 @@ const SURVEY_LABELS = {
   principal_proveedor:          'Proveedor principal',
   contacto_personal:            'Contacto personal del tomador de decisión',
   comentarios:                  'Comentarios',
-  responsable_compras_nombre:   'Nombre del responsable de compras',
-  responsable_compras_telefono: 'Número de teléfono',
+  responsable_compras_nombre:     'Nombre del responsable de compras',
+  responsable_compras_telefono:   'Número de teléfono',
+  responsable_compras_telefono_2: 'Número de teléfono adicional',
 };
 
 const { visitedIds, visitedStatusMap, visitedShops, setExclusiveStatus, updateSurvey } = useVisited();
@@ -428,14 +493,16 @@ const { statusDocs } = useShopStatus();
 const statusSaving      = ref(null); // null | 'visita_exitosa' | 'cerrada' | 'cerrada_permanentemente'
 const surveyingSaving   = ref(false);
 const showExitosaValidation = ref(false); // true after a blocked "Exitosa" attempt
+const exitosaValidationRef = ref(null);
 const logOpen           = ref(false);
 const tooltipVisible    = ref(false);
 const tooltipText       = ref('');
 const tooltipX          = ref(0);
 const tooltipY          = ref(0);
 const comentariosLocal  = ref('');
-const responsableNombreLocal    = ref('');
-const responsableTelefonoLocal  = ref('');
+const responsableNombreLocal     = ref('');
+const responsableTelefonoLocal   = ref('');
+const responsableTelefono2Local  = ref('');
 
 function showTooltip(text, event) {
   const rect = event.currentTarget.getBoundingClientRect();
@@ -507,6 +574,13 @@ function fieldInvalid(field) {
   return showExitosaValidation.value && !isFieldFilled(field);
 }
 
+function revealExitosaValidation() {
+  showExitosaValidation.value = true;
+  nextTick(() => {
+    exitosaValidationRef.value?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+}
+
 async function handleSurveyField(field, value) {
   if (!props.shop?.id || surveyingSaving.value) return;
   surveyingSaving.value = true;
@@ -537,7 +611,7 @@ async function handleStatusToggle(visitedStatus) {
   // Toggling it off (already exitosa) and the other statuses are unaffected.
   const turningOnExitosa = visitedStatus === 'visita_exitosa' && !isVisitaExitosa.value;
   if (turningOnExitosa && missingExitosaFields.value.length > 0) {
-    showExitosaValidation.value = true;
+    revealExitosaValidation();
     return;
   }
 
@@ -545,9 +619,10 @@ async function handleStatusToggle(visitedStatus) {
   // the doc satisfies the server-side completeness rule atomically. The local
   // text inputs (name/phone/comentarios) only persist on blur, so include them.
   const surveyPayload = turningOnExitosa ? {
-    responsable_compras_nombre:   responsableNombreLocal.value,
-    responsable_compras_telefono: responsableTelefonoLocal.value,
-    comentarios:                  comentariosLocal.value,
+    responsable_compras_nombre:     responsableNombreLocal.value,
+    responsable_compras_telefono:   responsableTelefonoLocal.value,
+    responsable_compras_telefono_2: responsableTelefono2Local.value,
+    comentarios:                    comentariosLocal.value,
     score_probabilidad:           surveyData.value.score_probabilidad ?? null,
     tamano_tienda:                surveyData.value.tamano_tienda ?? null,
     credito:                      surveyData.value.credito ?? null,
@@ -615,12 +690,14 @@ watch(() => props.shop?.id, () => {
   comentariosLocal.value = visitedEntry.value?.comentarios ?? '';
   responsableNombreLocal.value = visitedEntry.value?.responsable_compras_nombre ?? '';
   responsableTelefonoLocal.value = visitedEntry.value?.responsable_compras_telefono ?? '';
+  responsableTelefono2Local.value = visitedEntry.value?.responsable_compras_telefono_2 ?? '';
 });
 
 watch(visitedEntry, (entry) => {
   comentariosLocal.value = entry?.comentarios ?? '';
   responsableNombreLocal.value = entry?.responsable_compras_nombre ?? '';
   responsableTelefonoLocal.value = entry?.responsable_compras_telefono ?? '';
+  responsableTelefono2Local.value = entry?.responsable_compras_telefono_2 ?? '';
 }, { immediate: true });
 
 async function handleComentariosBlur() {
@@ -639,6 +716,12 @@ async function handleResponsableTelefonoBlur() {
   const saved = visitedEntry.value?.responsable_compras_telefono ?? '';
   if (responsableTelefonoLocal.value === saved) return;
   await updateSurvey(props.shop.id, 'responsable_compras_telefono', responsableTelefonoLocal.value);
+}
+
+async function handleResponsableTelefono2Blur() {
+  const saved = visitedEntry.value?.responsable_compras_telefono_2 ?? '';
+  if (responsableTelefono2Local.value === saved) return;
+  await updateSurvey(props.shop.id, 'responsable_compras_telefono_2', responsableTelefono2Local.value);
 }
 
 const typeClass = computed(() => {
@@ -978,8 +1061,8 @@ const sourceLabel = computed(() => {
 .exitosa-validation {
   margin-top: 10px;
   padding: 10px 12px;
-  background: rgba(239,68,68,0.10);
-  border: 1px solid rgba(239,68,68,0.30);
+  background: rgba(239,68,68,0.12);
+  border: 1px solid rgba(239,68,68,0.40);
   border-radius: 8px;
 }
 .ev-title {
@@ -1002,10 +1085,37 @@ const sourceLabel = computed(() => {
   line-height: 1.5;
 }
 .req { color: #f87171; font-weight: 700; }
+.field-invalid {
+  padding: 8px;
+  margin-left: -8px;
+  margin-right: -8px;
+  border-radius: 8px;
+  background: rgba(239,68,68,0.08);
+  outline: 1px solid rgba(239,68,68,0.35);
+}
 .field-invalid .score-label { color: #f87171; }
 .field-invalid .text-input,
 .field-invalid .comentarios-input {
-  border-color: rgba(239,68,68,0.55);
+  border-color: rgba(239,68,68,0.65);
+  background: rgba(239,68,68,0.06);
+  box-shadow: 0 0 0 2px rgba(239,68,68,0.12);
+}
+.field-invalid .score-btn:not(.active),
+.field-invalid .chip-btn:not(.active) {
+  border-color: rgba(239,68,68,0.40);
+  background: rgba(239,68,68,0.06);
+  color: #fca5a5;
+}
+.field-invalid :deep(.prov-input-row) {
+  border-color: rgba(239,68,68,0.65);
+  background: rgba(239,68,68,0.06);
+  box-shadow: 0 0 0 2px rgba(239,68,68,0.12);
+}
+.field-error {
+  font-size: 11px;
+  font-weight: 500;
+  color: #f87171;
+  margin-top: 2px;
 }
 
 /* Visita Exitosa — green */

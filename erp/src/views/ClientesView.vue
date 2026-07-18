@@ -99,7 +99,11 @@
               <span v-else class="pill pending">Sin informe</span>
             </td>
             <td class="acciones">
-              <button class="btn btn-sm btn-primary" @click="abrir(c)">
+              <button
+                class="btn btn-sm"
+                :class="nInformes(c) > 0 ? 'btn-ver' : 'btn-llenar'"
+                @click="abrir(c)"
+              >
                 {{ nInformes(c) > 0 ? 'Ver informe' : 'Llenar visita' }}
               </button>
             </td>
@@ -288,6 +292,24 @@ function onUpdated() { /* leads array is mutated in place by the composable */ }
 .table-wrap { padding: 0; overflow-x: auto; }
 .nombre { font-weight: 600; text-transform: uppercase; }
 .acciones { text-align: right; white-space: nowrap; }
+.btn-ver {
+  background: transparent;
+  border-color: rgba(52, 211, 153, 0.35);
+  color: var(--success);
+}
+.btn-ver:hover {
+  background: rgba(52, 211, 153, 0.1);
+  border-color: rgba(52, 211, 153, 0.55);
+}
+.btn-llenar {
+  background: rgba(251, 191, 36, 0.15);
+  border-color: rgba(251, 191, 36, 0.4);
+  color: var(--warning);
+}
+.btn-llenar:hover {
+  background: rgba(251, 191, 36, 0.25);
+  border-color: rgba(251, 191, 36, 0.6);
+}
 .done { color: var(--success); border-color: rgba(52,211,153,0.3); }
 .pending { color: var(--warning); border-color: rgba(251,191,36,0.3); }
 .tipo.taller { color: #7dd3fc; border-color: rgba(125,211,252,0.3); }

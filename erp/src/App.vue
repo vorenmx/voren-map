@@ -70,6 +70,7 @@ const nav = [
   { to: '/clientes', label: 'Clientes', icon: '🧾' },
   { to: '/equipo', label: 'Equipo', icon: '👥' },
   { to: '/almacen', label: 'Almacén', icon: '📦' },
+  { to: '/pedidos', label: 'Pedidos', icon: '🛒' },
   { type: 'divider' },
   { to: '/graficos', label: 'Gráficos', icon: '📊' },
   { to: '/analisis', label: 'Análisis IA', icon: '🤖' },

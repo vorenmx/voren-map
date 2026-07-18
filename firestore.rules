@@ -174,5 +174,11 @@ service cloud.firestore {
         && request.resource.data.usuarioEmail == request.auth.token.email.lower();
       allow update, delete: if false;
     }
+
+    // Ecommerce orders — written by Cloud Functions (ingestEcommerceOrder) only.
+    match /orders/{orderId} {
+      allow read:  if isAllowedGoogleEmail();
+      allow write: if false;
+    }
   }
 }

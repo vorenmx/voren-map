@@ -7,6 +7,7 @@ const routes = [
   { path: '/graficos', name: 'graficos', component: () => import('../views/GraficosView.vue'), meta: { titulo: 'Gráficos' } },
   { path: '/equipo', name: 'equipo', component: () => import('../views/EquipoView.vue'), meta: { titulo: 'Equipo' } },
   { path: '/almacen', name: 'almacen', component: () => import('../views/AlmacenView.vue'), meta: { titulo: 'Almacén' } },
+  { path: '/pedidos', name: 'pedidos', component: () => import('../views/PedidosView.vue'), meta: { titulo: 'Pedidos' } },
   { path: '/analisis', name: 'analisis', component: () => import('../views/AnalisisView.vue'), meta: { titulo: 'Análisis IA' } },
   { path: '/:pathMatch(.*)*', redirect: '/' },
 ];

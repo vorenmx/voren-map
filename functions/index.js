@@ -12,7 +12,9 @@ import {
   generateCumulativeInsights,
 } from './crmInsights.js';
 import { applyMovement } from './inventory.js';
-import { publishItemToCatalog } from './catalog.js';
+import { publishItemToCatalog, republishStockChange } from './catalog.js';
+import { importSkuCsv } from './importInventory.js';
+import { normalizeOrderPayload, ingestOrder } from './orders.js';
 import { findDuplicates, chooseKeeper } from './dedupe.js';
 import extraAllowedEmails from './allowed-google-emails.json' with { type: 'json' };
 
@@ -24,6 +26,8 @@ const PROJECT_ID =
 
 // ── Secrets ───────────────────────────────────────────────────────────────
 const ANTHROPIC_API_KEY = defineSecret('ANTHROPIC_API_KEY');
+/** Shared secret header for ecommerce → ERP order webhooks. */
+const ECOMMERCE_INGEST_SECRET = defineSecret('ECOMMERCE_INGEST_SECRET');
 
 const ALLOWED_DOMAIN = 'voren.com.mx';
 const EXTRA_ALLOWED = new Set(extraAllowedEmails.map((e) => e.toLowerCase().trim()));
@@ -626,19 +630,133 @@ export const aplicarMovimientoInventario = onDocumentCreated(
 );
 
 /**
- * Publishes a public-safe catalog mirror when a sellable item or its stock
- * changes. Currently a stub: it computes the public payload and logs it. Wire
- * the cross-project write once the e-commerce Firebase project exists.
+ * Publishes a public-safe catalog mirror when a sellable item changes.
+ * Writes to vorencommx via ADC (compute SA must have Datastore User there).
  */
 export const publicarCatalogo = onDocumentWritten(
   { document: 'inventory_items/{itemId}' },
   async (event) => {
     const itemId = event.params.itemId;
-    const after = event.data?.after?.data();
+    const after = event.data?.after?.exists ? event.data.after.data() : undefined;
     try {
       await publishItemToCatalog(getDb(), itemId, after);
     } catch (err) {
       console.error('publicarCatalogo error:', err);
+    }
+  }
+);
+
+/**
+ * Re-publishes catalog availability whenever warehouse stock changes
+ * (including ecommerce salidas applied by aplicarMovimientoInventario).
+ */
+export const publicarCatalogoStock = onDocumentWritten(
+  { document: 'inventory_stock/{stockId}' },
+  async (event) => {
+    const after = event.data?.after?.data();
+    const before = event.data?.before?.data();
+    const itemId = after?.itemId || before?.itemId;
+    if (!itemId) return;
+    try {
+      await republishStockChange(getDb(), itemId);
+    } catch (err) {
+      console.error('publicarCatalogoStock error:', err);
+    }
+  }
+);
+
+/**
+ * Import SKU master CSV from Storage into inventory_items.
+ *
+ * Usage: GET /importInventoryCsv?file=csvs/sku-es.csv
+ * Auth: Bearer Firebase ID token (same as importCsv).
+ *
+ * Query params:
+ *   file  — Storage object path (default: csvs/sku-es.csv)
+ *   clear — "true" to delete existing inventory_items first
+ */
+export const importInventoryCsv = onRequest(
+  {
+    timeoutSeconds: 540,
+    memory: '1GiB',
+    // Private: public (allUsers) invoker fails under org Domain Restricted Sharing.
+    // Call via ERP Hosting rewrite /api/importInventoryCsv + Firebase ID token.
+    invoker: 'private',
+  },
+  async (req, res) => {
+    if (!(await verifyCaller(req, res))) return;
+
+    const filePath = req.query.file || 'csvs/sku-es.csv';
+    const clearFirst = req.query.clear === 'true';
+
+    try {
+      const bucket = getStorage().bucket();
+      const file = bucket.file(filePath);
+      const [exists] = await file.exists();
+      if (!exists) {
+        res.status(404).json({ error: `File not found in Storage: ${filePath}` });
+        return;
+      }
+
+      const [contents] = await file.download();
+      const csvText = contents.toString('utf8');
+      const result = await importSkuCsv(getDb(), csvText, { clearFirst });
+      res.json({ success: true, file: filePath, ...result });
+    } catch (err) {
+      console.error('importInventoryCsv error:', err);
+      res.status(500).json({ error: err.message });
+    }
+  }
+);
+
+/**
+ * Ecommerce webhook: create order + inventory salidas.
+ *
+ * Auth: header `X-Voren-Ingest-Secret` must match ECOMMERCE_INGEST_SECRET.
+ * Body: { orderId, customer?, items:[{sku,cantidad,precio?}], total?, paidAt? }
+ *
+ * Idempotent: replaying the same orderId returns 200 with status already_exists.
+ *
+ * Call via ERP Hosting: POST https://voren-erp.web.app/api/ingestEcommerceOrder
+ * (function is private; Hosting invokes it — org policy blocks allUsers invoker).
+ */
+export const ingestEcommerceOrder = onRequest(
+  {
+    timeoutSeconds: 60,
+    memory: '256MiB',
+    secrets: [ECOMMERCE_INGEST_SECRET],
+    cors: true,
+    invoker: 'private',
+  },
+  async (req, res) => {
+    if (req.method === 'OPTIONS') {
+      res.status(204).send('');
+      return;
+    }
+    if (req.method !== 'POST') {
+      res.status(405).json({ error: 'Method not allowed' });
+      return;
+    }
+
+    const expected = ECOMMERCE_INGEST_SECRET.value();
+    const provided =
+      req.get('X-Voren-Ingest-Secret') ||
+      req.get('x-voren-ingest-secret') ||
+      '';
+    if (!expected || provided !== expected) {
+      res.status(401).json({ error: 'Unauthorized' });
+      return;
+    }
+
+    try {
+      const payload = normalizeOrderPayload(req.body);
+      const result = await ingestOrder(getDb(), payload);
+      const code = result.status === 'created' ? 201 : 200;
+      res.status(code).json({ success: true, ...result });
+    } catch (err) {
+      console.error('ingestEcommerceOrder error:', err);
+      const status = /no encontrado|inválid|Falta|sin items/i.test(err.message) ? 400 : 500;
+      res.status(status).json({ error: err.message });
     }
   }
 );

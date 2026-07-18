@@ -27,6 +27,20 @@
           }
         },
         {
+          "source": "/api/importInventoryCsv",
+          "function": {
+            "functionId": "importInventoryCsv",
+            "region": "us-central1"
+          }
+        },
+        {
+          "source": "/api/ingestEcommerceOrder",
+          "function": {
+            "functionId": "ingestEcommerceOrder",
+            "region": "us-central1"
+          }
+        },
+        {
           "source": "**",
           "destination": "/index.html"
         }

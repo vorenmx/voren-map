@@ -1,0 +1,740 @@
+[
+  {
+    "id": "fwvvTWyDeEKzb2nEOr4W",
+    "visited_stores": {
+      "responsable_compras_nombre": "Pedro",
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "responsable_compras_telefono": "sin contacto",
+      "score_probabilidad": 6,
+      "tamano_tienda": "Mediana",
+      "credito": "Sí",
+      "metodo_pago": [
+        "Transferencia"
+      ],
+      "entrega": "Delivery",
+      "contacto_personal": "No",
+      "surveyUpdatedAt": {
+        "_seconds": 1784269853,
+        "_nanoseconds": 2000000
+      },
+      "surveyLog": [
+        {
+          "field": "responsable_compras_nombre",
+          "value": "Pedro",
+          "ts": "2026-07-17T06:29:57.522Z"
+        },
+        {
+          "field": "responsable_compras_telefono",
+          "value": "sin contacto",
+          "ts": "2026-07-17T06:30:32.493Z"
+        },
+        {
+          "field": "score_probabilidad",
+          "value": "5",
+          "ts": "2026-07-17T06:30:32.593Z"
+        },
+        {
+          "field": "score_probabilidad",
+          "value": "6",
+          "ts": "2026-07-17T06:30:35.382Z"
+        },
+        {
+          "field": "tamano_tienda",
+          "value": "Mediana",
+          "ts": "2026-07-17T06:30:37.157Z"
+        },
+        {
+          "field": "credito",
+          "value": "Sí",
+          "ts": "2026-07-17T06:30:42.205Z"
+        },
+        {
+          "field": "metodo_pago",
+          "value": "Transferencia",
+          "ts": "2026-07-17T06:30:43.588Z"
+        },
+        {
+          "field": "entrega",
+          "value": "Delivery",
+          "ts": "2026-07-17T06:30:46.559Z"
+        },
+        {
+          "field": "contacto_personal",
+          "value": "No",
+          "ts": "2026-07-17T06:30:49.052Z"
+        },
+        {
+          "field": "principal_proveedor",
+          "value": "Moto Refacciones",
+          "ts": "2026-07-17T06:30:52.879Z"
+        }
+      ],
+      "principal_proveedor": [
+        "Moto Refacciones"
+      ],
+      "formatted_address": "Pirules 10, Valle de Santa María, Xochimilco, 16790 Ciudad de México, CDMX, México",
+      "website": "",
+      "purchases": 66,
+      "latitude": 19.2353893,
+      "municipality": "",
+      "rating": 5,
+      "review_count": 2,
+      "visited_status": "visita_exitosa",
+      "source": "google",
+      "average_order": 2838.45,
+      "phone": "",
+      "street": "",
+      "name": "TALLER DE MOTOS PISTON PRO.",
+      "shop_type": "Repair",
+      "shopId": "fwvvTWyDeEKzb2nEOr4W",
+      "state": "",
+      "google_maps_url": "https://maps.google.com/?cid=16044966227962603030&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.0983729,
+      "status": "visitada",
+      "visitedByEmail": "omar@voren.com.mx",
+      "pipeline_stage": "nuevo",
+      "crm_updated_at": "2026-07-18T00:11:17.493Z",
+      "statusAt": {
+        "_seconds": 1784138400,
+        "_nanoseconds": 0
+      },
+      "visitedAt": {
+        "_seconds": 1784138400,
+        "_nanoseconds": 0
+      }
+    },
+    "shops": {
+      "name": "TALLER DE MOTOS PISTON PRO.",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "Pirules 10, Valle de Santa María, Xochimilco, 16790 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "",
+      "email": "",
+      "website": "",
+      "latitude": 19.2353893,
+      "longitude": -99.0983729,
+      "location": {
+        "_latitude": 19.2353893,
+        "_longitude": -99.0983729
+      },
+      "rating": 5,
+      "review_count": 2,
+      "business_status": "OPERATIONAL",
+      "business_hours": "",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=16044966227962603030&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJT5qzKwAFzoURFqbZQsYrq94",
+      "purchases": 66,
+      "average_order": 2838.45,
+      "imported_at": "2026-03-05T18:12:00.436Z"
+    },
+    "actividades": [],
+    "informes": []
+  },
+  {
+    "id": "X2yK8NLkGVHz2xNKE2b2",
+    "visited_stores": {
+      "responsable_compras_nombre": "Ramirez",
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "responsable_compras_telefono": "sin contacto",
+      "score_probabilidad": 4,
+      "tamano_tienda": "Grande",
+      "credito": "No",
+      "metodo_pago": [
+        "Transferencia",
+        "Efectivo"
+      ],
+      "entrega": "Tienda física",
+      "principal_proveedor": [
+        "Remo"
+      ],
+      "contacto_personal": "No",
+      "surveyUpdatedAt": {
+        "_seconds": 1784234728,
+        "_nanoseconds": 695000000
+      },
+      "surveyLog": [
+        {
+          "field": "responsable_compras_nombre",
+          "value": "Ramirez",
+          "ts": "2026-07-16T20:45:10.256Z"
+        },
+        {
+          "field": "responsable_compras_telefono",
+          "value": "sin contacto",
+          "ts": "2026-07-16T20:45:18.451Z"
+        },
+        {
+          "field": "score_probabilidad",
+          "value": "4",
+          "ts": "2026-07-16T20:45:18.557Z"
+        },
+        {
+          "field": "tamano_tienda",
+          "value": "Grande",
+          "ts": "2026-07-16T20:45:22.246Z"
+        },
+        {
+          "field": "credito",
+          "value": "No",
+          "ts": "2026-07-16T20:45:23.829Z"
+        },
+        {
+          "field": "metodo_pago",
+          "value": "Transferencia",
+          "ts": "2026-07-16T20:45:25.786Z"
+        },
+        {
+          "field": "metodo_pago",
+          "value": "Transferencia,Efectivo",
+          "ts": "2026-07-16T20:45:27.151Z"
+        },
+        {
+          "field": "entrega",
+          "value": "Delivery",
+          "ts": "2026-07-16T20:45:29.896Z"
+        },
+        {
+          "field": "entrega",
+          "value": "Tienda física",
+          "ts": "2026-07-16T20:45:30.977Z"
+        },
+        {
+          "field": "principal_proveedor",
+          "value": "Remo",
+          "ts": "2026-07-16T20:45:34.855Z"
+        },
+        {
+          "field": "contacto_personal",
+          "value": "No",
+          "ts": "2026-07-16T20:45:38.863Z"
+        }
+      ],
+      "formatted_address": "Calz Acoxpa 6140, Coapa, Coapa Super 1, Tlalpan, 14390 Ciudad de México, CDMX, México",
+      "website": "",
+      "purchases": 3395,
+      "latitude": 19.289224,
+      "municipality": "",
+      "rating": null,
+      "review_count": null,
+      "visited_status": "visita_exitosa",
+      "source": "google",
+      "average_order": 3940.69,
+      "phone": "",
+      "street": "",
+      "name": "Taller de motos Coapa - Saga",
+      "shop_type": "Repair",
+      "shopId": "X2yK8NLkGVHz2xNKE2b2",
+      "state": "",
+      "google_maps_url": "https://maps.google.com/?cid=1533221285317974997&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.1160067,
+      "status": "visitada",
+      "visitedByEmail": "omar@voren.com.mx",
+      "pipeline_stage": "nuevo",
+      "crm_updated_at": "2026-07-18T00:11:18.860Z",
+      "statusAt": {
+        "_seconds": 1784138400,
+        "_nanoseconds": 0
+      },
+      "visitedAt": {
+        "_seconds": 1784138400,
+        "_nanoseconds": 0
+      }
+    },
+    "shops": {
+      "name": "Taller de motos Coapa - Saga",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "Calz Acoxpa 6140, Coapa, Coapa Super 1, Tlalpan, 14390 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "",
+      "email": "",
+      "website": "",
+      "latitude": 19.289224,
+      "longitude": -99.1160067,
+      "location": {
+        "_latitude": 19.289224,
+        "_longitude": -99.1160067
+      },
+      "rating": null,
+      "review_count": null,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 9:00–20:00 | martes: 9:00–20:00 | miércoles: 9:00–20:00 | jueves: 9:00–20:00 | viernes: 9:00–20:00 | sábado: 9:00–20:00 | domingo: Cerrado",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=1533221285317974997&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJt77wTgABzoUR1RtyuaIYRxU",
+      "purchases": 3395,
+      "average_order": 3940.69,
+      "imported_at": "2026-03-05T18:12:00.436Z"
+    },
+    "actividades": [],
+    "informes": []
+  },
+  {
+    "id": "OJfbMNtbFJ21BfiKj4dQ",
+    "visited_stores": {
+      "responsable_compras_nombre": "El compa",
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "responsable_compras_telefono": "55 3413 4772",
+      "score_probabilidad": 5,
+      "tamano_tienda": "Pequeña",
+      "credito": "No",
+      "metodo_pago": [
+        "Transferencia"
+      ],
+      "entrega": "Delivery",
+      "principal_proveedor": [
+        "Remo"
+      ],
+      "contacto_personal": "Sí",
+      "surveyUpdatedAt": {
+        "_seconds": 1784269712,
+        "_nanoseconds": 235000000
+      },
+      "surveyLog": [
+        {
+          "field": "responsable_compras_nombre",
+          "value": "El compa",
+          "ts": "2026-07-17T06:27:50.234Z"
+        },
+        {
+          "field": "responsable_compras_telefono",
+          "value": "55 3413 4772",
+          "ts": "2026-07-17T06:27:57.943Z"
+        },
+        {
+          "field": "score_probabilidad",
+          "value": "5",
+          "ts": "2026-07-17T06:27:58.030Z"
+        },
+        {
+          "field": "tamano_tienda",
+          "value": "Pequeña",
+          "ts": "2026-07-17T06:27:59.541Z"
+        },
+        {
+          "field": "credito",
+          "value": "No",
+          "ts": "2026-07-17T06:28:05.625Z"
+        },
+        {
+          "field": "metodo_pago",
+          "value": "Transferencia",
+          "ts": "2026-07-17T06:28:19.587Z"
+        },
+        {
+          "field": "entrega",
+          "value": "Tienda física",
+          "ts": "2026-07-17T06:28:22.803Z"
+        },
+        {
+          "field": "entrega",
+          "value": "Delivery",
+          "ts": "2026-07-17T06:28:24.661Z"
+        },
+        {
+          "field": "principal_proveedor",
+          "value": "Remo",
+          "ts": "2026-07-17T06:28:27.658Z"
+        },
+        {
+          "field": "contacto_personal",
+          "value": "Sí",
+          "ts": "2026-07-17T06:28:32.110Z"
+        }
+      ],
+      "formatted_address": "Aquiles Serdan 1, Santiago Tepalcatlalpan, Xochimilco, 16200 Ciudad de México, CDMX, México",
+      "website": "",
+      "purchases": 3273,
+      "latitude": 19.2472064,
+      "municipality": "",
+      "rating": 5,
+      "review_count": 1,
+      "visited_status": "visita_exitosa",
+      "source": "google",
+      "average_order": 667.14,
+      "phone": "55 3413 4772",
+      "street": "",
+      "name": "Taller de motos (los compás)",
+      "shop_type": "Repair",
+      "shopId": "OJfbMNtbFJ21BfiKj4dQ",
+      "state": "",
+      "google_maps_url": "https://maps.google.com/?cid=995670402729234523&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.1182657,
+      "status": "visitada",
+      "visitedByEmail": "omar@voren.com.mx",
+      "pipeline_stage": "nuevo",
+      "crm_updated_at": "2026-07-18T00:11:19.441Z",
+      "statusAt": {
+        "_seconds": 1784138400,
+        "_nanoseconds": 0
+      },
+      "visitedAt": {
+        "_seconds": 1784138400,
+        "_nanoseconds": 0
+      }
+    },
+    "shops": {
+      "name": "Taller de motos (los compás)",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "Aquiles Serdan 1, Santiago Tepalcatlalpan, Xochimilco, 16200 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "55 3413 4772",
+      "email": "",
+      "website": "",
+      "latitude": 19.2472064,
+      "longitude": -99.1182657,
+      "location": {
+        "_latitude": 19.2472064,
+        "_longitude": -99.1182657
+      },
+      "rating": 5,
+      "review_count": 1,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 9:00–19:00 | martes: 9:00–19:00 | miércoles: 9:00–19:00 | jueves: 9:00–19:00 | viernes: 9:00–19:00 | sábado: 9:00–19:00 | domingo: Cerrado",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=995670402729234523&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJW1nyAwABzoURW9ALvPRU0Q0",
+      "purchases": 3273,
+      "average_order": 667.14,
+      "imported_at": "2026-03-05T18:09:37.789Z"
+    },
+    "actividades": [],
+    "informes": []
+  },
+  {
+    "id": "afV4sQIeyKljMNcDd6Jj",
+    "visited_stores": {
+      "responsable_compras_nombre": "El compa",
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "responsable_compras_telefono": "55 3413 4772",
+      "score_probabilidad": 5,
+      "tamano_tienda": "Pequeña",
+      "credito": "No",
+      "metodo_pago": [
+        "Transferencia",
+        "Efectivo"
+      ],
+      "entrega": "Delivery",
+      "principal_proveedor": [
+        "Remo"
+      ],
+      "contacto_personal": "Sí",
+      "surveyUpdatedAt": {
+        "_seconds": 1784269647,
+        "_nanoseconds": 545000000
+      },
+      "surveyLog": [
+        {
+          "field": "responsable_compras_nombre",
+          "value": "El compa",
+          "ts": "2026-07-17T06:26:55.906Z"
+        },
+        {
+          "field": "responsable_compras_telefono",
+          "value": "55 3413 4772",
+          "ts": "2026-07-17T06:27:04.199Z"
+        },
+        {
+          "field": "score_probabilidad",
+          "value": "5",
+          "ts": "2026-07-17T06:27:04.294Z"
+        },
+        {
+          "field": "tamano_tienda",
+          "value": "Pequeña",
+          "ts": "2026-07-17T06:27:05.602Z"
+        },
+        {
+          "field": "tamano_tienda",
+          "value": null,
+          "ts": "2026-07-17T06:27:07.122Z"
+        },
+        {
+          "field": "tamano_tienda",
+          "value": "Pequeña",
+          "ts": "2026-07-17T06:27:10.053Z"
+        },
+        {
+          "field": "credito",
+          "value": "No",
+          "ts": "2026-07-17T06:27:12.649Z"
+        },
+        {
+          "field": "metodo_pago",
+          "value": "Transferencia",
+          "ts": "2026-07-17T06:27:14.438Z"
+        },
+        {
+          "field": "metodo_pago",
+          "value": "Transferencia,Efectivo",
+          "ts": "2026-07-17T06:27:16.107Z"
+        },
+        {
+          "field": "entrega",
+          "value": "Delivery",
+          "ts": "2026-07-17T06:27:19.437Z"
+        },
+        {
+          "field": "principal_proveedor",
+          "value": "Remo",
+          "ts": "2026-07-17T06:27:22.031Z"
+        },
+        {
+          "field": "contacto_personal",
+          "value": "Sí",
+          "ts": "2026-07-17T06:27:27.427Z"
+        }
+      ],
+      "formatted_address": "Aquiles Serdan 1, Santiago Tepalcatlalpan, Xochimilco, 16200 Ciudad de México, CDMX, México",
+      "website": "",
+      "purchases": 3273,
+      "latitude": 19.2472064,
+      "municipality": "",
+      "rating": 5,
+      "review_count": 1,
+      "visited_status": "visita_exitosa",
+      "source": "google",
+      "average_order": 667.14,
+      "phone": "55 3413 4772",
+      "street": "",
+      "name": "Taller de motos (los compás)",
+      "shop_type": "Repair",
+      "shopId": "afV4sQIeyKljMNcDd6Jj",
+      "state": "",
+      "google_maps_url": "https://maps.google.com/?cid=995670402729234523&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.1182657,
+      "status": "visitada",
+      "visitedByEmail": "omar@voren.com.mx",
+      "pipeline_stage": "nuevo",
+      "crm_updated_at": "2026-07-18T00:11:19.853Z",
+      "statusAt": {
+        "_seconds": 1784138400,
+        "_nanoseconds": 0
+      },
+      "visitedAt": {
+        "_seconds": 1784138400,
+        "_nanoseconds": 0
+      }
+    },
+    "shops": {
+      "name": "Taller de motos (los compás)",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "Aquiles Serdan 1, Santiago Tepalcatlalpan, Xochimilco, 16200 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "55 3413 4772",
+      "email": "",
+      "website": "",
+      "latitude": 19.2472064,
+      "longitude": -99.1182657,
+      "location": {
+        "_latitude": 19.2472064,
+        "_longitude": -99.1182657
+      },
+      "rating": 5,
+      "review_count": 1,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 9:00–19:00 | martes: 9:00–19:00 | miércoles: 9:00–19:00 | jueves: 9:00–19:00 | viernes: 9:00–19:00 | sábado: 9:00–19:00 | domingo: Cerrado",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=995670402729234523&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJW1nyAwABzoURW9ALvPRU0Q0",
+      "purchases": 3273,
+      "average_order": 667.14,
+      "imported_at": "2026-03-05T18:12:00.436Z"
+    },
+    "actividades": [],
+    "informes": []
+  },
+  {
+    "id": "0ZjafWOP62iopJTT8igA",
+    "visited_stores": {
+      "responsable_compras_nombre": "Guzman",
+      "userId": "5OE69rtGaJUVsCrgNjbiplejLA82",
+      "responsable_compras_telefono": "55 9630 2420",
+      "score_probabilidad": 6,
+      "tamano_tienda": "Mediana",
+      "credito": "Sí",
+      "metodo_pago": [
+        "Efectivo",
+        "Transferencia"
+      ],
+      "entrega": "Delivery",
+      "contacto_personal": "Sí",
+      "surveyUpdatedAt": {
+        "_seconds": 1784267836,
+        "_nanoseconds": 836000000
+      },
+      "surveyLog": [
+        {
+          "field": "responsable_compras_nombre",
+          "value": "Guzman",
+          "ts": "2026-07-17T05:56:59.399Z"
+        },
+        {
+          "field": "responsable_compras_telefono",
+          "value": "55 9630 2420",
+          "ts": "2026-07-17T05:57:08.283Z"
+        },
+        {
+          "field": "score_probabilidad",
+          "value": "6",
+          "ts": "2026-07-17T05:57:08.361Z"
+        },
+        {
+          "field": "tamano_tienda",
+          "value": "Mediana",
+          "ts": "2026-07-17T05:57:11.389Z"
+        },
+        {
+          "field": "credito",
+          "value": "Sí",
+          "ts": "2026-07-17T05:57:12.649Z"
+        },
+        {
+          "field": "metodo_pago",
+          "value": "Efectivo",
+          "ts": "2026-07-17T05:57:17.902Z"
+        },
+        {
+          "field": "metodo_pago",
+          "value": "Efectivo,Transferencia",
+          "ts": "2026-07-17T05:57:19.136Z"
+        },
+        {
+          "field": "entrega",
+          "value": "Delivery",
+          "ts": "2026-07-17T05:57:22.820Z"
+        },
+        {
+          "field": "contacto_personal",
+          "value": "Sí",
+          "ts": "2026-07-17T05:57:25.256Z"
+        },
+        {
+          "field": "principal_proveedor",
+          "value": "Remo",
+          "ts": "2026-07-17T05:57:28.570Z"
+        }
+      ],
+      "principal_proveedor": [
+        "Remo"
+      ],
+      "formatted_address": "Av. Comercio 33, Santa Cruz Xochitepec, Xochimilco, 16100 Ciudad de México, CDMX, México",
+      "website": "https://wa.me/message/N2BKQU7SYXONO1",
+      "purchases": 4550,
+      "latitude": 19.2546836,
+      "municipality": "",
+      "rating": 5,
+      "review_count": 2,
+      "visited_status": "visita_exitosa",
+      "source": "google",
+      "average_order": 544.91,
+      "phone": "55 9630 2420",
+      "street": "",
+      "name": "HEAVEN SHOP XOCHIMILCO Taller de Motos",
+      "shop_type": "Repair",
+      "shopId": "0ZjafWOP62iopJTT8igA",
+      "state": "",
+      "google_maps_url": "https://maps.google.com/?cid=11413532332117690030&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "longitude": -99.1308145,
+      "status": "visitada",
+      "visitedByEmail": "omar@voren.com.mx",
+      "pipeline_stage": "nuevo",
+      "crm_updated_at": "2026-07-18T00:11:22.166Z",
+      "statusAt": {
+        "_seconds": 1784224800,
+        "_nanoseconds": 0
+      },
+      "visitedAt": {
+        "_seconds": 1784224800,
+        "_nanoseconds": 0
+      }
+    },
+    "shops": {
+      "name": "HEAVEN SHOP XOCHIMILCO Taller de Motos",
+      "company_name": "",
+      "shop_type": "Repair",
+      "street": "",
+      "street_number": "",
+      "interior_number": "",
+      "neighborhood": "",
+      "formatted_address": "Av. Comercio 33, Santa Cruz Xochitepec, Xochimilco, 16100 Ciudad de México, CDMX, México",
+      "zip": "",
+      "locality": "",
+      "municipality": "",
+      "state": "",
+      "country": "Mexico",
+      "phone": "55 9630 2420",
+      "email": "",
+      "website": "https://wa.me/message/N2BKQU7SYXONO1",
+      "latitude": 19.2546836,
+      "longitude": -99.1308145,
+      "location": {
+        "_latitude": 19.2546836,
+        "_longitude": -99.1308145
+      },
+      "rating": 5,
+      "review_count": 2,
+      "business_status": "OPERATIONAL",
+      "business_hours": "lunes: 9:00–20:00 | martes: 9:00–20:00 | miércoles: 9:00–20:00 | jueves: 9:00–20:00 | viernes: 9:00–20:00 | sábado: 9:00–20:00 | domingo: Cerrado",
+      "employee_range": "",
+      "scian_description": "",
+      "google_maps_url": "https://maps.google.com/?cid=11413532332117690030&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "source": "google",
+      "denue_id": "",
+      "google_place_id": "ChIJ00KE-58BzoURroZPQC8DZZ4",
+      "purchases": 4550,
+      "average_order": 544.91,
+      "imported_at": "2026-03-05T18:14:57.179Z"
+    },
+    "actividades": [],
+    "informes": []
+  }
+]

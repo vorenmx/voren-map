@@ -59,7 +59,13 @@ export function useInventario() {
         ? item.codigos_barras.filter(Boolean)
         : (item.codigos_barras ? [item.codigos_barras] : []),
       nombre: item.nombre ?? '',
-      categoria: item.categoria ?? null,
+      categoria: item.categoria ?? item.grupo ?? null,
+      grupo: item.grupo ?? item.categoria ?? null,
+      especificacion: item.especificacion ?? null,
+      funcionalidad: item.funcionalidad ?? null,
+      medidas: item.medidas ?? null,
+      compatibilidad: item.compatibilidad ?? null,
+      comentarios: item.comentarios ?? null,
       descripcion: item.descripcion ?? null,
       unidad: item.unidad ?? 'pza',
       costo_unitario: Number(item.costo_unitario) || 0,
@@ -70,7 +76,12 @@ export function useInventario() {
       imagen_url: item.imagen_url ?? null,
       actualizado_en: serverTimestamp(),
     };
-    const ref = item.id ? doc(db, 'inventory_items', item.id) : doc(collection(db, 'inventory_items'));
+    // Prefer SKU as document id for stable ecommerce ↔ ERP matching.
+    const ref = item.id
+      ? doc(db, 'inventory_items', item.id)
+      : (item.sku
+          ? doc(db, 'inventory_items', String(item.sku).trim())
+          : doc(collection(db, 'inventory_items')));
     await setDoc(ref, payload, { merge: true });
     await fetchInventario(true);
     return ref.id;

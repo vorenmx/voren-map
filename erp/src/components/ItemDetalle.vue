@@ -14,9 +14,19 @@
           </div>
           <label>Nombre</label>
           <input v-model="form.nombre" class="input" :disabled="!puedeEditar" />
-          <label>Categoría</label>
+          <label>Grupo / Categoría</label>
           <input v-model="form.categoria" class="input" :disabled="!puedeEditar" />
-          <label>Descripción</label>
+          <label>Especificación</label>
+          <textarea v-model="form.especificacion" class="textarea" rows="2" :disabled="!puedeEditar"></textarea>
+          <label>Funcionalidad</label>
+          <textarea v-model="form.funcionalidad" class="textarea" rows="2" :disabled="!puedeEditar"></textarea>
+          <label>Medidas</label>
+          <textarea v-model="form.medidas" class="textarea" rows="2" :disabled="!puedeEditar"></textarea>
+          <label>Compatibilidad</label>
+          <textarea v-model="form.compatibilidad" class="textarea" rows="3" :disabled="!puedeEditar"></textarea>
+          <label>Comentarios técnicos / venta</label>
+          <textarea v-model="form.comentarios" class="textarea" rows="2" :disabled="!puedeEditar"></textarea>
+          <label>Descripción (corta)</label>
           <textarea v-model="form.descripcion" class="textarea" rows="2" :disabled="!puedeEditar"></textarea>
           <div class="row">
             <div><label>Costo unitario</label><input v-model.number="form.costo_unitario" type="number" class="input" :disabled="!puedeEditar" /></div>
@@ -98,7 +108,13 @@ const form = ref({
   id: props.item.id,
   sku: props.item.sku || '',
   nombre: props.item.nombre || '',
-  categoria: props.item.categoria || '',
+  categoria: props.item.categoria || props.item.grupo || '',
+  grupo: props.item.grupo || props.item.categoria || '',
+  especificacion: props.item.especificacion || '',
+  funcionalidad: props.item.funcionalidad || '',
+  medidas: props.item.medidas || '',
+  compatibilidad: props.item.compatibilidad || '',
+  comentarios: props.item.comentarios || '',
   descripcion: props.item.descripcion || '',
   unidad: props.item.unidad || 'pza',
   costo_unitario: props.item.costo_unitario || 0,
@@ -129,7 +145,11 @@ function quitarCodigo(idx) { form.value.codigos_barras.splice(idx, 1); }
 async function guardar() {
   guardando.value = true;
   try {
-    await guardarItem({ ...form.value, id: form.value.nuevo ? undefined : form.value.id });
+    await guardarItem({
+      ...form.value,
+      grupo: form.value.categoria || form.value.grupo,
+      id: form.value.nuevo ? undefined : form.value.id,
+    });
     emit('saved');
   } finally {
     guardando.value = false;

@@ -289,18 +289,24 @@ voren-map/
 │   └── dist/              # Built app (gitignored)
 ├── erp/                   # Vue 3 + Vite ERP app (Hosting target: erp)
 │   ├── src/
-│   │   ├── composables/   # useAuth, useCrm, useEmpleados, useInventario, useEscaner, useInsights
+│   │   ├── composables/   # useAuth, useCrm, useEmpleados, useInventario, usePedidos, …
 │   │   ├── components/    # LeadDetalle, ItemDetalle, BarcodeScanner, BarcodeLabel
-│   │   ├── views/         # CRM, Equipo, Almacén, Análisis IA, Dashboard
+│   │   ├── views/         # CRM, Equipo, Almacén, Pedidos, Análisis IA, Dashboard
 │   │   └── styles/        # theme.css (Voren design tokens)
 │   └── dist/              # Built app (gitignored)
 ├── functions/             # Firebase Cloud Functions
-│   ├── index.js           # importCsv, CRM insights, inventory, catalog triggers
+│   ├── index.js           # importCsv, CRM insights, inventory, catalog, orders
 │   ├── crmInsights.js     # Anthropic Opus CRM analysis
 │   ├── inventory.js       # atomic stock movements
-│   └── catalog.js         # e-commerce catalog publisher (stub)
+│   ├── catalog.js         # e-commerce catalog publisher → vorencommx
+│   ├── importInventory.js # SKU CSV → inventory_items
+│   └── orders.js          # ecommerce order ingest + stock salidas
+├── data/                  # SKU master CSV (sku-es.csv)
 ├── output/                # Generated CSVs
 ├── firebase.json          # Firebase config (map + erp hosting targets)
 ├── firestore.rules        # Firestore security rules
+├── STOREFRONT_INTEGRATION.md  # voren.com.mx ↔ ERP wiring
 └── storage.rules          # Storage security rules
 ```
+
+See [STOREFRONT_INTEGRATION.md](STOREFRONT_INTEGRATION.md) for catalog sync, SKU import, and order webhook setup.

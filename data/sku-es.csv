@@ -1,0 +1,341 @@
+﻿Item,SKU Interno,Grupo,Producto,Especificación,Funcionalidad,Medidas,Compatibilidad,Comentarios Técnicos y de Venta,Imagen
+1,VR-ACES-00001,Accesorios,Juego de Espejos,Tipo Original,Brindar visibilidad trasera y seguridad al conductor.,Rosca: 10mm (RH/RH),"Italika: Toda la línea FT y DT (125, 150, 200, 250), línea DM (150, 200, 250), línea Z (125Z, 150Z, 200Z, 250Z).
+Honda: CGL125 Tool, Cargo 125/150, XR150L, XR190L, CBF125/150, Invicta 150.
+Vento: Rocketman 250, Tornado 250, Crossmax 200/250, Falkon 200/250, Workman.
+Bajaj: Pulsar NS125/160/200 (la mayoría usa 10mm, aunque algunas versiones requieren adaptador si el lado derecho es rosca inversa).
+Suzuki: GN125, EN125, AX100.","Rosca 10mm estándar. En motos Bajaj/Yamaha, verificar si el lado derecho es rosca inversa (requeriría adaptador).",https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fac%2FVR-ACES-00001.webp?alt=media&token=9741428f-f4e2-4bf8-91c0-437505f70cba
+2,VR-ACPU-00002,Accesorios,Puños de Goma,Antiderrapante,Proporcionar agarre firme y cómodo en el manubrio.,"Diámetro: 22mm (7/8"")","Todas las Italika (FT, DT, DM, Z, RC, WS).
+Todas las Honda de baja cilindrada (Tool, Cargo, XR, CB).
+Todas las Vento, Yamaha, Suzuki y Kawasaki que tengan manubrio estándar.
+Bajaj: Pulsar, Boxer, Discover.",Material antiderrapante. Se deben cambiar cuando la goma se siente pegajosa o el relieve se ha borrado por el uso.,https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fac%2FVR-ACPU-00002.jpg?alt=media&token=6f3981fa-6cee-4fcd-ba17-dd7682b3e36c
+3,VR-CBCH-00003,Carburación,Chicote de Clutch,Acero autolubricado,Transmitir la presión de la manija al sistema de embrague.,"Cable: 110cm
+Funda: 100cm","Italika (Línea de Trabajo y Urbanas)
+Serie FT: FT125 (todas sus versiones: Clásica, Delivery, Roja, Sport), FT150 (G, GT, TS, Delivery, Grafitis).
+Serie DT: DT125, DT150 (Basic, Sport, Delivery).
+Serie Forza: Forza 125 y Forza 150.
+Serie Delivery: Italika Delivery 150.
+
+Honda (Modelos de Trabajo)
+CGL125 Tool: Es el reemplazo exacto para todos los años de la Honda Tool.
+Cargo 125: Modelos antiguos y recientes.
+Cargo 150: Específicamente la versión varillera (la que no tiene el motor OHC de cadena).
+
+Vento
+Workman: 125, 150 y 250 (versiones de trabajo).
+Ryder: 150.
+Lithium: 150.
+Cyclone: 150 y 200 (con manubrio estándar).","Autolubricado. Se recomienda revisar si hay hilos rotos cerca de las terminales; si el clutch se siente ""duro"", es hora de cambiarlo.",https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fcb%2FVR-CBCH-00003.webp?alt=media&token=68399f6e-54d4-4092-afbc-d9d8220b0cf6
+4,VR-CBCH-00004,Carburación,Chicote Acelerador,Terminal Martillo,Abrir la cortina del carburador para permitir el paso de mezcla.,Largo total: 95cm,"Italika (Línea de Trabajo y Urbanas)
+Serie FT: FT125 (todas sus versiones: Clásica, Delivery, Roja, Sport), FT150 (G, GT, TS, Delivery, Grafitis).
+Serie DT: DT125, DT150 (Basic, Sport, Delivery).
+Serie Forza: Forza 125 y Forza 150.
+Serie Delivery: Italika Delivery 150.
+
+Honda (Modelos de Trabajo)
+CGL125 Tool: Es el reemplazo exacto para todos los años de la Honda Tool.
+Cargo 125: Modelos antiguos y recientes.
+Cargo 150: Específicamente la versión varillera (la que no tiene el motor OHC de cadena).
+
+Vento
+Workman: 125, 150 y 250 (versiones de trabajo).
+Ryder: 150.
+Lithium: 150.
+Cyclone: 150 y 200 (con manubrio estándar).","Terminal tipo martillo. Un chicote deshilachado puede causar que el acelerador se quede pegado, lo cual es peligroso.",https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fcb%2FVR-CBCH-00004.webp?alt=media&token=e2dc4983-eb59-44a5-9804-3586810f26db
+5,VR-CBCR-00005,Carburación,Carburador completo,"PZ26
+Recomendado para 125cc
+El Ahogador: Hay dos versiones de este carburador: el que tiene la palanca de plástico en el cuerpo y el que tiene una guía para cable que va al manillar. Asegúrate de que el tuyo sea el que tus clientes usan más (generalmente el de palanca).",Mezclar aire y gasolina en la proporción exacta para la combustión.,"Tipo de Ahogador: Manual (palanca de 3 posiciones) o preparado para cable (depende de tu proveedor, pero el más común es el de palanca lateral).
+Diámetro de Admisión: 26mm
+Distancia entre tornillos de sujeción: 48 mm.
+Diámetro para Filtro de Aire: 38 mm.","Italika: FT125, DT125, Forza 125, 125Z, X125.
+Honda: CGL125 Tool, Cargo 125.
+Vento: Workman 125, Xpress 150 (versión económica).
+Generales: Motores varilleros de 125cc.",Ideal para motores 125cc. Verificar si el cliente usa ahogador de palanca (manual) o de cable al manillar.,https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fcb%2FVR-CBCR-00005.avif?alt=media&token=df814b35-562b-47ca-b299-4830352d4061
+6,VR-CBCR-00006,Carburación,Carburador completo,"PZ27
+Recomendado para 150cc a 200cc
+El Ahogador: Hay dos versiones de este carburador: el que tiene la palanca de plástico en el cuerpo y el que tiene una guía para cable que va al manillar. Asegúrate de que el tuyo sea el que tus clientes usan más (generalmente el de palanca).",Mezclar aire y gasolina para motores de cilindrada media.,"Tipo de Ahogador: Manual (palanca de 3 posiciones) o preparado para cable (depende de tu proveedor, pero el más común es el de palanca lateral).
+Diámetro de Admisión: 27mm.
+Distancia entre tornillos de sujeción: 48 mm.
+Diámetro para Filtro de Aire: 38 mm.","Italika: FT150 (G, TS, Delivery), DT150, 150Z (Varillera), FT180, FT200.
+Honda: Cargo 150 (Varillera).
+Vento: Workman 150, Ryder 150, Lithium 150, Cyclone 150/200.
+Generales: Motores varilleros de 150cc, 180cc y 200c",Recomendado para motores varilleros. El mayor diámetro (27mm) permite un mejor flujo para motores de 150cc en adelante.,https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fcb%2FVR-CBCR-00006.jpg?alt=media&token=85906e37-c6c5-4dc2-902c-927fd16e8d80
+7,VR-CBFA-00007,Carburación,Filtro de aire,Cilíndrico,Retener polvo e impurezas antes de que el aire entre al motor.,"Altura total: 122 mm a 125 mm.
+Diámetro Exterior (el ancho del bote): 90 mm a 95 mm.
+Diámetro Interior (el hueco de abajo): 52 mm a 55 mm.","Italika: FT125, FT150, DT125, DT150, Delivery 150, Forza 125.
+Vento: Workman 125/150, Ryder 150 (algunos modelos).","Pieza clave para evitar el desgaste prematuro del cilindro. Cambiar cada 3,000-6,000 km según la zona de uso.",https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fcb%2FVR-CBFA-00007.webp?alt=media&token=62ebd98b-e10d-445d-8f06-8d7588417235
+8,VR-CBFA-00008,Carburación,Filtro de aire,El Plano/Rectangular,Filtrar el aire de admisión en sistemas de caja cuadrada.,"Largo: 148 mm a 150 mm.
+Ancho: 92 mm a 95 mm.
+Grosor (espesor del marco): 20 mm a 22 mm.","Honda: CGL125 Tool (Exclusivo). Es el filtro que más se vende para Honda.
+Vento: Xpress 150.",Es el filtro de mayor rotación para modelos Honda de trabajo. No es intercambiable con el cilíndrico.,https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fcb%2FVR-CBFA-00008.webp?alt=media&token=57d44c25-f5c1-497f-a453-de71c65b72b1
+9,VR-CBFA-00009,Carburación,Filtro de aire,El de Panel Curvo,Filtrar aire en modelos deportivos/urbanos con caja de aire curva.,"Largo máximo: 185 mm a 190 mm.
+Ancho máximo: 115 mm a 120 mm.
+Forma: No es un rectángulo perfecto; tiene una base más ancha que la punta y es ligeramente arqueado.","Italika: 125Z, 150Z, 150SZ, 175Z","Diseño específico para la línea ""Z"" de Italika. Su forma asimétrica garantiza un sellado perfecto en el compartimento.",https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fcb%2FVR-CBFA-00009.webp?alt=media&token=da7b7184-b081-4dea-994c-0d8e29fced0d
+10,VR-CBFG-00010,Carburación,Filtro de gasolina,Diámetro 6mm,Retener sedimentos y basura provenientes del tanque de combustible.,"Diámetro de boquilla: 6 mm.
+Material: Cuerpo de polímero transparente con elemento filtrante de papel micrónico.","Italika: FT125, FT150, DT125, DT150, Forza, Delivery 150, 125Z, 150Z (Varillera).
+Honda: CGL125 Tool, Cargo 125, Cargo 150 (Varillera).
+Vento: Workman 125/150, Ryder 150, Lithium 150, Cyclone 150/200.
+Generales: Motores varilleros tipo CG desde 125cc hasta 200cc.","Al ser transparente, permite ver el estado de limpieza de la gasolina. Se recomienda cambiar en cada afinación.",https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fcb%2FVR-CBFG-00010.webp?alt=media&token=ef5f104d-f3f1-493d-8649-c43afc571d64
+11,VR-CBKT-00011,Carburación,Kit carburador,"PZ26: Juntas + chicleres
+",Reparar los componentes internos desgastados del carburador 125cc.,"Liga de la Cuba (Empaque inferior): Diámetro de 52 mm aprox. (en su forma circular).
+Distancia de tornillos del aislador: 48 mm de centro a centro.
+Diámetro del Émbolo (Cortina): 20 mm (PZ26) a 22 mm (PZ27). Nota: Aquí sí hay una pequeña variación, pero a veces los kits genéricos usan la misma aguja.
+Rosca del Chicler de Alta: M5 (5 mm de diámetro en la rosca).
+Rosca del Chicler de Baja: M4 (4 mm de diámetro en la rosca).
+
+Orificio Chicler Alta: 0,95 mm
+Orificio Chicler Baja: 0,35 mm
+Largo de la aguja: 38 mm","Italika: FT125, DT125, Forza 125, 125Z, X125.
+Honda: CGL125 Tool, Cargo 125.
+Vento: Workman 125, Xpress 150 (versión económica).
+Generales: Motores varilleros de 125cc.","Incluye juntas, agujas y espreas. Soluciona problemas de goteo o inestabilidad en ralentí sin cambiar todo el carburador.",https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fcb%2FVR-CBKT-00011.webp?alt=media&token=1628549b-5aab-490b-aa4e-1df3f909744e
+12,VR-CBKT-00012,Carburación,Kit carburador,"PZ27: Juntas + chicleres
+",Reparar componentes internos para carburadores 150-200cc.,"Liga de la Cuba (Empaque inferior): Diámetro de 52 mm aprox. (en su forma circular).
+Distancia de tornillos del aislador: 48 mm de centro a centro.
+Diámetro del Émbolo (Cortina): 20 mm (PZ26) a 22 mm (PZ27). Nota: Aquí sí hay una pequeña variación, pero a veces los kits genéricos usan la misma aguja.
+Rosca del Chicler de Alta: M5 (5 mm de diámetro en la rosca).
+Rosca del Chicler de Baja: M4 (4 mm de diámetro en la rosca).
+
+Orificio Chicler Alta: 1,05 mm
+Orificio Chicler Baja: 0,38 mm
+Largo de la aguja: 40 mm","Italika: FT150 (G, TS, Delivery), DT150, 150Z (Varillera), FT180, FT200.
+Honda: Cargo 150 (Varillera).
+Vento: Workman 150, Ryder 150, Lithium 150, Cyclone 150/200.
+Generales: Motores varilleros de 150cc, 180cc y 200c",La aguja y esprea de alta son ligeramente más grandes que el kit PZ26 para compensar la mayor cilindrada.,https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fcb%2FVR-CBKT-00012.webp?alt=media&token=44fd5a1b-2325-4dd6-9c69-a2bdba70b1ac
+13,VR-DIJU-00013,Suspensión,Cunas de Dirección,Juego de 7 piezas,Permitir el giro suave y estable de la horquilla delantera.,Estándar CG (Bolas de acero),"Italika (Línea de Trabajo y Urbanas)
+Serie FT: FT125 (todas), FT150 (todas: G, TS, GT, Delivery), FT180, FT200, FT250.
+Serie DT: DT125, DT150 (Sport, Clasica, Delivery).
+Serie Forza: Forza 125, Forza 150.
+Serie Z: 125Z, 150Z, 150SZ, 175Z.
+Serie DM: DM150 (Roja), DM200 (Verde). Nota: Algunas versiones muy recientes de DM250 ya usan rodillos cónicos, pero este kit le queda a las clásicas.
+
+Honda (Modelos de Trabajo)
+CGL125 Tool: Es la aplicación número uno en Honda.
+Cargo 125 / 150: Versiones varilleras.
+CBF125 / CB125F: Modelos urbanos.
+
+Vento
+Workman: 125, 150, 250.
+Ryder: 150.
+
+Lithium: 150.
+
+Cyclone: 150, 200.
+
+Xpress: 150.","Juego de 7 piezas con balines de acero. Si la moto ""se jalonea"" o el manubrio se siente trabado al centro, requiere cambio.",https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fsu%2FVR-DIJU-00013.webp?alt=media&token=e1efb7f4-4efe-4a7a-95a9-208623aa85fd
+14,VR-ELBO-00014,Eléctrico,Bobina de encendido,Corriente Alterna (AC) para CDI de 5 o 6 pines.,Elevar el voltaje de la batería/estator para crear la chispa en la bujía.,"Conexión: Suele tener un solo pin (una muesca de metal) para el cable que viene del CDI y la tierra la hace el mismo tornillo que la sujeta al chasis.
+Cable: El cable de alta tensión (el negro grueso) suele medir entre 30 cm y 40 cm.
+Capuchón: Generalmente viene con el capuchón de plástico rígido sencillo.","Italika: FT125, FT150, DT125, DT150, Forza, Delivery 150, 125Z, 150Z (Varillera).
+Honda: CGL125 Tool, Cargo 125, Cargo 150 (Varillera).
+Vento: Workman 125/150, Ryder 150, Lithium 150, Cyclone 150/200.
+Generales: Motores varilleros tipo CG desde 125cc hasta 200cc.","Para sistemas de Corriente Alterna (AC). Si la moto tiene dificultad para encender en frío o pierde potencia, puede ser falla de bobina.",https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fel%2FVR-ELBO-00014.webp?alt=media&token=84a30c09-d352-4042-908d-2fae8ce98c68
+15,VR-ELRG-00015,Eléctrico,Regulador / rectificador,"Regulador de 5 Cables (El más común): 
+Rosa y Amarillo: Entrada del estator.
+Rojo: Positivo de batería.
+Verde: Tierra (Negativo).
+Negro: ""Sensor"" de voltaje (va al switch).
+
+Regulador de 4 Cables: Es igual, pero no tiene el cable negro. En muchas motos Italika, si el regulador original es de 5, puedes poner el de 4 y simplemente dejar el cable negro de la moto suelto (o viceversa), pero lo ideal es que coincidan.",Convertir la corriente del motor para cargar la batería y proteger luces.,"Cuerpo: Aluminio con aletas de enfriamiento (disipador de calor).
+Conector: Un solo enchufe de plástico con 4 pines y a veces un cable suelto (el negro).
+Voltaje de salida: Debe regular entre 13.5 y 14.8 con la moto acelerada.","Italika: FT125, FT150, DT125, DT150, Forza, Delivery 150, 125Z, 150Z (Varillera).
+Honda: CGL125 Tool, Cargo 125, Cargo 150 (Varillera).
+Vento: Workman 125/150, Ryder 150, Lithium 150, Cyclone 150/200.
+Generales: Motores varilleros tipo CG desde 125cc hasta 200cc.
+Nota técnica: Verifique que su regulador original sea de 4 o 5 cables. No compatible con sistemas trifásicos (como XR150L o motos 250cc de alto desempeño).",Crucial: Verificar si el original es de 4 o 5 cables. El cuerpo de aluminio ayuda a disipar el calor para evitar que se queme.,https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fel%2FVR-ELRG-00015.webp?alt=media&token=06c57b98-b12b-4c4c-8b61-ab423fe32c55
+16,VR-ELSL-00016,Eléctrico,Solenoide de arranque,"12V, 125–150cc",Actuar como interruptor de alto voltaje para el motor de arranque.,"Voltaje: 12V.
+Conector: Un enchufe plástico de 2 pines (generalmente cables Rojo/Amarillo y Verde).
+Bornes: Dos postes de cobre con tuercas (generalmente de 10mm) protegidos por capuchones de hule rojo.
+Fusible: Algunos modelos ""tipo original"" traen un porta-fusible de 15A o 20A integrado, pero el estándar CG suele ser el barril liso sin fusible.","Italika: FT125, FT150, DT125, DT150, Forza, Delivery 150, 125Z, 150Z (Varillera).
+Honda: CGL125 Tool, Cargo 125, Cargo 150 (Varillera).
+Vento: Workman 125/150, Ryder 150, Lithium 150, Cyclone 150/200.
+Generales: Motores varilleros tipo CG desde 125cc hasta 200cc.","Si al presionar el botón de encendido solo se escucha un ""click"", es probable que el solenoide esté dañado.",https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fel%2FVR-ELSL-00016.webp?alt=media&token=8c61c4a5-a869-4b4f-a1f5-4d806b54d8d7
+17,VR-ENAC-00017,Motor (Engine),Aceite Motor 4T,20W-50 Mineral,"Lubricar, enfriar y limpiar las piezas internas del motor.","1 Litro
+JASO MA2","Motores 4 tiempos de baja y media cilindrada.
+No compatible con scooters, motos de alta cilindrada o climas de frios extremos","Certificación JASO MA2 (ideal para embragues sumergidos). Cambiar cada 2,000 - 3,000 km para vida máxima del motor.",https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fen%2FVR-ENAC-00017.webp?alt=media&token=65d40671-25b2-4cf6-989a-16867cd612c0
+18,VR-ENBJ-00018,Motor (Engine),Bujía,A7TC estándar,Generar la chispa necesaria para la combustión (Rosca corta).,"Diámetro de rosca: 10 mm
+Largo de rosca: 12,7 mm
+Medida del Hexágono: 16 mm","FT125/150, CGL125, Workman 125/150",Rosca 10mm. Es la bujía estándar de mayor uso en motores de trabajo varilleros.,https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fen%2FVR-ENBJ-00018.jpg?alt=media&token=cebb6f27-0865-4263-9672-0c2096fd5c14
+19,VR-ENBJ-00019,Motor (Engine),Bujía,D8EA estándar,Generar la chispa en motores de mayor cilindrada (Rosca gruesa).,"Diámetro de rosca: 12 mm
+Largo de rosca: 19 mm
+Medida del Hexágono: 18 mm","Rocketman 250, Tornado 250, Thunderbird",Rosca 12mm. Se usa comúnmente en motores 250cc que requieren mayor rango térmico.,https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fen%2FVR-ENBJ-00019.webp?alt=media&token=c81ae978-8160-4d70-a95f-7fedfba8c44c
+20,VR-ENBJ-00020,Motor (Engine),Bujía,CPR8EA-9 estándar,Generar la chispa en motores modernos (Rosca larga).,"Diámetro de rosca: 10 mm
+Largo de rosca: 19 mm
+Medida del Hexágono: 16 mm","XR150L, Invicta 150, CB190R",Rosca 10mm larga. Utilizada en motores con sistema OHC (cadena de distribución) que tienen la cámara de combustión profunda.,https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fen%2FVR-ENBJ-00019.webp?alt=media&token=c81ae978-8160-4d70-a95f-7fedfba8c44c
+21,VR-ENBJ-00021,Motor (Engine),Bujía Boxer 150,Específica Bajaj,Generar la chispa específica para tecnología Bajaj.,"Rosca: 10mm
+Largo: 19mm","Bajaj: 
+Boxer 150
+Discover 125/150",Diseñada para el ciclo de trabajo de Bajaj. Mantener el gap (calibración) correcto es vital para el ahorro de combustible.,https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fen%2FVR-ENBJ-00021.webp?alt=media&token=7151f63c-0708-4998-af01-40be129ed154
+22,VR-ENBT-00022,Motor (Engine),Bomba de Aceite,Tipo Engrane,Succionar y distribuir el aceite a presión hacia la cabeza del motor.,Engrane: 18 Dientes,"Italika: Casi toda la línea de trabajo y urbana: FT125, FT150, DT125, DT150, Forza 125/150, Delivery 150, 150Z (solo versión varillera), RC150.
+Honda: CGL125 Tool, Cargo 125, Cargo 150 (versión antigua varillera).
+Vento: Workman 125/150/250, Ryder 150, Lithium 150, Cyclone 150/200.
+Doble Propósito: Italika DM150 (roja/clásica) y DM200 que usen motor de varillas (OHV).
+
+Motores Genéricos: Todos los motores chinos con nomenclatura 156FMI (125cc), 162FMJ (150cc) y 163FML (200cc).","Engrane de 18 dientes. Si la cabeza del motor suena mucho (punterías), puede ser señal de que la bomba ya no manda presión.",https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fen%2FVR-ENBT-00022.webp?alt=media&token=46b365b7-4dfb-4a56-90c6-be3b3fc2f95c
+23,VR-ENFO-00023,Motor (Engine),Cedazo de Aceite (Filtro de Malla),Filtro de Aceite de Malla,Filtrar partículas gruesas del aceite dentro del cárter.,Marco de polímero con malla de acero inoxidable.,"Italika: FT125, FT150, DT150, DM150, 150Z, RC150.
+Honda: CGL125 Tool.",Es una malla lavable de acero. Se recomienda limpiar en cada cambio de aceite para evitar obstrucciones.,https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fen%2FVR-ENFO-00023.webp?alt=media&token=1bb1b198-7ca2-4a7e-826e-8e41c88dbfe0
+24,VR-ENFO-00024,Motor (Engine),Filtro de Aceite de Papel (Tipo Cartucho),,Filtración fina de impurezas en motores Bajaj.,"Medidas: Diámetro: 40mm
+Altura: 40 mm
+Medio Filtrante: Papel micrónico plisado de alta eficiencia.
+Válvula: No aplica (es cartucho abierto).","Bajaj: Boxer 150 (BM150), Boxer 150X, Boxer UG, Pulsar 135, Pulsar 150, Pulsar 160NS, Pulsar 180, Pulsar 200NS (algunas versiones), Discover 125/150.","Desechable. A diferencia del cedazo, este se debe reemplazar por uno nuevo en cada cambio de aceite obligatoriamente.",https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fen%2FVR-ENFO-00024.webp?alt=media&token=46d828c7-92f8-4c24-81e0-2f04c2bb5b71
+25,VR-ENJT-00025,Motor (Engine),Juego juntas top end,Culata + base cilindro,"Sellar la unión entre cilindro, cabeza y cárter para evitar fugas.","El orificio central mide 56,5 mm","FT125, DT 125, Forza 125, CGL125, Workman 125",No requiere silicón si las superficies están limpias. Vital para mantener la compresión del motor.,https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fen%2FVR-ENJT-00025.webp?alt=media&token=f1021c54-4e47-4dd2-b5b2-f997a38284b1
+26,VR-ENJT-00026,Motor (Engine),Juego juntas top end,Culata + base cilindro,Sellar los componentes superiores en motores 150cc.,El orificio central mide 62 mm,"FT150, DT150, Delivery 150, Workman 150, Ryder 150, Lithium 150",Mismas propiedades que la de 125cc pero con diámetro mayor para el pistón de 150cc.,https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fen%2FVR-ENJT-00026.webp?alt=media&token=7fd5060e-37c5-44a1-9c7a-3f6f79c8b8b4
+27,VR-ENJT-00027,Motor (Engine),Junta de Tapa de Clutch,,Evitar fugas de aceite en la tapa lateral derecha del motor.,"Material: Celulosa expandida de alta densidad (Non-Asbestos).
+Espesor: 0.5mm a 0.8mm (estándar de sellado hermético).
+Resistencia: Soporta temperaturas de hasta 180°C y es resistente a la degradación por aceites sintéticos y minerales.
+Diseño: Troquelado de precisión para 11 barrenos de tornillo y paso de vena de aceite.","Italika (Motores CG Varilleros): FT125, FT150 (G, TS, GT, Delivery), DT125, DT150 (Sport, Clasica), Forza 125/150, 150Z (Varillera), DM150 (Roja), RC150.
+Honda: CGL125 Tool, Cargo 125, Cargo 150 (Modelos varilleros).
+Vento: Workman 125/150, Ryder 150, Lithium 150, Cyclone 150/200.",Material de celulosa de alta densidad. Se debe cambiar siempre que se abran los discos de clutch para garantizar sellado.,https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fen%2FVR-ENJT-00027.webp?alt=media&token=e0835c41-38d6-449a-9939-38dae173fdfa
+28,VR-ENJV-00028,Motor (Engine),Empaque junta punterías,CG125/150,Sellar la tapa superior donde se ajustan las punterías.,"Forma: Parece un ""rectángulo con orejas"".
+Número de barrenos (hoyos): Tiene 3 orificios para los tornillos de la tapa.
+Material: Generalmente es de hule negro (nitrilo) resistente al calor o de un compuesto de corcho/caucho.
+Medida aprox: 135 mm de largo por 95 mm de ancho (en sus puntos más externos).","Italika: FT125, FT150 (todas), DT125, DT150, Forza 125, Delivery 150.
+Honda: CGL125 Tool, Cargo 125 (vieja).	SÍ
+Vento: Workman 125/150, Ryder 150, Lithium 150, Xpress 150.
+General: Cualquier motor tipo CG desde 125cc hasta 250cc (mismo molde)","Evita el molesto ""sudado"" de aceite en la parte superior del motor. Hecha de hule nitrilo resistente al calor extremo.",https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fen%2FVR-ENJV-00028.webp?alt=media&token=5dc72b70-c1ea-47ca-a3c8-97c276c22b91
+29,VR-ENOR-00029,Motor (Engine),Kit O-rings motor,Tapas laterales,Sellar tapones de inspección y bayoneta de aceite.,"O-ring	Diámetro Interior	Grosor (Cuerda)
+Tapón Grande (Tiempo)	27 mm - 30 mm	2.5 mm
+Tapón Chico (Cigüeñal)	13 mm - 14 mm	2.5 mm
+Bayoneta / Tapón Aceite	18 mm - 19 mm	3.0 mm","Italika: FT125, FT150 (todas), DT125, DT150, Forza 125, Delivery 150.
+Honda: CGL125 Tool, Cargo 125 (vieja).	SÍ
+Vento: Workman 125/150, Ryder 150, Lithium 150, Xpress 150.
+General: Cualquier motor tipo CG desde 125cc hasta 250cc (mismo molde)",Incluye orings para los tapones de tiempo y el de la bayoneta. Evitan pequeñas fugas estéticas.,https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fen%2FVR-ENOR-00029.webp?alt=media&token=888f5131-e404-44d3-bf5e-0a96559095e5
+30,VR-ENPA-00030,Motor (Engine),Palanca de arranque (kick),Tipo CG,Permitir el encendido manual del motor mediante pedal (Kick).,"Diámetro del Estriado (Hoyo): 16 mm
+Largo Total: 260 mm - 280 mm (aprox.)
+Tornillo de Sujeción: M8 (Requiere llave de 12mm o 13mm)
+Tipo de Eje: Estriado de 6 o más dientes (estándar CG)","Italika: FT125, FT150, DT125, DT150, Forza, Delivery 150, 125Z, 150Z (Varillera)
+Honda: CGL125 Tool, Cargo 125, Cargo 150 (Varillera)
+Vento: Workman 125/150, Ryder 150, Lithium 150, Cyclone 150/200.
+Generales: Motores tipo CG 125cc, 150cc, 200cc y 250cc",Estriado de 16mm. Se debe apretar muy bien el tornillo para evitar que el movimiento raye el eje de arranque.,https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fen%2FVR-ENPA-00030.webp?alt=media&token=74669248-27d7-4440-a4d3-68f276e06e5b
+31,VR-ENPI-00031,Motor (Engine),Kit Pistón y Anillos,150cc STD,Convertir la explosión de gasolina en movimiento mecánico.,"Diámetro: 62mm
+Perno: 15mm","Italika (La mayor rotación)
+Línea FT: FT150, FT150G, FT150 GT, FT150 TS, FT150 Delivery, FT150 Azul/Grafito.
+Línea DT: DT150, DT150 Sport, DT150 Delivery, DT150 Clasica.
+Línea Z: 150Z (Solo la versión Varillera).
+Otras: Forza 150, RC150 (Chopper), Delivery 150.
+
+Honda (Modelos específicos)
+Cargo 150 (GL150): Compatible con las versiones Varilleras (modelos anteriores al motor OHC).
+CGL125 Tool (Upgrade): Muchos mecánicos usan este kit para ""subir"" de 125cc a 150cc las Honda Tool, ya que el bloque lo permite.
+
+3. Vento
+Workman 150 (Modelo de trabajo).
+Ryder 150.
+Lithium 150.
+Cyclone 150.","Incluye pistón, anillos, perno y seguros. Requiere un periodo de ""asentamiento"" de 500km tras su instalación.",https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fen%2FVR-ENPI-00031.webp?alt=media&token=5f280a59-1811-422f-a3e0-9a5c1687157e
+32,VR-ENRT-00032,Motor (Engine),Retén eje salida,Estandar: medida original,Evitar fugas de aceite por el eje donde va el piñón de cadena.,"20 mm: Diámetro interno (lo que mide el eje).
+34mm: Diámetro externo (el hueco en el motor).
+7mm: Grosor del retén.","Italika: FT125, FT150 (todas), DT125, DT150, Forza 125, Delivery 150.
+Honda: CGL125, Cargo 125.
+Vento: Workman 125/150, Ryder 150, Lithium 150.
+Clones CG: Dinamo, Kurazai, Carabela 125-200cc.",Medida 20x34x7mm. Es el retén que más falla debido a la acumulación de tierra y grasa en el piñón.,https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fen%2FVR-ENRT-00032.webp?alt=media&token=8fdba441-9b0c-42da-a0aa-a76e06216d4c
+33,VR-ENRT-00034,Motor (Engine),Retén del tambor de cambios,Sella el eje que atraviesa el motor de lado a lado para conectar el pedal de cambios con la transmisión interna.,Evitar fugas en el eje del pedal de velocidades.,"14 mm: Diámetro interno (lo que mide el eje de velocidades). Un eje de 11mm sería demasiado delgado para estas motos de trabajo; se doblaría.
+24 mm: Diámetro externo (el orificio en la carcasa del motor).
+10 mm: El grosor del retén (algunos vienen de 6mm o 7mm y también funcionan, pero el de 10mm sella mejor).","Italika: FT125, FT150 (todas), DT125, DT150, Forza 125, Delivery 150.
+Honda: CGL125, Cargo 125.
+Vento: Workman 125/150, Ryder 150, Lithium 150.
+Clones CG: Dinamo, Kurazai, Carabela 125-200cc.",Medida 14x24x10mm. Un retén grueso (10mm) dura mucho más que las versiones económicas de 6mm.,
+34,VR-ENRV-00035,Motor (Engine),Retenes de válvula,Juego (2 pzas),Sellar el paso de aceite de la cabeza hacia la cámara de combustión.,"Diámetro Interno (Vástago): 5.5 mm.
+Diámetro Externo (Base): 10 mm - 11 mm.
+Cantidad: 2 piezas (Una para la válvula de Admisión y otra para la de Escape).","Italika: FT125, FT150, DT125, DT150, Forza, Delivery 150, 125Z, 150Z (Varillera)
+Honda: CGL125 Tool, Cargo 125, Cargo 150 (Varillera)
+Vento: Workman 125/150, Ryder 150, Lithium 150, Cyclone 150/200.
+Generales: Motores tipo CG 125cc, 150cc, 200cc y 250cc",Se deben cambiar si la moto saca humo azul al encender por las mañanas. El kit incluye 2 piezas (admisión/escape).,https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fen%2FVR-ENRV-00035.webp?alt=media&token=3f53b930-c29c-47e0-9626-8dd81101236e
+35,VR-FRKT-00036,Frenos,Kit freno tambor,Zapata + resortes + pernos tipo CG,Sistema de frenado integral para ruedas de maza.,"Diámetro de Zapata: 110 mm
+Ancho de Zapata: 25 mm
+Largo de Resortes: 35 mm a 40 mm (estándar de tensión alta)
+Diámetro de Pernos: Estándar para maza de 110mm (aprox. 8mm de grosor)","FT125/150, CGL125, Workman 125/150, clones CG, Similares","Incluye zapatas, resortes y pernos. Ideal para una renovación total del sistema de frenado trasero.",
+36,VR-FRMA-00037,Frenos,Leva de freno (manija),Tipo CG,Accionar el freno delantero de tambor.,"Largo Total:185 mm - 190 mm, 7.3"" - 7.5""
+Diámetro del barreno (Pivote): 8 mm, 5/16""
+Grosor en la base (donde va el perno):12 mm, 0.47""
+Diámetro del orificio para el cable (Barril):10 mm,""3/8""
+Ancho de la ranura para el cable: 3 mm - 4 mm,""1/8""","FT125/150, CGL125, Workman 125/150",Aluminio de alta resistencia. Verifique que el cable del freno corra libremente antes de instalar la nueva manija.,https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Ffr%2FVR-FRMA-00037.webp?alt=media&token=278a7462-9034-4756-a532-42ba4c04d044
+37,VR-FRPA-00038,Frenos,Balatas de Freno,Delanteras (Disco),Proporcionar fricción para frenado de disco delantero.,"Largo: ~77mm
+Ancho: ~42mm","XR150L, FT150TS, DT150 Sport, DM150/200",Medida 77x42mm. Se deben cambiar antes de que la pasta llegue a 1mm de espesor para no dañar el disco.,https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Ffr%2FVR-FRPA-00038.webp?alt=media&token=4925de9b-5ba6-4832-8c9c-e5a2264fa26f
+38,VR-FRZA-00039,Frenos,Zapata freno trasero,"Tambor, tipo CG",Proporcionar fricción en el frenado trasero de tambor.,"Diámetro Exterior: 110 mm (Estando cerrada).
+Ancho de la Zapata (Pasta): 25 mm.
+Grosor del Material de Fricción: 4 mm (Aproximadamente, cuando es nueva).
+Componentes: 2 zapatas de media luna + 2 resortes de tensión.","FT125/150, CGL125, Workman 125/150, clones CG, Similares",Diámetro 110mm. Pasta de larga duración. Se recomienda limpiar el tambor con lija antes de instalar.,https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Ffr%2FVR-FRZA-00039.webp?alt=media&token=2998c626-4365-441e-a955-2d68430c21fb
+39,VR-KT-EN-00040,Motor (Engine),Kit Afinación Italika/Tool,VR-ENAC-00017 + VR-ENBJ-00018 + VR-CBFA-00007 + VR-CBFG-00010,Mantenimiento preventivo completo del motor.,"Aceite 1L
+Bujía 10mm
+Filtro 122mm (Cil) o 150mm (Plano)","Italika: FT125/150, DT125/150, Forza 125/150. Honda: CGL125 Tool. Vento: Workman 125/150.","Combo Venta: Incluye Aceite, Bujía y Filtros. Es la compra básica de cada 3 meses para cualquier motociclista.",
+40,VR-KT-EN-00041,Motor (Engine),"Kit Motor ""Cero Fugas"" 56.5mm",VR-ENJT-00025 + VR-ENJT-00027 + VR-ENRT-00032 + VR-ENRT-00034 + VR-ENOR-00029,Eliminar todas las filtraciones de aceite en motores 125cc.,"Juntas 56.5mm
+Retenes 20x34x7mm, 14x24mm","Universal Motores CG: Italika FT/DT, Honda CGL125 Tool, Vento Ryder/Lithium/Workman y clones CG 125-200cc.",Incluye todas las juntas y retenes principales. Ideal cuando el motor se ve sucio y gotea por varios puntos.,
+41,VR-KT-EN-00042,Motor (Engine),"Kit Motor ""Cero Fugas"" 62mm",VR-ENJT-00026 + VR-ENJT-00027 + VR-ENRT-00033 + VR-ENRT-00034 + VR-ENOR-00029,Eliminar filtraciones de aceite en motores 150cc.,"Juntas 62mm
+Retenes 20x35x7mm, 14x24x10mm","Universal Motores CG: Italika FT/DT, Honda CGL125 Tool, Vento Ryder/Lithium/Workman y clones CG 125-200cc.","Misma función que el anterior, pero con juntas de 62mm para el cilindro de 150cc.",
+42,VR-KT-EN-00043,Motor (Engine),Kit Afinación Boxer 150,VR-ENAC-00017 + VR-ENBJ-00021 + VR-ENFO-00024 + VR-TRCH-00050,Mantenimiento completo para Bajaj Boxer.,"Aceite 1L
+Filtro 40x40mm
+Chicote 105cm","Bajaj: Boxer 150 (BM150), Boxer 150X, Boxer UG (5 velocidades).","Incluye el filtro de aceite de papel y el chicote de clutch, piezas que fallan seguido en este modelo.",
+43,VR-KT-FR-00044,Frenos,Kit Frenado Total,VR-FRPA-00038 + VR-FRZA-00039,Renovación de frenos delanteros y traseros.,"Pastillas 77x42mm
+Zapatas 110mm","Honda: XR150L, XR190L. Italika: DM150, DM200, FT150TS, DT150 Sport. Vento: Crossmax 150/200.",Incluye balatas de disco y zapatas de tambor. Perfecto para motos Doble Propósito.,
+44,VR-KT-TR-00045,Transmisión,Kit de Arrastre Premium,VR-TRPN-00053 + VR-TRSP-00054 + VR-TRCA-00048 + VR-TRKS-00051,Transmitir la fuerza del motor a la rueda trasera de forma eficiente.,"Paso 428 
+14D - 42D
+128 Eslabones","Italika: FT150 (G, TS, GT, Delivery), DT150 Sport/Clásica, Forza 150. Honda: Cargo 150 (Varillera). Vento: Workman 150.","Acero 1045 (alta durabilidad). Incluye piñón 14T, sprocket 42T y cadena reforzada 428H.",
+45,VR-KT-TR-00046,Transmisión,Kit de Clutch Maestro,VR-TRCC-00049 + VR-ENJT-00027 + VR-ENAC-00017,Restaurar la potencia y tracción del motor.,"Discos 110mm
+Aceite 1L
+Junta 0.5mm espesor","Italika: FT125/150, DT125/150, Forza 125/150. Honda: CGL125 Tool, Cargo 125/150 (Varillera). Vento: Workman 125/150.","Soluciona el problema de ""la moto revoluciona pero no avanza"". Incluye discos, aceite y junta.",
+46,VR-SUAM-00047,Suspensión,Amortiguador trasero,Tipo CG,Absorber irregularidades del camino y soportar carga.,"Largo Total (Ojo a Ojo): 320 mm (es la medida estándar).
+Diámetro de los Bujes (Hoyos): 12 mm (arriba) y 10 mm (abajo). Nota: Muchos traen reductores para adaptarse.
+Tipo de Anclaje: Ojo - Ojo (Circular arriba, circular abajo).
+Ajuste: 5 posiciones de precarga (para cuando la moto va cargada con bultos o repartidor).","Italika: FT125, FT150, DT125, DT150, Forza, Delivery 150, 125Z, 150Z (Varillera).
+Honda: CGL125 Tool, Cargo 125, Cargo 150 (Varillera).
+Vento: Workman 125/150, Ryder 150, Lithium 150, Cyclone 150/200.
+Generales: Motores varilleros tipo CG desde 125cc hasta 200cc.",Medida 320mm. Cuenta con 5 posiciones de precarga para cuando se lleva mucha carga (reparto).,https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Fsu%2FVR-SUAM-00047.webp?alt=media&token=8ba25fb3-cc1c-464f-ba75-bf9d06f07127
+47,VR-TRCA-00048,Transmisión,Cadena de Tracción,428H Reforzada,Conectar el piñón con el sprocket para mover la rueda.,"Paso: 428
+Eslabones: 128L","Italika: FT125, FT150, DT125, DT150, Forza 125/150, DM150, DM200, 150Z.
+Honda: CGL125 Tool, Cargo 125/150, XR150L
+Vento: Workman 125/150, Ryder 150, Lithium 150, Crossmax 200
+Bajaj: Boxer 150","Tipo 428H (Reforzada). Los eslabones son más gruesos que la cadena estándar, lo que evita que se estire rápido.",https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Ftr%2FVR-TRCA-00048.webp?alt=media&token=cea8c196-f291-4049-987e-fed61892c25f
+48,VR-TRCC-00049,Transmisión,Kit de clutch completo,Discos + separadores + resortes / 125–150cc tipo CG,Permitir el cambio de marchas sin dañar la transmisión.,"Discos de Fricción: 5 Piezas        Base de corcho y resina orgánica. Diámetro externo (con pestañas) de aprox. 110mm.
+Separadores: 4 Piezas        Acero templado con acabado ""punteado"" para mejor retención de aceite.
+Resortes: 4 o 5 Piezas*        Acero de alta tensión para evitar el patinado.","Italika: FT125, FT150, DT125, DT150, Forza, Delivery 150, 125Z, 150Z (Varillera).
+Honda: CGL125 Tool, Cargo 125, Cargo 150 (Varillera).
+Vento: Workman 125/150, Ryder 150, Lithium 150, Cyclone 150/200.
+Generales: Motores varilleros tipo CG desde 125cc hasta 200cc.","Incluye discos de corcho, separadores y resortes. Remojar los discos en aceite 30 min antes de instalarlos.",
+49,VR-TRCH-00050,Transmisión,Chicote de Clutch,Para Bajaj Boxer,Accionar el embrague específicamente en motos Bajaj.,"Largo Total del Cable: 105 cm.
+Largo de la Funda: 94 cm.
+Carrera (Cable libre): ~11 cm (distancia que sale del forro para conectar en la leva del motor).
+Terminal superior: Tipo ""martillo"" para la manija.
+Terminal inferior: Punta de rosca con doble tuerca para ajuste fino en la base del motor.","Bajaj:
+Boxer 150 (BM150): Versión clásica de 4 velocidades.
+Boxer 150 UG: Versión ""Upgrade"" de 5 velocidades (la más común actualmente).
+Boxer 150X",Más largo que el de Italika. Tiene terminales reforzadas para soportar el uso rudo de este modelo.,https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Ftr%2FVR-TRCH-00050.webp?alt=media&token=00768af7-439e-407f-ba7a-0ce0e55308a9
+50,VR-TRPA-00052,Transmisión,Palanca de cambios,Tipo CG,Permitir al conductor seleccionar las marchas con el pie.,"Diámetro del estriado (Hoyo): 11 mm a 12 mm (Para eje de 12mm).
+Largo total: 210 mm a 240 mm (Punta a punta).
+Tornillo de sujeción: M6 (Requiere llave de 10mm).
+Grosor del acero: 4 mm a 5 mm.","Italika: FT125, FT150, DT125, DT150, Forza, Delivery 150, 125Z, 150Z (Varillera)
+Honda: CGL125 Tool, Cargo 125, Cargo 150 (Varillera)
+Vento: Workman 125/150, Ryder 150, Lithium 150, Cyclone 150/200.
+Generales: Motores tipo CG 125cc, 150cc, 200cc y 250cc","Hecha de acero troquelado. En caso de caída, se puede enderezar, pero si el estriado se barre, debe cambiarse de inmediato.",https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Ftr%2FVR-TRPA-00052.webp?alt=media&token=79f3727e-d703-4d6e-9b19-f33985644f01
+51,VR-TRPN-00053,Transmisión,Piñón delantero,"14 dientes, paso 428",Engrane de salida del motor hacia la cadena.,"Paso de cadena: 428 (Es el ancho de los dientes).
+Cantidad de dientes: 14.
+Eje central (Estriado): * Diámetro interno (valle): 17 mm.
+Diámetro externo (cresta): 20 mm.
+Orificios de sujeción: Distancia de 34 mm entre los centros de los dos agujeros para los tornillos del seguro.","Italika: FT125, FT150 (todas), DT125, DT150, Forza 125, Delivery 150.
+Honda: XR150L, CGL125 Tool, Cargo 125/150, CBF125.
+Vento: Workman 125/150, Ryder 150, Lithium 150.
+Clones CG
+Similares",14 Dientes. Es la medida estándar que equilibra fuerza (torque) y velocidad final.,https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Ftr%2FVR-TRPN-00053.jpg?alt=media&token=3601dc4c-946d-4334-8622-07847daa32ae
+52,VR-TRSP-00054,Transmisión,Sprocket Trasero,Acero 1045 / 42T,Engrane de tracción en la rueda trasera.,"Paso: 428
+Barrenos: 4
+Dientes: 42","Italika
+Serie FT: FT150 (Versiones: G, GT, Roja, TS, Delivery, Grafito).
+Serie DT: DT150 Sport, DT150 Delivery, DT150 Clasica.
+Serie Forza: Forza 150.
+Serie Delivery: Italika Delivery 150.
+Serie Z: 150Z (Versión varillera).
+
+Honda (Modelos de Trabajo)
+Cargo 150 (GL150): Compatible con los modelos que usan la maza de 4 tornillos (principalmente versiones varilleras).
+CGL125 Tool: Se puede instalar como un ""Upgrade"". La Tool originalmente trae un sprocket más pequeño (38T); ponerle este de 42T le da mucha más fuerza para subir pendientes o cargar bultos pesados, aunque reduce un poco la velocidad tope.
+
+Vento
+Workman 150 / 250: Modelos con maza de 4 barrenos.
+Ryder 150.
+Lithium 150.
+
+Cyclone 150 / 200.","42 Dientes. Al ser de 4 barrenos, es compatible con la maza estándar de Italika y Honda.",https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Ftr%2FVR-TRSP-00054.webp?alt=media&token=6a08b768-8e4a-4c3e-87b9-f778784e6306
+53,VR-TRTC-00055,Transmisión,Tensor de cadena,Tipo CG,Mantener la tensión correcta de la cadena en el basculante.,"Diámetro del barreno (hoyo para el eje): 12 mm o 15 mm (El de 12 mm es el más común para FT125/150).
+Largo del tornillo: 50 mm a 60 mm.
+Grosor del tornillo: 8 mm (M8).
+Ancho de la placa (U): Diseñada para entrar en un basculante de 20 mm a 25 mm de ancho.","Italika: FT125, FT150 (todas), DT125, DT150, Delivery, Forza.
+Honda: CGL125
+Vento: Workman, Ryder, Lithium, Xpress",Ayuda a alinear la llanta trasera. Se deben usar siempre por par para que el eje no quede chueco.,https://firebasestorage.googleapis.com/v0/b/vorencommx.firebasestorage.app/o/sku%2Ftr%2FVR-TRTC-00055.webp?alt=media&token=6df4e739-769e-45ec-8b0b-cf8bee522bb7

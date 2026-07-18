@@ -1,5 +1,6 @@
 node_modules/
 .env
+.ecommerce_ingest_secret.local
 output/
 .firebase/
 firebase-debug.log
